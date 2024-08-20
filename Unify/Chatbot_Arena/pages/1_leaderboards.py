@@ -10,6 +10,10 @@ st.set_page_config(
 
 source = "online" if st.session_state.source is True else "offline"
 
+_, theme_col = st.columns([7, 1])
+with theme_col:
+    helpers.Buttons.change_theme_button()
+
 # Add custom CSS for the buttons
 st.markdown(
     """
@@ -21,37 +25,43 @@ st.markdown(
 )
 # Create a DataFrame with the sorted vote counts
 if source == "offline":
+
     vote_counts_df = pd.DataFrame(st.session_state.vote_counts)
     vote_counts_df["Model Name"] = vote_counts_df.index
-    vote_counts_df[["Wins ⭐", "Losses ❌"]] = vote_counts_df[
-        ["Wins ⭐", "Losses ❌"]
-    ].add(st.session_state.offline_leaderboard[["Wins ⭐", "Losses ❌"]], fill_value=0)
-    sorted_counts = vote_counts_df[["Model Name", "Wins ⭐", "Losses ❌"]]
+    vote_counts_df_added = vote_counts_df[["Wins ⭐", "Losses ❌"]].add(
+        st.session_state.offline_leaderboard[["Wins ⭐", "Losses ❌"]],
+        fill_value=0,
+    )
+    vote_counts_df_added["Model Name"] = vote_counts_df_added.index
+    sorted_counts = vote_counts_df_added[["Model Name", "Wins ⭐", "Losses ❌"]]
     sorted_counts.sort_values(by=["Wins ⭐", "Losses ❌"], inplace=True)
     sorted_counts.index = range(sorted_counts.shape[0])
 
-    detail_leaderboards = st.session_state.detailed_leaderboard["scores"].add(
-        st.session_state.offline_detailed["scores"], fill_value=0
+    detail_leaderboards = st.session_state.detailed_leaderboards.add(
+        st.session_state.offline_detailed, fill_value=0
     )
 
     model_selection = list(detail_leaderboards.keys())
-    detail_leaderboards = {"scores": detail_leaderboards}
+    detail_leaderboards = detail_leaderboards
 
 if source == "online":
     helpers.database.get_online(True)
-    detail_leaderboards = st.session_state.detailed_leaderboard["scores"].add(
-        st.session_state.online_detailed["scores"], fill_value=0
+    detail_leaderboards = st.session_state.detailed_leaderboards.add(
+        st.session_state.online_detailed, fill_value=0
     )
 
     model_selection = list(detail_leaderboards.keys())
-    detail_leaderboards = {"scores": detail_leaderboards}
+    detail_leaderboards = detail_leaderboards
 
     vote_counts_df = pd.DataFrame(st.session_state.vote_counts)
-    vote_counts_df[["Wins ⭐", "Losses ❌"]] = vote_counts_df[
-        ["Wins ⭐", "Losses ❌"]
-    ].add(st.session_state.online_leaderboard[["Wins ⭐", "Losses ❌"]], fill_value=0)
     vote_counts_df["Model Name"] = vote_counts_df.index
-    sorted_counts = vote_counts_df[["Model Name", "Wins ⭐", "Losses ❌"]]
+
+    vote_counts_df_added = vote_counts_df[["Wins ⭐", "Losses ❌"]].add(
+        st.session_state.online_leaderboard[["Wins ⭐", "Losses ❌"]],
+        fill_value=0,
+    )
+    vote_counts_df_added["Model Name"] = vote_counts_df_added.index
+    sorted_counts = vote_counts_df_added[["Model Name", "Wins ⭐", "Losses ❌"]]
     sorted_counts.sort_values(by=["Wins ⭐", "Losses ❌"], inplace=True)
     sorted_counts.index = range(sorted_counts.shape[0])
 
@@ -74,8 +84,7 @@ sorted_counts_detail = sorted_counts_detail[
     ["Compare", "Model Name", "Wins ⭐", "Losses ❌"]
 ]
 
-detail_leaderboards = st.session_state.detailed_leaderboard
-model_selection = list(detail_leaderboards["scores"].keys())[1:]
+model_selection = list(detail_leaderboards.keys())[1:]
 
 if st.session_state.enable_detail:
     select_for_comparison = st.data_editor(
@@ -85,7 +94,7 @@ if st.session_state.enable_detail:
 
     model_names = models_to_compare["Model Name"]
 
-    view_detail = detail_leaderboards["scores"].loc[model_names, model_names]
+    view_detail = detail_leaderboards.loc[model_names, model_names]
 
     with st.container(border=True):
 
@@ -122,11 +131,11 @@ else:
             unsafe_allow_html=True,
         )
         st.markdown(
-            f"<h4 style='text-align: center;'>{int(detail_leaderboards['scores'].at[model1_detail, model2_detail])}:{int(detail_leaderboards['scores'].at[model2_detail, model1_detail])}</h4>",
+            f"<h4 style='text-align: center;'>{int(detail_leaderboards.at[model1_detail, model2_detail])}:{int(detail_leaderboards.at[model2_detail, model1_detail])}</h4>",
             unsafe_allow_html=True,
         )
 enable_global = st.sidebar.checkbox(
-    "Enable global leaderboards",
+    "Enable [global leaderboards](https://docs.google.com/spreadsheets/d/10QrEik70RYY_LM8RW8GGq-vZWK2e1dka6agRGtKZPHU/edit?usp=sharing)",
     value=st.session_state.source,
     on_change=lambda: (
         setattr(st.session_state, "new_source", True),
@@ -140,24 +149,6 @@ if st.session_state.new_source in [True, None]:
     if source == "offline":
         helpers.database.get_offline(True)
     st.session_state.new_source = False
+    st.rerun()
 with st.sidebar:
-    st.button("Save leaderboards", key="save")
-    if st.session_state.save:
-
-        helpers.database.save_offline()
-        try:
-            helpers.database.save_online()
-        except Exception as e:
-            st.write("Could not upload the results.")
-            st.write(e)
-        st.session_state.leaderboard[["Wins ⭐", "Losses ❌"]] = (
-            st.session_state.leaderboard[["Wins ⭐", "Losses ❌"]].where(
-                st.session_state.leaderboard[["Wins ⭐", "Losses ❌"]] == 0, 0
-            )
-        )
-
-        st.session_state.detailed_leaderboard["scores"] = (
-            st.session_state.detailed_leaderboard["scores"].where(
-                st.session_state.detailed_leaderboard["scores"] == 0, 0
-            )
-        )
+    helpers.Buttons.save_button()
