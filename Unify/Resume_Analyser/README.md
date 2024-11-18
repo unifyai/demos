@@ -80,7 +80,7 @@ This command will start the Streamlit server, and you’ll see a URL (usually `h
 
 ### 📂 Folder Structure  
 ```plaintext
-📦resume-enhancement-chat   
+📦resume-analyser   
  ┣ 📜app.py              # Main Streamlit application file  
  ┣ 📜requirements.txt    # Dependencies required to run the app  
  ┗ 📜README.md           # Documentation of the project  
