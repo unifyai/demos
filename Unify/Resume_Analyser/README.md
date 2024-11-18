@@ -1,6 +1,8 @@
 # 📄 Resume Enhancement with Chat  
 [🚀 Demo](https://resume-analyser-unifyai.streamlit.app/)  
 
+https://github.com/user-attachments/assets/246e0437-9a57-42a8-81a0-3224eea24f17
+
 <video width="640" height="480" autoplay>
   <source src="videos/Resume_Enhancement.mp4" type="video/mp4">
 Your browser does not support the video tag.
