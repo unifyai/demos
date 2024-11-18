@@ -1,0 +1,16 @@
+numpy
+pandas
+seaborn
+matplotlib
+streamlit>=1.34.0
+PyPDF2
+python-docx
+langchain
+langchain-community
+unifyai
+unify
+git+https://github.com/unifyai/langchain.git#egg=langchain&subdirectory=libs/langchain
+git+https://github.com/unifyai/langchain.git#egg=langchain-unify&subdirectory=libs/partners/unify
+sentence-transformers
+torch
+httpx
