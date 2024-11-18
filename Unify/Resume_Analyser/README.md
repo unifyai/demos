@@ -52,7 +52,7 @@ This app bridges the gap between **job seekers** and **career success** by enabl
 ## 📂 Repository and Deployment  
 
 ### 🔍 Access the Source Code  
-The source code for **Resume Enhancement with Chat** is available [here](https://github.com/user/resume-enhancement-chat).  
+The source code for **Resume Enhancement with Chat** is available [here](https://github.com/muzakkirhussain011/Resume-Analyser/blob/main/app.py).  
 
 ### 🌐 Live Application  
 Access the live app here: [Resume Enhancement with Chat on Streamlit](https://resume-analyser-unifyai.streamlit.app/)  
