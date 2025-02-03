@@ -1,0 +1,242 @@
+{
+    "1": {
+        "question": "1 (a) Work out:  \n    4 \u00d7 2 \u2212 1  \n    (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n  (b) Find \u00bc of 16.  \n    (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]",
+        "question-components": {
+            "a": "Work out: 4 \u00d7 2 \u2212 1",
+            "b": "Find \u00bc of 16."
+        },
+        "text-only": true,
+        "pages": [
+            2
+        ],
+        "correctly_parsed": true
+    },
+    "2": {
+        "question": "2  A tin contains four different types of sweet. A sweet is taken from the tin at random.  \n   The table below shows some of the probabilities of taking each type of sweet:\n\n       Sweet    | Probability\n       -----------------------\n       Toffee   |    0.4\n       Fudge    |    0.2\n       Jelly    |    0.3\n       Mint     |     ?\n\n(a) Complete the table. [2]\n\n(b) What is the probability that a toffee or a mint is taken from the tin? [2]",
+        "question-components": {
+            "a": "Complete the table.",
+            "b": "What is the probability that a toffee or a mint is taken from the tin?"
+        },
+        "text-only": true,
+        "pages": [
+            2
+        ],
+        "correctly_parsed": true
+    },
+    "3": {
+        "question": "3 Peter says:  \n\"The sum of an odd number and an even number is even.\"  \n\nThe example 3 + 4 = 7 shows that Peter is not correct.  \n\nWrite an example to show that each of these statements is not correct:  \n\n(a) The sum of two prime numbers is always odd.  \n................................................................................................................................. [1]\n\n(b) Squaring a whole number always results in an even number.  \n................................................................................................................................. [1]",
+        "question-components": {
+            "a": "The sum of two prime numbers is always odd.",
+            "b": "Squaring a whole number always results in an even number."
+        },
+        "text-only": true,
+        "pages": [
+            3
+        ],
+        "correctly_parsed": true
+    },
+    "4": {
+        "question": "4  Charlie, Mo and Andrzej share a flat.\n\n\u2022 Charlie pays 25% of the rent.  \n\u2022 Mo pays \u00bd of the rent.  \n\u2022 Andrzej pays \u00a3450.  \n\nHow much do they pay altogether for the rent?  \n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]",
+        "question-components": "How much do they pay altogether for the rent?",
+        "text-only": true,
+        "pages": [
+            3
+        ],
+        "correctly_parsed": true
+    },
+    "5": {
+        "question": "5  The table below shows the number of tonnes of rice produced in a year in five countries:\n\n    Country   | Rice produced (tonnes)\n    ----------------------------------\n    China     | 1.43 \u00d7 10\u2078\n    India     | 9.9 \u00d7 10\u2077\n    Vietnam   | 2.71 \u00d7 10\u2077\n    Thailand  | 2.05 \u00d7 10\u2077\n    Brazil    | 7.82 \u00d7 10\u2076\n\n(a) Which country produced the most rice?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Write 2.71 \u00d7 10\u2077 as an ordinary number.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) One tonne is equal to 1000 kilograms.  \n    Change 7.82 \u00d7 10\u2076 tonnes to kilograms.  \n    Give your answer in standard form.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 kg [2]\n\n(d) How many more tonnes of rice did India produce than Thailand?  \n    Give your answer in standard form.  \n(d) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 tonnes [2]",
+        "question-components": {
+            "a": "Which country produced the most rice?",
+            "b": "Write 2.71 \u00d7 10\u2077 as an ordinary number.",
+            "c": "One tonne is equal to 1000 kilograms. Change 7.82 \u00d7 10\u2076 tonnes to kilograms. Give your answer in standard form.",
+            "d": "How many more tonnes of rice did India produce than Thailand? Give your answer in standard form."
+        },
+        "text-only": true,
+        "pages": [
+            4
+        ],
+        "correctly_parsed": true
+    },
+    "6": {
+        "question": "6 (a) A square has an area of 100 cm\u00b2.  \nFind its perimeter.  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f[2]  \n\n(b) The area of the parallelogram is three times the area of the triangle.  \n\n      Not to scale\n\n       8\u202fcm    \n        /|  \n       / |  \n      /  |  \n     6\u202fcm  \n\n           h  \n     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \n             18\u202fcm  \n\nShow that the perpendicular height h of the parallelogram is 4\u202fcm. [4]",
+        "question-components": {
+            "a": "A square has an area of 100 cm\u00b2. Find its perimeter.",
+            "b": "The area of the parallelogram is three times the area of the triangle. Show that the perpendicular height h of the parallelogram is 4\u202fcm."
+        },
+        "text-only": true,
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "7": {
+        "question": "7  Here are six numbers:\n\n5   8   9   15   22   54\n\nFrom these numbers, find a number that is\n\n(a) a multiple of two and a multiple of three,  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) a factor of 30 and a factor of 40.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]",
+        "question-components": {
+            "a": "a multiple of two and a multiple of three",
+            "b": "a factor of 30 and a factor of 40"
+        },
+        "text-only": true,
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "8": {
+        "question": "8 (a) The product of three numbers is 312.  \nTwo of the numbers are 3 and 13.  \nWhat is the third number?\n\n(a) ____________________ [3]\n\n(b) Find three different numbers that are each  \n\u2022 a prime number  \n\u2022 two less than a square number.\n\n(b) __________  __________  __________ [3]",
+        "question-components": {
+            "a": "The product of three numbers is 312. Two of the numbers are 3 and 13. What is the third number?",
+            "b": "Find three different numbers that are each \u2022 a prime number \u2022 two less than a square number."
+        },
+        "text-only": true,
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "9": {
+        "question": "9\u202f\u202fThese prisms have different shapes as end faces.\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502 Shape of end face     \u2502 Number of faces     \u2502 Number of edges     \u2502 Number of vertices  \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Triangle (3 sides)    \u2502 5                   \u2502 9                   \u2502 6                   \u2502\n \u2502 Rectangle (4 sides)   \u2502 \u2026                   \u2502 \u2026                   \u2502 8                   \u2502\n \u2502 Pentagon (5 sides)    \u2502 \u2026                   \u2502 15                  \u2502 10                  \u2502\n \u2502 Hexagon (6 sides)     \u2502 8                   \u2502 18                  \u2502 \u2026                   \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Complete this table.\u202f\u202f\u202f\u202f[2]\n\n(b) How many edges and vertices does a prism with a 100\u2011sided end face have?  \n   (b) edges \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n       vertices \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n(c) F is the number of faces in a prism.  \n   N is the number of sides of its end face.  \n   Write down a formula connecting F and N.  \n   (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n\u00a9\u202fOCR\u202f2024\u202fJ560/02\u202f\u202f\u202fTurn\u202fover",
+        "question-components": {
+            "a": "Complete this table.",
+            "b": "How many edges and vertices does a prism with a 100\u2011sided end face have?",
+            "c": "F is the number of faces in a prism. N is the number of sides of its end face. Write down a formula connecting F and N."
+        },
+        "text-only": true,
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "10": {
+        "question": "10 The graph shows the number of ice creams sold in a shop each day against the temperature at midday that day.\n\n(a) (i) Describe the relationship between the temperature at midday and the number of ice creams sold. [1]  \n(ii) One data point is an outlier. Give a reason why this does not fit the rest of the data. [1]\n\n(b) Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was:  \n(i) 22\u00b0C [1]  \n(ii) 28\u00b0C [1]  \n(iii) Explain which of these two predictions is more reliable. [2]\n\n(c) A newspaper headline reads:  \n\u201cHigh temperatures make more people buy ice cream!\u201d\n\nDoes the graph above prove this claim? Give a reason for your decision. [2]",
+        "question-components": {
+            "a.i": "Describe the relationship between the temperature at midday and the number of ice creams sold.",
+            "a.ii": "One data point is an outlier. Give a reason why this does not fit the rest of the data.",
+            "b.i": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 22\u00b0C.",
+            "b.ii": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 28\u00b0C.",
+            "b.iii": "Explain which of these two predictions is more reliable.",
+            "c": "A newspaper headline reads: 'High temperatures make more people buy ice cream!' Does the graph above prove this claim? Give a reason for your decision."
+        },
+        "text-only": true,
+        "pages": [
+            8,
+            9
+        ],
+        "correctly_parsed": true
+    },
+    "11": {
+        "question": "11\u202f(a) A shop sold goods worth a total of \u00a350\u202f000 in January.  \nThe value of goods sold in February was 10% lower than in January.  \n\nCalculate the value of goods sold in February.  \n(a) \u00a3\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b) Each month, the value of goods sold continued to be 10% lower than the previous month.  \nWhen the value of goods sold was less than \u00a335\u202f000, the shop closed at the end of that month.  \n\nShow that the store closed at the end of May. [3]\n\n(c) The store reopens under new management and sells goods worth \u00a3100\u202f000 in the first month.  \n\u2022\u202fThe value of goods sold in the second month is 20% more than the first month.  \n\u2022\u202fThe value of goods sold in the third month is 10% less than the second month.  \n\nFind the percentage increase in the total value of goods sold from the first month to the third month.  \nYou must show your working.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202f% [5]",
+        "question-components": {
+            "a": "Calculate the value of goods sold in February.",
+            "b": "Show that the store closed at the end of May.",
+            "c": "Find the percentage increase in the total value of goods sold from the first month to the third month. You must show your working."
+        },
+        "text-only": true,
+        "pages": [
+            10,
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "12": {
+        "question": "12 (a) Solve:  \n     5x = 2x + 18  \n     (a) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]  \n\n   (b) Solve by factorising:  \n     x\u00b2 + 8x + 15 = 0  \n     (b) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]",
+        "question-components": {
+            "a": "Solve: 5x = 2x + 18",
+            "b": "Solve by factorising: x\u00b2 + 8x + 15 = 0"
+        },
+        "text-only": true,
+        "pages": [
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "13": {
+        "question": "13\u202f\u202fEva\u2019s camera takes photos with width and height in the ratio 3\u202f:\u202f2.  \nPhotos can be printed in the following sizes:  \n\u2022\u202f20\u202fcm by 16\u202fcm  \n\u2022\u202f14\u202fcm by 10\u202fcm  \n\u2022\u202f24\u202fcm by 16\u202fcm  \n\u2022\u202f12\u202fcm by 8\u202fcm  \n\nEva says:  \n\u201cOnly two of these sizes have the same ratio as my photos!\u201d  \n\n(a)\u202fWhich sizes have the same ratio as her photos?\u202f\u202f[2]  \n\n(b)\u202fEva has a display board measuring 45\u202fcm by 60\u202fcm. She wants to display postcards, each measuring 9\u202fcm by 6\u202fcm.  \nIf no postcards overlap, find the maximum number of postcards she can display on the board.\u202f\u202f[3]",
+        "question-components": {
+            "a": "Which sizes have the same ratio as her photos?",
+            "b": "Eva has a display board measuring 45 cm by 60 cm. She wants to display postcards, each measuring 9 cm by 6 cm. If no postcards overlap, find the maximum number of postcards she can display on the board."
+        },
+        "text-only": true,
+        "pages": [
+            12
+        ],
+        "correctly_parsed": true
+    },
+    "14": {
+        "question": "14\u202f(a) Here is a coordinate grid:\n\n     8 |          \n       |          \n     7 |          \n       |          \n     6 |     \u250c\u2500\u2500\u2500 \n       |     \u2502 S  \n     5 |     \u2514\u2500\u2500\u2500 \n       |          \n     4 |          \n       |          \n     3 |          \n       |          \n     2 |               \u250c\u2500\u2500\u2500\n       |               \u2502 T \n     1 |               \u2514\u2500\u2500\u2500\n       |\n     0 |________________________________\n         0  1  2  3  4  5  6  7  8\n\nShape S is translated to Shape T using the vector  \n   ( p )  \n   ( q ).  \n\nWrite down the values of p and q.\n\n(a) p = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n    q = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [2]\n\n(b) Vectors a, b, c, d, and e are drawn on an isometric grid:\n\n           b\n           \n      a            d\n           \n           e\n   \n                    c\n\nWrite each of the vectors c, d, and e in terms of a and/or b.\n\nc = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nd = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \ne = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [3]",
+        "question-components": {
+            "a": "Write down the values of p and q.",
+            "b": "Write each of the vectors c, d, and e in terms of a and/or b."
+        },
+        "text-only": true,
+        "pages": [
+            13
+        ],
+        "correctly_parsed": true
+    },
+    "15": {
+        "question": "15  Sam and two friends put letters in envelopes on Monday.  \n    The three of them take two hours to put 600 letters in envelopes.\n\n(a)  On Tuesday Sam has three friends helping.  \n     Working at the same rate, how many letters should the four of them  \n     be able to put in envelopes in two hours?  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b)  Working at the same rate, how much longer would it take four people  \n     to put 1000 letters in envelopes than it would take five people?  \n     (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]\n\n(c)  Sam says:  \n     \u201cIt took two hours for three people to put 600 letters in envelopes.  \n      If I assume they work all day, then in one day three people will put  \n      7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d  \n\n     Why is Sam\u2019s assumption not reasonable?  \n     What effect has Sam\u2019s assumption had on her answer?  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]",
+        "question-components": {
+            "a": "On Tuesday Sam has three friends helping. Working at the same rate, how many letters should the four of them be able to put in envelopes in two hours?",
+            "b": "Working at the same rate, how much longer would it take four people to put 1000 letters in envelopes than it would take five people?",
+            "c": "Sam says: \u201cIt took two hours for three people to put 600 letters in envelopes. If I assume they work all day, then in one day three people will put 7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d Why is Sam\u2019s assumption not reasonable? What effect has Sam\u2019s assumption had on her answer?"
+        },
+        "text-only": true,
+        "pages": [
+            14
+        ],
+        "correctly_parsed": true
+    },
+    "16": {
+        "question": "16\u202f\u202fAbi, Ben and Carl each drop a number of identical drawing pins, and count how many land with the pin upwards. The table shows some of their results:\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502               \u2502 Number landing \u2018pin up\u2019    \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Abi (10 pins) \u2502 4                          \u2502\n \u2502 Ben (30 pins) \u2502 9                          \u2502\n \u2502 Carl (100 pins) \u2502 35                       \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Abi says:  \n\u201cAs a drawing pin can only land with its pin up or with its pin down,  \n\u202f\u202fthe probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d  \n\nCriticise her statement.  \n[1]\n\n(b) Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.  \n[1]\n\n(c) Two pins are dropped.  \nEstimate the probability that both pins land \u2018pin up\u2019.  \n[2]",
+        "question-components": {
+            "a": "Abi says: \u201cAs a drawing pin can only land with its pin up or with its pin down, the probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d Criticise her statement.",
+            "b": "Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.",
+            "c": "Two pins are dropped. Estimate the probability that both pins land \u2018pin up\u2019."
+        },
+        "text-only": true,
+        "pages": [
+            15
+        ],
+        "correctly_parsed": true
+    },
+    "17": {
+        "question": "17\u202f\u202fIn this row of boxes, you start with 5 and 7.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502    \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nYou add 5 and 7 to get 12 to go in the third box.  \nYou add 7 and 12 to get 19 to go in the fourth box.  \nYou add 12 and 19 to get 31 to go in the fifth box.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502 12 \u2502 19 \u2502 31 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nComplete these rows of boxes using the rule shown above.\n\n(a)  \n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 4 \u2502 6 \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[1]\n\n(b)  \n \u250c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502    \u2502    \u2502 34 \u2502 55 \u2502\n \u2514\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(c)  Complete this row of boxes, writing your expressions in their simplest form.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 a \u2502 b \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(d)  Use your answer to (c) to help you fill in the missing numbers in this row of boxes.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 6 \u2502    \u2502    \u2502 57 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[3]",
+        "question-components": {
+            "a": "Complete these rows of boxes using the rule shown above.",
+            "b": "Complete these rows of boxes using the rule shown above.",
+            "c": "Complete this row of boxes, writing your expressions in their simplest form.",
+            "d": "Use your answer to (c) to help you fill in the missing numbers in this row of boxes."
+        },
+        "text-only": true,
+        "pages": [
+            16,
+            17
+        ],
+        "correctly_parsed": true
+    },
+    "18": {
+        "question": "18 Amin is attempting to solve the following equation:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\nHis incorrect solution is shown below:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\n  Step 1:  x\u00b2 + 4x + x + 4 = x\u00b2 \u2013 3x \u2013 2x + 6  \n  Step 2:  x\u00b2 + 5x + 4 = x\u00b2 \u2013 x + 6  \n  Step 3:  5x + 4 = \u2013x + 6  \n  Step 4:  6x + 4 = 6  \n  Step 5:  6x = 2  \n  Step 6:  x = 1/3  \n\n(a) Identify the step in which Amin made his first error and explain why this step is incorrect.\n\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................ [2]\n\n(b) Write out a correct solution to the equation. [2]",
+        "question-components": {
+            "a": "Identify the step in which Amin made his first error and explain why this step is incorrect.",
+            "b": "Write out a correct solution to the equation."
+        },
+        "text-only": true,
+        "pages": [
+            18
+        ],
+        "correctly_parsed": true
+    },
+    "19": {
+        "question": "19  \nThe perimeter of the triangle is the same length as the perimeter of the square.  \nThe triangle\u2019s sides are 4a \u2212 1, a + 2, and 3a + 3.  \n\nFind an expression for the length of one side of the square in terms of a.  \nGive your answer in its simplest form.  \n\n[4]",
+        "question-components": "Find an expression for the length of one side of the square in terms of a. Give your answer in its simplest form.",
+        "text-only": true,
+        "pages": [
+            19
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page19.png"
+        ]
+    }
+}

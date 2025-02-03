@@ -1,0 +1,13 @@
+node_modules
+.idea
+results.json
+results_pruned.json
+.env
+*.pyc
+__pycache__/
+*.swp
+.pytest_cache/
+.DS_Store/
+.cache.json
+*.tmp
+.DS_Store

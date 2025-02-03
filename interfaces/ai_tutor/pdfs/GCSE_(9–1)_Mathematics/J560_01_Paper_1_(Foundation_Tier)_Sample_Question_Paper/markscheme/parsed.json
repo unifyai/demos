@@ -1,0 +1,300 @@
+{
+    "1": {
+        "markscheme-components": {
+            "a": "Answer: 1 : 50\nMarks: 2\nMarking guidelines: M1 shows a partial simplification e.g. 4 : 200",
+            "b": "Answer: 50 300\nMarks: 2\nMarking guidelines: M1 for 350 \u00f7 (1 + 6)",
+            "c": "Answer: 90\nMarks: 2\nMarking guidelines: M1 for 10% = 45 soi or M1 for 450 \u00d7 0.2"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "c": 2,
+            "total": 6
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "2": {
+        "markscheme-components": "Answer: 3.5%, 1/3, 0.34 (2 marks)\n\nPart marks and guidance:\n\u2022 B1 for 1/3 = 0.33\u2026 or 33\u2026%\n\u2022 or B1 for 0.34 = 34%\n\u2022 or B1 for changing 3.5% to 0.035\n\u2022 or SC1 for 1/3, 0.34, 3.5%\n\nAccept correct order with equivalent values.",
+        "mark-breakdown": {
+            "total": 2
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "3": {
+        "markscheme-components": "Answer: \u00a31.38 with working shown (3 marks)\n\nPart marks and guidance:\n\u2022 Condone 138p\n\u2022 M1 for 7 \u00d7 3/8\n\u2022 M1 for 89p + 49p or 3 \u00d7 49p or 2 \u00d7 49p > 89p\n\u2022 OR B1 for \u00a31.38 without working",
+        "mark-breakdown": {
+            "total": 3
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "4": {
+        "markscheme-components": {
+            "a.i": "Answer: 5\nMarks: 1",
+            "a.ii": "Answer: 1\nMarks: 1",
+            "a.iii": "Answer: Any number apart from 1, 3 or 5\nMarks: 1",
+            "b": "Answer: Three different numbers only, 6 appears most, and more even numbers than odd\nMarks: 3\nGuidance: B1 awarded for each of the three properties"
+        },
+        "mark-breakdown": {
+            "a.i": 1,
+            "a.ii": 1,
+            "a.iii": 1,
+            "b": 3,
+            "total": 6
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "5": {
+        "markscheme-components": "Answer: 48 cm\u00b2\n\nMarks: 3\n\nMarking instructions:\n\u2022 M1 for \u00bd \u00d7 8 \u00d7 4 = 16\n\u2022 M1 for their \u201816\u2019 \u00d7 3",
+        "mark-breakdown": {
+            "total": 3
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "6": {
+        "markscheme-components": "Answer (3 marks)\n\nMarking guidelines:\n\u2022 B1 for 13 in \u2018intersection\u2019\n\u2022 B1 for (16 \u2212 their \u201813\u2019) in \u2018Cat\u2019\n\u2022 B1 for sum of 8 + their three numbers = 30",
+        "mark-breakdown": {
+            "total": 3
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page6.png"
+        ]
+    },
+    "7": {
+        "markscheme-components": {
+            "a": "(a) Answer: 60 and 50\nMarks: 2\nPart marks and guidance: B1 awarded for each correct value.",
+            "b": "(b) Answer: 2\nMarks: 2\nPart marks and guidance: M1 awarded for \u20188\u2019 seen."
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "total": 4
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "8": {
+        "markscheme-components": "Answer: 70\nMarks: 3\nB1 for each\n\nThe triangle is isosceles so the missing angle is x (may be on diagram) oe\nAngles in a triangle sum to 180\u00b0 oe (may be indicated by summing of angles to 180\u00b0 oe)",
+        "mark-breakdown": {
+            "total": 3
+        },
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "9": {
+        "markscheme-components": {
+            "a": "Answer: 100 (1 mark)",
+            "b": "Answer: 10 (1 mark)",
+            "c": "Answer: One and a quarter boxes drawn (3 marks)\nMarking guidelines:\n\u2022 M2 for 50\n\u2022 or M1 for 310\n\u2022 or M1 FT from subtraction"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 1,
+            "c": 3,
+            "total": 5
+        },
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "10": {
+        "markscheme-components": {
+            "a.i": "Answer: >\nMarks: 1\nGuidance: (no further notes beyond assessment objectives, which are omitted)",
+            "a.ii": "Answer: <\nMarks: 1\nGuidance: (no further notes beyond assessment objectives, which are omitted)",
+            "a.iii": "Answer: >\nMarks: 1\nGuidance: (no further notes beyond assessment objectives, which are omitted)",
+            "b": "Answer: 2500 oe\nMarks: 2\nGuidance: M1 for 25 or 100"
+        },
+        "mark-breakdown": {
+            "a.i": 1,
+            "a.ii": 1,
+            "a.iii": 1,
+            "b": 2,
+            "total": 5
+        },
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "11": {
+        "markscheme-components": "Correct reasoning (2 marks)\nM1 for 4a + 12 \u2212 3a \u00b1 6",
+        "mark-breakdown": {
+            "total": 2
+        },
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "12": {
+        "markscheme-components": {
+            "a": "Answer: 2\nB1 for 4 \u00d7 4 dotted squares correct\nB1 for 4 blocks of 4 black squares correct",
+            "b": "Answer: 64 (2 marks)\nM1 for 8 \u00d7 8 or 8\u00b2 or 8 squared",
+            "c": "Answer: 4n (2 marks)\nM1 for 4, 8, 12 seen",
+            "d": "Number of blacks is always even (oe) \u2013 B1\nand reason \u2013 B1 (Accept 4 times table or 4 is even)\n\nNumber of dots alternates between odd and even (oe) \u2013 B1\nand reason \u2013 B1 (Accept any reason that has explanatory value, e.g. odd\u00b2 = odd,\neven + even = even,\nodd + even = odd)\n\nIf 0 scored, instead award:\nB1 shows true for patterns 1, 2, and 3\nB1 shows true for at least two more patterns"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "c": 2,
+            "d": 4,
+            "total": 10
+        },
+        "pages": [
+            8
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page8.png"
+        ]
+    },
+    "13": {
+        "markscheme-components": {
+            "a.i": "Any straight line through the origin (for example)\nMarks: 2\nGuidance:\n\u2022 B1 for a straight line",
+            "a.ii": "Marks: 2\nGuidance:\n\u2022 B1 for a cubic with two turning points",
+            "b.i": "At least one point plotted correctly\nMarks: 1",
+            "b.ii": "Marks: 3\nGuidance:\n\u2022 B2 for at least 5 points correctly plotted\n  OR\n\u2022 B1 for at least 3 points correctly plotted\n  AND\n\u2022 B1 for curve drawn through their points"
+        },
+        "mark-breakdown": {
+            "a.i": 2,
+            "a.ii": 2,
+            "b.i": 1,
+            "b.ii": 3,
+            "total": 8
+        },
+        "pages": [
+            9,
+            10
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page9.png",
+            "page10.png"
+        ]
+    },
+    "14": {
+        "markscheme-components": {
+            "a": "Answer: \u00a320\u202f000\nMarks: 1",
+            "b": "Answer: \u00a314\u202f580 or \u00a314\u202f600\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 20\u202f000 \u00d7 0.9\u00b3",
+            "c": "Answer: 7 years\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 2 trials shown"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 2,
+            "c": 2,
+            "total": 5
+        },
+        "pages": [
+            10
+        ],
+        "correctly_parsed": true
+    },
+    "15": {
+        "markscheme-components": "Answer: 25, 30, 17 with correct working\nMarks: 5\n\n\"Correct working\" requires evidence of at least M1M1M1\n\nMethods shown use Kieran as x; apply similar schemes if using Jermaine or Chris as the subject.\n\nM1 for x \u2212 8 + x + x + 5 = 72\nM1FT for 3x \u2212 3 = 72\nM1FT for 3x = 75 implied by x = 25\n\nNote: x = 25 scores M1M1M1 if there is some supporting work but on its own scores SC1\n\nAND\nM1 for substituting their 25 into x \u2212 8 and x + 5\n\nAlternative method using trials:\n\u2022 M3 for a correctly evaluated trial of x \u2212 8 + x + x + 5 with x = 25\n\u2022 Or M2 for at least two complete correct evaluations of x \u2212 8 + x + x + 5\n\u2022 Or M1 for at least one complete correct evaluation of x \u2212 8 + x + x + 5\n\nAND\nM1 for substituting their 25 into x \u2212 8 and x + 5\n\nIf 0 or 1 scored, instead award SC2 for 25, 30, 17 with no working or insufficient working\n\nIf 0 scored, instead award SC1 for x = 25 with no working or insufficient working",
+        "mark-breakdown": {
+            "total": 5
+        },
+        "pages": [
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "16": {
+        "markscheme-components": {
+            "a": "Answer: 140 \u2013 160 (s)\nTotal marks for (a): 3\n\nMarking guidance:\n\u2022 B1 for 300 \u00b1 20 (m)\n\u2022 M1 for (their \u2018300\u2019) \u00f7 2",
+            "b": "Answer: Correct location for F\nTotal marks for (b): 2\n\nMarking guidance:\n\u2022 B1 for angle 55\u00b0 \u00b1 2\u00b0\n\u2022 B1 for distance 8 cm \u00b1 0.2",
+            "c": "Total marks for (c): 4\n\nMarking guidance:\n\u2022 B1 for perpendicular bisector of PQ drawn \u00b1 2\u00b0\n\u2022 B1 for arcs seen (arcs must be fit for purpose)\n\u2022 B1 arc centre P, radius 4 \u00b1 0.2 cm (may be the same arcs as used for perpendicular bisector)\n\u2022 B1 for correct line segment marked (follow through their constructions)"
+        },
+        "mark-breakdown": {
+            "a": 3,
+            "b": 2,
+            "c": 4,
+            "total": 9
+        },
+        "pages": [
+            12
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page12.png"
+        ]
+    },
+    "17": {
+        "markscheme-components": {
+            "a": "Answer: E\nMarks: 1",
+            "b": "Answer: C and D\nMarks: 2\nMarking guidance: B1 for each"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 2,
+            "total": 3
+        },
+        "pages": [
+            12
+        ],
+        "correctly_parsed": true
+    },
+    "18": {
+        "markscheme-components": "Marks: 4\n\nAnswer:\n\u2022 Average speed = Distance \u00f7 Time = x/5 km/h\n\u2022 Converting to metres per second: 1000x \u00f7 (60\u00b2 \u00d7 5) = x/18 m/s\n\nPart marks and guidance:\n\u2022 B1 for x km = 1000x m\n\u2022 B1 for 5 hours = 60\u00b2 \u00d7 5 s (i.e. 18 000 s)\n\u2022 B1 for working to given answer without intermediate expression or statement of formula",
+        "mark-breakdown": {
+            "total": 4
+        },
+        "pages": [
+            13
+        ],
+        "correctly_parsed": true
+    },
+    "19": {
+        "markscheme-components": "25 with correct working (5 marks)\n\n\"Correct working\" requires evidence of at least M1M1\n\nM1 for 10 \u00d7 (2/5) = 4 litres red or for 10 \u00d7 (3/5) = 6 litres white\nM1 for red costs \u00a38 per litre or for white costs \u00a30.50 per litre\nM1 for cost of one 10-litre can is their 4 \u00d7 their 8 + their 6 \u00d7 their 0.5\nM1 for 60 \u2013 their 35\n\nAlternative method:\nM1 for 2 : 3 = 20 litres red : 30 litres white\nM1 for 2 \u00d7 \u00a380 + 3 \u00d7 \u00a35 = \u00a3175\nM1 for (their 175) \u00f7 5 = 35\nM1 for 60 \u2013 their 35\nM1 for cost of one 10-litre can is their 4 \u00d7 their 8 + their 6 \u00d7 their 0.5\n\nIf 0 or 1 scored, instead award SC2 for answer 25 with no working or insufficient working",
+        "mark-breakdown": {
+            "total": 5
+        },
+        "pages": [
+            13
+        ],
+        "correctly_parsed": true
+    },
+    "20": {
+        "markscheme-components": "Answer: 2.8(0\u2026) (3 marks)\n\nMarking guidelines:\n\u2022 B1 for tan \u03b8 = opp / adj\n\u2022 M1 for 4 \u00d7 tan 35",
+        "mark-breakdown": {
+            "total": 3
+        },
+        "pages": [
+            13
+        ],
+        "correctly_parsed": true
+    },
+    "21": {
+        "markscheme-components": "Answer: 0.82 oe\nMarks: 4\n\nM3 for 0.7 \u00d7 0.4 + 0.7 \u00d7 0.6 + 0.3 \u00d7 0.4 or 1 \u2013 0.18\nOr\nM2 for two correct products\nOr\nM1 for one correct product or 0.3 and 0.6 seen (may be on a tree diagram or equivalent)",
+        "mark-breakdown": {
+            "total": 4
+        },
+        "pages": [
+            14
+        ],
+        "correctly_parsed": true
+    }
+}

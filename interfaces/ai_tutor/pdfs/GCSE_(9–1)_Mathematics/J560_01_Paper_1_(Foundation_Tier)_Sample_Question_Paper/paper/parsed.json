@@ -1,0 +1,251 @@
+{
+    "1": {
+        "question": "1\u202f(a)\u202fWrite 40\u202f:\u202f2000 as a ratio in its simplest form.  \n(a)\u202f\u2026\u2026\u2026\u202f:\u202f\u2026\u2026\u2026\u202f[2]\n\n(b)\u202fTwo people share \u00a3350 in the ratio 1\u202f:\u202f6.  \nCalculate each share.  \n(b)\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f[2]\n\n(c)\u202fFind 20% of 450.  \n(c)\u202f\u2026\u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026\u2026\u202f[2]",
+        "question-components": {
+            "a": "Write 40:2000 as a ratio in its simplest form.",
+            "b": "Two people share \u00a3350 in the ratio 1:6. Calculate each share.",
+            "c": "Find 20% of 450."
+        },
+        "text-only": true,
+        "pages": [
+            2
+        ],
+        "correctly_parsed": true
+    },
+    "2": {
+        "question": "2  Write these in order, smallest first:\n\n    0.34    1/3    3.5%\n\n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  [2]\n             smallest",
+        "question-components": "Write these in order, smallest first:\n\n0.34    1/3    3.5%\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.  [2]",
+        "text-only": true,
+        "pages": [
+            2
+        ],
+        "correctly_parsed": true
+    },
+    "3": {
+        "question": "3. Colin drinks \u00b3/\u2088 of a litre of milk each day.\n\n   Milk costs 89p for a 2-litre carton and 49p for a 1-litre carton.\n\n   What is the smallest amount that Colin would have to spend to buy milk for one week?\n   Show your working.\n\n   \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]",
+        "question-components": "Colin drinks \u00b3/\u2088 of a litre of milk each day. Milk costs 89p for a 2-litre carton and 49p for a 1-litre carton. What is the smallest amount that Colin would have to spend to buy milk for one week? Show your working. \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+        "text-only": true,
+        "pages": [
+            2
+        ],
+        "correctly_parsed": true
+    },
+    "4": {
+        "question": "4  An unbiased spinner is shown below.\n\n(a)  Write a number to make each sentence true.\n\n   (i)   It is even that the spinner will land on number _______.   [1]\n\n   (ii)  There is a probability of 1/6 that the spinner will land on number _______.   [1]\n\n   (iii) It is impossible that the spinner will land on number _______.   [1]\n\n(b)  The spinner below has the following properties:\n   \u2022 There are eight equal sections, each showing one number.\n   \u2022 There are three different numbers on the spinner.\n   \u2022 The probability of the spinner landing on an even number is greater than the probability of it landing on an odd number.\n   \u2022 It is more likely that the spinner will land on a 6 than either of the other numbers.\n\n   Complete the spinner to show one possible arrangement of numbers.   [3]",
+        "question-components": {
+            "a.i": "It is even that the spinner will land on number _______.",
+            "a.ii": "There is a probability of 1/6 that the spinner will land on number _______.",
+            "a.iii": "It is impossible that the spinner will land on number _______.",
+            "b": "Complete the spinner to show one possible arrangement of numbers."
+        },
+        "text-only": true,
+        "pages": [
+            3
+        ],
+        "correctly_parsed": true
+    },
+    "5": {
+        "question": "5. This shape is made from three congruent right-angled triangles (not to scale):\n\n         /\\\n        /  \\\n       /    \\\n      /      \\\n     /        \\\n    /__________\\\n\n    8 cm       4 cm\n\nFind the total area of the shape.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u00b2  [3]",
+        "question-components": "Find the total area of the shape. \u2026\u2026\u2026\u2026 cm\u00b2 [3]",
+        "text-only": true,
+        "pages": [
+            4
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page4.png"
+        ]
+    },
+    "6": {
+        "question": "6\u202f\u202fHere is a Venn diagram.\n\n      Dog                Cat\n      8       \u2026\u2026\u2026\u2026     \u2026\u2026\u2026\u2026\n\n30 students are asked if they have a dog or cat:\n\u2022 21 have a dog.\n\u2022 16 have a cat.\n\u2022 8 have a dog, but not a cat.\n\nComplete the Venn diagram. [3]",
+        "question-components": "Complete the Venn diagram. [3]",
+        "text-only": true,
+        "pages": [
+            4
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page4.png"
+        ]
+    },
+    "7": {
+        "question": "7\u202f(a)\u202fWrite numbers in the boxes below to make the statement true:\n\n\u200315\u202f\u00d7\u202f20 = 5\u202f\u00d7\u202f[\u2009\u2009] = 6\u202f\u00d7\u202f[\u2009\u2009]\n\n\u2003[2]\n\n(b)\u202fAngus thinks of a number.  \n\u2003If he cubes his number and then adds 9, he gets 17.  \n\u2003What number is he thinking of?\n\n\u2003[2]",
+        "question-components": {
+            "a": "Write numbers in the boxes below to make the statement true:\n15 \u00d7 20 = 5 \u00d7 [ ] = 6 \u00d7 [ ]",
+            "b": "Angus thinks of a number. If he cubes his number and then adds 9, he gets 17. What number is he thinking of?"
+        },
+        "text-only": true,
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "8": {
+        "question": "8  The diagram shows a triangle (not to scale):\n\n       /\\\n      /  \\\n     /    \\\n    /      \\\n   /________\\\n\n\u2022 The angle at the bottom left corner is 40\u00b0.  \n\u2022 The angle at the bottom right corner is x.  \n\u2022 The two equal\u2011length sides are indicated by matching markings.  \n\nFind the value of x.  \nGive a reason for each step of your working.  \n\nx = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0  [3]",
+        "question-components": "Find the value of x. Give a reason for each step of your working. x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0 [3]",
+        "text-only": true,
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "9": {
+        "question": "9\u202f\u202fThe pictogram shows how some passengers spent most of their time on a flight.\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reading        \u2502 [\u25a1][\u25a1][\u25a1]                          \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Watching films \u2502 [\u25a1][\u25a1][\u25a1][\u25e7]                        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Listening to   \u2502                                     \u2502\n\u2502 music          \u2502  (to be completed in part (c))      \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Playing games  \u2502 [\u25a1][\u25a1][\u25a1][\u25e7][\u25e7]                     \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Other          \u2502 [\u25a1][\u25e7]                              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nKey: \n[\u25a1] represents 40 people \n[\u25e7] represents 20 people (a half-square)\n\n(a) How many passengers spent most of their time playing games?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) How many more passengers spent most of their time watching films than reading?  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) There were 360\u202fpassengers on the plane.  \nComplete the pictogram for listening to music. [3]",
+        "question-components": {
+            "a": "How many passengers spent most of their time playing games?",
+            "b": "How many more passengers spent most of their time watching films than reading?",
+            "c": "There were 360\u202fpassengers on the plane. Complete the pictogram for listening to music."
+        },
+        "text-only": true,
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page6.png"
+        ]
+    },
+    "10": {
+        "question": "10 (a) Insert one of <, > or = to make each statement true:\n\n(i) \u22125 \u2026 \u22127  \n(ii) 0.09 \u2026 0.8  \n(iii) 6\u00b2 \u2026 12  \n\n(b) Work out the value of 5\u00b2 \u00d7 10\u00b2.",
+        "question-components": {
+            "a.i": "\u22125 \u2026 \u22127",
+            "a.ii": "0.09 \u2026 0.8",
+            "a.iii": "6\u00b2 \u2026 12",
+            "b": "Work out the value of 5\u00b2 \u00d7 10\u00b2."
+        },
+        "text-only": true,
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "11": {
+        "question": "11 Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18. [2]",
+        "question-components": "Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18.",
+        "text-only": true,
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "12": {
+        "question": "12\u202f\u202fHere are the first three patterns in a sequence.\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510   \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510   \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502               \u2502   \u2502               \u2502   \u2502               \u2502\n \u2502 Pattern 1     \u2502   \u2502 Pattern 2     \u2502   \u2502 Pattern 3     \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518   \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518   \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Draw Pattern\u202f4 in this sequence on the grid below.\n\n[2]\n\n(b) Pattern\u202f3 has 9 dotted squares and 12 black squares.  \n   How many dotted squares will there be in Pattern\u202f8?\n\n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c) Write an expression for the number of black squares in the nth pattern.\n\n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(d) Sally looks at the patterns. She says:  \n   \u201cIf the pattern number is odd, the total number of squares will be odd.  \n    If it is even, the total number of squares will be even.\u201d  \n\n   Explain clearly why Sally is right for all patterns in the sequence.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [6]",
+        "question-components": {
+            "a": "Draw Pattern 4 in this sequence on the grid below.",
+            "b": "Pattern 3 has 9 dotted squares and 12 black squares. How many dotted squares will there be in Pattern\u202f8?",
+            "c": "Write an expression for the number of black squares in the nth pattern.",
+            "d": "Explain clearly why Sally is right for all patterns in the sequence."
+        },
+        "text-only": false,
+        "pages": [
+            8,
+            9
+        ],
+        "correctly_parsed": true
+    },
+    "13": {
+        "question": "13 (a) (i)\u202fSketch a graph on the axes below that shows that y is directly proportional to x. [2]\n\n\u2003\u2003(ii)\u202fSketch a graph on the axes below that shows y = x\u00b3. [2]\n\n(b)\u202fIt is possible to draw many rectangles that have area 24\u202fcm\u00b2. Here are two of them:\n\n\u2003\u2003\u2022 12\u202fcm by 2\u202fcm  \n\u2003\u2003\u2022 8\u202fcm by 3\u202fcm  \n\n\u2003\u2003(i)\u202fPlot the dimensions of these two rectangles on the grid below. [1]  \n\u2003\u2003(ii)\u202fComplete the graph to show the relationship between length and width for rectangles with area 24\u202fcm\u00b2. [3]",
+        "question-components": {
+            "a.i": "Sketch a graph on the axes below that shows that y is directly proportional to x.",
+            "a.ii": "Sketch a graph on the axes below that shows y = x\u00b3.",
+            "b.i": "Plot the dimensions of these two rectangles on the grid below.",
+            "b.ii": "Complete the graph to show the relationship between length and width for rectangles with area 24\u202fcm\u00b2."
+        },
+        "text-only": false,
+        "pages": [
+            10,
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "14": {
+        "question": "14  The value of a car \u00a3V is given by  \n    V = 20\u202f000 \u00d7 0.9^t  \nwhere t is the age of the car in complete years.\n\n(a)  Write down the value of V when t = 0.  \n    (a) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)  What is the value of V when t = 3?  \n    (b) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c)  After how many complete years will the car\u2019s value drop below \u00a310\u202f000?  \n    (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]",
+        "question-components": {
+            "a": "Write down the value of V when t = 0.",
+            "b": "What is the value of V when t = 3?",
+            "c": "After how many complete years will the car\u2019s value drop below \u00a310\u202f000?"
+        },
+        "text-only": true,
+        "pages": [
+            12
+        ],
+        "correctly_parsed": true
+    },
+    "15": {
+        "question": "15 Kieran, Jermaine and Chris play football.  \n\u2022 Kieran has scored 8 more goals than Chris.  \n\u2022 Jermaine has scored 5 more goals than Kieran.  \n\u2022 Altogether they have scored 72 goals.  \n\nHow many goals did they each score?  \nYou must show your working.\n\nKieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nJermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nChris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\n[5]",
+        "question-components": "How many goals did they each score? You must show your working. Kieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Jermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Chris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
+        "text-only": true,
+        "pages": [
+            13
+        ],
+        "correctly_parsed": true
+    },
+    "16": {
+        "question": "16  Otis keeps bees in two beehives. They are marked P and Q in the scale drawing below.\n\n    Scale: 1 cm represents 50 metres\n\n(a)  If Otis walks at about 2 m/s, estimate how long it takes him to walk from beehive P to beehive Q.  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]\n\n(b)  Bees can indicate to other bees where flowers are.  \n     A bee indicates that there are flowers:  \n       \u2022 on a bearing of 055\u00b0 from P  \n       \u2022 at a distance of 400 m from P  \n     On the scale drawing, show the point where the flowers are. Label this point F.  \n     [2]\n\n(c)  Otis plants some fruit trees, which are:  \n       \u2022 the same distance from P and from Q  \n       \u2022 200 m or less from P  \n     Indicate on the scale drawing where Otis plants the trees. You must show all your construction lines.  \n     [4]",
+        "question-components": {
+            "a": "If Otis walks at about 2 m/s, estimate how long it takes him to walk from beehive P to beehive Q.",
+            "b": "A bee indicates that there are flowers on a bearing of 055\u00b0 from P and at a distance of 400 m from P. On the scale drawing, show the point where the flowers are. Label this point F.",
+            "c": "Otis plants some fruit trees, which are the same distance from P and from Q and 200 m or less from P. Indicate on the scale drawing where Otis plants the trees. You must show all your construction lines."
+        },
+        "text-only": false,
+        "pages": [
+            14,
+            15
+        ],
+        "correctly_parsed": true
+    },
+    "17": {
+        "question": "17  Six equations are shown below, each labelled with a letter:\n\nA:  y = 6x  \nB:  x =  (1/6) y  \nC:  y =  -3/x  \nD:  x =  6/y  \nE:  y =  6x  \nF:  y =  (2 / x) + 2  \n\nChoose the correct letters to make each statement true:\n\n(a)  Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.  [1]  \n\n(b)  Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y.  [2]",
+        "question-components": {
+            "a": "Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.",
+            "b": "Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y."
+        },
+        "text-only": true,
+        "pages": [
+            16
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page16.png"
+        ]
+    },
+    "18": {
+        "question": "18  Jo went for a bike ride one evening.  \nShe travelled x kilometres in 5 hours.\n\nShow that her average speed can be written as x/18 m/s. [4]",
+        "question-components": "Jo went for a bike ride one evening. She travelled x kilometres in 5 hours. Show that her average speed can be written as x/18 m/s. [4]",
+        "text-only": true,
+        "pages": [
+            16
+        ],
+        "correctly_parsed": true
+    },
+    "19": {
+        "question": "19. Peter makes a large amount of pink paint by mixing red and white paint in the ratio 2 : 3.\n\n   \u2022 Red paint costs \u00a380 per 10 litres.  \n   \u2022 White paint costs \u00a35 per 10 litres.  \n   \u2022 Peter sells his pink paint in 10-litre tins for \u00a360 per tin.\n\nCalculate how much profit he makes for each tin he sells.  \nYou must show your working.\n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [5]",
+        "question-components": "Calculate how much profit he makes for each tin he sells. You must show your working.",
+        "text-only": true,
+        "pages": [
+            17
+        ],
+        "correctly_parsed": true
+    },
+    "20": {
+        "question": "20\u202f\u202fThe diagram shows a right-angled triangle (not to scale):\n\n    35\u00b0\n     /|\n    / |\n   /  |\n  /   | x\n /    |\n/_____|\n   4 cm\n\nCalculate x.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f [3]",
+        "question-components": "Calculate x.",
+        "text-only": true,
+        "pages": [
+            18
+        ],
+        "correctly_parsed": true,
+        "images": [
+            "page18.png"
+        ]
+    },
+    "21": {
+        "question": "21. Louise travels to work and home again by train.  \n\u2022 The probability that her train to work is late is 0.7.  \n\u2022 The probability that her train home is late is 0.4.  \n\nWhat is the probability that at least one of her trains is late?",
+        "question-components": "What is the probability that at least one of her trains is late?",
+        "text-only": true,
+        "pages": [
+            19
+        ],
+        "correctly_parsed": true
+    }
+}

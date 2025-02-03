@@ -1,0 +1,307 @@
+{
+    "1": {
+        "markscheme-components": {
+            "a": "Answer: 7\nMarks: 1",
+            "b": "Answer: 4\nMarks: 1"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 1,
+            "total": 2
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "2": {
+        "markscheme-components": {
+            "a": "Answer: 0.1\nMarks: 2\nPart marks and guidance: M1 for 0.4 + 0.2 + 0.3 soi or 1 \u2013 their \u20180.9\u2019",
+            "b": "Answer: 0.7\nMarks: 2\nPart marks and guidance: M1 for 0.4 and 0.3 identified"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "total": 4
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "3": {
+        "markscheme-components": {
+            "a": "Any two odd primes added correctly (1 mark). Example: 3 + 5 = 8",
+            "b": "An odd integer squared with correct result (1 mark). Example: 5\u00b2 = 25"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 1,
+            "total": 2
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "4": {
+        "markscheme-components": "[\u00a3]1800 (4 marks)\nM1 for 1/4 + 1/2 = 3/4 soi (oe using percentages or decimals)\nM1 for 1/4 (of the rent) = 450\nM1 for 450 \u00d7 4",
+        "mark-breakdown": {
+            "total": 4
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "5": {
+        "markscheme-components": {
+            "a": "Correct answer: China\nMarks awarded: 1",
+            "b": "Correct answer: 27 100 000\nMarks awarded: 1",
+            "c": "Correct answer: 7.82 \u00d7 10\u2079\nMarks awarded: 2\nMarking guidance: M1 for attempting to multiply by 1000",
+            "d": "Correct answer: 7.85 \u00d7 10\u2077\nMarks awarded: 2\nMarking guidance: M1 for 9.9 \u2013 2.05 soi"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 1,
+            "c": 2,
+            "d": 2,
+            "total": 6
+        },
+        "pages": [
+            5
+        ],
+        "correctly_parsed": true
+    },
+    "6": {
+        "markscheme-components": {
+            "a": "Answer: 40 (cm)\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 4 \u00d7 their \u221a100",
+            "b": "Answer: Correct working leading to 4 cm\nMarks: 4\nPart marks and guidance:\n\u2022 B1 for area of triangle is 24\n\u2022 B1 for their \u201824\u2019 \u00d7 3\n\u2022 B1 for their \u201872\u2019 \u00f7 18\n\u2022 or area of parallelogram = 18h"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 4,
+            "total": 6
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "7": {
+        "markscheme-components": {
+            "a": "Answer: 54\nMarks available: 1",
+            "b": "Answer: 5\nMarks available: 2\nMarking guidance:\n\u2022 M1 for a complete factor tree (or equivalent)"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 2,
+            "total": 3
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "8": {
+        "markscheme-components": {
+            "a": "Answer: 8 (3 marks)\n\nMarking guidance:\n\u2022 M1 for dividing by 3 or 13\n\u2022 M1 for dividing by remaining factor\n\u2022 M1 for dividing by 39 or listing multiples of 39",
+            "b": "Answer: Any three valid answers (e.g. 2, 7, 23) (3 marks)\n\nMarking guidance:\n\u2022 B1 for each valid answer\n\u2022 If 0 scored, award SC1 for at least 3 primes and 3 squares seen"
+        },
+        "mark-breakdown": {
+            "a": 3,
+            "b": 3,
+            "total": 6
+        },
+        "pages": [
+            6
+        ],
+        "correctly_parsed": true
+    },
+    "9": {
+        "markscheme-components": {
+            "a": "Answer: 2 marks\nB1 for 2 correct\n\nPrism               Number of faces   Number of edges   Number of vertices\nTriangular (3 sides)         5                9                 6\nRectangular (4 sides)        6                12                8\nPentagonal (5 sides)         7                15                10\nHexagonal (6 sides)          8                18                12",
+            "b": "Answer: 300 (edges), 200 (vertices)\n1 mark awarded for each correct value",
+            "c": "Answer: F = N + 2 (or equivalent)\n2 marks\nB1 for N + 2 (without a subject)\nCondone a correct word-formula version"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "c": 2,
+            "total": 6
+        },
+        "pages": [
+            6,
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "10": {
+        "markscheme-components": {
+            "a.i": "Answer: Positive correlation (1 mark)\nGuidance: Condone 'positive' or correct description, e.g. 'As the temperature increases, more ice creams are sold'.",
+            "a.ii": "Answer: Correct reason, e.g. 'He sold far more ice creams than you would expect him to for a 20\u00b0C day' (1 mark).",
+            "b.i": "Answer: 75\u201395 (1 mark).",
+            "b.ii": "Answer: 140\u2013170 (1 mark).",
+            "b.iii": "Answer: The (b)(i) prediction is more reliable, as it is within the range of the given data (2 marks)\nGuidance: B1 for (b)(i) prediction identified with partial reason.",
+            "c": "Answer: No, because there may be other factors involved (2 marks)\nGuidance: B1 for 'No', with partial reason."
+        },
+        "mark-breakdown": {
+            "a.i": 1,
+            "a.ii": 1,
+            "b.i": 1,
+            "b.ii": 1,
+            "b.iii": 2,
+            "c": 2,
+            "total": 8
+        },
+        "pages": [
+            7
+        ],
+        "correctly_parsed": true
+    },
+    "11": {
+        "markscheme-components": {
+            "a": "45\u202f000 (2 marks)\nM1 for 50\u202f000 \u00d7 0.9 soi or 50\u202f000 \u2013 5\u202f000",
+            "b": "Total value of goods sold in May was \u00a332\u202f805, which is less than \u00a335\u202f000 (3 marks)\nM2 for 50\u202f000 (or 45\u202f000) \u00d7 0.9 used three times (or two times) soi or decreasing by 10% three times\nOr\nM1 for 45\u202f000 \u00d7 0.9 or 45\u202f000 \u2013 4\u202f500 (implied by 40\u202f500)",
+            "c": "8[%] with correct working (5 marks)\nB4 for answer 108[%] or 1.08 or [0].08 with correct working\nor\nM3 for 1.2 \u00d7 [0].9 oe\n   or for (100\u202f000 \u00d7 1.2 \u00d7 [0].9 \u2013 100\u202f000) / 100\u202f000\nor\nM2 for 1.2 and [0].9\nor\nM1 for 1.2 or [0].9\n\nIf 0 or 1 scored, instead award SC2 for answer 8[%] with no working or insufficient working\nIf 0 scored, instead award SC1 for 108[%] or 1.08 or [0].08 with no working or insufficient working"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 3,
+            "c": 5,
+            "total": 10
+        },
+        "pages": [
+            7,
+            8
+        ],
+        "correctly_parsed": true
+    },
+    "12": {
+        "markscheme-components": {
+            "a": "Answer: 6\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 3x = 18",
+            "b": "Answer: -3, -5\nMarks: 3\nPart marks and guidance:\n\u2022 M2 for (x + 3)(x + 5) seen or implied in table\n  Or\n\u2022 M1 for (x \u00b1 3)(x \u00b1 5) seen or pair of factors giving two correct terms seen or implied in table\n  And\n\u2022 B1 for correct solutions FT their quadratic factors"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 3,
+            "total": 5
+        },
+        "pages": [
+            8,
+            9
+        ],
+        "correctly_parsed": true
+    },
+    "13": {
+        "markscheme-components": {
+            "a": "Answer:\n\u2022 24 cm by 16 cm\n\u2022 12 cm by 8 cm\n\nMarks: 2\n\nPart marks and guidance:\n\u2022 B1 for each\n\u2022 Answers may be indicated on the list in the question",
+            "b": "Answer: 50\n\nMarks: 3\n\nPart marks and guidance:\n\u2022 M1 for 45/9 or 60/6\n\u2022 M1 for their \u20185\u2019 \u00d7 their \u201810\u2019\n\u2022 SC2 for 42 or for area calculation leading to incorrect answer"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 3,
+            "total": 5
+        },
+        "pages": [
+            9,
+            10
+        ],
+        "correctly_parsed": true
+    },
+    "14": {
+        "markscheme-components": {
+            "a": "(a)\nAnswer: p = 5, q = -5\nMarks: 2\nMarking guidelines: B1 for each",
+            "b": "(b)\nAnswer: c = 3a, d = a + b, e = a \u2013 b\nMarks: 3\nMarking guidelines: B1 for each"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 3,
+            "total": 5
+        },
+        "pages": [
+            10
+        ],
+        "correctly_parsed": true
+    },
+    "15": {
+        "markscheme-components": {
+            "a": "Answer: 800 (2 marks)\n\nMark scheme:\n\u2022 M1 for unitary work, e.g. 1 person does 200 letters in 2 hours",
+            "b": "Answer: 30 minutes oe (4 marks)\n\nMark scheme:\n\u2022 M1 for 1 person does 100 letters in 1 hour\n\u2022 M1 for 5 people do 1000 letters in 2 hours\n\u2022 M1 for 4 people do 1000 letters in 2.5 hours\n\u2022 FT from their rate in (a) throughout",
+            "c": "Answer: 2 marks total \n\u2022 Correct comment on the reasonableness of her assumption (e.g. she has assumed that 'all day' means '24 hours', but it is not reasonable for them to work without a break).\n\u2022 Correct comment on the effect it will have on the answer (e.g. they can\u2019t work at that rate for that long, so her answer is an over-estimate).\n\nMark scheme:\n\u2022 B1 for each"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 4,
+            "c": 2,
+            "total": 8
+        },
+        "pages": [
+            10,
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "16": {
+        "markscheme-components": {
+            "a": "Outcomes not equally likely (or equivalent)\nMarks: 1\nPart marks and guidance: None",
+            "b": "Larger number of trials\nMarks: 1\nPart marks and guidance: None",
+            "c": "Answer range: 0.09 \u2013 0.16\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for (48/150)\u00b2 or 0.35\u00b2 or any reasonable estimate (follow through their answer from part (b))"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 1,
+            "c": 2,
+            "total": 4
+        },
+        "pages": [
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "17": {
+        "markscheme-components": {
+            "a": "Answer: 10, 16, 26\nMarks: 1",
+            "b": "Answer: 8, 13, 21\nMarks: 2\nGuidance:\n\u2022 M1 for one correct subtraction of two boxes",
+            "c": "Answer: a + b, a + 2b, 2a + 3b\nMarks: 2\nGuidance:\n\u2022 M1 for two expressions correct",
+            "d": "Answer: 15, 21, 36\nMarks: 3\nGuidance:\n\u2022 M1 for their \u20182a + 3b\u2019 = 57\n\u2022 M1 for substituting a = 6 into their final expression and solving for b"
+        },
+        "mark-breakdown": {
+            "a": 1,
+            "b": 2,
+            "c": 2,
+            "d": 3,
+            "total": 8
+        },
+        "pages": [
+            11
+        ],
+        "correctly_parsed": true
+    },
+    "18": {
+        "markscheme-components": {
+            "a": "The first error is in step 2: \u22123x \u2212 2x = \u22125x, not \u2212x as given.\n\nMarking guidelines (2 marks):\n\u2022 B1 for identifying step 2\n\u2022 B1 for explaining the error",
+            "b": "[x\u00b2 + 4x + x + 4 = x\u00b2 \u2212 3x \u2212 2x + 6]\nx\u00b2 + 5x + 4 = x\u00b2 \u2212 5x + 6\n5x + 4 = \u22125x + 6\n10x + 4 = 6\n10x = 2\nx = 1/5\n\nMarking guidelines (2 marks):\n\u2022 M1 for an attempt to correct the solution in line with their answer to (a)"
+        },
+        "mark-breakdown": {
+            "a": 2,
+            "b": 2,
+            "total": 4
+        },
+        "pages": [
+            11,
+            12
+        ],
+        "correctly_parsed": true
+    },
+    "19": {
+        "markscheme-components": "Answer: 2a + 1\nMarks: 4\nPart marks and guidance:\n\u2022 M1 for a + 2 + 3a + 3 + 4a \u2013 1\n\u2022 M1 for collecting terms\n\u2022 M1 for dividing their \u20188a + 4\u2019 by 4",
+        "mark-breakdown": {
+            "total": 4
+        },
+        "pages": [
+            12
+        ],
+        "correctly_parsed": true
+    }
+}
