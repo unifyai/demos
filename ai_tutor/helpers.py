@@ -11,7 +11,7 @@ VALID_NUMERALS = ("i", "ii", "iii", "iv", "v", "vi")
 def build_response_format(question_num, sub_questions, dtype=str):
     response_keys = sub_questions if sub_questions else [str(question_num)]
     response_fields = dict(zip(response_keys, [(dtype, ...)] * len(response_keys)))
-    return create_model('Response', **response_fields)
+    return create_model("Response", **response_fields)
 
 
 def is_invalid_question_order(detected_qs, valid_num, valid_char):
@@ -48,7 +48,7 @@ def update_str_in_table(table: List, fn: Callable):
             new_table.append("")
         else:
             raise ValueError(
-                "Expected nested list, but found {} of type {}".format(fn, type(item))
+                "Expected nested list, but found {} of type {}".format(fn, type(item)),
             )
     return new_table
 
@@ -65,8 +65,9 @@ def prune_invalid_leading_alphanumeric_questions(detected_qs):
             else:
                 break
             next_numeral_idx = VALID_NUMERALS.index(q) - 1
-            next_numeral = VALID_NUMERALS[next_numeral_idx] \
-                if next_numeral_idx >= 0 else None
+            next_numeral = (
+                VALID_NUMERALS[next_numeral_idx] if next_numeral_idx >= 0 else None
+            )
         elif q.isalpha():
             if not next_char or q == next_char:
                 ret.append(q)
@@ -91,8 +92,8 @@ def parse_key(k: str):
     - The part before the dot is turned into an integer (if there's no dot, the whole key is an integer).
     - The remainder (if any) is kept as a suffix for secondary sorting.
     """
-    parts = k.split('.', 1)
-    num = int(parts[0])                # integer portion
+    parts = k.split(".", 1)
+    num = int(parts[0])  # integer portion
     suffix = parts[1] if len(parts) > 1 else ""  # suffix after the first dot, if any
     return num, suffix
 
@@ -124,7 +125,8 @@ def load_questions_and_answers():
                     continue
                 ans_n_marks = markscheme[question_num]
                 markscheme_components, mark_breakdown = (
-                    ans_n_marks["markscheme-components"], ans_n_marks["mark-breakdown"]
+                    ans_n_marks["markscheme-components"],
+                    ans_n_marks["mark-breakdown"],
                 )
                 question_imgs = question.get("images")
                 if question_imgs:
@@ -144,8 +146,9 @@ def load_questions_and_answers():
                         )
                         for fname in markscheme_imgs
                     ]
-                correctly_parsed = (question["correctly_parsed"] and
-                                    ans_n_marks["correctly_parsed"])
+                correctly_parsed = (
+                    question["correctly_parsed"] and ans_n_marks["correctly_parsed"]
+                )
                 questions_and_answers[question["question"]] = {
                     "subject": subject,
                     "paper_id": paper_id,

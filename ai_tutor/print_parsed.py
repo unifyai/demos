@@ -3,7 +3,7 @@ import json
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--path', help='Path of the parsed .json file to print', type=str)
+parser.add_argument("--path", help="Path of the parsed .json file to print", type=str)
 args = parser.parse_args()
 
 

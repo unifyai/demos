@@ -5,16 +5,23 @@ import argparse
 from pydantic import BaseModel, create_model
 
 import unify
+
 unify.CLIENT_LOGGING = True
 from prompts import *
 from helpers import load_questions_and_answers, encode_image
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--labelled', help='Generate synthetic labelled data',
-                    action="store_true")
-parser.add_argument('--usage', help='Generate synthetic usage data',
-                    action="store_true")
+parser.add_argument(
+    "--labelled",
+    help="Generate synthetic labelled data",
+    action="store_true",
+)
+parser.add_argument(
+    "--usage",
+    help="Generate synthetic usage data",
+    action="store_true",
+)
 args = parser.parse_args()
 mode = "usage" if args.usage else "labelled"
 
@@ -56,25 +63,27 @@ def generate_question(question, data, idx):
             .replace(
                 "{question}",
                 question,
-            ).replace(
+            )
+            .replace(
                 "{question_num}",
-                str(data["question_num"])
+                str(data["question_num"]),
             )
             .replace(
                 "{markscheme}",
                 json.dumps(data["answer"], indent=4),
-            ).replace(
-                "{mark_breakdown}",
-                json.dumps(data["marks"], indent=4)
             )
+            .replace(
+                "{mark_breakdown}",
+                json.dumps(data["marks"], indent=4),
+            ),
         )
         sub_questions = [k for k in data["marks"] if k != "total"]
         if sub_questions:
             response_keys = sub_questions
             response_fields = dict(
-                zip(response_keys, [(AnswerForTargetMarks, ...)] * len(response_keys))
+                zip(response_keys, [(AnswerForTargetMarks, ...)] * len(response_keys)),
             )
-            response_format = create_model('Response', **response_fields)
+            response_format = create_model("Response", **response_fields)
         else:
             response_format = AnswerForTargetMarks
         generation_client.set_response_format(response_format)
@@ -87,10 +96,11 @@ def generate_question(question, data, idx):
                             "type": "image_url",
                             "image_url": {
                                 "url": f"data:image/jpeg;base64,"
-                                       f"{encode_image(img)}",
+                                f"{encode_image(img)}",
                             },
                         }
-                    for img in imgs],
+                        for img in imgs
+                    ],
                 },
             ],
         )
@@ -99,10 +109,11 @@ def generate_question(question, data, idx):
             sum_of_marks = sum([v["marks"] for k, v in response.items()])
         else:
             sum_of_marks = response["marks"]
-        assert sum_of_marks == target, \
-            ("The sum of marks awarded across sub-questions "
-             f"{json.dumps(response, indent=4)} is not equal "
-             f"to the target {target}")
+        assert sum_of_marks == target, (
+            "The sum of marks awarded across sub-questions "
+            f"{json.dumps(response, indent=4)} is not equal "
+            f"to the target {target}"
+        )
         targets[target] = response
     targets["subject"] = data["subject"]
     targets["paper_id"] = data["paper_id"]
@@ -117,7 +128,9 @@ def generate_question(question, data, idx):
     else:
         targets["question_imgs"] = None
     if data["markscheme_imgs"]:
-        targets["markscheme_imgs"] = [fp.split("/")[-1] for fp in data["markscheme_imgs"]]
+        targets["markscheme_imgs"] = [
+            fp.split("/")[-1] for fp in data["markscheme_imgs"]
+        ]
     else:
         targets["markscheme_imgs"] = None
     # incremental file writing
@@ -131,7 +144,8 @@ def combine_data():
     if os.path.exists(os.path.join(data_dir, f"{mode}_data.json")):
         os.remove(os.path.join(data_dir, f"{mode}_data.json"))
     data_paths = [
-        os.path.join(data_dir, fname) for fname in os.listdir(data_dir)
+        os.path.join(data_dir, fname)
+        for fname in os.listdir(data_dir)
         if fname.startswith(f"{mode}_data_")
     ]
     data = {}
@@ -147,7 +161,8 @@ def combine_data():
 def main():
     qna = load_questions_and_answers()
     args = [
-        (question, dct, i) for i, (question, dct) in enumerate(qna.items())
+        (question, dct, i)
+        for i, (question, dct) in enumerate(qna.items())
         if dct["correctly_parsed"]
     ]
     unify.map(generate_question, args)
@@ -157,10 +172,10 @@ def main():
 if __name__ == "__main__":
     os.makedirs(
         os.path.join(os.path.dirname(os.path.realpath(__file__)), "data"),
-        exist_ok=True
+        exist_ok=True,
     )
-    assert not (args.labelled and args.usage), \
-        "Please specify either --labelled or --usage, not both."
-    assert args.labelled or args.usage, \
-        "Please specify one of --labelled or --usage."
+    assert not (
+        args.labelled and args.usage
+    ), "Please specify either --labelled or --usage, not both."
+    assert args.labelled or args.usage, "Please specify one of --labelled or --usage."
     main()

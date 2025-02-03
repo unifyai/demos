@@ -9,8 +9,11 @@ import unify
 from helpers import load_questions_and_answers, encode_image
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--no-images', help='Whether to omit images from the logging',
-                    action="store_true")
+parser.add_argument(
+    "--no-images",
+    help="Whether to omit images from the logging",
+    action="store_true",
+)
 args = parser.parse_args()
 WITH_IMAGES = not args.no_images
 
@@ -22,7 +25,6 @@ CORRELATIONS = {
     # usage_prob ~ exp( usage_age_factor * (age - 40) )
     # => if age > 40, usage increases exponentially; if age < 40, < 1 => less usage
     "usage_age_factor": 0.02,
-
     # Time-of-day usage distribution
     # We'll define a normal distribution for "peak usage hour" with mean:
     #   mean_hour = time_base_hour + time_age_factor * (age - time_age_center)
@@ -31,13 +33,11 @@ CORRELATIONS = {
     # Negative => older => earlier usage (midday); younger => evening
     "time_base_hour": 16.0,  # 16:00 is the average usage hour for someone at age=40
     "time_hour_spread": 3.0,  # std dev in hours
-
     # Score distribution by age
     # We use a logistic transform for "prob of a high score" that depends on:
     #   logistic( score_age_slope * (age - score_age_center) + gender_boost )
     "score_age_center": 25.0,
     "score_age_slope": 0.3,
-
     # Gender-based shift in the logistic for scoring
     "score_gender_boost_male": 0.2,
     "score_gender_boost_female": -0.1,
@@ -47,6 +47,7 @@ CORRELATIONS = {
 ########################################################################
 # 2. Helper functions
 ########################################################################
+
 
 def compute_usage_weight(age):
     """
@@ -110,9 +111,9 @@ def sample_usage_time(age):
       mean_hour = time_base_hour + time_age_factor * (age - time_age_center)
       stdev = time_hour_spread
     """
-    mean_hour = (CORRELATIONS["time_base_hour"] +
-                 CORRELATIONS["time_age_factor"] * (
-                             age - CORRELATIONS["time_age_center"]))
+    mean_hour = CORRELATIONS["time_base_hour"] + CORRELATIONS["time_age_factor"] * (
+        age - CORRELATIONS["time_age_center"]
+    )
     stdev = CORRELATIONS["time_hour_spread"]
 
     # Sample from normal distribution
@@ -134,13 +135,13 @@ def sample_usage_time(age):
         day=today.day,
         hour=hour_int,
         minute=minute_int,
-        second=random.randint(0, 59)
+        second=random.randint(0, 59),
     )
     return usage_dt
 
 
 def logistic(x):
-    """ Classic logistic function. """
+    """Classic logistic function."""
     return 1.0 / (1.0 + math.exp(-x))
 
 
@@ -164,7 +165,7 @@ def sample_score(age, gender, available_marks):
     #   male => +0.2, female => -0.1
     gender_map = {
         "male": CORRELATIONS["score_gender_boost_male"],
-        "female": CORRELATIONS["score_gender_boost_female"]
+        "female": CORRELATIONS["score_gender_boost_female"],
     }
     gender_boost = gender_map.get(gender.lower(), 0.0)
 
@@ -193,6 +194,7 @@ def sample_score(age, gender, available_marks):
 ########################################################################
 # 3. Main load + event streaming
 ########################################################################
+
 
 def load_data():
     this_dir = os.path.dirname(os.path.realpath(__file__))
@@ -265,15 +267,18 @@ def main():
                         paper_id=qna_dct["paper_id"],
                         question_num=qna_dct["question_num"],
                         question=question,
-                        question_imgs=(question_imgs[0] if question_imgs and WITH_IMAGES else
-                                       None),
+                        question_imgs=(
+                            question_imgs[0] if question_imgs and WITH_IMAGES else None
+                        ),
                         provided_answer=provided_answer,
                         markscheme=qna_dct["answer"],
                         markscheme_imgs=(
-                            markscheme_imgs[0] if markscheme_imgs and WITH_IMAGES
-                            else None),
+                            markscheme_imgs[0]
+                            if markscheme_imgs and WITH_IMAGES
+                            else None
+                        ),
                         available_marks=qna_dct["marks"],
-                        chosen_score=score
+                        chosen_score=score,
                     )
 
 

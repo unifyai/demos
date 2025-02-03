@@ -1,6 +1,6 @@
 QUESTION_DETECTION = """
-Your task is to detect the numeric question numbers [1, 2, 3 etc.], letter sub-questions 
-[a, b, c etc.] *and* roman numeral sub-sub-questions [i, ii, iii] that are present in 
+Your task is to detect the numeric question numbers [1, 2, 3 etc.], letter sub-questions
+[a, b, c etc.] *and* roman numeral sub-sub-questions [i, ii, iii] that are present in
 the following text.
 
 When deciding whether the number refers to a question, look at the *subsequent text*.
@@ -15,28 +15,28 @@ Please respond in the exact order presented on the current page, starting either
 If there are any numbered questions on the page, then the first of these numbers will be `{n0}`.
 The presence of this specific number {n0} before any explanatory text or question means that this represents the question number, and should be included in your answer.
 
-If the *first question identifier* on the page is a letter (not a number), then this 
-*first* letter will be `{c0}`. This is because question {n-1} on the previous page {explanation}. 
-However, if the first question identifier is {n0}, then the any letters immediately 
+If the *first question identifier* on the page is a letter (not a number), then this
+*first* letter will be `{c0}`. This is because question {n-1} on the previous page {explanation}.
+However, if the first question identifier is {n0}, then the any letters immediately
 following this number (or immediately following any other question number),
-will always be `a`, and this will then ascend alphabetically until the next 
-question number. Likewise, roman-numeral sub-sub-questions will always come after a 
+will always be `a`, and this will then ascend alphabetically until the next
+question number. Likewise, roman-numeral sub-sub-questions will always come after a
 letter, and will also be strictly ascending starting from `i`.
 
-A full image of the page has also been included, please look at this image to help 
-understand the page *layout*, which might help you make sense of which numbers 
+A full image of the page has also been included, please look at this image to help
+understand the page *layout*, which might help you make sense of which numbers
 indicate pages vs questions.
 
-Remember, sometimes questions are split across **multiple 
-pages**, with only letters starting on the next page without showing the previous 
-question number, but these should **always** be included in your answer, as these 
-lettered sub-questions must be detected on every page, even if it overflows from a 
+Remember, sometimes questions are split across **multiple
+pages**, with only letters starting on the next page without showing the previous
+question number, but these should **always** be included in your answer, as these
+lettered sub-questions must be detected on every page, even if it overflows from a
 prior question on the previous page.
 
 Think through your reasoning in detail, step by step.
 
 As the final part of your response, please respond with "answer: " followed by a
-single comma separated list of numbers, letters and roman numerals on a new line, 
+single comma separated list of numbers, letters and roman numerals on a new line,
 like either of the two examples below:
 answer: {n0}, a, i, ii, b, i, {n1}, a, {n2}, a, b, c, i, ii
 answer: {c0}, {c1}, {c2}, {n0}, a, b, i, ii, c,
@@ -45,12 +45,12 @@ If you do not see any clear questions on the page, then just explain why, with n
 """
 
 QUESTION_ANSWER_DETECTION = """
-Your task is to detect the numeric question numbers [1, 2, 3 etc.], letter sub-questions 
-[a, b, c etc.] *and* roman numeral sub-sub-questions [i, ii, iii] that are present in 
+Your task is to detect the numeric question numbers [1, 2, 3 etc.], letter sub-questions
+[a, b, c etc.] *and* roman numeral sub-sub-questions [i, ii, iii] that are present in
 the following markscheme text, which contains questions and answers.
 
 When deciding whether the number refers to a question, look at *all of* the text within
-the corresponding row in the table. Also note that question numbers are always 
+the corresponding row in the table. Also note that question numbers are always
 strictly ascending incrementing by one whole number at a time.
 
 Please ignore general guidelines to the marker, which may also come ordered with
@@ -63,23 +63,23 @@ question numbers are always on the left hand side, and M1, M2 indicate the marks
 each point. If you see this, it means this is part of the mark scheme, and there is
 likely a number and/or letter to be extracted.
 
-The first question on this page should be `{i0}`, possibly followed by `{i1}`, 
-`{i2}`, ... (if they're on this page) because {detected_so_far}, 
+The first question on this page should be `{i0}`, possibly followed by `{i1}`,
+`{i2}`, ... (if they're on this page) because {detected_so_far},
 and it's known that the questions in the paper are structured as follows:
 
 {full_question_structure}
 
-A full image of the page has also been included, please look at this image to help 
-understand the page *layout*, which might help you make sense of which numbers 
-indicate pages vs questions vs marks awarded. Specifically, question numbers are 
+A full image of the page has also been included, please look at this image to help
+understand the page *layout*, which might help you make sense of which numbers
+indicate pages vs questions vs marks awarded. Specifically, question numbers are
 likely to be listed under a "Questions" column, and marks under a "Marks" column.
-This structure might not be clear from the text-only representation you've been 
+This structure might not be clear from the text-only representation you've been
 provided with, so please use both sources when considering your answer.
 
-Remember, sometimes questions are split across **multiple 
-pages**, with only letters or lower-case roman numerals starting on the next page 
-without showing the previous question number, but these should **always** be included 
-in your answer, as these lettered and roman numeral sub-questions must be detected on 
+Remember, sometimes questions are split across **multiple
+pages**, with only letters or lower-case roman numerals starting on the next page
+without showing the previous question number, but these should **always** be included
+in your answer, as these lettered and roman numeral sub-questions must be detected on
 every page, even if it overflows from a prior question on the previous page.
 
 Think through your reasoning in detail, step by step.
@@ -98,27 +98,27 @@ Your task is to extract the full contents of question {question_number} from the
 following text and images. You should *not* extract any parts of the
 preceding question {preceding} or subsequent question {subsequent}.
 
-The question was parsed from a PDF, and the formatting might be strange or wrong as a 
-result of this conversion to pure text. More importantly, mathematical symbols 
-such as √w, x², y₄, ⁴√z etc. are very often missed by the parsing logic. Sometimes, 
-entire equations are embedded in the PDF as images, and will not be shown in the text. 
+The question was parsed from a PDF, and the formatting might be strange or wrong as a
+result of this conversion to pure text. More importantly, mathematical symbols
+such as √w, x², y₄, ⁴√z etc. are very often missed by the parsing logic. Sometimes,
+entire equations are embedded in the PDF as images, and will not be shown in the text.
 Image(s) of the relevant page(s) have therefore *also* been provided.
 
-Please extract **all** important information for question {question_number} 
-**including any symbols and/or equations missing in the text**, 
+Please extract **all** important information for question {question_number}
+**including any symbols and/or equations missing in the text**,
 by inferring these from the provided image(s).
 
-Furthermore, if the formatting could be improved to make the question more readable 
+Furthermore, if the formatting could be improved to make the question more readable
 in text-only format, please make any formatting improvements as you see fit.
 
 Please respond with the **question only**. Do not provide any explanations, commentary
-or preliminary details as part of your answer. Just respond with the newly formatted 
+or preliminary details as part of your answer. Just respond with the newly formatted
 question and nothing else.
 """
 
 QUESTION_COMPONENT_PARSER = """
-Your task is to parse the following question into it's known sub-components, 
-whilst disregarding general explanatory text. For example, if a question has the 
+Your task is to parse the following question into it's known sub-components,
+whilst disregarding general explanatory text. For example, if a question has the
 following structure:
 
 ```
@@ -150,42 +150,42 @@ marking guidelines for question {question_number} from the
 following text and images. You should *not* extract any parts of the
 answer or guidelines for the preceding question {preceding} or subsequent question {subsequent}.
 
-Specifically, you should extract **all parts** of question {question_number}, 
+Specifically, you should extract **all parts** of question {question_number},
 as indicated by the requested output format, containing {sub-questions}.
 
-The only exception to this is the assessment objects which **should be omitted**. 
-These assessment objectives are of the form `{n} AO{1|2|3}.{m{a|b|c|etc.}}`, 
-such as `1 AO1.2a`, `3 AO2.1` and `3 AO2.4b`. These assessment objectives should 
-not be fully omitted from your response, as they are not relevant for awarding 
+The only exception to this is the assessment objects which **should be omitted**.
+These assessment objectives are of the form `{n} AO{1|2|3}.{m{a|b|c|etc.}}`,
+such as `1 AO1.2a`, `3 AO2.1` and `3 AO2.4b`. These assessment objectives should
+not be fully omitted from your response, as they are not relevant for awarding
 the correct marks.
 
-The text was parsed from a PDF, and the formatting might be strange or wrong as a 
-result of this conversion to pure text. More importantly, mathematical symbols 
-such as √w, x², y₄, ⁴√z etc. are very often missed by the parsing logic. Sometimes, 
+The text was parsed from a PDF, and the formatting might be strange or wrong as a
+result of this conversion to pure text. More importantly, mathematical symbols
+such as √w, x², y₄, ⁴√z etc. are very often missed by the parsing logic. Sometimes,
 entire equations are embedded in the PDF as images, and will not be shown in the text.
 Image(s) of the relevant page(s) have therefore *also* been provided.
 
-Please extract **all** text for the markscheme of question {question_number}, 
-**including any symbols and/or equations missing in the text**, 
+Please extract **all** text for the markscheme of question {question_number},
+**including any symbols and/or equations missing in the text**,
 by inferring these from the provided image(s).
 
-The question of interest (question {question_number}) contains {sub-questions}, 
-and {field(s)} of the requested structured output representation 
-must be **fully populated** based on the information which is known to exist in the 
-text and images(s). Remember, sometimes questions are split across **multiple 
-pages**, with only letters starting on the next page without showing the question 
-number, but these should **always** be included as part of the question on the previous 
+The question of interest (question {question_number}) contains {sub-questions},
+and {field(s)} of the requested structured output representation
+must be **fully populated** based on the information which is known to exist in the
+text and images(s). Remember, sometimes questions are split across **multiple
+pages**, with only letters starting on the next page without showing the question
+number, but these should **always** be included as part of the question on the previous
 page.
 
-Please look at this image to help understand the page *layout*, which might help you 
-make sense of which numbers indicate pages vs questions vs marks awarded. 
-Specifically, question numbers are likely to be listed under a "Questions" column, 
-and marks under a "Marks" column. This structure might not be clear from the 
-text-only representation you've been provided with, 
+Please look at this image to help understand the page *layout*, which might help you
+make sense of which numbers indicate pages vs questions vs marks awarded.
+Specifically, question numbers are likely to be listed under a "Questions" column,
+and marks under a "Marks" column. This structure might not be clear from the
+text-only representation you've been provided with,
 so please use both sources when considering your answer.
 
-If the formatting could be improved to make the markscheme for each 
-question component more readable in text-only format, 
+If the formatting could be improved to make the markscheme for each
+question component more readable in text-only format,
 please make any formatting improvements as you see fit.
 """
 
@@ -222,19 +222,19 @@ no
 """
 
 MARK_BREAKDOWN_DETECTION = """
-Your task is to determine the total number of marks available for each component of 
-this question. The total number of marks are shown under the marks heading (disregard 
+Your task is to determine the total number of marks available for each component of
+this question. The total number of marks are shown under the marks heading (disregard
 any info about assessment objectives which you might see in the image, such as AOx.xx).
-The total number of marks for each sub-question is usually shown as a single 
-integer, but it might also be shown as a list of mark types, prepending with a 
-letter. For example, B1 B1 B1 would indicate 3 marks. A1 B1 would indicate 2 marks 
-etc. Please response with a single integer per field in the requested response 
+The total number of marks for each sub-question is usually shown as a single
+integer, but it might also be shown as a list of mark types, prepending with a
+letter. For example, B1 B1 B1 would indicate 3 marks. A1 B1 would indicate 2 marks
+etc. Please response with a single integer per field in the requested response
 format, as well as the total number of marks summed across all fields.
 """
 
 MARK_BREAKDOWN_DETECTION_NO_SUBQS = """
 Your task is to determine the total number of marks available this question.
-The total number of marks are shown under the marks heading (disregard any 
+The total number of marks are shown under the marks heading (disregard any
 info about assessment objectives which you might see in the image, such as AOx.xx).
 Please response with a single integer in the requested response format.
 """
@@ -272,8 +272,8 @@ correct|partially correct|incorrect
 """
 
 GENERATE_RESPONSE_PROMPT = """
-Your task is to generate a response to question {question_num} below which should 
-achieve a total of {target} out of {num_marks} available marks, if it was to be 
+Your task is to generate a response to question {question_num} below which should
+achieve a total of {target} out of {num_marks} available marks, if it was to be
 marked correctly.
 
 The marking scheme adds marks based on the following guidelines:
@@ -310,20 +310,20 @@ mark to be awarded.
 
 5.
 The following abbreviations are commonly found in GCSE Mathematics mark schemes.
-- **figs 237**, for example, means any answer with only these digits. You should ignore 
- leading or trailing zeros and any decimal point e.g. 237000, 2.37, 2.370, 0.00237 
+- **figs 237**, for example, means any answer with only these digits. You should ignore
+ leading or trailing zeros and any decimal point e.g. 237000, 2.37, 2.370, 0.00237
  would be acceptable but 23070 or 2374 would not.
 - **isw** means **ignore subsequent working** after correct answer obtained and applies as a default.
 - **nfww** means not from wrong working.
 - **oe** means **or equivalent**.
 - **rot** means **rounded or truncated**.
-- **seen** means that you should award the mark if that number/expression is seen 
+- **seen** means that you should award the mark if that number/expression is seen
 anywhere in the answer space, including the answer line, even if it is not in the method leading to the final answer
 - **soi** means seen or implied.
 
 6.
-In questions with no final answer line, make no deductions for wrong work after an 
-acceptable answer (ie **isw**) unless the mark scheme says otherwise, indicated by 
+In questions with no final answer line, make no deductions for wrong work after an
+acceptable answer (ie **isw**) unless the mark scheme says otherwise, indicated by
 the instruction ‘mark final answer’.
 
 7.
@@ -359,7 +359,7 @@ marked.
 
 10.
 When the data of a question is consistently misread in such a way as not to alter the nature or difficulty of the question, please follow the
-candidate’s work and allow follow through for **A** and **B** marks. Deduct 1 mark 
+candidate’s work and allow follow through for **A** and **B** marks. Deduct 1 mark
 from any **A** or **B** marks earned and record this by using the MR annotation.
 **M** marks are not deducted for misreads.
 
@@ -391,23 +391,23 @@ And the known correct distribution of marks:
 
 {mark_breakdown}
 
-Provide a complete answer to *all parts* of this question [including answers to all 
-sub-questions (a), (b), (i), (ii) etc. if they exist] which should achieve a total 
+Provide a complete answer to *all parts* of this question [including answers to all
+sub-questions (a), (b), (i), (ii) etc. if they exist] which should achieve a total
 of {target} marks for the entire question, if marked correctly.
 
-Please state your reasoning in lots of detail in each sub-question's `rationale: str` 
-field of the response format, referring specifically to the markscheme provided for 
-each of the marks the answer should receive. State the intended marks to be awarded 
+Please state your reasoning in lots of detail in each sub-question's `rationale: str`
+field of the response format, referring specifically to the markscheme provided for
+each of the marks the answer should receive. State the intended marks to be awarded
 for each sub-question in the `marks: int` field.
 
-Image(s) of the page have also been provided, in case these help provide extra context. 
+Image(s) of the page have also been provided, in case these help provide extra context.
 You don't need to make use of the images if the text is sufficient.
 
-For the `answer: str` part of the response format, please provide your proposed 
-answer(s) as though the question was answered by a student (who has no knowledge about 
-the markscheme). Please **include any working** which is necessary for the student to 
-attain {target} marks, even if this means repeating some parts in `answer: str` that 
-were already explained in `rationale: str`. However, do not provide commentary in this 
-answer. The answer will be directly parsed and used as a student answer, without any 
+For the `answer: str` part of the response format, please provide your proposed
+answer(s) as though the question was answered by a student (who has no knowledge about
+the markscheme). Please **include any working** which is necessary for the student to
+attain {target} marks, even if this means repeating some parts in `answer: str` that
+were already explained in `rationale: str`. However, do not provide commentary in this
+answer. The answer will be directly parsed and used as a student answer, without any
 awareness about the marks attained within the answer.
 """
