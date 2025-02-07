@@ -35,7 +35,8 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Colin drinks \u00b3/\u2088 of a litre of milk each day. Milk costs 89p for a 2-litre carton and 49p for a 1-litre carton. What is the smallest amount that Colin would have to spend to buy milk for one week? Show your working. \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026"
     },
     "15\u202f\u202fIn the diagram below (not to scale), AE and BD are straight lines, with right angles at B and D:\n\n   A\n    \\\n     \\\n      B\u2500\u2500\u2500\u2500C\u2500\u2500\u2500\u2500D\n             \\\n              \\\n               E\n\n(a)  Show that triangles ABC and EDC are similar.  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]\n\n(b)  The length DE is 3.5\u202fm.  \n     The ratio BC\u202f:\u202fCD\u202f=\u202f3\u202f:\u202f1.  \n\n     Find the length AB.\n\n     (b)\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fm\u202f[2]": {
         "0": {
@@ -132,7 +133,11 @@
         "question_imgs": [
             "page15.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Show that triangles ABC and EDC are similar.",
+            "b": "The length DE is 3.5\u202fm. The ratio BC\u202f:\u202fCD\u202f=\u202f3\u202f:\u202f1. Find the length AB."
+        }
     },
     "18 (a) (i) Solve:  \n5x + 1 > x + 13  \n\n(a)(i) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]\n\n(ii) Write down the largest integer that satisfies 5x \u2013 1 < 10.  \n\n(a)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Solve:  \n3x\u00b2 = 75  \n\n(b) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c) Solve the simultaneous equations:  \n4x + 3y = 5  \n2x + 3y = 1  \n\n(c) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n    y = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]": {
         "0": {
@@ -379,7 +384,13 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "Solve: 5x + 1 > x + 13",
+            "a.ii": "Write down the largest integer that satisfies 5x \u2013 1 < 10.",
+            "b": "Solve: 3x\u00b2 = 75",
+            "c": "Solve the simultaneous equations: 4x + 3y = 5 and 2x + 3y = 1"
+        }
     },
     "19\u202fHere are the interest rates for two accounts:\n\nAccount A  \nInterest: 3% per year compound interest.  \nNo withdrawals until the end of three years.  \n\nAccount B  \nInterest: 4% for the first year, 3% for the second year, and 2% for the third year.  \nWithdrawals allowed at any time.  \n\nDerrick has \u00a310\u202f000 he wants to invest.  \n\n(a) Calculate which account would give him most money if he invests his money for 3 years.  \n    Give the difference in the interest to the nearest penny.  \n    You must show your working.  \n\n    (a) Account \u2026\u2026\u2026\u2026\u2026\u2026 by \u2026\u2026\u2026\u2026\u2026\u2026 p\u202f[5]  \n\n(b) Explain why he might not want to use Account A.  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202f[1]": {
         "0": {
@@ -486,7 +497,11 @@
             14
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Calculate which account would give him most money if he invests his money for 3 years. Give the difference in the interest to the nearest penny. You must show your working.",
+            "b": "Explain why he might not want to use Account A."
+        }
     },
     "8 (a) The nth term of a sequence is given by 3n + 5.  \nExplain why 21 is not a term in this sequence.  \n[2]\n\n(b) Here are the first three terms in a sequence:  \n1   2   4  \n\nThis sequence can be continued in different ways.\n\n(i) Find one rule for continuing the sequence and give the next two terms.  \n    Rule 1 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n    Next two terms \u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026  \n    [2]\n\n(ii) Find a second rule for continuing the sequence and give the next two terms.  \n     Rule 2 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n     Next two terms \u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026  \n     [2]": {
         "0": {
@@ -631,7 +646,12 @@
             9
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "The nth term of a sequence is given by 3n + 5. Explain why 21 is not a term in this sequence.",
+            "b.i": "Find one rule for continuing the sequence and give the next two terms.",
+            "b.ii": "Find a second rule for continuing the sequence and give the next two terms."
+        }
     },
     "1 (a) Work out:  \n    4 \u00d7 2 \u2212 1  \n    (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n  (b) Find \u00bc of 16.  \n    (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -690,7 +710,11 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Work out: 4 \u00d7 2 \u2212 1",
+            "b": "Find \u00bc of 16."
+        }
     },
     "6 (a) A square has an area of 100 cm\u00b2.  \nFind its perimeter.  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f[2]  \n\n(b) The area of the parallelogram is three times the area of the triangle.  \n\n      Not to scale\n\n       8\u202fcm    \n        /|  \n       / |  \n      /  |  \n     6\u202fcm  \n\n           h  \n     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \n             18\u202fcm  \n\nShow that the perpendicular height h of the parallelogram is 4\u202fcm. [4]": {
         "0": {
@@ -797,7 +821,11 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "A square has an area of 100 cm\u00b2. Find its perimeter.",
+            "b": "The area of the parallelogram is three times the area of the triangle. Show that the perpendicular height h of the parallelogram is 4\u202fcm."
+        }
     },
     "1\u202f(a)\u2003Solve.\n\n\u2003(i)\u20032x\u202f=\u202f18  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n\u2003(ii)\u2003x\u202f+\u202f2\u202f=\u202f5  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n\u2003(iii)\u2003x\u202f/\u202f3\u202f=\u202f15  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)\u2003(i)\u2003Find the value of t when g\u202f=\u202f4 and h\u202f=\u202f7.  \n\u2003\u2003\u2003t\u202f=\u202f12g\u202f\u2212\u202f5h  \n\u2003\u2003\u2003t\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n\u2003(ii)\u2003Rearrange to make r the subject.  \n\u2003\u2003\u20034r\u202f\u2212\u202fp\u202f=\u202fq  \n\u2003\u2003\u2003r\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -1042,7 +1070,14 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "2x = 18\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "a.ii": "x + 2 = 5\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "a.iii": "x / 3 = 15\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "b.i": "Find the value of t when g=4 and h=7.\nt = 12g - 5h\nt = \u2026\u2026\u2026\u2026\u2026 [2]",
+            "b.ii": "Rearrange to make r the subject.\n4r - p = q\nr = \u2026\u2026\u2026\u2026\u2026 [2]"
+        }
     },
     "12 (a) Solve:  \n     5x = 2x + 18  \n     (a) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]  \n\n   (b) Solve by factorising:  \n     x\u00b2 + 8x + 15 = 0  \n     (b) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]": {
         "0": {
@@ -1138,7 +1173,11 @@
             9
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Solve: 5x = 2x + 18",
+            "b": "Solve by factorising: x\u00b2 + 8x + 15 = 0"
+        }
     },
     "11\u202f(a) A shop sold goods worth a total of \u00a350\u202f000 in January.  \nThe value of goods sold in February was 10% lower than in January.  \n\nCalculate the value of goods sold in February.  \n(a) \u00a3\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b) Each month, the value of goods sold continued to be 10% lower than the previous month.  \nWhen the value of goods sold was less than \u00a335\u202f000, the shop closed at the end of that month.  \n\nShow that the store closed at the end of May. [3]\n\n(c) The store reopens under new management and sells goods worth \u00a3100\u202f000 in the first month.  \n\u2022\u202fThe value of goods sold in the second month is 20% more than the first month.  \n\u2022\u202fThe value of goods sold in the third month is 10% less than the second month.  \n\nFind the percentage increase in the total value of goods sold from the first month to the third month.  \nYou must show your working.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202f% [5]": {
         "0": {
@@ -1352,7 +1391,12 @@
             8
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Calculate the value of goods sold in February.",
+            "b": "Show that the store closed at the end of May.",
+            "c": "Find the percentage increase in the total value of goods sold from the first month to the third month. You must show your working."
+        }
     },
     "14\u202f\u202fThis frequency diagram summarises the number of minutes Astrid\u2019s train was late over the last 50 days:\n\n(Frequency axis from 0 to 20, with bars for 1, 2, 3, and 4 minutes late summing to 50 days in total.)\n\n(a)\u202f\u202fUse information from this diagram to estimate the probability that her train will be 4 minutes late tomorrow.  \n(a)\u202f\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b)\u202f\u202fExplain whether your answer to part (a) gives a reliable probability.  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -1423,7 +1467,11 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Use information from this diagram to estimate the probability that her train will be 4 minutes late tomorrow.",
+            "b": "Explain whether your answer to part (a) gives a reliable probability."
+        }
     },
     "3 Peter says:  \n\"The sum of an odd number and an even number is even.\"  \n\nThe example 3 + 4 = 7 shows that Peter is not correct.  \n\nWrite an example to show that each of these statements is not correct:  \n\n(a) The sum of two prime numbers is always odd.  \n................................................................................................................................. [1]\n\n(b) Squaring a whole number always results in an even number.  \n................................................................................................................................. [1]": {
         "0": {
@@ -1482,7 +1530,11 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "The sum of two prime numbers is always odd.",
+            "b": "Squaring a whole number always results in an even number."
+        }
     },
     "4  An unbiased spinner is shown below.\n\n(a)  Write a number to make each sentence true.\n\n   (i)   It is even that the spinner will land on number _______.   [1]\n\n   (ii)  There is a probability of 1/6 that the spinner will land on number _______.   [1]\n\n   (iii) It is impossible that the spinner will land on number _______.   [1]\n\n(b)  The spinner below has the following properties:\n   \u2022 There are eight equal sections, each showing one number.\n   \u2022 There are three different numbers on the spinner.\n   \u2022 The probability of the spinner landing on an even number is greater than the probability of it landing on an odd number.\n   \u2022 It is more likely that the spinner will land on a 6 than either of the other numbers.\n\n   Complete the spinner to show one possible arrangement of numbers.   [3]": {
         "0": {
@@ -1663,7 +1715,13 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "It is even that the spinner will land on number _______.",
+            "a.ii": "There is a probability of 1/6 that the spinner will land on number _______.",
+            "a.iii": "It is impossible that the spinner will land on number _______.",
+            "b": "Complete the spinner to show one possible arrangement of numbers."
+        }
     },
     "3 (a) How many 20p coins would you need to make up \u00a37000?  \n\u2003\u2003(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b) Each 20p coin weighs 5 g.  \n\u2003Lizzie says:  \n\u2003\u201cI can lift \u00a37000 worth of 20p coins.\u201d  \n\nIs Lizzie\u2019s claim reasonable?  \nShow your working and state any assumptions you have made.  \n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 because \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]\n\n(c) How have any assumptions you have made affected your answer to part (b)?  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -1824,7 +1882,12 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "How many 20p coins would you need to make up \u00a37000?",
+            "b": "Is Lizzie\u2019s claim reasonable? Show your working and state any assumptions you have made.",
+            "c": "How have any assumptions you have made affected your answer to part (b)?"
+        }
     },
     "18  Jo went for a bike ride one evening.  \nShe travelled x kilometres in 5 hours.\n\nShow that her average speed can be written as x/18 m/s. [4]": {
         "0": {
@@ -1867,7 +1930,8 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Jo went for a bike ride one evening. She travelled x kilometres in 5 hours. Show that her average speed can be written as x/18 m/s. [4]"
     },
     "10 (a) Insert one of <, > or = to make each statement true:\n\n(i) \u22125 \u2026 \u22127  \n(ii) 0.09 \u2026 0.8  \n(iii) 6\u00b2 \u2026 12  \n\n(b) Work out the value of 5\u00b2 \u00d7 10\u00b2.": {
         "0": {
@@ -2026,7 +2090,13 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "\u22125 \u2026 \u22127",
+            "a.ii": "0.09 \u2026 0.8",
+            "a.iii": "6\u00b2 \u2026 12",
+            "b": "Work out the value of 5\u00b2 \u00d7 10\u00b2."
+        }
     },
     "1\u202f(a)\u202fWrite 40\u202f:\u202f2000 as a ratio in its simplest form.  \n(a)\u202f\u2026\u2026\u2026\u202f:\u202f\u2026\u2026\u2026\u202f[2]\n\n(b)\u202fTwo people share \u00a3350 in the ratio 1\u202f:\u202f6.  \nCalculate each share.  \n(b)\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f[2]\n\n(c)\u202fFind 20% of 450.  \n(c)\u202f\u2026\u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026\u2026\u202f[2]": {
         "0": {
@@ -2170,7 +2240,12 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Write 40:2000 as a ratio in its simplest form.",
+            "b": "Two people share \u00a3350 in the ratio 1:6. Calculate each share.",
+            "c": "Find 20% of 450."
+        }
     },
     "17  Six equations are shown below, each labelled with a letter:\n\nA:  y = 6x  \nB:  x =  (1/6) y  \nC:  y =  -3/x  \nD:  x =  6/y  \nE:  y =  6x  \nF:  y =  (2 / x) + 2  \n\nChoose the correct letters to make each statement true:\n\n(a)  Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.  [1]  \n\n(b)  Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y.  [2]": {
         "0": {
@@ -2243,7 +2318,11 @@
         "question_imgs": [
             "page16.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.",
+            "b": "Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y."
+        }
     },
     "16) Leo is using these numbers to make a new number:  \n\u2022 11  \n\u2022 1  \n\u2022 3  \n\u2022 6  \n\nHe can use brackets, +, \u2013 , \u00d7 and \u00f7 as often as he wishes.  \nHe cannot use any number more than once.  \nHe cannot use powers.  \nHe cannot put numbers together (e.g., he can\u2019t use 136).  \n\nWhat is the biggest number he can make?  \nShow how he can make this number. [4]": {
         "0": {
@@ -2288,7 +2367,8 @@
         "question_imgs": [
             "page16.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "What is the biggest number he can make? Show how he can make this number."
     },
     "4  Antonio works Monday, Tuesday and Wednesday.  \n    He starts work at 4.00 pm and finishes at 10.30 pm.  \n    Antonio is paid \u00a310 per hour on weekdays.  \n\n    One week, he also works for 4 hours on Sunday.  \n    He is paid 50% more on Sundays.  \n\n    How much does Antonio earn altogether this week?  \n    You must show your working.  \n\n    \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [6]": {
         "0": {
@@ -2341,7 +2421,8 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "How much does Antonio earn altogether this week? You must show your working."
     },
     "10 The graph shows the number of ice creams sold in a shop each day against the temperature at midday that day.\n\n(a) (i) Describe the relationship between the temperature at midday and the number of ice creams sold. [1]  \n(ii) One data point is an outlier. Give a reason why this does not fit the rest of the data. [1]\n\n(b) Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was:  \n(i) 22\u00b0C [1]  \n(ii) 28\u00b0C [1]  \n(iii) Explain which of these two predictions is more reliable. [2]\n\n(c) A newspaper headline reads:  \n\u201cHigh temperatures make more people buy ice cream!\u201d\n\nDoes the graph above prove this claim? Give a reason for your decision. [2]": {
         "0": {
@@ -2661,7 +2742,15 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "Describe the relationship between the temperature at midday and the number of ice creams sold.",
+            "a.ii": "One data point is an outlier. Give a reason why this does not fit the rest of the data.",
+            "b.i": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 22\u00b0C.",
+            "b.ii": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 28\u00b0C.",
+            "b.iii": "Explain which of these two predictions is more reliable.",
+            "c": "A newspaper headline reads: 'High temperatures make more people buy ice cream!' Does the graph above prove this claim? Give a reason for your decision."
+        }
     },
     "4  Charlie, Mo and Andrzej share a flat.\n\n\u2022 Charlie pays 25% of the rent.  \n\u2022 Mo pays \u00bd of the rent.  \n\u2022 Andrzej pays \u00a3450.  \n\nHow much do they pay altogether for the rent?  \n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]": {
         "0": {
@@ -2704,7 +2793,8 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "How much do they pay altogether for the rent?"
     },
     "10  Calculate.\n\n(a)  \u221a3136  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)  \u2074\u221a625  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c)  5\u207b\u00b2  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -2797,7 +2887,12 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "\u221a3136",
+            "b": "\u2074\u221a625",
+            "c": "5\u207b\u00b2"
+        }
     },
     "5  Darren says\n\n\u201cI can run 100\u202fm in 15\u202fseconds, so I should be able to run 800\u202fm in 120\u202fseconds.\u201d\n\nDo you think that he would take more or less than 120\u202fseconds to run 800\u202fm? Explain your answer, with reference to any assumptions Darren has made.\n\n\u2026................................ because \u2026......................................................................................................\n\u2026..........................................................................................................................................................\n\u2026..........................................................................................................................................................\n\u2026.......................................................................................................................................................... [3]": {
         "0": {
@@ -2835,7 +2930,8 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Do you think that he would take more or less than 120\u202fseconds to run 800\u202fm? Explain your answer, with reference to any assumptions Darren has made."
     },
     "5  The table below shows the number of tonnes of rice produced in a year in five countries:\n\n    Country   | Rice produced (tonnes)\n    ----------------------------------\n    China     | 1.43 \u00d7 10\u2078\n    India     | 9.9 \u00d7 10\u2077\n    Vietnam   | 2.71 \u00d7 10\u2077\n    Thailand  | 2.05 \u00d7 10\u2077\n    Brazil    | 7.82 \u00d7 10\u2076\n\n(a) Which country produced the most rice?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Write 2.71 \u00d7 10\u2077 as an ordinary number.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) One tonne is equal to 1000 kilograms.  \n    Change 7.82 \u00d7 10\u2076 tonnes to kilograms.  \n    Give your answer in standard form.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 kg [2]\n\n(d) How many more tonnes of rice did India produce than Thailand?  \n    Give your answer in standard form.  \n(d) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 tonnes [2]": {
         "0": {
@@ -3016,7 +3112,13 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Which country produced the most rice?",
+            "b": "Write 2.71 \u00d7 10\u2077 as an ordinary number.",
+            "c": "One tonne is equal to 1000 kilograms. Change 7.82 \u00d7 10\u2076 tonnes to kilograms. Give your answer in standard form.",
+            "d": "How many more tonnes of rice did India produce than Thailand? Give your answer in standard form."
+        }
     },
     "14  The value of a car \u00a3V is given by  \n    V = 20\u202f000 \u00d7 0.9^t  \nwhere t is the age of the car in complete years.\n\n(a)  Write down the value of V when t = 0.  \n    (a) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)  What is the value of V when t = 3?  \n    (b) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c)  After how many complete years will the car\u2019s value drop below \u00a310\u202f000?  \n    (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -3143,7 +3245,12 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Write down the value of V when t = 0.",
+            "b": "What is the value of V when t = 3?",
+            "c": "After how many complete years will the car\u2019s value drop below \u00a310\u202f000?"
+        }
     },
     "6\u202f\u202fHere is a Venn diagram.\n\n      Dog                Cat\n      8       \u2026\u2026\u2026\u2026     \u2026\u2026\u2026\u2026\n\n30 students are asked if they have a dog or cat:\n\u2022 21 have a dog.\n\u2022 16 have a cat.\n\u2022 8 have a dog, but not a cat.\n\nComplete the Venn diagram. [3]": {
         "0": {
@@ -3185,7 +3292,8 @@
         ],
         "markscheme_imgs": [
             "page6.png"
-        ]
+        ],
+        "question_components": "Complete the Venn diagram. [3]"
     },
     "15 Kieran, Jermaine and Chris play football.  \n\u2022 Kieran has scored 8 more goals than Chris.  \n\u2022 Jermaine has scored 5 more goals than Kieran.  \n\u2022 Altogether they have scored 72 goals.  \n\nHow many goals did they each score?  \nYou must show your working.\n\nKieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nJermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nChris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\n[5]": {
         "0": {
@@ -3233,7 +3341,8 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "How many goals did they each score? You must show your working. Kieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Jermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Chris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026"
     },
     "8 (a) The product of three numbers is 312.  \nTwo of the numbers are 3 and 13.  \nWhat is the third number?\n\n(a) ____________________ [3]\n\n(b) Find three different numbers that are each  \n\u2022 a prime number  \n\u2022 two less than a square number.\n\n(b) __________  __________  __________ [3]": {
         "0": {
@@ -3340,7 +3449,11 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "The product of three numbers is 312. Two of the numbers are 3 and 13. What is the third number?",
+            "b": "Find three different numbers that are each \u2022 a prime number \u2022 two less than a square number."
+        }
     },
     "17  180 g of copper is mixed with 105 g of zinc to make an alloy.  \n    The density of copper is 9 g/cm\u00b3.  \n    The density of zinc is 7 g/cm\u00b3.  \n\n(a)  Work out the volume of copper used in the alloy.  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026. cm\u00b3  [2]  \n\n(b)  What is the density of the alloy?  \n     (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 g/cm\u00b3 [4]": {
         "0": {
@@ -3448,7 +3561,11 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Work out the volume of copper used in the alloy.",
+            "b": "What is the density of the alloy?"
+        }
     },
     "13 (a) Mia cycled 23\u202fkm, correct to the nearest km.  \nWhat is the least distance Mia could have cycled?  \n\n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 km [1]\n\n(b) A number x, rounded to one decimal place, is 4.7.  \nSo the error interval for x is given by 4.65 \u2264 x < 4.75.\n\n   (i) A number y, rounded to two decimal places, is 4.13.  \n   Write down the error interval for y.  \n\n   (b)(i) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n   (ii) A number z, rounded to two significant figures, is 4700.  \n   Write down the error interval for z.  \n\n   (b)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -3575,7 +3692,12 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "What is the least distance Mia could have cycled?",
+            "b.i": "A number y, rounded to two decimal places, is 4.13. Write down the error interval for y.",
+            "b.ii": "A number z, rounded to two significant figures, is 4700. Write down the error interval for z."
+        }
     },
     "20\u202f\u202fThe diagram shows a right-angled triangle (not to scale):\n\n    35\u00b0\n     /|\n    / |\n   /  |\n  /   | x\n /    |\n/_____|\n   4 cm\n\nCalculate x.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f [3]": {
         "0": {
@@ -3615,7 +3737,8 @@
         "question_imgs": [
             "page18.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Calculate x."
     },
     "11 Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18. [2]": {
         "0": {
@@ -3648,7 +3771,8 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18."
     },
     "9  Three friends, Ann (A), Bob (B) and Carol (C), go on holiday together.\n\n(a) They book a row of three seats on the plane.  \n    When they arrive at the plane they sit in a random order.\n\n    (i)  List all the different orders they could sit on the three seats.  \n         The first one has been done for you.\n\n         Seat 1 | Seat 2 | Seat 3  \n         A      | B      | C  \n\n         [2]\n\n    (ii) What is the probability that Ann and Carol sit next to each other?  \n         (a)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n    (iii) What is the probability that Bob sits in seat 1 with Ann next to him?  \n          (iii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Ann, Bob and Carol have a total budget of \u00a3500 to rent a holiday apartment.  \n    The apartment normally costs \u00a350 per night, but they can get a 20% discount if they book early.  \n\n    Calculate how many extra nights they can stay in the apartment if they book early.  \n    You must show your working.\n\n    (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 nights [4]": {
         "0": {
@@ -3875,7 +3999,13 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a.i": "List all the different orders they could sit on the three seats. The first one has been done for you.",
+            "a.ii": "What is the probability that Ann and Carol sit next to each other?",
+            "a.iii": "What is the probability that Bob sits in seat 1 with Ann next to him?",
+            "b": "Calculate how many extra nights they can stay in the apartment if they book early. You must show your working."
+        }
     },
     "2  Write these in order, smallest first:\n\n    0.34    1/3    3.5%\n\n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  [2]\n             smallest": {
         "0": {
@@ -3908,7 +4038,8 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Write these in order, smallest first:\n\n0.34    1/3    3.5%\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.  [2]"
     },
     "17\u202f\u202fIn this row of boxes, you start with 5 and 7.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502    \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nYou add 5 and 7 to get 12 to go in the third box.  \nYou add 7 and 12 to get 19 to go in the fourth box.  \nYou add 12 and 19 to get 31 to go in the fifth box.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502 12 \u2502 19 \u2502 31 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nComplete these rows of boxes using the rule shown above.\n\n(a)  \n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 4 \u2502 6 \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[1]\n\n(b)  \n \u250c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502    \u2502    \u2502 34 \u2502 55 \u2502\n \u2514\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(c)  Complete this row of boxes, writing your expressions in their simplest form.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 a \u2502 b \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(d)  Use your answer to (c) to help you fill in the missing numbers in this row of boxes.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 6 \u2502    \u2502    \u2502 57 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[3]": {
         "0": {
@@ -4134,7 +4265,13 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Complete these rows of boxes using the rule shown above.",
+            "b": "Complete these rows of boxes using the rule shown above.",
+            "c": "Complete this row of boxes, writing your expressions in their simplest form.",
+            "d": "Use your answer to (c) to help you fill in the missing numbers in this row of boxes."
+        }
     },
     "16\u202f\u202fAbi, Ben and Carl each drop a number of identical drawing pins, and count how many land with the pin upwards. The table shows some of their results:\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502               \u2502 Number landing \u2018pin up\u2019    \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Abi (10 pins) \u2502 4                          \u2502\n \u2502 Ben (30 pins) \u2502 9                          \u2502\n \u2502 Carl (100 pins) \u2502 35                       \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Abi says:  \n\u201cAs a drawing pin can only land with its pin up or with its pin down,  \n\u202f\u202fthe probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d  \n\nCriticise her statement.  \n[1]\n\n(b) Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.  \n[1]\n\n(c) Two pins are dropped.  \nEstimate the probability that both pins land \u2018pin up\u2019.  \n[2]": {
         "0": {
@@ -4244,7 +4381,12 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Abi says: \u201cAs a drawing pin can only land with its pin up or with its pin down, the probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d Criticise her statement.",
+            "b": "Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.",
+            "c": "Two pins are dropped. Estimate the probability that both pins land \u2018pin up\u2019."
+        }
     },
     "9\u202f\u202fThe pictogram shows how some passengers spent most of their time on a flight.\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reading        \u2502 [\u25a1][\u25a1][\u25a1]                          \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Watching films \u2502 [\u25a1][\u25a1][\u25a1][\u25e7]                        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Listening to   \u2502                                     \u2502\n\u2502 music          \u2502  (to be completed in part (c))      \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Playing games  \u2502 [\u25a1][\u25a1][\u25a1][\u25e7][\u25e7]                     \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Other          \u2502 [\u25a1][\u25e7]                              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nKey: \n[\u25a1] represents 40 people \n[\u25e7] represents 20 people (a half-square)\n\n(a) How many passengers spent most of their time playing games?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) How many more passengers spent most of their time watching films than reading?  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) There were 360\u202fpassengers on the plane.  \nComplete the pictogram for listening to music. [3]": {
         "0": {
@@ -4373,7 +4515,12 @@
         "question_imgs": [
             "page6.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "How many passengers spent most of their time playing games?",
+            "b": "How many more passengers spent most of their time watching films than reading?",
+            "c": "There were 360\u202fpassengers on the plane. Complete the pictogram for listening to music."
+        }
     },
     "18 Amin is attempting to solve the following equation:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\nHis incorrect solution is shown below:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\n  Step 1:  x\u00b2 + 4x + x + 4 = x\u00b2 \u2013 3x \u2013 2x + 6  \n  Step 2:  x\u00b2 + 5x + 4 = x\u00b2 \u2013 x + 6  \n  Step 3:  5x + 4 = \u2013x + 6  \n  Step 4:  6x + 4 = 6  \n  Step 5:  6x = 2  \n  Step 6:  x = 1/3  \n\n(a) Identify the step in which Amin made his first error and explain why this step is incorrect.\n\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................ [2]\n\n(b) Write out a correct solution to the equation. [2]": {
         "0": {
@@ -4457,7 +4604,11 @@
             12
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Identify the step in which Amin made his first error and explain why this step is incorrect.",
+            "b": "Write out a correct solution to the equation."
+        }
     },
     "14\u202f(a) Here is a coordinate grid:\n\n     8 |          \n       |          \n     7 |          \n       |          \n     6 |     \u250c\u2500\u2500\u2500 \n       |     \u2502 S  \n     5 |     \u2514\u2500\u2500\u2500 \n       |          \n     4 |          \n       |          \n     3 |          \n       |          \n     2 |               \u250c\u2500\u2500\u2500\n       |               \u2502 T \n     1 |               \u2514\u2500\u2500\u2500\n       |\n     0 |________________________________\n         0  1  2  3  4  5  6  7  8\n\nShape S is translated to Shape T using the vector  \n   ( p )  \n   ( q ).  \n\nWrite down the values of p and q.\n\n(a) p = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n    q = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [2]\n\n(b) Vectors a, b, c, d, and e are drawn on an isometric grid:\n\n           b\n           \n      a            d\n           \n           e\n   \n                    c\n\nWrite each of the vectors c, d, and e in terms of a and/or b.\n\nc = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nd = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \ne = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [3]": {
         "0": {
@@ -4552,7 +4703,11 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Write down the values of p and q.",
+            "b": "Write each of the vectors c, d, and e in terms of a and/or b."
+        }
     },
     "9\u202f\u202fThese prisms have different shapes as end faces.\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502 Shape of end face     \u2502 Number of faces     \u2502 Number of edges     \u2502 Number of vertices  \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Triangle (3 sides)    \u2502 5                   \u2502 9                   \u2502 6                   \u2502\n \u2502 Rectangle (4 sides)   \u2502 \u2026                   \u2502 \u2026                   \u2502 8                   \u2502\n \u2502 Pentagon (5 sides)    \u2502 \u2026                   \u2502 15                  \u2502 10                  \u2502\n \u2502 Hexagon (6 sides)     \u2502 8                   \u2502 18                  \u2502 \u2026                   \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Complete this table.\u202f\u202f\u202f\u202f[2]\n\n(b) How many edges and vertices does a prism with a 100\u2011sided end face have?  \n   (b) edges \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n       vertices \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n(c) F is the number of faces in a prism.  \n   N is the number of sides of its end face.  \n   Write down a formula connecting F and N.  \n   (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n\u00a9\u202fOCR\u202f2024\u202fJ560/02\u202f\u202f\u202fTurn\u202fover": {
         "0": {
@@ -4697,7 +4852,12 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Complete this table.",
+            "b": "How many edges and vertices does a prism with a 100\u2011sided end face have?",
+            "c": "F is the number of faces in a prism. N is the number of sides of its end face. Write down a formula connecting F and N."
+        }
     },
     "7  Here are six numbers:\n\n5   8   9   15   22   54\n\nFrom these numbers, find a number that is\n\n(a) a multiple of two and a multiple of three,  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) a factor of 30 and a factor of 40.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -4768,7 +4928,11 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "a multiple of two and a multiple of three",
+            "b": "a factor of 30 and a factor of 40"
+        }
     },
     "8  The diagram shows a triangle (not to scale):\n\n       /\\\n      /  \\\n     /    \\\n    /      \\\n   /________\\\n\n\u2022 The angle at the bottom left corner is 40\u00b0.  \n\u2022 The angle at the bottom right corner is x.  \n\u2022 The two equal\u2011length sides are indicated by matching markings.  \n\nFind the value of x.  \nGive a reason for each step of your working.  \n\nx = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0  [3]": {
         "0": {
@@ -4806,7 +4970,8 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Find the value of x. Give a reason for each step of your working. x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0 [3]"
     },
     "19  \nThe perimeter of the triangle is the same length as the perimeter of the square.  \nThe triangle\u2019s sides are 4a \u2212 1, a + 2, and 3a + 3.  \n\nFind an expression for the length of one side of the square in terms of a.  \nGive your answer in its simplest form.  \n\n[4]": {
         "0": {
@@ -4851,7 +5016,8 @@
         "question_imgs": [
             "page19.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Find an expression for the length of one side of the square in terms of a. Give your answer in its simplest form."
     },
     "19. Peter makes a large amount of pink paint by mixing red and white paint in the ratio 2 : 3.\n\n   \u2022 Red paint costs \u00a380 per 10 litres.  \n   \u2022 White paint costs \u00a35 per 10 litres.  \n   \u2022 Peter sells his pink paint in 10-litre tins for \u00a360 per tin.\n\nCalculate how much profit he makes for each tin he sells.  \nYou must show your working.\n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [5]": {
         "0": {
@@ -4899,7 +5065,8 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Calculate how much profit he makes for each tin he sells. You must show your working."
     },
     "7  PQRS is a rectangle.  \n   A, B, C and D are points on SP, PQ, QR and RS respectively.  \n   AC is the line of symmetry for the diagram.  \n\n(a) Angle ABC = 125\u00b0.  \n    Write down the size of angle ADC.  \n\n    Angle ADC = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [1]\n\n(b) AP is the same length as PB.  \n    Work out the size of angle BCD.  \n    You must show your working.  \n\n    Angle BCD = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [4]": {
         "0": {
@@ -4996,7 +5163,11 @@
         "question_imgs": [
             "page8.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Angle ABC = 125\u00b0. Write down the size of angle ADC. Angle ADC = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [1]",
+            "b": "AP is the same length as PB. Work out the size of angle BCD. You must show your working. Angle BCD = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [4]"
+        }
     },
     "21. Louise travels to work and home again by train.  \n\u2022 The probability that her train to work is late is 0.7.  \n\u2022 The probability that her train home is late is 0.4.  \n\nWhat is the probability that at least one of her trains is late?": {
         "0": {
@@ -5039,7 +5210,8 @@
             14
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "What is the probability that at least one of her trains is late?"
     },
     "5. This shape is made from three congruent right-angled triangles (not to scale):\n\n         /\\\n        /  \\\n       /    \\\n      /      \\\n     /        \\\n    /__________\\\n\n    8 cm       4 cm\n\nFind the total area of the shape.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u00b2  [3]": {
         "0": {
@@ -5079,7 +5251,8 @@
         "question_imgs": [
             "page4.png"
         ],
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "Find the total area of the shape. \u2026\u2026\u2026\u2026 cm\u00b2 [3]"
     },
     "7\u202f(a)\u202fWrite numbers in the boxes below to make the statement true:\n\n\u200315\u202f\u00d7\u202f20 = 5\u202f\u00d7\u202f[\u2009\u2009] = 6\u202f\u00d7\u202f[\u2009\u2009]\n\n\u2003[2]\n\n(b)\u202fAngus thinks of a number.  \n\u2003If he cubes his number and then adds 9, he gets 17.  \n\u2003What number is he thinking of?\n\n\u2003[2]": {
         "0": {
@@ -5162,7 +5335,11 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Write numbers in the boxes below to make the statement true:\n15 \u00d7 20 = 5 \u00d7 [ ] = 6 \u00d7 [ ]",
+            "b": "Angus thinks of a number. If he cubes his number and then adds 9, he gets 17. What number is he thinking of?"
+        }
     },
     "15  Sam and two friends put letters in envelopes on Monday.  \n    The three of them take two hours to put 600 letters in envelopes.\n\n(a)  On Tuesday Sam has three friends helping.  \n     Working at the same rate, how many letters should the four of them  \n     be able to put in envelopes in two hours?  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b)  Working at the same rate, how much longer would it take four people  \n     to put 1000 letters in envelopes than it would take five people?  \n     (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]\n\n(c)  Sam says:  \n     \u201cIt took two hours for three people to put 600 letters in envelopes.  \n      If I assume they work all day, then in one day three people will put  \n      7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d  \n\n     Why is Sam\u2019s assumption not reasonable?  \n     What effect has Sam\u2019s assumption had on her answer?  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -5341,7 +5518,12 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "On Tuesday Sam has three friends helping. Working at the same rate, how many letters should the four of them be able to put in envelopes in two hours?",
+            "b": "Working at the same rate, how much longer would it take four people to put 1000 letters in envelopes than it would take five people?",
+            "c": "Sam says: \u201cIt took two hours for three people to put 600 letters in envelopes. If I assume they work all day, then in one day three people will put 7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d Why is Sam\u2019s assumption not reasonable? What effect has Sam\u2019s assumption had on her answer?"
+        }
     },
     "2  A tin contains four different types of sweet. A sweet is taken from the tin at random.  \n   The table below shows some of the probabilities of taking each type of sweet:\n\n       Sweet    | Probability\n       -----------------------\n       Toffee   |    0.4\n       Fudge    |    0.2\n       Jelly    |    0.3\n       Mint     |     ?\n\n(a) Complete the table. [2]\n\n(b) What is the probability that a toffee or a mint is taken from the tin? [2]": {
         "0": {
@@ -5424,7 +5606,11 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Complete the table.",
+            "b": "What is the probability that a toffee or a mint is taken from the tin?"
+        }
     },
     "13\u202f\u202fEva\u2019s camera takes photos with width and height in the ratio 3\u202f:\u202f2.  \nPhotos can be printed in the following sizes:  \n\u2022\u202f20\u202fcm by 16\u202fcm  \n\u2022\u202f14\u202fcm by 10\u202fcm  \n\u2022\u202f24\u202fcm by 16\u202fcm  \n\u2022\u202f12\u202fcm by 8\u202fcm  \n\nEva says:  \n\u201cOnly two of these sizes have the same ratio as my photos!\u201d  \n\n(a)\u202fWhich sizes have the same ratio as her photos?\u202f\u202f[2]  \n\n(b)\u202fEva has a display board measuring 45\u202fcm by 60\u202fcm. She wants to display postcards, each measuring 9\u202fcm by 6\u202fcm.  \nIf no postcards overlap, find the maximum number of postcards she can display on the board.\u202f\u202f[3]": {
         "0": {
@@ -5520,7 +5706,11 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "Which sizes have the same ratio as her photos?",
+            "b": "Eva has a display board measuring 45 cm by 60 cm. She wants to display postcards, each measuring 9 cm by 6 cm. If no postcards overlap, find the maximum number of postcards she can display on the board."
+        }
     },
     "6  Jo makes a pendant from a rectangular piece of silver.\n\n(a)  The rectangle measures 8\u202fcm by 5\u202fcm.  \n     Work out the area of this rectangle.  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fcm\u00b2  [1]\n\n(b)  To complete the pendant, Jo cuts two semicircles of radius 1\u202fcm from the rectangle, as shown below:\n\n     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n     \u2502       \u250c\u2500\u2500\u2500\u2510       \u2502  8\u202fcm\n     \u2502       \u2502   \u2502       \u2502\n     \u2502       \u2514\u2500\u2500\u2500\u2518       \u2502\n     \u2502                   \u2502 \n     \u2502       \u250c\u2500\u2500\u2500\u2510       \u2502\n     \u2502       \u2502   \u2502       \u2502\n     \u2502       \u2514\u2500\u2500\u2500\u2518       \u2502\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                5\u202fcm  \n\n     Show that the shaded area is 36.9\u202fcm\u00b2 correct to three significant figures.  \n     [4]\n\n(c)  The silver Jo uses is 2\u202fmm thick.  \n     Find the volume of silver in the pendant. Give your answer in\u202fcm\u00b3.  \n     (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fcm\u00b3  [3]": {
         "0": {
@@ -5699,7 +5889,12 @@
             8
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "The rectangle measures 8\u202fcm by 5\u202fcm. Work out the area of this rectangle.",
+            "b": "Show that the shaded area is 36.9\u202fcm\u00b2 correct to three significant figures.",
+            "c": "The silver Jo uses is 2\u202fmm thick. Find the volume of silver in the pendant. Give your answer in\u202fcm\u00b3."
+        }
     },
     "12 Shinya\u2019s internet service provider gives him a graph of his internet usage in the first part of February:\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Internet usage (Gigabytes downloaded)\n14 \u2524        \u00d7\u2500\u2500\u2500\u00d7\u2500\u2500\u2500\u00d7\u2500\n12 \u2524       \u00d7         \\\n10 \u2524      \u00d7           \u00d7\n 8 \u2524     \u00d7             \\\n 6 \u2524    \u00d7               \u00d7\n 5 \u2524   \u00d7                \n 4 \u2524                   \n 3 \u2524                     \n 2 \u2524                       \n 1 \u2524                         \n 0 \u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  Days in February\n\nState two reasons why this graph is misleading.\n\n1 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n2 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n\n[2]": {
         "0": {
@@ -5732,7 +5927,8 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": "State two reasons why this graph is misleading."
     },
     "11 Ema has done some calculations.\n\nFor each calculation, explain how you know the answer is wrong without working out the correct answer.\n\n(a) 0.38 \u00d7 0.26 = 0.827\n\n(b) \u00be + \u00b2/\u2083 = \u2075/\u2087": {
         "0": {
@@ -5791,6 +5987,10 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null
+        "markscheme_imgs": null,
+        "question_components": {
+            "a": "0.38 \u00d7 0.26 = 0.827",
+            "b": "\u00be + \u00b2/\u2083 = \u2075/\u2087"
+        }
     }
 }
