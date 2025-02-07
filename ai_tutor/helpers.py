@@ -153,6 +153,7 @@ def load_questions_and_answers():
                     "subject": subject,
                     "paper_id": paper_id,
                     "question_num": question_num,
+                    "question_components": question["question-components"],
                     "question_pages": question["pages"],
                     "markscheme_pages": ans_n_marks["pages"],
                     "answer": markscheme_components,

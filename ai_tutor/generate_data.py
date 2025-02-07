@@ -118,6 +118,7 @@ def generate_question(question, data, idx):
     targets["subject"] = data["subject"]
     targets["paper_id"] = data["paper_id"]
     targets["question_num"] = int(data["question_num"])
+    targets["question_components"] = data["question_components"]
     targets["markscheme"] = data["answer"]
     targets["available_marks"] = int(data["marks"]["total"])
     targets["mark_breakdown"] = data["marks"]
