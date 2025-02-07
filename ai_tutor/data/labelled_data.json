@@ -23,6 +23,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 3,
+        "question_components": "Colin drinks \u00b3/\u2088 of a litre of milk each day. Milk costs 89p for a 2-litre carton and 49p for a 1-litre carton. What is the smallest amount that Colin would have to spend to buy milk for one week? Show your working. \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
         "markscheme": "Answer: \u00a31.38 with working shown (3 marks)\n\nPart marks and guidance:\n\u2022 Condone 138p\n\u2022 M1 for 7 \u00d7 3/8\n\u2022 M1 for 89p + 49p or 3 \u00d7 49p or 2 \u00d7 49p > 89p\n\u2022 OR B1 for \u00a31.38 without working",
         "available_marks": 3,
         "mark_breakdown": {
@@ -35,8 +36,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Colin drinks \u00b3/\u2088 of a litre of milk each day. Milk costs 89p for a 2-litre carton and 49p for a 1-litre carton. What is the smallest amount that Colin would have to spend to buy milk for one week? Show your working. \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026"
+        "markscheme_imgs": null
     },
     "15\u202f\u202fIn the diagram below (not to scale), AE and BD are straight lines, with right angles at B and D:\n\n   A\n    \\\n     \\\n      B\u2500\u2500\u2500\u2500C\u2500\u2500\u2500\u2500D\n             \\\n              \\\n               E\n\n(a)  Show that triangles ABC and EDC are similar.  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2003\u2003\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]\n\n(b)  The length DE is 3.5\u202fm.  \n     The ratio BC\u202f:\u202fCD\u202f=\u202f3\u202f:\u202f1.  \n\n     Find the length AB.\n\n     (b)\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fm\u202f[2]": {
         "0": {
@@ -114,6 +114,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 15,
+        "question_components": {
+            "a": "Show that triangles ABC and EDC are similar.",
+            "b": "The length DE is 3.5\u202fm. The ratio BC\u202f:\u202fCD\u202f=\u202f3\u202f:\u202f1. Find the length AB."
+        },
         "markscheme": {
             "a": "\u2022 Angles at B and D are right angles (1 mark)\n\u2022 Angles ACB and ECD are vertically opposite oe (1 mark)\n\u2022 Three equal angles (angle sum of a triangle), hence triangles are similar oe (1 mark)",
             "b": "\u2022 10.5 (2 marks)\n\u2022 M1 for 3.5 \u00d7 3 oe"
@@ -133,11 +137,7 @@
         "question_imgs": [
             "page15.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Show that triangles ABC and EDC are similar.",
-            "b": "The length DE is 3.5\u202fm. The ratio BC\u202f:\u202fCD\u202f=\u202f3\u202f:\u202f1. Find the length AB."
-        }
+        "markscheme_imgs": null
     },
     "18 (a) (i) Solve:  \n5x + 1 > x + 13  \n\n(a)(i) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]\n\n(ii) Write down the largest integer that satisfies 5x \u2013 1 < 10.  \n\n(a)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Solve:  \n3x\u00b2 = 75  \n\n(b) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c) Solve the simultaneous equations:  \n4x + 3y = 5  \n2x + 3y = 1  \n\n(c) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n    y = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]": {
         "0": {
@@ -363,6 +363,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 18,
+        "question_components": {
+            "a.i": "Solve: 5x + 1 > x + 13",
+            "a.ii": "Write down the largest integer that satisfies 5x \u2013 1 < 10.",
+            "b": "Solve: 3x\u00b2 = 75",
+            "c": "Solve the simultaneous equations: 4x + 3y = 5 and 2x + 3y = 1"
+        },
         "markscheme": {
             "a.i": "Answer: x > 3\nMarks: 3\nM1 for 4x soi\nM1 for 12 soi",
             "a.ii": "Answer: 2\nMarks: 1",
@@ -384,13 +390,7 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "Solve: 5x + 1 > x + 13",
-            "a.ii": "Write down the largest integer that satisfies 5x \u2013 1 < 10.",
-            "b": "Solve: 3x\u00b2 = 75",
-            "c": "Solve the simultaneous equations: 4x + 3y = 5 and 2x + 3y = 1"
-        }
+        "markscheme_imgs": null
     },
     "19\u202fHere are the interest rates for two accounts:\n\nAccount A  \nInterest: 3% per year compound interest.  \nNo withdrawals until the end of three years.  \n\nAccount B  \nInterest: 4% for the first year, 3% for the second year, and 2% for the third year.  \nWithdrawals allowed at any time.  \n\nDerrick has \u00a310\u202f000 he wants to invest.  \n\n(a) Calculate which account would give him most money if he invests his money for 3 years.  \n    Give the difference in the interest to the nearest penny.  \n    You must show your working.  \n\n    (a) Account \u2026\u2026\u2026\u2026\u2026\u2026 by \u2026\u2026\u2026\u2026\u2026\u2026 p\u202f[5]  \n\n(b) Explain why he might not want to use Account A.  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202f[1]": {
         "0": {
@@ -480,6 +480,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 19,
+        "question_components": {
+            "a": "Calculate which account would give him most money if he invests his money for 3 years. Give the difference in the interest to the nearest penny. You must show your working.",
+            "b": "Explain why he might not want to use Account A."
+        },
         "markscheme": {
             "a": "(Account) A (by) 103[p] with correct working (5 marks)\n\n\"Correct working\" requires evidence of at M2M2\n\nM2 for [10\u202f000 \u00d7] 1.03\u00b3 implied by 10\u202f927.27\n   or M1 for 10\u202f300 and 10\u202f609\n\nAND\n\nM2 for [10\u202f000 \u00d7] 1.04 \u00d7 1.03 \u00d7 1.02 implied by 10\u202f926.24\n   or M1 for 10\u202f400 and 10\u202f712\n\nIf 0, 1 or 2 scored, instead award SC3 for A by 103[p] with no working or insufficient working",
             "b": "He may not want to leave it there for 3 years (1 mark)\n\nAccept any valid reason"
@@ -497,11 +501,7 @@
             14
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Calculate which account would give him most money if he invests his money for 3 years. Give the difference in the interest to the nearest penny. You must show your working.",
-            "b": "Explain why he might not want to use Account A."
-        }
+        "markscheme_imgs": null
     },
     "8 (a) The nth term of a sequence is given by 3n + 5.  \nExplain why 21 is not a term in this sequence.  \n[2]\n\n(b) Here are the first three terms in a sequence:  \n1   2   4  \n\nThis sequence can be continued in different ways.\n\n(i) Find one rule for continuing the sequence and give the next two terms.  \n    Rule 1 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n    Next two terms \u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026  \n    [2]\n\n(ii) Find a second rule for continuing the sequence and give the next two terms.  \n     Rule 2 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n     Next two terms \u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026  \n     [2]": {
         "0": {
@@ -626,6 +626,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 8,
+        "question_components": {
+            "a": "The nth term of a sequence is given by 3n + 5. Explain why 21 is not a term in this sequence.",
+            "b.i": "Find one rule for continuing the sequence and give the next two terms.",
+            "b.ii": "Find a second rule for continuing the sequence and give the next two terms."
+        },
         "markscheme": {
             "a": "(2 marks)\nAnswer: (21\u22125)/3 is not an integer.\n\u2022 M1 awarded for showing (21\u22125)/3 or for identifying 20 and 23.\n",
             "b.i": "(2 marks)\n\u2022 Award 1 mark for any valid rule.\n\u2022 Award 1 mark for the correct next two terms, following that rule.\nExamples:\n\u2013 \u201cAdd one more to the difference each time\u201d: next terms 7, 11\n\u2013 \u201cDoubling\u201d: next terms 8, 16\n",
@@ -646,12 +651,7 @@
             9
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "The nth term of a sequence is given by 3n + 5. Explain why 21 is not a term in this sequence.",
-            "b.i": "Find one rule for continuing the sequence and give the next two terms.",
-            "b.ii": "Find a second rule for continuing the sequence and give the next two terms."
-        }
+        "markscheme_imgs": null
     },
     "1 (a) Work out:  \n    4 \u00d7 2 \u2212 1  \n    (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n  (b) Find \u00bc of 16.  \n    (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -693,6 +693,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 1,
+        "question_components": {
+            "a": "Work out: 4 \u00d7 2 \u2212 1",
+            "b": "Find \u00bc of 16."
+        },
         "markscheme": {
             "a": "Answer: 7\nMarks: 1",
             "b": "Answer: 4\nMarks: 1"
@@ -710,11 +714,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Work out: 4 \u00d7 2 \u2212 1",
-            "b": "Find \u00bc of 16."
-        }
+        "markscheme_imgs": null
     },
     "6 (a) A square has an area of 100 cm\u00b2.  \nFind its perimeter.  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f[2]  \n\n(b) The area of the parallelogram is three times the area of the triangle.  \n\n      Not to scale\n\n       8\u202fcm    \n        /|  \n       / |  \n      /  |  \n     6\u202fcm  \n\n           h  \n     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2502              \u2502\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518  \n             18\u202fcm  \n\nShow that the perpendicular height h of the parallelogram is 4\u202fcm. [4]": {
         "0": {
@@ -804,6 +804,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 6,
+        "question_components": {
+            "a": "A square has an area of 100 cm\u00b2. Find its perimeter.",
+            "b": "The area of the parallelogram is three times the area of the triangle. Show that the perpendicular height h of the parallelogram is 4\u202fcm."
+        },
         "markscheme": {
             "a": "Answer: 40 (cm)\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 4 \u00d7 their \u221a100",
             "b": "Answer: Correct working leading to 4 cm\nMarks: 4\nPart marks and guidance:\n\u2022 B1 for area of triangle is 24\n\u2022 B1 for their \u201824\u2019 \u00d7 3\n\u2022 B1 for their \u201872\u2019 \u00f7 18\n\u2022 or area of parallelogram = 18h"
@@ -821,11 +825,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "A square has an area of 100 cm\u00b2. Find its perimeter.",
-            "b": "The area of the parallelogram is three times the area of the triangle. Show that the perpendicular height h of the parallelogram is 4\u202fcm."
-        }
+        "markscheme_imgs": null
     },
     "1\u202f(a)\u2003Solve.\n\n\u2003(i)\u20032x\u202f=\u202f18  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n\u2003(ii)\u2003x\u202f+\u202f2\u202f=\u202f5  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n\u2003(iii)\u2003x\u202f/\u202f3\u202f=\u202f15  \n\u2003\u2003\u2003x\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)\u2003(i)\u2003Find the value of t when g\u202f=\u202f4 and h\u202f=\u202f7.  \n\u2003\u2003\u2003t\u202f=\u202f12g\u202f\u2212\u202f5h  \n\u2003\u2003\u2003t\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n\u2003(ii)\u2003Rearrange to make r the subject.  \n\u2003\u2003\u20034r\u202f\u2212\u202fp\u202f=\u202fq  \n\u2003\u2003\u2003r\u202f=\u202f\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -1047,6 +1047,13 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 1,
+        "question_components": {
+            "a.i": "2x = 18\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "a.ii": "x + 2 = 5\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "a.iii": "x / 3 = 15\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
+            "b.i": "Find the value of t when g=4 and h=7.\nt = 12g - 5h\nt = \u2026\u2026\u2026\u2026\u2026 [2]",
+            "b.ii": "Rearrange to make r the subject.\n4r - p = q\nr = \u2026\u2026\u2026\u2026\u2026 [2]"
+        },
         "markscheme": {
             "a.i": "Answer: 9\nMarks: 1",
             "a.ii": "Answer: 3\nMarks: 1",
@@ -1070,14 +1077,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "2x = 18\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
-            "a.ii": "x + 2 = 5\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
-            "a.iii": "x / 3 = 15\nx = \u2026\u2026\u2026\u2026\u2026 [1]",
-            "b.i": "Find the value of t when g=4 and h=7.\nt = 12g - 5h\nt = \u2026\u2026\u2026\u2026\u2026 [2]",
-            "b.ii": "Rearrange to make r the subject.\n4r - p = q\nr = \u2026\u2026\u2026\u2026\u2026 [2]"
-        }
+        "markscheme_imgs": null
     },
     "12 (a) Solve:  \n     5x = 2x + 18  \n     (a) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]  \n\n   (b) Solve by factorising:  \n     x\u00b2 + 8x + 15 = 0  \n     (b) x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [3]": {
         "0": {
@@ -1155,6 +1155,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 12,
+        "question_components": {
+            "a": "Solve: 5x = 2x + 18",
+            "b": "Solve by factorising: x\u00b2 + 8x + 15 = 0"
+        },
         "markscheme": {
             "a": "Answer: 6\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 3x = 18",
             "b": "Answer: -3, -5\nMarks: 3\nPart marks and guidance:\n\u2022 M2 for (x + 3)(x + 5) seen or implied in table\n  Or\n\u2022 M1 for (x \u00b1 3)(x \u00b1 5) seen or pair of factors giving two correct terms seen or implied in table\n  And\n\u2022 B1 for correct solutions FT their quadratic factors"
@@ -1173,11 +1177,7 @@
             9
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Solve: 5x = 2x + 18",
-            "b": "Solve by factorising: x\u00b2 + 8x + 15 = 0"
-        }
+        "markscheme_imgs": null
     },
     "11\u202f(a) A shop sold goods worth a total of \u00a350\u202f000 in January.  \nThe value of goods sold in February was 10% lower than in January.  \n\nCalculate the value of goods sold in February.  \n(a) \u00a3\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b) Each month, the value of goods sold continued to be 10% lower than the previous month.  \nWhen the value of goods sold was less than \u00a335\u202f000, the shop closed at the end of that month.  \n\nShow that the store closed at the end of May. [3]\n\n(c) The store reopens under new management and sells goods worth \u00a3100\u202f000 in the first month.  \n\u2022\u202fThe value of goods sold in the second month is 20% more than the first month.  \n\u2022\u202fThe value of goods sold in the third month is 10% less than the second month.  \n\nFind the percentage increase in the total value of goods sold from the first month to the third month.  \nYou must show your working.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202f% [5]": {
         "0": {
@@ -1370,6 +1370,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 11,
+        "question_components": {
+            "a": "Calculate the value of goods sold in February.",
+            "b": "Show that the store closed at the end of May.",
+            "c": "Find the percentage increase in the total value of goods sold from the first month to the third month. You must show your working."
+        },
         "markscheme": {
             "a": "45\u202f000 (2 marks)\nM1 for 50\u202f000 \u00d7 0.9 soi or 50\u202f000 \u2013 5\u202f000",
             "b": "Total value of goods sold in May was \u00a332\u202f805, which is less than \u00a335\u202f000 (3 marks)\nM2 for 50\u202f000 (or 45\u202f000) \u00d7 0.9 used three times (or two times) soi or decreasing by 10% three times\nOr\nM1 for 45\u202f000 \u00d7 0.9 or 45\u202f000 \u2013 4\u202f500 (implied by 40\u202f500)",
@@ -1391,12 +1396,7 @@
             8
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Calculate the value of goods sold in February.",
-            "b": "Show that the store closed at the end of May.",
-            "c": "Find the percentage increase in the total value of goods sold from the first month to the third month. You must show your working."
-        }
+        "markscheme_imgs": null
     },
     "14\u202f\u202fThis frequency diagram summarises the number of minutes Astrid\u2019s train was late over the last 50 days:\n\n(Frequency axis from 0 to 20, with bars for 1, 2, 3, and 4 minutes late summing to 50 days in total.)\n\n(a)\u202f\u202fUse information from this diagram to estimate the probability that her train will be 4 minutes late tomorrow.  \n(a)\u202f\u202f\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b)\u202f\u202fExplain whether your answer to part (a) gives a reliable probability.  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -1450,6 +1450,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 14,
+        "question_components": {
+            "a": "Use information from this diagram to estimate the probability that her train will be 4 minutes late tomorrow.",
+            "b": "Explain whether your answer to part (a) gives a reliable probability."
+        },
         "markscheme": {
             "a": "Answer: 8/50 (or equivalent)\nMarks: 2\nPart marks and guidance: B1 for n/50",
             "b": "Answer: Any comment with valid reason\nMarks: 1"
@@ -1467,11 +1471,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Use information from this diagram to estimate the probability that her train will be 4 minutes late tomorrow.",
-            "b": "Explain whether your answer to part (a) gives a reliable probability."
-        }
+        "markscheme_imgs": null
     },
     "3 Peter says:  \n\"The sum of an odd number and an even number is even.\"  \n\nThe example 3 + 4 = 7 shows that Peter is not correct.  \n\nWrite an example to show that each of these statements is not correct:  \n\n(a) The sum of two prime numbers is always odd.  \n................................................................................................................................. [1]\n\n(b) Squaring a whole number always results in an even number.  \n................................................................................................................................. [1]": {
         "0": {
@@ -1513,6 +1513,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 3,
+        "question_components": {
+            "a": "The sum of two prime numbers is always odd.",
+            "b": "Squaring a whole number always results in an even number."
+        },
         "markscheme": {
             "a": "Any two odd primes added correctly (1 mark). Example: 3 + 5 = 8",
             "b": "An odd integer squared with correct result (1 mark). Example: 5\u00b2 = 25"
@@ -1530,11 +1534,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "The sum of two prime numbers is always odd.",
-            "b": "Squaring a whole number always results in an even number."
-        }
+        "markscheme_imgs": null
     },
     "4  An unbiased spinner is shown below.\n\n(a)  Write a number to make each sentence true.\n\n   (i)   It is even that the spinner will land on number _______.   [1]\n\n   (ii)  There is a probability of 1/6 that the spinner will land on number _______.   [1]\n\n   (iii) It is impossible that the spinner will land on number _______.   [1]\n\n(b)  The spinner below has the following properties:\n   \u2022 There are eight equal sections, each showing one number.\n   \u2022 There are three different numbers on the spinner.\n   \u2022 The probability of the spinner landing on an even number is greater than the probability of it landing on an odd number.\n   \u2022 It is more likely that the spinner will land on a 6 than either of the other numbers.\n\n   Complete the spinner to show one possible arrangement of numbers.   [3]": {
         "0": {
@@ -1694,6 +1694,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 4,
+        "question_components": {
+            "a.i": "It is even that the spinner will land on number _______.",
+            "a.ii": "There is a probability of 1/6 that the spinner will land on number _______.",
+            "a.iii": "It is impossible that the spinner will land on number _______.",
+            "b": "Complete the spinner to show one possible arrangement of numbers."
+        },
         "markscheme": {
             "a.i": "Answer: 5\nMarks: 1",
             "a.ii": "Answer: 1\nMarks: 1",
@@ -1715,13 +1721,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "It is even that the spinner will land on number _______.",
-            "a.ii": "There is a probability of 1/6 that the spinner will land on number _______.",
-            "a.iii": "It is impossible that the spinner will land on number _______.",
-            "b": "Complete the spinner to show one possible arrangement of numbers."
-        }
+        "markscheme_imgs": null
     },
     "3 (a) How many 20p coins would you need to make up \u00a37000?  \n\u2003\u2003(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b) Each 20p coin weighs 5 g.  \n\u2003Lizzie says:  \n\u2003\u201cI can lift \u00a37000 worth of 20p coins.\u201d  \n\nIs Lizzie\u2019s claim reasonable?  \nShow your working and state any assumptions you have made.  \n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 because \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]\n\n(c) How have any assumptions you have made affected your answer to part (b)?  \n\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -1863,6 +1863,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 3,
+        "question_components": {
+            "a": "How many 20p coins would you need to make up \u00a37000?",
+            "b": "Is Lizzie\u2019s claim reasonable? Show your working and state any assumptions you have made.",
+            "c": "How have any assumptions you have made affected your answer to part (b)?"
+        },
         "markscheme": {
             "a": "Answer: 35\u202f000\n\nMarks: 2\n\u2022 M1 for 7000 \u00d7 5 or equivalent",
             "b": "Answer: No, following correct working and estimates\n\nMarks: 4\n\u2022 M2 for (their \u201835\u202f000\u2019 \u00d7 5) \u00f7 1000 or M1 for their \u201835\u202f000\u2019 \u00d7 5\n\u2022 \u2018No\u2019 may be implied by seeing the mass of coins and an estimate of carry weight\n\u2022 B1 for a valid estimate of weight a person can carry (5\u202fkg\u201375\u202fkg). Accept any valid alternate argument\n\u2022 Allow estimates for their \u201835\u202f000\u2019",
@@ -1882,12 +1887,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "How many 20p coins would you need to make up \u00a37000?",
-            "b": "Is Lizzie\u2019s claim reasonable? Show your working and state any assumptions you have made.",
-            "c": "How have any assumptions you have made affected your answer to part (b)?"
-        }
+        "markscheme_imgs": null
     },
     "18  Jo went for a bike ride one evening.  \nShe travelled x kilometres in 5 hours.\n\nShow that her average speed can be written as x/18 m/s. [4]": {
         "0": {
@@ -1918,6 +1918,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 18,
+        "question_components": "Jo went for a bike ride one evening. She travelled x kilometres in 5 hours. Show that her average speed can be written as x/18 m/s. [4]",
         "markscheme": "Marks: 4\n\nAnswer:\n\u2022 Average speed = Distance \u00f7 Time = x/5 km/h\n\u2022 Converting to metres per second: 1000x \u00f7 (60\u00b2 \u00d7 5) = x/18 m/s\n\nPart marks and guidance:\n\u2022 B1 for x km = 1000x m\n\u2022 B1 for 5 hours = 60\u00b2 \u00d7 5 s (i.e. 18 000 s)\n\u2022 B1 for working to given answer without intermediate expression or statement of formula",
         "available_marks": 4,
         "mark_breakdown": {
@@ -1930,8 +1931,7 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Jo went for a bike ride one evening. She travelled x kilometres in 5 hours. Show that her average speed can be written as x/18 m/s. [4]"
+        "markscheme_imgs": null
     },
     "10 (a) Insert one of <, > or = to make each statement true:\n\n(i) \u22125 \u2026 \u22127  \n(ii) 0.09 \u2026 0.8  \n(iii) 6\u00b2 \u2026 12  \n\n(b) Work out the value of 5\u00b2 \u00d7 10\u00b2.": {
         "0": {
@@ -2069,6 +2069,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 10,
+        "question_components": {
+            "a.i": "\u22125 \u2026 \u22127",
+            "a.ii": "0.09 \u2026 0.8",
+            "a.iii": "6\u00b2 \u2026 12",
+            "b": "Work out the value of 5\u00b2 \u00d7 10\u00b2."
+        },
         "markscheme": {
             "a.i": "Answer: >\nMarks: 1\nGuidance: (no further notes beyond assessment objectives, which are omitted)",
             "a.ii": "Answer: <\nMarks: 1\nGuidance: (no further notes beyond assessment objectives, which are omitted)",
@@ -2090,13 +2096,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "\u22125 \u2026 \u22127",
-            "a.ii": "0.09 \u2026 0.8",
-            "a.iii": "6\u00b2 \u2026 12",
-            "b": "Work out the value of 5\u00b2 \u00d7 10\u00b2."
-        }
+        "markscheme_imgs": null
     },
     "1\u202f(a)\u202fWrite 40\u202f:\u202f2000 as a ratio in its simplest form.  \n(a)\u202f\u2026\u2026\u2026\u202f:\u202f\u2026\u2026\u2026\u202f[2]\n\n(b)\u202fTwo people share \u00a3350 in the ratio 1\u202f:\u202f6.  \nCalculate each share.  \n(b)\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f\u202f\u00a3 \u2026\u2026\u2026\u2026\u202f[2]\n\n(c)\u202fFind 20% of 450.  \n(c)\u202f\u2026\u2026\u2026\u2026\u2026\u2026 \u2026\u2026\u2026\u2026\u2026\u2026\u202f[2]": {
         "0": {
@@ -2221,6 +2221,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 1,
+        "question_components": {
+            "a": "Write 40:2000 as a ratio in its simplest form.",
+            "b": "Two people share \u00a3350 in the ratio 1:6. Calculate each share.",
+            "c": "Find 20% of 450."
+        },
         "markscheme": {
             "a": "Answer: 1 : 50\nMarks: 2\nMarking guidelines: M1 shows a partial simplification e.g. 4 : 200",
             "b": "Answer: 50 300\nMarks: 2\nMarking guidelines: M1 for 350 \u00f7 (1 + 6)",
@@ -2240,12 +2245,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Write 40:2000 as a ratio in its simplest form.",
-            "b": "Two people share \u00a3350 in the ratio 1:6. Calculate each share.",
-            "c": "Find 20% of 450."
-        }
+        "markscheme_imgs": null
     },
     "17  Six equations are shown below, each labelled with a letter:\n\nA:  y = 6x  \nB:  x =  (1/6) y  \nC:  y =  -3/x  \nD:  x =  6/y  \nE:  y =  6x  \nF:  y =  (2 / x) + 2  \n\nChoose the correct letters to make each statement true:\n\n(a)  Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.  [1]  \n\n(b)  Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y.  [2]": {
         "0": {
@@ -2299,6 +2299,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 17,
+        "question_components": {
+            "a": "Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.",
+            "b": "Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y."
+        },
         "markscheme": {
             "a": "Answer: E\nMarks: 1",
             "b": "Answer: C and D\nMarks: 2\nMarking guidance: B1 for each"
@@ -2318,11 +2322,7 @@
         "question_imgs": [
             "page16.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Equation B and equation \u2026\u2026\u2026\u2026. are equivalent.",
-            "b": "Equation \u2026\u2026\u2026\u2026. and equation \u2026\u2026\u2026\u2026. each show x is inversely proportional to y."
-        }
+        "markscheme_imgs": null
     },
     "16) Leo is using these numbers to make a new number:  \n\u2022 11  \n\u2022 1  \n\u2022 3  \n\u2022 6  \n\nHe can use brackets, +, \u2013 , \u00d7 and \u00f7 as often as he wishes.  \nHe cannot use any number more than once.  \nHe cannot use powers.  \nHe cannot put numbers together (e.g., he can\u2019t use 136).  \n\nWhat is the biggest number he can make?  \nShow how he can make this number. [4]": {
         "0": {
@@ -2353,6 +2353,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 16,
+        "question_components": "What is the biggest number he can make? Show how he can make this number.",
         "markscheme": "Correct answer (264) with complete correct working, e.g. (3 + 1) \u00d7 6 \u00d7 11\n\nMarks: 4\n\nM3 for correct working but no final answer stated (3 + 1) \u00d7 6 \u00d7 11, or the working is poorly communicated but is clear, e.g. (3 + 1) \u00d7 6 \u00d7 11 = 264, or any number greater than 200 with complete correct working.\n\nOr M2 for 264 with no (or incomplete) working, or for an acceptable number over 200 with poorly communicated working.\n\nOr M1 for number greater than 200 with no, or incomplete, working, or for (3 \u00d7 6) \u00d7 11 [\u00d7 1] condoning an error in calculation, or for two trials leading to numbers below 200 (condone poor communication), or acceptable calculation with their answer minimum 200 but an error in evaluation.\n\nWorking correctly communicated in stages is acceptable for 4 marks, e.g. 3 + 1 = 4, 4 \u00d7 6 = 24, 24 \u00d7 11 = 264.\n\nFull written explanation is also acceptable.\n\nFor 1 or 2 marks, \u201cacceptable\u201d implies a number (minimum 200) that can be made.",
         "available_marks": 4,
         "mark_breakdown": {
@@ -2367,8 +2368,7 @@
         "question_imgs": [
             "page16.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": "What is the biggest number he can make? Show how he can make this number."
+        "markscheme_imgs": null
     },
     "4  Antonio works Monday, Tuesday and Wednesday.  \n    He starts work at 4.00 pm and finishes at 10.30 pm.  \n    Antonio is paid \u00a310 per hour on weekdays.  \n\n    One week, he also works for 4 hours on Sunday.  \n    He is paid 50% more on Sundays.  \n\n    How much does Antonio earn altogether this week?  \n    You must show your working.  \n\n    \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [6]": {
         "0": {
@@ -2409,6 +2409,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 4,
+        "question_components": "How much does Antonio earn altogether this week? You must show your working.",
         "markscheme": "255 with correct working (6 marks)\n\n\u201cCorrect working\u201d requires evidence of at least M2 and M1.\n\nM1 for 6.5 [hours]\nM2 for their \u20186.5\u2019 \u00d7 10 \u00d7 3 oe\n   or M1 for their \u20186.5\u2019 \u00d7 10\n   or their \u20186.5\u2019 \u00d7 3\n\nAND\n\nM1 for [\u00a3]15\nM1 for their \u201815\u2019 \u00d7 4\n\nIf 0, 1 or 2 scored, instead award SC3 for answer 255 with no working or insufficient working.\nIf 0 or 1 scored, instead award SC2 for 195 or 60 with no working or insufficient working.\nIf 0 scored, instead award SC1 for 19.5 or 65 with no working or insufficient working.",
         "available_marks": 6,
         "mark_breakdown": {
@@ -2421,8 +2422,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "How much does Antonio earn altogether this week? You must show your working."
+        "markscheme_imgs": null
     },
     "10 The graph shows the number of ice creams sold in a shop each day against the temperature at midday that day.\n\n(a) (i) Describe the relationship between the temperature at midday and the number of ice creams sold. [1]  \n(ii) One data point is an outlier. Give a reason why this does not fit the rest of the data. [1]\n\n(b) Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was:  \n(i) 22\u00b0C [1]  \n(ii) 28\u00b0C [1]  \n(iii) Explain which of these two predictions is more reliable. [2]\n\n(c) A newspaper headline reads:  \n\u201cHigh temperatures make more people buy ice cream!\u201d\n\nDoes the graph above prove this claim? Give a reason for your decision. [2]": {
         "0": {
@@ -2716,6 +2716,14 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 10,
+        "question_components": {
+            "a.i": "Describe the relationship between the temperature at midday and the number of ice creams sold.",
+            "a.ii": "One data point is an outlier. Give a reason why this does not fit the rest of the data.",
+            "b.i": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 22\u00b0C.",
+            "b.ii": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 28\u00b0C.",
+            "b.iii": "Explain which of these two predictions is more reliable.",
+            "c": "A newspaper headline reads: 'High temperatures make more people buy ice cream!' Does the graph above prove this claim? Give a reason for your decision."
+        },
         "markscheme": {
             "a.i": "Answer: Positive correlation (1 mark)\nGuidance: Condone 'positive' or correct description, e.g. 'As the temperature increases, more ice creams are sold'.",
             "a.ii": "Answer: Correct reason, e.g. 'He sold far more ice creams than you would expect him to for a 20\u00b0C day' (1 mark).",
@@ -2742,15 +2750,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "Describe the relationship between the temperature at midday and the number of ice creams sold.",
-            "a.ii": "One data point is an outlier. Give a reason why this does not fit the rest of the data.",
-            "b.i": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 22\u00b0C.",
-            "b.ii": "Use the scatter graph to predict the number of ice creams sold on a day when the temperature at midday was 28\u00b0C.",
-            "b.iii": "Explain which of these two predictions is more reliable.",
-            "c": "A newspaper headline reads: 'High temperatures make more people buy ice cream!' Does the graph above prove this claim? Give a reason for your decision."
-        }
+        "markscheme_imgs": null
     },
     "4  Charlie, Mo and Andrzej share a flat.\n\n\u2022 Charlie pays 25% of the rent.  \n\u2022 Mo pays \u00bd of the rent.  \n\u2022 Andrzej pays \u00a3450.  \n\nHow much do they pay altogether for the rent?  \n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]": {
         "0": {
@@ -2781,6 +2781,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 4,
+        "question_components": "How much do they pay altogether for the rent?",
         "markscheme": "[\u00a3]1800 (4 marks)\nM1 for 1/4 + 1/2 = 3/4 soi (oe using percentages or decimals)\nM1 for 1/4 (of the rent) = 450\nM1 for 450 \u00d7 4",
         "available_marks": 4,
         "mark_breakdown": {
@@ -2793,8 +2794,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "How much do they pay altogether for the rent?"
+        "markscheme_imgs": null
     },
     "10  Calculate.\n\n(a)  \u221a3136  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)  \u2074\u221a625  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c)  5\u207b\u00b2  \n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]": {
         "0": {
@@ -2868,6 +2868,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 10,
+        "question_components": {
+            "a": "\u221a3136",
+            "b": "\u2074\u221a625",
+            "c": "5\u207b\u00b2"
+        },
         "markscheme": {
             "a": "Answer: 56\nMarks: 1",
             "b": "Answer: 5\nMarks: 1",
@@ -2887,12 +2892,7 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "\u221a3136",
-            "b": "\u2074\u221a625",
-            "c": "5\u207b\u00b2"
-        }
+        "markscheme_imgs": null
     },
     "5  Darren says\n\n\u201cI can run 100\u202fm in 15\u202fseconds, so I should be able to run 800\u202fm in 120\u202fseconds.\u201d\n\nDo you think that he would take more or less than 120\u202fseconds to run 800\u202fm? Explain your answer, with reference to any assumptions Darren has made.\n\n\u2026................................ because \u2026......................................................................................................\n\u2026..........................................................................................................................................................\n\u2026..........................................................................................................................................................\n\u2026.......................................................................................................................................................... [3]": {
         "0": {
@@ -2918,6 +2918,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 5,
+        "question_components": "Do you think that he would take more or less than 120\u202fseconds to run 800\u202fm? Explain your answer, with reference to any assumptions Darren has made.",
         "markscheme": "He has assumed he can run 800 m at the same speed as he can run 100 m, but he will run 800 m at a slower speed, therefore it will take him more than 120 s\n\n3\n\nB1 for correct reference to Darren\u2019s assumption\n100 \u00f7 15 = 800 \u00f7 120 soi\nB1 for \u2018his speed will be slower over 800 m\u2019 oe",
         "available_marks": 3,
         "mark_breakdown": {
@@ -2930,8 +2931,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Do you think that he would take more or less than 120\u202fseconds to run 800\u202fm? Explain your answer, with reference to any assumptions Darren has made."
+        "markscheme_imgs": null
     },
     "5  The table below shows the number of tonnes of rice produced in a year in five countries:\n\n    Country   | Rice produced (tonnes)\n    ----------------------------------\n    China     | 1.43 \u00d7 10\u2078\n    India     | 9.9 \u00d7 10\u2077\n    Vietnam   | 2.71 \u00d7 10\u2077\n    Thailand  | 2.05 \u00d7 10\u2077\n    Brazil    | 7.82 \u00d7 10\u2076\n\n(a) Which country produced the most rice?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Write 2.71 \u00d7 10\u2077 as an ordinary number.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) One tonne is equal to 1000 kilograms.  \n    Change 7.82 \u00d7 10\u2076 tonnes to kilograms.  \n    Give your answer in standard form.  \n(c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 kg [2]\n\n(d) How many more tonnes of rice did India produce than Thailand?  \n    Give your answer in standard form.  \n(d) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 tonnes [2]": {
         "0": {
@@ -3091,6 +3091,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 5,
+        "question_components": {
+            "a": "Which country produced the most rice?",
+            "b": "Write 2.71 \u00d7 10\u2077 as an ordinary number.",
+            "c": "One tonne is equal to 1000 kilograms. Change 7.82 \u00d7 10\u2076 tonnes to kilograms. Give your answer in standard form.",
+            "d": "How many more tonnes of rice did India produce than Thailand? Give your answer in standard form."
+        },
         "markscheme": {
             "a": "Correct answer: China\nMarks awarded: 1",
             "b": "Correct answer: 27 100 000\nMarks awarded: 1",
@@ -3112,13 +3118,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Which country produced the most rice?",
-            "b": "Write 2.71 \u00d7 10\u2077 as an ordinary number.",
-            "c": "One tonne is equal to 1000 kilograms. Change 7.82 \u00d7 10\u2076 tonnes to kilograms. Give your answer in standard form.",
-            "d": "How many more tonnes of rice did India produce than Thailand? Give your answer in standard form."
-        }
+        "markscheme_imgs": null
     },
     "14  The value of a car \u00a3V is given by  \n    V = 20\u202f000 \u00d7 0.9^t  \nwhere t is the age of the car in complete years.\n\n(a)  Write down the value of V when t = 0.  \n    (a) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b)  What is the value of V when t = 3?  \n    (b) \u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(c)  After how many complete years will the car\u2019s value drop below \u00a310\u202f000?  \n    (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -3226,6 +3226,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 14,
+        "question_components": {
+            "a": "Write down the value of V when t = 0.",
+            "b": "What is the value of V when t = 3?",
+            "c": "After how many complete years will the car\u2019s value drop below \u00a310\u202f000?"
+        },
         "markscheme": {
             "a": "Answer: \u00a320\u202f000\nMarks: 1",
             "b": "Answer: \u00a314\u202f580 or \u00a314\u202f600\nMarks: 2\nPart marks and guidance:\n\u2022 M1 for 20\u202f000 \u00d7 0.9\u00b3",
@@ -3245,12 +3250,7 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Write down the value of V when t = 0.",
-            "b": "What is the value of V when t = 3?",
-            "c": "After how many complete years will the car\u2019s value drop below \u00a310\u202f000?"
-        }
+        "markscheme_imgs": null
     },
     "6\u202f\u202fHere is a Venn diagram.\n\n      Dog                Cat\n      8       \u2026\u2026\u2026\u2026     \u2026\u2026\u2026\u2026\n\n30 students are asked if they have a dog or cat:\n\u2022 21 have a dog.\n\u2022 16 have a cat.\n\u2022 8 have a dog, but not a cat.\n\nComplete the Venn diagram. [3]": {
         "0": {
@@ -3276,6 +3276,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 6,
+        "question_components": "Complete the Venn diagram. [3]",
         "markscheme": "Answer (3 marks)\n\nMarking guidelines:\n\u2022 B1 for 13 in \u2018intersection\u2019\n\u2022 B1 for (16 \u2212 their \u201813\u2019) in \u2018Cat\u2019\n\u2022 B1 for sum of 8 + their three numbers = 30",
         "available_marks": 3,
         "mark_breakdown": {
@@ -3292,8 +3293,7 @@
         ],
         "markscheme_imgs": [
             "page6.png"
-        ],
-        "question_components": "Complete the Venn diagram. [3]"
+        ]
     },
     "15 Kieran, Jermaine and Chris play football.  \n\u2022 Kieran has scored 8 more goals than Chris.  \n\u2022 Jermaine has scored 5 more goals than Kieran.  \n\u2022 Altogether they have scored 72 goals.  \n\nHow many goals did they each score?  \nYou must show your working.\n\nKieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nJermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nChris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\n[5]": {
         "0": {
@@ -3329,6 +3329,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 15,
+        "question_components": "How many goals did they each score? You must show your working. Kieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Jermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Chris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026",
         "markscheme": "Answer: 25, 30, 17 with correct working\nMarks: 5\n\n\"Correct working\" requires evidence of at least M1M1M1\n\nMethods shown use Kieran as x; apply similar schemes if using Jermaine or Chris as the subject.\n\nM1 for x \u2212 8 + x + x + 5 = 72\nM1FT for 3x \u2212 3 = 72\nM1FT for 3x = 75 implied by x = 25\n\nNote: x = 25 scores M1M1M1 if there is some supporting work but on its own scores SC1\n\nAND\nM1 for substituting their 25 into x \u2212 8 and x + 5\n\nAlternative method using trials:\n\u2022 M3 for a correctly evaluated trial of x \u2212 8 + x + x + 5 with x = 25\n\u2022 Or M2 for at least two complete correct evaluations of x \u2212 8 + x + x + 5\n\u2022 Or M1 for at least one complete correct evaluation of x \u2212 8 + x + x + 5\n\nAND\nM1 for substituting their 25 into x \u2212 8 and x + 5\n\nIf 0 or 1 scored, instead award SC2 for 25, 30, 17 with no working or insufficient working\n\nIf 0 scored, instead award SC1 for x = 25 with no working or insufficient working",
         "available_marks": 5,
         "mark_breakdown": {
@@ -3341,8 +3342,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "How many goals did they each score? You must show your working. Kieran \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Jermaine \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  Chris \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026"
+        "markscheme_imgs": null
     },
     "8 (a) The product of three numbers is 312.  \nTwo of the numbers are 3 and 13.  \nWhat is the third number?\n\n(a) ____________________ [3]\n\n(b) Find three different numbers that are each  \n\u2022 a prime number  \n\u2022 two less than a square number.\n\n(b) __________  __________  __________ [3]": {
         "0": {
@@ -3432,6 +3432,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 8,
+        "question_components": {
+            "a": "The product of three numbers is 312. Two of the numbers are 3 and 13. What is the third number?",
+            "b": "Find three different numbers that are each \u2022 a prime number \u2022 two less than a square number."
+        },
         "markscheme": {
             "a": "Answer: 8 (3 marks)\n\nMarking guidance:\n\u2022 M1 for dividing by 3 or 13\n\u2022 M1 for dividing by remaining factor\n\u2022 M1 for dividing by 39 or listing multiples of 39",
             "b": "Answer: Any three valid answers (e.g. 2, 7, 23) (3 marks)\n\nMarking guidance:\n\u2022 B1 for each valid answer\n\u2022 If 0 scored, award SC1 for at least 3 primes and 3 squares seen"
@@ -3449,11 +3453,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "The product of three numbers is 312. Two of the numbers are 3 and 13. What is the third number?",
-            "b": "Find three different numbers that are each \u2022 a prime number \u2022 two less than a square number."
-        }
+        "markscheme_imgs": null
     },
     "17  180 g of copper is mixed with 105 g of zinc to make an alloy.  \n    The density of copper is 9 g/cm\u00b3.  \n    The density of zinc is 7 g/cm\u00b3.  \n\n(a)  Work out the volume of copper used in the alloy.  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026. cm\u00b3  [2]  \n\n(b)  What is the density of the alloy?  \n     (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 g/cm\u00b3 [4]": {
         "0": {
@@ -3543,6 +3543,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 17,
+        "question_components": {
+            "a": "Work out the volume of copper used in the alloy.",
+            "b": "What is the density of the alloy?"
+        },
         "markscheme": {
             "a": "20\n\n2 marks\nCan be implied by an answer of 2.\nM1 for D = M / V soi",
             "b": "8 1/7 or 8.14[\u2026]\n\n4 marks\nM1 for 15 or 105 \u00f7 7\nAND 180 + 105\nM2 for their(20 + 15)\n         18 + 10.5\n   or their(2 + 1.5)\nOr M1 for some attempt to find total mass / total volume"
@@ -3561,11 +3565,7 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Work out the volume of copper used in the alloy.",
-            "b": "What is the density of the alloy?"
-        }
+        "markscheme_imgs": null
     },
     "13 (a) Mia cycled 23\u202fkm, correct to the nearest km.  \nWhat is the least distance Mia could have cycled?  \n\n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 km [1]\n\n(b) A number x, rounded to one decimal place, is 4.7.  \nSo the error interval for x is given by 4.65 \u2264 x < 4.75.\n\n   (i) A number y, rounded to two decimal places, is 4.13.  \n   Write down the error interval for y.  \n\n   (b)(i) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n   (ii) A number z, rounded to two significant figures, is 4700.  \n   Write down the error interval for z.  \n\n   (b)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -3673,6 +3673,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 13,
+        "question_components": {
+            "a": "What is the least distance Mia could have cycled?",
+            "b.i": "A number y, rounded to two decimal places, is 4.13. Write down the error interval for y.",
+            "b.ii": "A number z, rounded to two significant figures, is 4700. Write down the error interval for z."
+        },
         "markscheme": {
             "a": "Answer: 22.5\nMarks: 1",
             "b.i": "Answer: 4.125 \u2264 y < 4.135\nMarks: 2\nMarking guidance: B1 for either limit with correct inequality sign. Condone using x instead of y",
@@ -3692,12 +3697,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "What is the least distance Mia could have cycled?",
-            "b.i": "A number y, rounded to two decimal places, is 4.13. Write down the error interval for y.",
-            "b.ii": "A number z, rounded to two significant figures, is 4700. Write down the error interval for z."
-        }
+        "markscheme_imgs": null
     },
     "20\u202f\u202fThe diagram shows a right-angled triangle (not to scale):\n\n    35\u00b0\n     /|\n    / |\n   /  |\n  /   | x\n /    |\n/_____|\n   4 cm\n\nCalculate x.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u202f [3]": {
         "0": {
@@ -3723,6 +3723,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 20,
+        "question_components": "Calculate x.",
         "markscheme": "Answer: 2.8(0\u2026) (3 marks)\n\nMarking guidelines:\n\u2022 B1 for tan \u03b8 = opp / adj\n\u2022 M1 for 4 \u00d7 tan 35",
         "available_marks": 3,
         "mark_breakdown": {
@@ -3737,8 +3738,7 @@
         "question_imgs": [
             "page18.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": "Calculate x."
+        "markscheme_imgs": null
     },
     "11 Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18. [2]": {
         "0": {
@@ -3759,6 +3759,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 11,
+        "question_components": "Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18.",
         "markscheme": "Correct reasoning (2 marks)\nM1 for 4a + 12 \u2212 3a \u00b1 6",
         "available_marks": 2,
         "mark_breakdown": {
@@ -3771,8 +3772,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Show that 4(a + 3) \u2212 3(a \u2212 2) = a + 18."
+        "markscheme_imgs": null
     },
     "9  Three friends, Ann (A), Bob (B) and Carol (C), go on holiday together.\n\n(a) They book a row of three seats on the plane.  \n    When they arrive at the plane they sit in a random order.\n\n    (i)  List all the different orders they could sit on the three seats.  \n         The first one has been done for you.\n\n         Seat 1 | Seat 2 | Seat 3  \n         A      | B      | C  \n\n         [2]\n\n    (ii) What is the probability that Ann and Carol sit next to each other?  \n         (a)(ii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n    (iii) What is the probability that Bob sits in seat 1 with Ann next to him?  \n          (iii) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) Ann, Bob and Carol have a total budget of \u00a3500 to rent a holiday apartment.  \n    The apartment normally costs \u00a350 per night, but they can get a 20% discount if they book early.  \n\n    Calculate how many extra nights they can stay in the apartment if they book early.  \n    You must show your working.\n\n    (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 nights [4]": {
         "0": {
@@ -3976,6 +3976,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 9,
+        "question_components": {
+            "a.i": "List all the different orders they could sit on the three seats. The first one has been done for you.",
+            "a.ii": "What is the probability that Ann and Carol sit next to each other?",
+            "a.iii": "What is the probability that Bob sits in seat 1 with Ann next to him?",
+            "b": "Calculate how many extra nights they can stay in the apartment if they book early. You must show your working."
+        },
         "markscheme": {
             "a.i": "Answer: ACB, BAC, BCA, CAB, CBA\nMarks: 2\nB1 for at least three more ways of seating listed.",
             "a.ii": "Answer: 2/3 (or equivalent)\nMarks: 1\nFT on answer to part (a)(i).",
@@ -3999,13 +4005,7 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a.i": "List all the different orders they could sit on the three seats. The first one has been done for you.",
-            "a.ii": "What is the probability that Ann and Carol sit next to each other?",
-            "a.iii": "What is the probability that Bob sits in seat 1 with Ann next to him?",
-            "b": "Calculate how many extra nights they can stay in the apartment if they book early. You must show your working."
-        }
+        "markscheme_imgs": null
     },
     "2  Write these in order, smallest first:\n\n    0.34    1/3    3.5%\n\n    \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  [2]\n             smallest": {
         "0": {
@@ -4026,6 +4026,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 2,
+        "question_components": "Write these in order, smallest first:\n\n0.34    1/3    3.5%\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.  [2]",
         "markscheme": "Answer: 3.5%, 1/3, 0.34 (2 marks)\n\nPart marks and guidance:\n\u2022 B1 for 1/3 = 0.33\u2026 or 33\u2026%\n\u2022 or B1 for 0.34 = 34%\n\u2022 or B1 for changing 3.5% to 0.035\n\u2022 or SC1 for 1/3, 0.34, 3.5%\n\nAccept correct order with equivalent values.",
         "available_marks": 2,
         "mark_breakdown": {
@@ -4038,8 +4039,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Write these in order, smallest first:\n\n0.34    1/3    3.5%\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.   \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026.  [2]"
+        "markscheme_imgs": null
     },
     "17\u202f\u202fIn this row of boxes, you start with 5 and 7.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502    \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nYou add 5 and 7 to get 12 to go in the third box.  \nYou add 7 and 12 to get 19 to go in the fourth box.  \nYou add 12 and 19 to get 31 to go in the fifth box.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 5 \u2502 7 \u2502 12 \u2502 19 \u2502 31 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n\nComplete these rows of boxes using the rule shown above.\n\n(a)  \n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 4 \u2502 6 \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[1]\n\n(b)  \n \u250c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502    \u2502    \u2502 34 \u2502 55 \u2502\n \u2514\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(c)  Complete this row of boxes, writing your expressions in their simplest form.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 a \u2502 b \u2502    \u2502    \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[2]\n\n(d)  Use your answer to (c) to help you fill in the missing numbers in this row of boxes.\n\n \u250c\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2510\n \u2502 6 \u2502    \u2502    \u2502 57 \u2502\n \u2514\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2518\n[3]": {
         "0": {
@@ -4243,6 +4243,12 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 17,
+        "question_components": {
+            "a": "Complete these rows of boxes using the rule shown above.",
+            "b": "Complete these rows of boxes using the rule shown above.",
+            "c": "Complete this row of boxes, writing your expressions in their simplest form.",
+            "d": "Use your answer to (c) to help you fill in the missing numbers in this row of boxes."
+        },
         "markscheme": {
             "a": "Answer: 10, 16, 26\nMarks: 1",
             "b": "Answer: 8, 13, 21\nMarks: 2\nGuidance:\n\u2022 M1 for one correct subtraction of two boxes",
@@ -4265,13 +4271,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Complete these rows of boxes using the rule shown above.",
-            "b": "Complete these rows of boxes using the rule shown above.",
-            "c": "Complete this row of boxes, writing your expressions in their simplest form.",
-            "d": "Use your answer to (c) to help you fill in the missing numbers in this row of boxes."
-        }
+        "markscheme_imgs": null
     },
     "16\u202f\u202fAbi, Ben and Carl each drop a number of identical drawing pins, and count how many land with the pin upwards. The table shows some of their results:\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502               \u2502 Number landing \u2018pin up\u2019    \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Abi (10 pins) \u2502 4                          \u2502\n \u2502 Ben (30 pins) \u2502 9                          \u2502\n \u2502 Carl (100 pins) \u2502 35                       \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Abi says:  \n\u201cAs a drawing pin can only land with its pin up or with its pin down,  \n\u202f\u202fthe probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d  \n\nCriticise her statement.  \n[1]\n\n(b) Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.  \n[1]\n\n(c) Two pins are dropped.  \nEstimate the probability that both pins land \u2018pin up\u2019.  \n[2]": {
         "0": {
@@ -4362,6 +4362,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 16,
+        "question_components": {
+            "a": "Abi says: \u201cAs a drawing pin can only land with its pin up or with its pin down, the probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d Criticise her statement.",
+            "b": "Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.",
+            "c": "Two pins are dropped. Estimate the probability that both pins land \u2018pin up\u2019."
+        },
         "markscheme": {
             "a": "Outcomes not equally likely (or equivalent)\nMarks: 1\nPart marks and guidance: None",
             "b": "Larger number of trials\nMarks: 1\nPart marks and guidance: None",
@@ -4381,12 +4386,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Abi says: \u201cAs a drawing pin can only land with its pin up or with its pin down, the probability of a drawing pin landing \u2018pin up\u2019 is \u00bd.\u201d Criticise her statement.",
-            "b": "Carl\u2019s results give the best estimate of the probability of a drawing pin landing \u2018pin up\u2019. Explain why.",
-            "c": "Two pins are dropped. Estimate the probability that both pins land \u2018pin up\u2019."
-        }
+        "markscheme_imgs": null
     },
     "9\u202f\u202fThe pictogram shows how some passengers spent most of their time on a flight.\n\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 Reading        \u2502 [\u25a1][\u25a1][\u25a1]                          \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Watching films \u2502 [\u25a1][\u25a1][\u25a1][\u25e7]                        \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Listening to   \u2502                                     \u2502\n\u2502 music          \u2502  (to be completed in part (c))      \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Playing games  \u2502 [\u25a1][\u25a1][\u25a1][\u25e7][\u25e7]                     \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 Other          \u2502 [\u25a1][\u25e7]                              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\nKey: \n[\u25a1] represents 40 people \n[\u25e7] represents 20 people (a half-square)\n\n(a) How many passengers spent most of their time playing games?  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) How many more passengers spent most of their time watching films than reading?  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(c) There were 360\u202fpassengers on the plane.  \nComplete the pictogram for listening to music. [3]": {
         "0": {
@@ -4494,6 +4494,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 9,
+        "question_components": {
+            "a": "How many passengers spent most of their time playing games?",
+            "b": "How many more passengers spent most of their time watching films than reading?",
+            "c": "There were 360\u202fpassengers on the plane. Complete the pictogram for listening to music."
+        },
         "markscheme": {
             "a": "Answer: 100 (1 mark)",
             "b": "Answer: 10 (1 mark)",
@@ -4515,12 +4520,7 @@
         "question_imgs": [
             "page6.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "How many passengers spent most of their time playing games?",
-            "b": "How many more passengers spent most of their time watching films than reading?",
-            "c": "There were 360\u202fpassengers on the plane. Complete the pictogram for listening to music."
-        }
+        "markscheme_imgs": null
     },
     "18 Amin is attempting to solve the following equation:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\nHis incorrect solution is shown below:\n\n  (x + 1)(x + 4) = (x \u2013 2)(x \u2013 3)\n\n  Step 1:  x\u00b2 + 4x + x + 4 = x\u00b2 \u2013 3x \u2013 2x + 6  \n  Step 2:  x\u00b2 + 5x + 4 = x\u00b2 \u2013 x + 6  \n  Step 3:  5x + 4 = \u2013x + 6  \n  Step 4:  6x + 4 = 6  \n  Step 5:  6x = 2  \n  Step 6:  x = 1/3  \n\n(a) Identify the step in which Amin made his first error and explain why this step is incorrect.\n\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................\n........................................................................................................................................................ [2]\n\n(b) Write out a correct solution to the equation. [2]": {
         "0": {
@@ -4586,6 +4586,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 18,
+        "question_components": {
+            "a": "Identify the step in which Amin made his first error and explain why this step is incorrect.",
+            "b": "Write out a correct solution to the equation."
+        },
         "markscheme": {
             "a": "The first error is in step 2: \u22123x \u2212 2x = \u22125x, not \u2212x as given.\n\nMarking guidelines (2 marks):\n\u2022 B1 for identifying step 2\n\u2022 B1 for explaining the error",
             "b": "[x\u00b2 + 4x + x + 4 = x\u00b2 \u2212 3x \u2212 2x + 6]\nx\u00b2 + 5x + 4 = x\u00b2 \u2212 5x + 6\n5x + 4 = \u22125x + 6\n10x + 4 = 6\n10x = 2\nx = 1/5\n\nMarking guidelines (2 marks):\n\u2022 M1 for an attempt to correct the solution in line with their answer to (a)"
@@ -4604,11 +4608,7 @@
             12
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Identify the step in which Amin made his first error and explain why this step is incorrect.",
-            "b": "Write out a correct solution to the equation."
-        }
+        "markscheme_imgs": null
     },
     "14\u202f(a) Here is a coordinate grid:\n\n     8 |          \n       |          \n     7 |          \n       |          \n     6 |     \u250c\u2500\u2500\u2500 \n       |     \u2502 S  \n     5 |     \u2514\u2500\u2500\u2500 \n       |          \n     4 |          \n       |          \n     3 |          \n       |          \n     2 |               \u250c\u2500\u2500\u2500\n       |               \u2502 T \n     1 |               \u2514\u2500\u2500\u2500\n       |\n     0 |________________________________\n         0  1  2  3  4  5  6  7  8\n\nShape S is translated to Shape T using the vector  \n   ( p )  \n   ( q ).  \n\nWrite down the values of p and q.\n\n(a) p = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n    q = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [2]\n\n(b) Vectors a, b, c, d, and e are drawn on an isometric grid:\n\n           b\n           \n      a            d\n           \n           e\n   \n                    c\n\nWrite each of the vectors c, d, and e in terms of a and/or b.\n\nc = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \nd = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \ne = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026     [3]": {
         "0": {
@@ -4686,6 +4686,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 14,
+        "question_components": {
+            "a": "Write down the values of p and q.",
+            "b": "Write each of the vectors c, d, and e in terms of a and/or b."
+        },
         "markscheme": {
             "a": "(a)\nAnswer: p = 5, q = -5\nMarks: 2\nMarking guidelines: B1 for each",
             "b": "(b)\nAnswer: c = 3a, d = a + b, e = a \u2013 b\nMarks: 3\nMarking guidelines: B1 for each"
@@ -4703,11 +4707,7 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Write down the values of p and q.",
-            "b": "Write each of the vectors c, d, and e in terms of a and/or b."
-        }
+        "markscheme_imgs": null
     },
     "9\u202f\u202fThese prisms have different shapes as end faces.\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n \u2502 Shape of end face     \u2502 Number of faces     \u2502 Number of edges     \u2502 Number of vertices  \u2502\n \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n \u2502 Triangle (3 sides)    \u2502 5                   \u2502 9                   \u2502 6                   \u2502\n \u2502 Rectangle (4 sides)   \u2502 \u2026                   \u2502 \u2026                   \u2502 8                   \u2502\n \u2502 Pentagon (5 sides)    \u2502 \u2026                   \u2502 15                  \u2502 10                  \u2502\n \u2502 Hexagon (6 sides)     \u2502 8                   \u2502 18                  \u2502 \u2026                   \u2502\n \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\n(a) Complete this table.\u202f\u202f\u202f\u202f[2]\n\n(b) How many edges and vertices does a prism with a 100\u2011sided end face have?  \n   (b) edges \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n       vertices \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n(c) F is the number of faces in a prism.  \n   N is the number of sides of its end face.  \n   Write down a formula connecting F and N.  \n   (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n\u202f\u202f\u202f\u202f[2]\n\n\u00a9\u202fOCR\u202f2024\u202fJ560/02\u202f\u202f\u202fTurn\u202fover": {
         "0": {
@@ -4832,6 +4832,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 9,
+        "question_components": {
+            "a": "Complete this table.",
+            "b": "How many edges and vertices does a prism with a 100\u2011sided end face have?",
+            "c": "F is the number of faces in a prism. N is the number of sides of its end face. Write down a formula connecting F and N."
+        },
         "markscheme": {
             "a": "Answer: 2 marks\nB1 for 2 correct\n\nPrism               Number of faces   Number of edges   Number of vertices\nTriangular (3 sides)         5                9                 6\nRectangular (4 sides)        6                12                8\nPentagonal (5 sides)         7                15                10\nHexagonal (6 sides)          8                18                12",
             "b": "Answer: 300 (edges), 200 (vertices)\n1 mark awarded for each correct value",
@@ -4852,12 +4857,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Complete this table.",
-            "b": "How many edges and vertices does a prism with a 100\u2011sided end face have?",
-            "c": "F is the number of faces in a prism. N is the number of sides of its end face. Write down a formula connecting F and N."
-        }
+        "markscheme_imgs": null
     },
     "7  Here are six numbers:\n\n5   8   9   15   22   54\n\nFrom these numbers, find a number that is\n\n(a) a multiple of two and a multiple of three,  \n(a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [1]\n\n(b) a factor of 30 and a factor of 40.  \n(b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -4911,6 +4911,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 7,
+        "question_components": {
+            "a": "a multiple of two and a multiple of three",
+            "b": "a factor of 30 and a factor of 40"
+        },
         "markscheme": {
             "a": "Answer: 54\nMarks available: 1",
             "b": "Answer: 5\nMarks available: 2\nMarking guidance:\n\u2022 M1 for a complete factor tree (or equivalent)"
@@ -4928,11 +4932,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "a multiple of two and a multiple of three",
-            "b": "a factor of 30 and a factor of 40"
-        }
+        "markscheme_imgs": null
     },
     "8  The diagram shows a triangle (not to scale):\n\n       /\\\n      /  \\\n     /    \\\n    /      \\\n   /________\\\n\n\u2022 The angle at the bottom left corner is 40\u00b0.  \n\u2022 The angle at the bottom right corner is x.  \n\u2022 The two equal\u2011length sides are indicated by matching markings.  \n\nFind the value of x.  \nGive a reason for each step of your working.  \n\nx = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0  [3]": {
         "0": {
@@ -4958,6 +4958,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 8,
+        "question_components": "Find the value of x. Give a reason for each step of your working. x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0 [3]",
         "markscheme": "Answer: 70\nMarks: 3\nB1 for each\n\nThe triangle is isosceles so the missing angle is x (may be on diagram) oe\nAngles in a triangle sum to 180\u00b0 oe (may be indicated by summing of angles to 180\u00b0 oe)",
         "available_marks": 3,
         "mark_breakdown": {
@@ -4970,8 +4971,7 @@
             7
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Find the value of x. Give a reason for each step of your working. x = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 \u00b0 [3]"
+        "markscheme_imgs": null
     },
     "19  \nThe perimeter of the triangle is the same length as the perimeter of the square.  \nThe triangle\u2019s sides are 4a \u2212 1, a + 2, and 3a + 3.  \n\nFind an expression for the length of one side of the square in terms of a.  \nGive your answer in its simplest form.  \n\n[4]": {
         "0": {
@@ -5002,6 +5002,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 19,
+        "question_components": "Find an expression for the length of one side of the square in terms of a. Give your answer in its simplest form.",
         "markscheme": "Answer: 2a + 1\nMarks: 4\nPart marks and guidance:\n\u2022 M1 for a + 2 + 3a + 3 + 4a \u2013 1\n\u2022 M1 for collecting terms\n\u2022 M1 for dividing their \u20188a + 4\u2019 by 4",
         "available_marks": 4,
         "mark_breakdown": {
@@ -5016,8 +5017,7 @@
         "question_imgs": [
             "page19.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": "Find an expression for the length of one side of the square in terms of a. Give your answer in its simplest form."
+        "markscheme_imgs": null
     },
     "19. Peter makes a large amount of pink paint by mixing red and white paint in the ratio 2 : 3.\n\n   \u2022 Red paint costs \u00a380 per 10 litres.  \n   \u2022 White paint costs \u00a35 per 10 litres.  \n   \u2022 Peter sells his pink paint in 10-litre tins for \u00a360 per tin.\n\nCalculate how much profit he makes for each tin he sells.  \nYou must show your working.\n\n\u00a3 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [5]": {
         "0": {
@@ -5053,6 +5053,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 19,
+        "question_components": "Calculate how much profit he makes for each tin he sells. You must show your working.",
         "markscheme": "25 with correct working (5 marks)\n\n\"Correct working\" requires evidence of at least M1M1\n\nM1 for 10 \u00d7 (2/5) = 4 litres red or for 10 \u00d7 (3/5) = 6 litres white\nM1 for red costs \u00a38 per litre or for white costs \u00a30.50 per litre\nM1 for cost of one 10-litre can is their 4 \u00d7 their 8 + their 6 \u00d7 their 0.5\nM1 for 60 \u2013 their 35\n\nAlternative method:\nM1 for 2 : 3 = 20 litres red : 30 litres white\nM1 for 2 \u00d7 \u00a380 + 3 \u00d7 \u00a35 = \u00a3175\nM1 for (their 175) \u00f7 5 = 35\nM1 for 60 \u2013 their 35\nM1 for cost of one 10-litre can is their 4 \u00d7 their 8 + their 6 \u00d7 their 0.5\n\nIf 0 or 1 scored, instead award SC2 for answer 25 with no working or insufficient working",
         "available_marks": 5,
         "mark_breakdown": {
@@ -5065,8 +5066,7 @@
             13
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "Calculate how much profit he makes for each tin he sells. You must show your working."
+        "markscheme_imgs": null
     },
     "7  PQRS is a rectangle.  \n   A, B, C and D are points on SP, PQ, QR and RS respectively.  \n   AC is the line of symmetry for the diagram.  \n\n(a) Angle ABC = 125\u00b0.  \n    Write down the size of angle ADC.  \n\n    Angle ADC = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [1]\n\n(b) AP is the same length as PB.  \n    Work out the size of angle BCD.  \n    You must show your working.  \n\n    Angle BCD = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [4]": {
         "0": {
@@ -5144,6 +5144,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 7,
+        "question_components": {
+            "a": "Angle ABC = 125\u00b0. Write down the size of angle ADC. Angle ADC = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [1]",
+            "b": "AP is the same length as PB. Work out the size of angle BCD. You must show your working. Angle BCD = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [4]"
+        },
         "markscheme": {
             "a": "Answer: 125\n\nMarks: 1",
             "b": "Answer: 20 with correct working\n\nMarks: 4\n\n\u2022 B1 for PAB = 45\n\u2022 B1 for BAD = 90\n\u2022 M1 for 360 \u2013 (their \u2018125\u2019 + their \u201890\u2019 + 125)\n  (\u201cCorrect working\u201d requires evidence of at least M1)\n\nIf 0 scored, instead award SC1 for answer 20 with no working or insufficient working.\n\nAlternative method:\n\u2022 B1 for PAB = 45\n\u2022 B1 for BAC = 45\n\u2022 M1 for 180 \u2013 their 45 \u2013 125"
@@ -5163,11 +5167,7 @@
         "question_imgs": [
             "page8.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Angle ABC = 125\u00b0. Write down the size of angle ADC. Angle ADC = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [1]",
-            "b": "AP is the same length as PB. Work out the size of angle BCD. You must show your working. Angle BCD = \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u00b0 [4]"
-        }
+        "markscheme_imgs": null
     },
     "21. Louise travels to work and home again by train.  \n\u2022 The probability that her train to work is late is 0.7.  \n\u2022 The probability that her train home is late is 0.4.  \n\nWhat is the probability that at least one of her trains is late?": {
         "0": {
@@ -5198,6 +5198,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 21,
+        "question_components": "What is the probability that at least one of her trains is late?",
         "markscheme": "Answer: 0.82 oe\nMarks: 4\n\nM3 for 0.7 \u00d7 0.4 + 0.7 \u00d7 0.6 + 0.3 \u00d7 0.4 or 1 \u2013 0.18\nOr\nM2 for two correct products\nOr\nM1 for one correct product or 0.3 and 0.6 seen (may be on a tree diagram or equivalent)",
         "available_marks": 4,
         "mark_breakdown": {
@@ -5210,8 +5211,7 @@
             14
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "What is the probability that at least one of her trains is late?"
+        "markscheme_imgs": null
     },
     "5. This shape is made from three congruent right-angled triangles (not to scale):\n\n         /\\\n        /  \\\n       /    \\\n      /      \\\n     /        \\\n    /__________\\\n\n    8 cm       4 cm\n\nFind the total area of the shape.\n\n\u2026\u2026\u2026\u2026\u2026\u2026\u2026 cm\u00b2  [3]": {
         "0": {
@@ -5237,6 +5237,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 5,
+        "question_components": "Find the total area of the shape. \u2026\u2026\u2026\u2026 cm\u00b2 [3]",
         "markscheme": "Answer: 48 cm\u00b2\n\nMarks: 3\n\nMarking instructions:\n\u2022 M1 for \u00bd \u00d7 8 \u00d7 4 = 16\n\u2022 M1 for their \u201816\u2019 \u00d7 3",
         "available_marks": 3,
         "mark_breakdown": {
@@ -5251,8 +5252,7 @@
         "question_imgs": [
             "page4.png"
         ],
-        "markscheme_imgs": null,
-        "question_components": "Find the total area of the shape. \u2026\u2026\u2026\u2026 cm\u00b2 [3]"
+        "markscheme_imgs": null
     },
     "7\u202f(a)\u202fWrite numbers in the boxes below to make the statement true:\n\n\u200315\u202f\u00d7\u202f20 = 5\u202f\u00d7\u202f[\u2009\u2009] = 6\u202f\u00d7\u202f[\u2009\u2009]\n\n\u2003[2]\n\n(b)\u202fAngus thinks of a number.  \n\u2003If he cubes his number and then adds 9, he gets 17.  \n\u2003What number is he thinking of?\n\n\u2003[2]": {
         "0": {
@@ -5318,6 +5318,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 01 Paper 1 (Foundation Tier) Sample Question Paper",
         "question_num": 7,
+        "question_components": {
+            "a": "Write numbers in the boxes below to make the statement true:\n15 \u00d7 20 = 5 \u00d7 [ ] = 6 \u00d7 [ ]",
+            "b": "Angus thinks of a number. If he cubes his number and then adds 9, he gets 17. What number is he thinking of?"
+        },
         "markscheme": {
             "a": "(a) Answer: 60 and 50\nMarks: 2\nPart marks and guidance: B1 awarded for each correct value.",
             "b": "(b) Answer: 2\nMarks: 2\nPart marks and guidance: M1 awarded for \u20188\u2019 seen."
@@ -5335,11 +5339,7 @@
             6
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Write numbers in the boxes below to make the statement true:\n15 \u00d7 20 = 5 \u00d7 [ ] = 6 \u00d7 [ ]",
-            "b": "Angus thinks of a number. If he cubes his number and then adds 9, he gets 17. What number is he thinking of?"
-        }
+        "markscheme_imgs": null
     },
     "15  Sam and two friends put letters in envelopes on Monday.  \n    The three of them take two hours to put 600 letters in envelopes.\n\n(a)  On Tuesday Sam has three friends helping.  \n     Working at the same rate, how many letters should the four of them  \n     be able to put in envelopes in two hours?  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]\n\n(b)  Working at the same rate, how much longer would it take four people  \n     to put 1000 letters in envelopes than it would take five people?  \n     (b) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [4]\n\n(c)  Sam says:  \n     \u201cIt took two hours for three people to put 600 letters in envelopes.  \n      If I assume they work all day, then in one day three people will put  \n      7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d  \n\n     Why is Sam\u2019s assumption not reasonable?  \n     What effect has Sam\u2019s assumption had on her answer?  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026  \n     \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026 [2]": {
         "0": {
@@ -5498,6 +5498,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 15,
+        "question_components": {
+            "a": "On Tuesday Sam has three friends helping. Working at the same rate, how many letters should the four of them be able to put in envelopes in two hours?",
+            "b": "Working at the same rate, how much longer would it take four people to put 1000 letters in envelopes than it would take five people?",
+            "c": "Sam says: \u201cIt took two hours for three people to put 600 letters in envelopes. If I assume they work all day, then in one day three people will put 7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d Why is Sam\u2019s assumption not reasonable? What effect has Sam\u2019s assumption had on her answer?"
+        },
         "markscheme": {
             "a": "Answer: 800 (2 marks)\n\nMark scheme:\n\u2022 M1 for unitary work, e.g. 1 person does 200 letters in 2 hours",
             "b": "Answer: 30 minutes oe (4 marks)\n\nMark scheme:\n\u2022 M1 for 1 person does 100 letters in 1 hour\n\u2022 M1 for 5 people do 1000 letters in 2 hours\n\u2022 M1 for 4 people do 1000 letters in 2.5 hours\n\u2022 FT from their rate in (a) throughout",
@@ -5518,12 +5523,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "On Tuesday Sam has three friends helping. Working at the same rate, how many letters should the four of them be able to put in envelopes in two hours?",
-            "b": "Working at the same rate, how much longer would it take four people to put 1000 letters in envelopes than it would take five people?",
-            "c": "Sam says: \u201cIt took two hours for three people to put 600 letters in envelopes. If I assume they work all day, then in one day three people will put 7200 letters in envelopes because 600 \u00d7 12 = 7200.\u201d Why is Sam\u2019s assumption not reasonable? What effect has Sam\u2019s assumption had on her answer?"
-        }
+        "markscheme_imgs": null
     },
     "2  A tin contains four different types of sweet. A sweet is taken from the tin at random.  \n   The table below shows some of the probabilities of taking each type of sweet:\n\n       Sweet    | Probability\n       -----------------------\n       Toffee   |    0.4\n       Fudge    |    0.2\n       Jelly    |    0.3\n       Mint     |     ?\n\n(a) Complete the table. [2]\n\n(b) What is the probability that a toffee or a mint is taken from the tin? [2]": {
         "0": {
@@ -5589,6 +5589,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 2,
+        "question_components": {
+            "a": "Complete the table.",
+            "b": "What is the probability that a toffee or a mint is taken from the tin?"
+        },
         "markscheme": {
             "a": "Answer: 0.1\nMarks: 2\nPart marks and guidance: M1 for 0.4 + 0.2 + 0.3 soi or 1 \u2013 their \u20180.9\u2019",
             "b": "Answer: 0.7\nMarks: 2\nPart marks and guidance: M1 for 0.4 and 0.3 identified"
@@ -5606,11 +5610,7 @@
             5
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Complete the table.",
-            "b": "What is the probability that a toffee or a mint is taken from the tin?"
-        }
+        "markscheme_imgs": null
     },
     "13\u202f\u202fEva\u2019s camera takes photos with width and height in the ratio 3\u202f:\u202f2.  \nPhotos can be printed in the following sizes:  \n\u2022\u202f20\u202fcm by 16\u202fcm  \n\u2022\u202f14\u202fcm by 10\u202fcm  \n\u2022\u202f24\u202fcm by 16\u202fcm  \n\u2022\u202f12\u202fcm by 8\u202fcm  \n\nEva says:  \n\u201cOnly two of these sizes have the same ratio as my photos!\u201d  \n\n(a)\u202fWhich sizes have the same ratio as her photos?\u202f\u202f[2]  \n\n(b)\u202fEva has a display board measuring 45\u202fcm by 60\u202fcm. She wants to display postcards, each measuring 9\u202fcm by 6\u202fcm.  \nIf no postcards overlap, find the maximum number of postcards she can display on the board.\u202f\u202f[3]": {
         "0": {
@@ -5688,6 +5688,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 02 Paper 2 (Foundation Tier) Sample Question Paper",
         "question_num": 13,
+        "question_components": {
+            "a": "Which sizes have the same ratio as her photos?",
+            "b": "Eva has a display board measuring 45 cm by 60 cm. She wants to display postcards, each measuring 9 cm by 6 cm. If no postcards overlap, find the maximum number of postcards she can display on the board."
+        },
         "markscheme": {
             "a": "Answer:\n\u2022 24 cm by 16 cm\n\u2022 12 cm by 8 cm\n\nMarks: 2\n\nPart marks and guidance:\n\u2022 B1 for each\n\u2022 Answers may be indicated on the list in the question",
             "b": "Answer: 50\n\nMarks: 3\n\nPart marks and guidance:\n\u2022 M1 for 45/9 or 60/6\n\u2022 M1 for their \u20185\u2019 \u00d7 their \u201810\u2019\n\u2022 SC2 for 42 or for area calculation leading to incorrect answer"
@@ -5706,11 +5710,7 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "Which sizes have the same ratio as her photos?",
-            "b": "Eva has a display board measuring 45 cm by 60 cm. She wants to display postcards, each measuring 9 cm by 6 cm. If no postcards overlap, find the maximum number of postcards she can display on the board."
-        }
+        "markscheme_imgs": null
     },
     "6  Jo makes a pendant from a rectangular piece of silver.\n\n(a)  The rectangle measures 8\u202fcm by 5\u202fcm.  \n     Work out the area of this rectangle.  \n     (a) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fcm\u00b2  [1]\n\n(b)  To complete the pendant, Jo cuts two semicircles of radius 1\u202fcm from the rectangle, as shown below:\n\n     \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n     \u2502       \u250c\u2500\u2500\u2500\u2510       \u2502  8\u202fcm\n     \u2502       \u2502   \u2502       \u2502\n     \u2502       \u2514\u2500\u2500\u2500\u2518       \u2502\n     \u2502                   \u2502 \n     \u2502       \u250c\u2500\u2500\u2500\u2510       \u2502\n     \u2502       \u2502   \u2502       \u2502\n     \u2502       \u2514\u2500\u2500\u2500\u2518       \u2502\n     \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                5\u202fcm  \n\n     Show that the shaded area is 36.9\u202fcm\u00b2 correct to three significant figures.  \n     [4]\n\n(c)  The silver Jo uses is 2\u202fmm thick.  \n     Find the volume of silver in the pendant. Give your answer in\u202fcm\u00b3.  \n     (c) \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u202fcm\u00b3  [3]": {
         "0": {
@@ -5869,6 +5869,11 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 6,
+        "question_components": {
+            "a": "The rectangle measures 8\u202fcm by 5\u202fcm. Work out the area of this rectangle.",
+            "b": "Show that the shaded area is 36.9\u202fcm\u00b2 correct to three significant figures.",
+            "c": "The silver Jo uses is 2\u202fmm thick. Find the volume of silver in the pendant. Give your answer in\u202fcm\u00b3."
+        },
         "markscheme": {
             "a": "40 (1 mark)",
             "b": "Correct reasoning leading to 36.9 (4 marks)\nM2 for \u03c0 \u00d7 12\u00b2\nor M1 for \u00bd \u00d7 \u03c0 \u00d7 12\u00b2\nAND M1 for their \u201840\u2019 \u2013 \u03c0 \u00d7 12\u00b2",
@@ -5889,12 +5894,7 @@
             8
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "The rectangle measures 8\u202fcm by 5\u202fcm. Work out the area of this rectangle.",
-            "b": "Show that the shaded area is 36.9\u202fcm\u00b2 correct to three significant figures.",
-            "c": "The silver Jo uses is 2\u202fmm thick. Find the volume of silver in the pendant. Give your answer in\u202fcm\u00b3."
-        }
+        "markscheme_imgs": null
     },
     "12 Shinya\u2019s internet service provider gives him a graph of his internet usage in the first part of February:\n\n \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 Internet usage (Gigabytes downloaded)\n14 \u2524        \u00d7\u2500\u2500\u2500\u00d7\u2500\u2500\u2500\u00d7\u2500\n12 \u2524       \u00d7         \\\n10 \u2524      \u00d7           \u00d7\n 8 \u2524     \u00d7             \\\n 6 \u2524    \u00d7               \u00d7\n 5 \u2524   \u00d7                \n 4 \u2524                   \n 3 \u2524                     \n 2 \u2524                       \n 1 \u2524                         \n 0 \u253c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n    0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  Days in February\n\nState two reasons why this graph is misleading.\n\n1 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n2 \u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\u2026\n\n[2]": {
         "0": {
@@ -5915,6 +5915,7 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 12,
+        "question_components": "State two reasons why this graph is misleading.",
         "markscheme": "Vertical axis is not consistent\nThe line does not represent the days when he doesn\u2019t use the internet\n\nMarks: 2\n\nB1 for each valid comment",
         "available_marks": 2,
         "mark_breakdown": {
@@ -5927,8 +5928,7 @@
             11
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": "State two reasons why this graph is misleading."
+        "markscheme_imgs": null
     },
     "11 Ema has done some calculations.\n\nFor each calculation, explain how you know the answer is wrong without working out the correct answer.\n\n(a) 0.38 \u00d7 0.26 = 0.827\n\n(b) \u00be + \u00b2/\u2083 = \u2075/\u2087": {
         "0": {
@@ -5970,6 +5970,10 @@
         "subject": "GCSE (9\u20131) Mathematics",
         "paper_id": "J560 03 Paper 3 (Foundation Tier) Sample Question Paper",
         "question_num": 11,
+        "question_components": {
+            "a": "0.38 \u00d7 0.26 = 0.827",
+            "b": "\u00be + \u00b2/\u2083 = \u2075/\u2087"
+        },
         "markscheme": {
             "a": "Explanation, e.g. there should be 4 dp in the answer or the answer should be smaller than 0.38 (or 0.26) or because 0.4 \u00d7 0.3 = 0.12\n\nClear sensible reason (not just giving the actual answer with no working or explanation)\n\nCondone: multiplying two decimals means a smaller number oe",
             "b": "Explanation, e.g. the answer should be bigger than 1 because both 3/4 and 2/3 are bigger than 1/2 or the answer should be bigger than 3/4 but 5/7 is smaller than 3/4 oe\n\nExemplars for 1 mark:\n\u2022 \u201cyou don\u2019t add fractions by adding tops and bottoms\u201d\n\u2022 \u201cyou don\u2019t add the denominators\u201d\n\u2022 \u201cyou have to find a common denominator first\u201d\n\u2022 \u201c3/4 + 2/3 is obviously > 1\u201d"
@@ -5987,10 +5991,6 @@
             10
         ],
         "question_imgs": null,
-        "markscheme_imgs": null,
-        "question_components": {
-            "a": "0.38 \u00d7 0.26 = 0.827",
-            "b": "\u00be + \u00b2/\u2083 = \u2075/\u2087"
-        }
+        "markscheme_imgs": null
     }
 }
