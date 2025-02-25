@@ -7,7 +7,7 @@ random.seed(0)
 
 import unify
 unify.set_seed(0)
-unify.activate("EdTech", overwrite=True)
+unify.activate("EdTech")
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -40,12 +40,12 @@ def create_dataset():
         paper_dir = os.path.join(subject_dir, data["paper_id"].replace(" ", "_"))
         q_imgs_dir = os.path.join(paper_dir, "paper/imgs")
         q_img_fpaths = [f"{q_imgs_dir}/page{pg}.png" for pg in data["question_pages"]]
-        # question_imgs = [encode_image(cv2.imread(fpath, -1)) for fpath in q_img_fpaths]
+        question_imgs = [encode_image(cv2.imread(fpath, -1)) for fpath in q_img_fpaths]
         m_imgs_dir = os.path.join(paper_dir, "markscheme/imgs")
         m_img_fpaths = [f"{m_imgs_dir}/page{pg}.png" for pg in data["markscheme_pages"]]
-        # markscheme_imgs = [
-        #     encode_image(cv2.imread(fpath, -1)) for fpath in m_img_fpaths
-        # ]
+        markscheme_imgs = [
+            encode_image(cv2.imread(fpath, -1)) for fpath in m_img_fpaths
+        ]
         for mark, ans_n_rat in data.items():
             if not all(c.isdigit() for c in mark):
                 continue
@@ -95,8 +95,8 @@ def create_dataset():
                         "correct_marks": correct_marks,
                         "correct_marks_total": mark_int,
                         "per_question_breakdown": per_question_breakdown,
-                        # "question_pages": question_imgs,
-                        # "markscheme_pages": markscheme_imgs,
+                        "question_pages": question_imgs,
+                        "markscheme_pages": markscheme_imgs,
                     },
                 },
             )
@@ -110,5 +110,4 @@ with open(os.path.join(this_dir, "data", "labelled_data.json"), "r") as f:
     labelled_data = json.load(f)
 
 data = create_dataset()
-dataset = unify.Dataset(data[0:10], name="TestSet").sync()
-dataset = unify.Dataset(data[10:20], name="TestSet10").sync()
+dataset = unify.Dataset(data, name="TestSet").sync()
