@@ -1,7 +1,5 @@
-import base64
 import os
 import json
-import cv2
 import random
 random.seed(0)
 
@@ -17,16 +15,23 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Functions
 
-def encode_image(image):
-    _, buffer = cv2.imencode(".jpg", image)
-    return base64.b64encode(buffer).decode("utf-8")
-
+pdf_url = "https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/ai_tutor/data/parsed"
 
 def reformat_data():
     logs = list()
     example_id = 0
     for question, data in labelled_data.items():
         data = data.copy()
+        del data["question_imgs"]
+        del data["markscheme_imgs"]
+        data["question_pages"] = [
+            f"{pdf_url}/{data['subject'].replace(' ', '_')}/{data['paper_id'].replace(' ', '_')}/paper/pdfs/page{p}.pdf"
+            for p in data["question_pages"]
+        ]
+        data["markscheme_pages"] = [
+            f"{pdf_url}/{data['subject'].replace(' ', '_')}/{data['paper_id'].replace(' ', '_')}/markscheme/pdfs/page{p}.pdf"
+            for p in data["markscheme_pages"]
+        ]
         data["available_marks_total"] = data["available_marks"]
         data["available_marks"] = data["mark_breakdown"]
         del data["mark_breakdown"]
@@ -36,20 +41,6 @@ def reformat_data():
         del data["question_components"]
         if not isinstance(data["markscheme"], dict):
             data["markscheme"] = {"_": data["markscheme"]}
-        subject_dir = os.path.join(this_dir, "data/parsed", data["subject"].replace(" ", "_"))
-        paper_dir = os.path.join(subject_dir, data["paper_id"].replace(" ", "_"))
-        q_imgs_dir = os.path.join(paper_dir, "paper/imgs")
-        q_img_fpaths = [f"{q_imgs_dir}/page{pg}.png" for pg in data["question_pages"]]
-        question_imgs = [
-            encode_image(cv2.imread(fpath, -1)) if fpath else None
-            for fpath in q_img_fpaths
-        ]
-        m_imgs_dir = os.path.join(paper_dir, "markscheme/imgs")
-        m_img_fpaths = [f"{m_imgs_dir}/page{pg}.png" for pg in data["markscheme_pages"]]
-        markscheme_imgs = [
-            encode_image(cv2.imread(fpath, -1)) if fpath else None
-            for fpath in m_img_fpaths
-        ]
         for mark, ans_n_rat in data.items():
             if not all(c.isdigit() for c in mark):
                 continue
@@ -98,8 +89,6 @@ def reformat_data():
                         "correct_marks": correct_marks,
                         "correct_marks_total": mark_int,
                         "per_question_breakdown": per_question_breakdown,
-                        "question_pages": question_imgs,
-                        "markscheme_pages": markscheme_imgs,
                     },
                 },
             )
@@ -114,5 +103,5 @@ with open(os.path.join(this_dir, "data", "labelled_data.json"), "r") as f:
     labelled_data = json.load(f)
 
 data = reformat_data()
-with open(os.path.join(this_dir, "data", "dataset.json"), "w") as f:
+with open(os.path.join(this_dir, "data", "dataset.json"), "w+") as f:
     json.dump(data, f, indent=4)

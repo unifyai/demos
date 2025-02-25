@@ -2700,7 +2700,7 @@ optional = false
 python-versions = "^3.9"
 groups = ["main"]
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 aiohttp = "^3.11.12"
@@ -2900,4 +2900,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "fb396dfb433a1056187b2467080c77bf4fcf51e1355b1d0d583aa98730215a44"
+content-hash = "3800b9b34812e0e724df5fe6729cf997f1c3b2104f3929b97b007cf90c130f4d"
