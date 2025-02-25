@@ -2,6 +2,8 @@ import os
 import wget
 import json
 import shutil
+import argparse
+
 import unify
 unify.activate("MarkingAssistant", overwrite=True)
 
@@ -21,5 +23,10 @@ def save_dataset(name):
     # ensure the dataset upstream is the same as the local data
     unify.Dataset(data, name=name.replace("_", " ").title().replace(" ", "")).sync()
 
-save_dataset("test_set")
-save_dataset("students")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--name", type=str, required=True)
+    name = parser.parse_args().name
+    assert name in ("students", "test_set")
+    save_dataset(name)
