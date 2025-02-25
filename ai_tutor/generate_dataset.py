@@ -22,7 +22,7 @@ def encode_image(image):
     return base64.b64encode(buffer).decode("utf-8")
 
 
-def create_dataset():
+def reformat_data():
     logs = list()
     example_id = 0
     for question, data in labelled_data.items():
@@ -36,15 +36,19 @@ def create_dataset():
         del data["question_components"]
         if not isinstance(data["markscheme"], dict):
             data["markscheme"] = {"_": data["markscheme"]}
-        subject_dir = os.path.join("data/parsed", data["subject"].replace(" ", "_"))
+        subject_dir = os.path.join(this_dir, "data/parsed", data["subject"].replace(" ", "_"))
         paper_dir = os.path.join(subject_dir, data["paper_id"].replace(" ", "_"))
         q_imgs_dir = os.path.join(paper_dir, "paper/imgs")
         q_img_fpaths = [f"{q_imgs_dir}/page{pg}.png" for pg in data["question_pages"]]
-        question_imgs = [encode_image(cv2.imread(fpath, -1)) for fpath in q_img_fpaths]
+        question_imgs = [
+            encode_image(cv2.imread(fpath, -1)) if fpath else None
+            for fpath in q_img_fpaths
+        ]
         m_imgs_dir = os.path.join(paper_dir, "markscheme/imgs")
         m_img_fpaths = [f"{m_imgs_dir}/page{pg}.png" for pg in data["markscheme_pages"]]
         markscheme_imgs = [
-            encode_image(cv2.imread(fpath, -1)) for fpath in m_img_fpaths
+            encode_image(cv2.imread(fpath, -1)) if fpath else None
+            for fpath in m_img_fpaths
         ]
         for mark, ans_n_rat in data.items():
             if not all(c.isdigit() for c in mark):
@@ -67,7 +71,6 @@ def create_dataset():
                     }
                     for k, v in ans_n_rat.items()
                 }
-                correct_marks_breakdown = {k: v["marks"] for k, v in ans_n_rat.items()}
             per_question_breakdown = {
                 k: {
                     "sub_question": q,
@@ -104,10 +107,12 @@ def create_dataset():
     return logs
 
 
-# Execute
+# Generate Dataset Json #
+# ----------------------#
 
 with open(os.path.join(this_dir, "data", "labelled_data.json"), "r") as f:
     labelled_data = json.load(f)
 
-data = create_dataset()
-dataset = unify.Dataset(data, name="TestSet").sync()
+data = reformat_data()
+with open(os.path.join(this_dir, "data", "dataset.json"), "w") as f:
+    json.dump(data, f, indent=4)
