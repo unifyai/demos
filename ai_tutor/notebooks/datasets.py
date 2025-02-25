@@ -5,7 +5,7 @@ import shutil
 import argparse
 
 import unify
-unify.activate("MarkingAssistant", overwrite=True)
+unify.activate("MarkingAssistant")
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
