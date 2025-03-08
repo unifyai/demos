@@ -11,3 +11,4 @@ __pycache__/
 .cache.json
 *.tmp
 .DS_Store
+.vscode/
