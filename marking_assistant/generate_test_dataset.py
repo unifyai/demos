@@ -103,5 +103,6 @@ with open(os.path.join(this_dir, "data", "labelled_data.json"), "r") as f:
     labelled_data = json.load(f)
 
 data = reformat_data()
-with open(os.path.join(this_dir, "data", "dataset.json"), "w+") as f:
+random.shuffle(data)
+with open(os.path.join(this_dir, "data", "test_set.json"), "w+") as f:
     json.dump(data, f, indent=4)
