@@ -4,7 +4,7 @@ import json
 import shutil
 
 import unify
-unify.activate("MarkingAssistant")
+unify.activate("MarkingAssistant", overwrite=True)
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -18,5 +18,4 @@ if not os.path.exists(data_path):
 with open(data_path, "r") as f:
     data = json.load(f)
 
-unify.map(lambda **kw: unify.log(**kw, context="Traffic"), data, mode="asyncio")
-unify.create_logs(context="Traffic", entries=data)
+unify.create_logs(context="Usage", entries=data)
