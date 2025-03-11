@@ -39,16 +39,23 @@ for commit_msg, cache in caches.items():
     for inp, out in cache.items():
         if isinstance(out, str):
             out = json.loads(out)
+
+        input_fn = inp.split("{")[0]
+
         input_dict = "{" + "{".join(inp.split("{")[1:])
         input_dict = "}".join(input_dict.split("}")[:-1]) + "}"
         input_dict = json.loads(input_dict)
+
+        output_type = "types" if inp.split("}")[-1] == "_res_types" else "response"
+
         cache_data.append(
             {
                 "commit_msg": commit_msg,
                 "commit_hash": cache_versions[commit_msg],
-                "input": inp,
-                "input_dict": input_dict,
-                "output": out
+                "function": input_fn,
+                "input": input_dict,
+                "output": out,
+                "output_type": output_type,
             }
         )
 
