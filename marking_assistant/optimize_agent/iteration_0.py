@@ -74,7 +74,7 @@ def evaluate(
     pred_marks = {"_": {"marks": pred_marks_total, "rationale": pred_marks}}
     return
 
-with unify.Experiment("simple_agent"), unify.Params(
+with unify.Experiment("simple_agent", overwrite=True), unify.Params(
     system_message=system_message,
     dataset="TestSet10",
     source=unify.get_source()

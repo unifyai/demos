@@ -85,7 +85,7 @@ def evaluate(
     return
 
 
-with unify.Experiment("add_markscheme"), unify.Params(
+with unify.Experiment("add_markscheme", overwrite=True), unify.Params(
     system_message=system_message,
     dataset="TestSet10",
     source=unify.get_source()
