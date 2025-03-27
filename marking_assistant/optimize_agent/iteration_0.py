@@ -6,7 +6,7 @@ import unify
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
 
-agent = unify.Unify("o3-mini@openai", traced=True)
+agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
 
 if os.path.exists(".cache.json"):
     os.remove(".cache.json")
