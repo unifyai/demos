@@ -38,11 +38,7 @@ As the very final part of your response, simply provide the number of marks on a
 
 @unify.traced
 def call_agent(system_msg, question, answer, available_marks_total):
-
-    # copy agent, so each thread uniquely sets system message
     local_agent = agent.copy()
-
-    # set each of the placeholder values
     local_agent.set_system_message(
         system_msg.replace(
             "{question}", question
@@ -52,8 +48,6 @@ def call_agent(system_msg, question, answer, available_marks_total):
             "{available_marks_total}", str(available_marks_total)
         )
     )
-
-    # return prediction (no user message, only system message)
     return local_agent.generate()
 
 @unify.log
@@ -64,27 +58,19 @@ def evaluate(
     correct_marks_total,
     _system_message,
 ):
-
-    # extract agent prediction
     pred_marks = call_agent(
         _system_message, question, student_answer,
         available_marks_total
     )
-
-    # parse the predicted integer
     _pred_marks_split = pred_marks.split("\n")
     pred_marks_total, diff_total, error_total = None, None, None
     for _substr in reversed(_pred_marks_split):
         _extracted = "".join([c for c in _substr if c.isdigit()])
         if _extracted != "":
-
-          # log intermediate variables once detected, and break
           pred_marks_total = int(_extracted)
           diff_total = correct_marks_total - pred_marks_total
           error_total = abs(diff_total)
           break
-
-    # log structured prediction
     pred_marks = {"_": {"marks": pred_marks_total, "rationale": pred_marks}}
     return
 
