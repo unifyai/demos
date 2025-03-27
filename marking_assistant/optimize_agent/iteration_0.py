@@ -96,7 +96,7 @@ with unify.Experiment("simple_agent"), unify.Params(
     unify.map(
         evaluate,
         [
-             dict(**d, _system_message=system_message)
+             dict(**d.entries, _system_message=system_message)
              for d in test_set_10
         ],
         name="Evals"
