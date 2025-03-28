@@ -4,10 +4,13 @@ import json
 import unify
 from pydantic import BaseModel, create_model
 
+
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
 
+
 agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
+
 
 if os.path.exists(".cache.json"):
     os.remove(".cache.json")
@@ -16,6 +19,7 @@ wget.download(
     "unifyai/demos/refs/heads/main/"
     "marking_assistant/.cache.json"
 )
+
 
 test_set_10 = unify.download_dataset("TestSet10")
 
@@ -127,17 +131,21 @@ The student's answer to this question (which you need to marked) is:
     general_guidelines
 )
 
+
 system_message = system_message.replace(
     "{general_guidelines}", general_guidelines
 )
+
 
 output_response_explanations = dict()
 output_response_explanations["with_subqs"] = "For each sub-question {subquestions}, you should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award for this sub-question in the `marks` field."
 output_response_explanations["without_subqs"] = "You should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award in the `marks` field."
 
+
 class MarksAndReasoning(BaseModel):
     reasoning: str
     marks: int
+
 
 @unify.traced
 def create_response_format(response_keys):
@@ -148,6 +156,7 @@ def create_response_format(response_keys):
         return create_model('Response', **response_fields)
     else:
         return MarksAndReasoning
+
 
 @unify.traced
 def call_agent(system_msg, question, markscheme, answer, available_marks_total):

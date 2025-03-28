@@ -3,10 +3,13 @@ import wget
 import json
 import unify
 
+
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
 
+
 agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
+
 
 if os.path.exists(".cache.json"):
     os.remove(".cache.json")
@@ -16,7 +19,9 @@ wget.download(
     "marking_assistant/.cache.json"
 )
 
+
 test_set_10 = unify.download_dataset("TestSet10")
+
 
 system_message = """
 Your task is to award a suitable number of marks for a student's answer to a question, from 0 up to a maximum of {available_marks_total} marks.
@@ -36,6 +41,7 @@ As the very final part of your response, simply provide the number of marks on a
 3
 """
 
+
 @unify.traced
 def call_agent(system_msg, question, answer, available_marks_total):
     local_agent = agent.copy()
@@ -49,6 +55,7 @@ def call_agent(system_msg, question, answer, available_marks_total):
         )
     )
     return local_agent.generate()
+
 
 @unify.log
 def evaluate(
@@ -73,6 +80,7 @@ def evaluate(
           break
     pred_marks = {"_": {"marks": pred_marks_total, "rationale": pred_marks}}
     return
+
 
 with unify.Experiment("simple_agent", overwrite=True), unify.Params(
     system_message=system_message,

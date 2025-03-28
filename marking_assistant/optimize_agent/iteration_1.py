@@ -3,10 +3,13 @@ import wget
 import json
 import unify
 
+
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
 
+
 agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
+
 
 if os.path.exists(".cache.json"):
     os.remove(".cache.json")
@@ -16,7 +19,9 @@ wget.download(
     "marking_assistant/.cache.json"
 )
 
+
 test_set_10 = unify.download_dataset("TestSet10")
+
 
 system_message = """
 Your task is to award a suitable number of marks for a student's answer to a question, from 0 up to a maximum of {available_marks_total} marks.
