@@ -1,5 +1,5 @@
-import json
 import os
+import textwrap
 
 import unify
 import wget
@@ -8,7 +8,7 @@ unify.activate("MarkingAssistant")
 unify.set_context("Evals")
 
 
-agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
+agent = unify.Unify("o3-mini@openai", traced=True)
 
 
 if os.path.exists(".cache.json"):
@@ -21,6 +21,18 @@ wget.download(
 
 
 test_set_10 = unify.download_dataset("TestSet10")
+
+
+def pretty_print_dict(d, indent=0):
+    output = ""
+    for key, value in d.items():
+        output += " " * indent + str(key) + ":\n"
+        if isinstance(value, dict):
+            output += pretty_print_dict(value, indent=indent + 4)
+        else:
+            for line in str(value).splitlines():
+                output += " " * (indent + 4) + line + "\n"
+    return output
 
 
 system_message = """
@@ -48,11 +60,11 @@ def call_agent(system_msg, question, answer, available_marks_total):
     local_agent.set_system_message(
         system_msg.replace(
             "{question}",
-            question,
+            textwrap.indent(question, " " * 4),
         )
         .replace(
             "{answer}",
-            json.dumps(answer, indent=4),
+            pretty_print_dict(answer, indent=4),
         )
         .replace(
             "{available_marks_total}",
