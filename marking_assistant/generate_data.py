@@ -1,15 +1,14 @@
-import os
-import json
-import cv2
 import argparse
+import json
+import os
+
+import cv2
+import unify
 from pydantic import BaseModel, create_model
 
-import unify
-
 unify.CLIENT_LOGGING = True
+from helpers import encode_image, load_questions_and_answers
 from prompts import *
-from helpers import load_questions_and_answers, encode_image
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument(

@@ -1,11 +1,13 @@
-import os
-import math
-import random
 import datetime
 import json
-import wget
+import math
+import os
+import random
 import shutil
+
 import unify
+import wget
+
 unify.activate("MarkingAssistant")
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +17,6 @@ CORRELATIONS = {
     # usage_prob ~ exp( usage_age_factor * (age - 40) )
     # => if age > 40, usage increases exponentially; if age < 40, < 1 => less usage
     "usage_age_factor": 0.02,
-
     # Time-of-day usage distribution
     # We'll define a normal distribution for "peak usage hour" with mean:
     #   mean_hour = time_base_hour + time_age_factor * (age - time_age_center)
@@ -24,13 +25,11 @@ CORRELATIONS = {
     # Negative => older => earlier usage (midday); younger => evening
     "time_base_hour": 16.0,  # 16:00 is the average usage hour for someone at age=40
     "time_hour_spread": 3.0,  # std dev in hours
-
     # Score distribution by age
     # We use a logistic transform for "prob of a high score" that depends on:
     #   logistic( score_age_slope * (age - score_age_center) + gender_boost )
     "score_age_center": 25.0,
     "score_age_slope": 0.3,
-
     # Gender-based shift in the logistic for scoring
     "score_gender_boost_male": 0.2,
     "score_gender_boost_female": -0.1,
@@ -99,9 +98,9 @@ def sample_usage_time(age):
       mean_hour = time_base_hour + time_age_factor * (age - time_age_center)
       stdev = time_hour_spread
     """
-    mean_hour = (CORRELATIONS["time_base_hour"] +
-                 CORRELATIONS["time_age_factor"] * (
-                             age - CORRELATIONS["time_age_center"]))
+    mean_hour = CORRELATIONS["time_base_hour"] + CORRELATIONS["time_age_factor"] * (
+        age - CORRELATIONS["time_age_center"]
+    )
     stdev = CORRELATIONS["time_hour_spread"]
 
     # Sample from normal distribution
@@ -123,13 +122,13 @@ def sample_usage_time(age):
         day=today.day,
         hour=hour_int,
         minute=minute_int,
-        second=random.randint(0, 59)
+        second=random.randint(0, 59),
     )
     return usage_dt
 
 
 def logistic(x):
-    """ Classic logistic function. """
+    """Classic logistic function."""
     return 1.0 / (1.0 + math.exp(-x))
 
 
@@ -153,7 +152,7 @@ def sample_score(age, gender, available_marks):
     #   male => +0.2, female => -0.1
     gender_map = {
         "male": CORRELATIONS["score_gender_boost_male"],
-        "female": CORRELATIONS["score_gender_boost_female"]
+        "female": CORRELATIONS["score_gender_boost_female"],
     }
     gender_boost = gender_map.get(gender.lower(), 0.0)
 
@@ -177,21 +176,26 @@ def sample_score(age, gender, available_marks):
         return random.randint(mid + 1, available_marks)
     else:
         return random.randint(0, mid)
-    
-fpath = os.path.join(this_dir, "data/labelled_data.json")        
+
+
+fpath = os.path.join(this_dir, "data/labelled_data.json")
 if not os.path.exists(fpath):
-    wget.download("https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/ai_tutor/data/labelled_data.json")
+    wget.download(
+        "https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/ai_tutor/data/labelled_data.json",
+    )
     shutil.move("labelled_data.json", fpath)
 with open(fpath, "r") as f:
     usage_data = json.load(f)
 
 fpath = os.path.join(this_dir, "data/students.json")
 if not os.path.exists(fpath):
-    wget.download("https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/ai_tutor/data/students.json")
+    wget.download(
+        "https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/ai_tutor/data/students.json",
+    )
     shutil.move("students.json", fpath)
 with open(fpath, "r") as f:
     student_data = json.load(f)
-    
+
 questions = list(usage_data.keys())
 img_dir = "parsed/GCSE_(9–1)_Mathematics"
 
@@ -220,17 +224,13 @@ for _ in range(10000):
     # 4) Pick the answer string from the question corresponding to the score
     ans_n_rat = question_dict[str(score)]
     if "answer" in ans_n_rat:
-      provided_answer = {"_": ans_n_rat["answer"]}
-      correct_marks_rationale = {"_": ans_n_rat["rationale"]}
-      correct_marks_breakdown = {"_": ans_n_rat["marks"]}
+        provided_answer = {"_": ans_n_rat["answer"]}
+        correct_marks_rationale = {"_": ans_n_rat["rationale"]}
+        correct_marks_breakdown = {"_": ans_n_rat["marks"]}
     else:
-      provided_answer = {k: v["answer"] for k, v in ans_n_rat.items()}
-      correct_marks_rationale = {
-          k: v["rationale"] for k, v in ans_n_rat.items()
-      }
-      correct_marks_breakdown = {
-          k: v["marks"] for k, v in ans_n_rat.items()
-      }
+        provided_answer = {k: v["answer"] for k, v in ans_n_rat.items()}
+        correct_marks_rationale = {k: v["rationale"] for k, v in ans_n_rat.items()}
+        correct_marks_breakdown = {k: v["marks"] for k, v in ans_n_rat.items()}
 
     # 5) Simulate the time of usage
     usage_timestamp = sample_usage_time(student_age)
@@ -243,7 +243,6 @@ for _ in range(10000):
         "student/email": student["email"],
         "student/gender": student["gender"],
         "student/date_of_birth": student["date_of_birth"],
-
         "question/subject": question_dict["subject"],
         "question/paper_id": question_dict["paper_id"],
         "question/question_num": question_dict["question_num"],

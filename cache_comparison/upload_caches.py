@@ -1,8 +1,9 @@
-import os
-import wget
 import json
+import os
 import shutil
+
 import unify
+import wget
 
 unify.activate("CacheComparison", overwrite=True)
 
@@ -19,7 +20,7 @@ cache_versions = {
     "reverted .cache.json back to SIXTH (not seventh) iteraton, mark_type_reasoning.": "8e249391b921bbc87fdac70407931cfb695dabc4",
     "updated .cache.json to iteration seven, queries_per_subquestion.": "beaf975e2c7da2bd09f5fa4e1fd4f66474f20d0c",
     "updated .cache.json to iteration eight, with_preceeding_context": "7191aa6b5752431b1e8336177dbc5ed7dcc6e21d",
-    "updated .cache.json to iteration nine, queries_per_mark": "07cf944193e134ba9ae6bfa70ceed60d0d791b65"
+    "updated .cache.json to iteration nine, queries_per_mark": "07cf944193e134ba9ae6bfa70ceed60d0d791b65",
 }
 
 caches = dict()
@@ -28,7 +29,7 @@ for commit_msg, commit_hash in cache_versions.items():
     new_fname = f".cache_{commit_hash}.json"
     if not os.path.exists(new_fname):
         wget.download(
-            f"https://github.com/unifyai/demos/raw/{commit_hash}/marking_assistant/.cache.json"
+            f"https://github.com/unifyai/demos/raw/{commit_hash}/marking_assistant/.cache.json",
         )
         shutil.move(".cache.json", new_fname)
     with open(new_fname, "r") as f:
@@ -56,7 +57,7 @@ for commit_msg, cache in caches.items():
                 "input": input_dict,
                 "output": out,
                 "output_type": output_type,
-            }
+            },
         )
 
 unify.create_logs(entries=cache_data)

@@ -1,9 +1,9 @@
-import os
-import wget
 import json
-import unify
-from pydantic import BaseModel, create_model
+import os
 
+import unify
+import wget
+from pydantic import BaseModel, create_model
 
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
@@ -17,7 +17,7 @@ if os.path.exists(".cache.json"):
 wget.download(
     "https://raw.githubusercontent.com/"
     "unifyai/demos/refs/heads/main/"
-    "marking_assistant/.cache.json"
+    "marking_assistant/.cache.json",
 )
 
 
@@ -128,18 +128,23 @@ The student's answer to this question (which you need to marked) is:
 {output_response_explanation}
 """.replace(
     "{general_guidelines}",
-    general_guidelines
+    general_guidelines,
 )
 
 
 system_message = system_message.replace(
-    "{general_guidelines}", general_guidelines
+    "{general_guidelines}",
+    general_guidelines,
 )
 
 
 output_response_explanations = dict()
-output_response_explanations["with_subqs"] = "For each sub-question {subquestions}, you should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award for this sub-question in the `marks` field."
-output_response_explanations["without_subqs"] = "You should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award in the `marks` field."
+output_response_explanations["with_subqs"] = (
+    "For each sub-question {subquestions}, you should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award for this sub-question in the `marks` field."
+)
+output_response_explanations["without_subqs"] = (
+    "You should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award in the `marks` field."
+)
 
 
 class MarksAndReasoning(BaseModel):
@@ -151,9 +156,9 @@ class MarksAndReasoning(BaseModel):
 def create_response_format(response_keys):
     if response_keys:
         response_fields = dict(
-            zip(response_keys, [(MarksAndReasoning, ...)] * len(response_keys))
+            zip(response_keys, [(MarksAndReasoning, ...)] * len(response_keys)),
         )
-        return create_model('Response', **response_fields)
+        return create_model("Response", **response_fields)
     else:
         return MarksAndReasoning
 
@@ -163,29 +168,38 @@ def call_agent(system_msg, question, markscheme, answer, available_marks_total):
     local_agent = agent.copy()
     with_subqs = len(markscheme) > 1
     response_format = create_response_format(
-        list(markscheme.keys()) if with_subqs else None
+        list(markscheme.keys()) if with_subqs else None,
     )
     local_agent.set_response_format(response_format)
     if with_subqs:
         output_response_exp = output_response_explanations["with_subqs"]
         output_response_exp = output_response_exp.replace(
-            "{subquestions}", json.dumps(list(markscheme.keys()))
+            "{subquestions}",
+            json.dumps(list(markscheme.keys())),
         )
     else:
         output_response_exp = output_response_explanations["without_subqs"]
     local_agent.set_system_message(
         system_msg.replace(
-            "{question}", question
-        ).replace(
-            "{markscheme}", json.dumps(markscheme, indent=4)
-        ).replace(
-            "{answer}", json.dumps(answer, indent=4)
-        ).replace(
-            "{available_marks_total}", str(available_marks_total)
-        ).replace(
-            "{output_response_explanation}",
-            output_response_exp
+            "{question}",
+            question,
         )
+        .replace(
+            "{markscheme}",
+            json.dumps(markscheme, indent=4),
+        )
+        .replace(
+            "{answer}",
+            json.dumps(answer, indent=4),
+        )
+        .replace(
+            "{available_marks_total}",
+            str(available_marks_total),
+        )
+        .replace(
+            "{output_response_explanation}",
+            output_response_exp,
+        ),
     )
     ret = local_agent.generate()
     if "```" in ret:
@@ -207,13 +221,16 @@ def evaluate(
     _system_message,
 ):
     pred_marks = call_agent(
-        _system_message, question, markscheme, student_answer,
-        available_marks_total
+        _system_message,
+        question,
+        markscheme,
+        student_answer,
+        available_marks_total,
     )
     pred_marks_total = sum([v["marks"] for v in pred_marks.values()])
     diff = {
-        k: vcor["marks"] - vpred["marks"] for (k, vcor), (_, vpred) in
-        zip(correct_marks.items(), pred_marks.items())
+        k: vcor["marks"] - vpred["marks"]
+        for (k, vcor), (_, vpred) in zip(correct_marks.items(), pred_marks.items())
     }
     error = {k: abs(v) for k, v in diff.items()}
     diff_total = sum(diff.values())
@@ -222,11 +239,12 @@ def evaluate(
         k: {
             **per_question_breakdown[k],
             "predicted_marks": pm,
-            "diff": d
-        } for (k, pqb), pm, d in zip(
+            "diff": d,
+        }
+        for (k, pqb), pm, d in zip(
             per_question_breakdown.items(),
             pred_marks.values(),
-            diff.values()
+            diff.values(),
         )
     }
     return error
@@ -235,13 +253,10 @@ def evaluate(
 with unify.Experiment("add_structured_output", overwrite=True), unify.Params(
     system_message=system_message,
     dataset="TestSet10",
-    source=unify.get_source()
+    source=unify.get_source(),
 ):
     unify.map(
         evaluate,
-        [
-             dict(**d.entries, _system_message=system_message)
-             for d in test_set_10
-        ],
-        name="Evals"
+        [dict(**d.entries, _system_message=system_message) for d in test_set_10],
+        name="Evals",
     )

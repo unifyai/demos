@@ -1,8 +1,9 @@
-import os
-import cv2
-import json
 import base64
-from typing import List, Callable
+import json
+import os
+from typing import Callable, List
+
+import cv2
 from pydantic import create_model
 
 VALID_NUMERALS = ("i", "ii", "iii", "iv", "v", "vi")

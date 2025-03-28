@@ -1,6 +1,6 @@
-import os
-import json
 import argparse
+import json
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--path", help="Path of the parsed .json file to print", type=str)

@@ -1,27 +1,27 @@
-import re
-import os
-import cv2
-import wget
 import json
+import os
+import re
 import threading
+
+import cv2
 import numpy as np
 import pdfplumber
-from pypdf import PdfReader, PdfWriter
-from pdf2image import convert_from_path
-
 import unify
+import wget
+from pdf2image import convert_from_path
+from pypdf import PdfReader, PdfWriter
 
 unify.CLIENT_LOGGING = True
-from prompts import *
 from helpers import (
-    encode_image,
-    parse_key,
-    is_invalid_question_order,
-    prune_invalid_leading_alphanumeric_questions,
-    build_response_format,
-    update_str_in_table,
     VALID_NUMERALS,
+    build_response_format,
+    encode_image,
+    is_invalid_question_order,
+    parse_key,
+    prune_invalid_leading_alphanumeric_questions,
+    update_str_in_table,
 )
+from prompts import *
 
 url = (
     "https://www.ocr.org.uk/Images/169000-foundation-tier-sample-assessment"

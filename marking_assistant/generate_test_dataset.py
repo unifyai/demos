@@ -1,9 +1,11 @@
-import os
 import json
+import os
 import random
+
 random.seed(0)
 
 import unify
+
 unify.set_seed(0)
 unify.activate("EdTech")
 
@@ -16,6 +18,7 @@ this_dir = os.path.dirname(os.path.abspath(__file__))
 # Functions
 
 pdf_url = "https://raw.githubusercontent.com/unifyai/demos/refs/heads/main/marking_assistant/data/parsed"
+
 
 def reformat_data():
     logs = list()

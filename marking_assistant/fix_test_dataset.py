@@ -1,15 +1,28 @@
-import os
 import json
+import os
 import random
+
 random.seed(0)
 
 import unify
+
 unify.set_seed(0)
 unify.activate("EdTech")
 
 paper_id_dict = {
     "J560 01 Paper 1 (Foundation Tier) Sample Question Paper": [1, 2, 5, 13, 14, 16],
-    "J560 02 Paper 2 (Foundation Tier) Sample Question Paper": [3, 4, 6, 7, 9, 10, 12, 15, 17, 19],
+    "J560 02 Paper 2 (Foundation Tier) Sample Question Paper": [
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        15,
+        17,
+        19,
+    ],
     "J560 03 Paper 3 (Foundation Tier) Sample Question Paper": [8, 11, 18, 20],
 }
 
@@ -25,7 +38,7 @@ question_num_dict = {
     14: [13],
     2: [14],
     7: [15],
-    19: [16, 18]
+    19: [16, 18],
 }
 
 correct_marks_total_dict = {
@@ -36,7 +49,7 @@ correct_marks_total_dict = {
     10: [10],
     6: [11, 19],
     4: [12],
-    7: [17]
+    7: [17],
 }
 
 this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -54,10 +67,11 @@ for i in range(1, 21):
     assert len(correct_marks_total) == 1
     correct_marks_total = correct_marks_total[0]
     index = [
-        idx for idx, d in enumerate(data) if
-        d["paper_id"] == paper_id and
-        d["question_num"] == question_num and
-        d["correct_marks_total"] == correct_marks_total
+        idx
+        for idx, d in enumerate(data)
+        if d["paper_id"] == paper_id
+        and d["question_num"] == question_num
+        and d["correct_marks_total"] == correct_marks_total
     ]
     assert len(index) == 1
     index = index[0]
