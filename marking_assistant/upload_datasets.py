@@ -4,7 +4,7 @@ import os
 import unify
 import wget
 
-unify.activate("MarkingAssistant", overwrite=True)
+unify.activate("MarkingAssistant")
 for dataset in unify.list_datasets():
     unify.delete_dataset(dataset)
 
@@ -44,7 +44,5 @@ test_set.sync()
 
 # Sub Test Sets
 
-for size in [10]:
-    # ToDo uncomment once add_log_to_context implicitly creates the context
-    # test_set[0:size].set_name(f"TestSet{size}").sync()
-    unify.Dataset(test_set[0:size].data).set_name(f"TestSet{size}").sync()
+for size in [10, 20, 40, 80, 160]:
+    test_set[0:size].set_name(f"TestSet{size}").sync()
