@@ -265,7 +265,7 @@ def call_agent(
         )
         .replace(
             "{questions_markscheme_and_answers}",
-            json.dumps(
+            pretty_print_dict(
                 {
                     k: {
                         "sub-question": sub_questions[k],
