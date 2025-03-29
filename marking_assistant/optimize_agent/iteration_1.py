@@ -74,7 +74,7 @@ def call_agent(system_msg, question, markscheme, answer, available_marks_total):
         )
         .replace(
             "{answer}",
-            json.dumps(answer, indent=4),
+            pretty_print_dict(answer, indent=4),
         )
         .replace(
             "{available_marks_total}",

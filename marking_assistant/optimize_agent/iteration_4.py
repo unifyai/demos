@@ -198,7 +198,7 @@ def call_agent(
         )
         .replace(
             "{answer}",
-            json.dumps(answer, indent=4),
+            pretty_print_dict(answer, indent=4),
         )
         .replace(
             "{available_marks_total}",
