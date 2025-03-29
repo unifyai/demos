@@ -70,7 +70,7 @@ def call_agent(system_msg, question, markscheme, answer, available_marks_total):
         )
         .replace(
             "{markscheme}",
-            json.dumps(markscheme, indent=4),
+            pretty_print_dict(markscheme, indent=4),
         )
         .replace(
             "{answer}",

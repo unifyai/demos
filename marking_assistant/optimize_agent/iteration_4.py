@@ -194,7 +194,7 @@ def call_agent(
         )
         .replace(
             "{markscheme}",
-            json.dumps(markscheme, indent=4),
+            pretty_print_dict(markscheme, indent=4),
         )
         .replace(
             "{answer}",
