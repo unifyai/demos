@@ -154,7 +154,7 @@ system_message = system_message.replace(
 
 output_response_explanations = dict()
 output_response_explanations["with_subqs"] = (
-    "For each sub-question {subquestions}, you should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award for this sub-question in the `marks` field."
+    "For each sub-question {subquestions} you should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award for this sub-question in the `marks` field."
 )
 output_response_explanations["without_subqs"] = (
     "You should populate the `reasoning` field with your initial reasoning about the correct number of marks to award. Finally, you should put the number of marks to award in the `marks` field."
@@ -189,7 +189,7 @@ def call_agent(system_msg, question, markscheme, answer, available_marks_total):
         output_response_exp = output_response_explanations["with_subqs"]
         output_response_exp = output_response_exp.replace(
             "{subquestions}",
-            json.dumps(list(markscheme.keys())),
+            ", ".join(list(markscheme.keys())),
         )
     else:
         output_response_exp = output_response_explanations["without_subqs"]
