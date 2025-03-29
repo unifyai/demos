@@ -194,7 +194,7 @@ def call_agent(system_msg, question, markscheme, answer, available_marks_total):
     local_agent.set_system_message(
         system_msg.replace(
             "{question}",
-            question,
+            textwrap.indent(question, " " * 4),
         )
         .replace(
             "{markscheme}",
