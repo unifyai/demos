@@ -25,6 +25,18 @@ wget.download(
 test_set_10 = unify.download_dataset("TestSet10")
 
 
+def pretty_print_dict(d, indent=0):
+    output = ""
+    for key, value in d.items():
+        output += " " * indent + str(key) + ":\n"
+        if isinstance(value, dict):
+            output += pretty_print_dict(value, indent=indent + 4)
+        else:
+            for line in str(value).splitlines():
+                output += " " * (indent + 4) + line + "\n"
+    return output
+
+
 general_guidelines = """----
 
 1.
