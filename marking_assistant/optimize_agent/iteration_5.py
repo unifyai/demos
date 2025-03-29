@@ -190,12 +190,7 @@ def update_markscheme(markscheme: str):
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return markscheme
-    markscheme = (
-        """Firstly, the mark types have the following meanings:
-{mark_types}
-With these definitions in mind, marks should be awarded as follows:
-""" + markscheme
-    )
+    markscheme = "{mark_types}With this in mind, marks should be awarded as follows:\n" + markscheme
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
             key = "".join(c for c in mark if not c.isdigit())
