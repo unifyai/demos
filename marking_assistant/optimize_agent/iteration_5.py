@@ -191,14 +191,10 @@ def update_markscheme(markscheme: str):
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return markscheme
     markscheme = (
-        """
-Firstly, the mark types have the following meanings:
-
+        """Firstly, the mark types have the following meanings:
 {mark_types}
-
 With these definitions in mind, marks should be awarded as follows:
-    """
-        + markscheme
+""" + markscheme
     )
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
@@ -214,7 +210,7 @@ With these definitions in mind, marks should be awarded as follows:
             )
             markscheme = markscheme.replace(
                 "{mark_types}",
-                key + ":/n" + explanation + "\n\n{mark_types}",
+                explanation + "\n{mark_types}",
             )
     markscheme = markscheme.replace(
         "{mark_types}",
