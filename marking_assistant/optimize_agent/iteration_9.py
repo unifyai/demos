@@ -385,9 +385,6 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
         )
         keys = list()
         for k, _ in mark_agents:
-            if k not in keys:
-                keys.append(k)
-                continue
             keys.append(
                 k + f"({len([ky for ky in keys if k in ky])})",
             )
