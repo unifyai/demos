@@ -267,10 +267,9 @@ def parse_marks_from_markscheme(subquestion: str, markscheme: str):
         index = markscheme.find(mark)
         chunk = markscheme[0:index]
         if i > 0:
-            prev_mark = extracted_marks[i - 1]
             marks_n_context[i - 1][1] += chunk
-        markscheme = markscheme[index:]
-        marks_n_context.append([mark, chunk])
+        markscheme = markscheme[(index + len(mark)):]
+        marks_n_context.append([mark, chunk + mark])
     marks_n_context[-1][1] += markscheme
     return marks_n_context
 
