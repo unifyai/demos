@@ -1,4 +1,3 @@
-import json
 import os
 import textwrap
 
@@ -30,7 +29,7 @@ def pretty_print_dict(d, indent=0):
         if key != "_":
             output += " " * indent + str(key) + ":\n"
         if isinstance(value, dict):
-            output += pretty_print_dict(value, indent=indent + (4*int(key!="_")))
+            output += pretty_print_dict(value, indent=indent + (4 * int(key != "_")))
         else:
             for line in str(value).splitlines():
                 output += " " * (indent + 4) + line + "\n"

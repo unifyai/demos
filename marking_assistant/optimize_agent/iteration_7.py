@@ -1,4 +1,3 @@
-import json
 import os
 import re
 import textwrap
@@ -32,7 +31,7 @@ def pretty_print_dict(d, indent=0):
         if key != "_":
             output += " " * indent + str(key) + ":\n"
         if isinstance(value, dict):
-            output += pretty_print_dict(value, indent=indent + (4*int(key!="_")))
+            output += pretty_print_dict(value, indent=indent + (4 * int(key != "_")))
         else:
             for line in str(value).splitlines():
                 output += " " * (indent + 4) + line + "\n"
@@ -153,7 +152,7 @@ The markscheme is:
 {output_response_explanation}
 """.replace(
     "{general_guidelines}",
-    general_guidelines
+    general_guidelines,
 )
 
 
@@ -169,18 +168,19 @@ class ThoughtsAndAwardDecision(BaseModel):
 def create_per_mark_reasoning_format(mark_types):
     response_fields = dict(
         zip(
-            mark_types + ["overall_thoughts"], [(ThoughtsAndAwardDecision, ...)] * len(mark_types) + [(str, ...)]
-        )
+            mark_types + ["overall_thoughts"],
+            [(ThoughtsAndAwardDecision, ...)] * len(mark_types) + [(str, ...)],
+        ),
     )
-    return create_model('PerMarkReasoning', **response_fields)
+    return create_model("PerMarkReasoning", **response_fields)
 
 
 @unify.traced(name="create_marks_and_reasoning_format_{mark_types}")
 def create_marks_and_reasoning_format(mark_types):
     return create_model(
-        'MarksAndReasoning',
+        "MarksAndReasoning",
         reasoning=(create_per_mark_reasoning_format(mark_types), ...),
-        marks=(int, ...)
+        marks=(int, ...),
     )
 
 
@@ -193,17 +193,17 @@ def create_response_format(response_keys, mark_types):
                 [
                     (create_marks_and_reasoning_format(mark_types[key]), ...)
                     for key in response_keys
-                ]
-            )
+                ],
+            ),
         )
-        return create_model('Response', **response_fields)
+        return create_model("Response", **response_fields)
     else:
         return create_marks_and_reasoning_format(mark_types["_"])
 
 
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
 def parse_marks_from_markscheme(subquestion: str, markscheme: str):
-    extracted_marks = re.findall(r'(?:SC|M|A|B)\d+', markscheme)
+    extracted_marks = re.findall(r"(?:SC|M|A|B)\d+", markscheme)
     if not extracted_marks:
         return []
     marks_n_context = list()
@@ -211,8 +211,8 @@ def parse_marks_from_markscheme(subquestion: str, markscheme: str):
         index = markscheme.find(mark)
         chunk = markscheme[0:index]
         if i > 0:
-            prev_mark = extracted_marks[i-1]
-            marks_n_context[i-1][1] += chunk
+            prev_mark = extracted_marks[i - 1]
+            marks_n_context[i - 1][1] += chunk
         markscheme = markscheme[index:]
         marks_n_context.append([mark, chunk])
     marks_n_context[-1][1] += markscheme
@@ -235,7 +235,10 @@ def update_markscheme(subquestion: str, markscheme: str):
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return markscheme
-    markscheme = "{mark_types}With this in mind, marks should be awarded as follows:\n" + markscheme
+    markscheme = (
+        "{mark_types}With this in mind, marks should be awarded as follows:\n"
+        + markscheme
+    )
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
             key = "".join(c for c in mark if not c.isdigit())
@@ -260,47 +263,65 @@ def update_markscheme(subquestion: str, markscheme: str):
 
 
 @unify.traced
-def call_agent(example_id, system_msg, sub_questions, markscheme, answer, available_marks):
+def call_agent(
+    example_id,
+    system_msg,
+    sub_questions,
+    markscheme,
+    answer,
+    available_marks,
+):
     agents = {k: agent.copy() for k in markscheme.keys()}
     response_formats = {
         k: create_marks_and_reasoning_format(
-            [itm[0] for itm in parse_marks_from_markscheme(f"_{k}" if k != "_" else "", v)]
-        ) for k, v in markscheme.items()
+            [
+                itm[0]
+                for itm in parse_marks_from_markscheme(f"_{k}" if k != "_" else "", v)
+            ],
+        )
+        for k, v in markscheme.items()
     }
     [
         agnt.set_response_format(rf)
         for agnt, rf in zip(
-            agents.values(), response_formats.values()
+            agents.values(),
+            response_formats.values(),
         )
     ]
     markscheme = {
-        k: update_markscheme(f"_{k}" if k != "_" else "", v) for k, v in markscheme.items()
+        k: update_markscheme(f"_{k}" if k != "_" else "", v)
+        for k, v in markscheme.items()
     }
     for k in markscheme.keys():
         agents[k].set_system_message(
             system_msg.replace(
-                "{question}", textwrap.indent(sub_questions[k], " " * 4),
-            ).replace(
-                "{markscheme}", textwrap.indent(markscheme[k], " " * 4),
-            ).replace(
-                "{answer}", textwrap.indent(answer[k], " " * 4),
-            ).replace(
-                "{available_marks}",
-                str(available_marks[k.replace("_", "total")])
-            ).replace(
-                "{output_response_explanation}",
-                output_response_explanation
+                "{question}",
+                textwrap.indent(sub_questions[k], " " * 4),
             )
+            .replace(
+                "{markscheme}",
+                textwrap.indent(markscheme[k], " " * 4),
+            )
+            .replace(
+                "{answer}",
+                textwrap.indent(answer[k], " " * 4),
+            )
+            .replace(
+                "{available_marks}",
+                str(available_marks[k.replace("_", "total")]),
+            )
+            .replace(
+                "{output_response_explanation}",
+                output_response_explanation,
+            ),
         )
     rets = unify.map(
         lambda k, a: a.generate(tags=[k]),
         list(agents.items()),
-        name=f"Evals[{example_id}]->SubQAgent"
+        name=f"Evals[{example_id}]->SubQAgent",
     )
     rets = [
-        ret.split("```")[-2].lstrip("json")
-        if "```" in ret else ret
-        for ret in rets
+        ret.split("```")[-2].lstrip("json") if "```" in ret else ret for ret in rets
     ]
     rets = {
         k: response_formats[k].model_validate_json(ret).model_dump()
@@ -321,13 +342,17 @@ def evaluate(
     _system_message,
 ):
     pred_marks = call_agent(
-        example_id, _system_message, sub_questions, markscheme, student_answer,
-        available_marks
+        example_id,
+        _system_message,
+        sub_questions,
+        markscheme,
+        student_answer,
+        available_marks,
     )
     pred_marks_total = sum([v["marks"] for v in pred_marks.values()])
     diff = {
-        k: vcor["marks"] - vpred["marks"] for (k, vcor), (_, vpred) in
-        zip(correct_marks.items(), pred_marks.items())
+        k: vcor["marks"] - vpred["marks"]
+        for (k, vcor), (_, vpred) in zip(correct_marks.items(), pred_marks.items())
     }
     error = {k: abs(v) for k, v in diff.items()}
     diff_total = sum(diff.values())
@@ -336,11 +361,12 @@ def evaluate(
         k: {
             **per_question_breakdown[k],
             "predicted_marks": pm,
-            "diff": d
-        } for (k, pqb), pm, d in zip(
+            "diff": d,
+        }
+        for (k, pqb), pm, d in zip(
             per_question_breakdown.items(),
             pred_marks.values(),
-            diff.values()
+            diff.values(),
         )
     }
     return error

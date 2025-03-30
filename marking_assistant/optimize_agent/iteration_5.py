@@ -1,4 +1,3 @@
-import json
 import os
 import re
 import textwrap
@@ -32,7 +31,7 @@ def pretty_print_dict(d, indent=0):
         if key != "_":
             output += " " * indent + str(key) + ":\n"
         if isinstance(value, dict):
-            output += pretty_print_dict(value, indent=indent + (4*int(key!="_")))
+            output += pretty_print_dict(value, indent=indent + (4 * int(key != "_")))
         else:
             for line in str(value).splitlines():
                 output += " " * (indent + 4) + line + "\n"
@@ -190,7 +189,10 @@ def update_markscheme(subquestion: str, markscheme: str):
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return markscheme
-    markscheme = "{mark_types}With this in mind, marks should be awarded as follows:\n" + markscheme
+    markscheme = (
+        "{mark_types}With this in mind, marks should be awarded as follows:\n"
+        + markscheme
+    )
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
             key = "".join(c for c in mark if not c.isdigit())
@@ -237,7 +239,10 @@ def call_agent(
         )
     else:
         output_response_exp = output_response_explanations["without_subqs"]
-    markscheme = {k: update_markscheme(f"_{k}" if k != "_" else "", v) for k, v in markscheme.items()}
+    markscheme = {
+        k: update_markscheme(f"_{k}" if k != "_" else "", v)
+        for k, v in markscheme.items()
+    }
     local_agent.set_system_message(
         system_msg.replace(
             "{question}",

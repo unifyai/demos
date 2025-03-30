@@ -32,7 +32,7 @@ def pretty_print_dict(d, indent=0):
         if key != "_":
             output += " " * indent + str(key) + ":\n"
         if isinstance(value, dict):
-            output += pretty_print_dict(value, indent=indent + (4*int(key!="_")))
+            output += pretty_print_dict(value, indent=indent + (4 * int(key != "_")))
         else:
             for line in str(value).splitlines():
                 output += " " * (indent + 4) + line + "\n"
@@ -162,7 +162,7 @@ The markscheme for this specific question is:
 {output_response_explanation}
 """.replace(
     "{general_guidelines}",
-    general_guidelines
+    general_guidelines,
 )
 
 
@@ -199,7 +199,7 @@ The markscheme for this specific question, with the mark in question {mark} expr
 You should populate the `thoughts` field with your thoughts on the whether the specific mark identified within the markscheme should be awarded for the student's answer. The mark might be irrelevant given the student's approach or answer, in which case just respond `False` for the `should_award` field, and explain this in the `thoughts` field. Please think carefully about your decision for the mark, considering the general guidelines.
 """.replace(
     "{general_guidelines}",
-    general_guidelines
+    general_guidelines,
 )
 
 
@@ -225,18 +225,19 @@ class ThoughtsAndAwardDecision(BaseModel):
 def create_per_mark_reasoning_format(mark_types):
     response_fields = dict(
         zip(
-            mark_types + ["overall_thoughts"], [(ThoughtsAndAwardDecision, ...)] * len(mark_types) + [(str, ...)]
-        )
+            mark_types + ["overall_thoughts"],
+            [(ThoughtsAndAwardDecision, ...)] * len(mark_types) + [(str, ...)],
+        ),
     )
-    return create_model('PerMarkReasoning', **response_fields)
+    return create_model("PerMarkReasoning", **response_fields)
 
 
 @unify.traced(name="create_marks_and_reasoning_format_{mark_types}")
 def create_marks_and_reasoning_format(mark_types):
     return create_model(
-        'MarksAndReasoning',
+        "MarksAndReasoning",
         reasoning=(create_per_mark_reasoning_format(mark_types), ...),
-        marks=(int, ...)
+        marks=(int, ...),
     )
 
 
@@ -249,17 +250,17 @@ def create_response_format(response_keys, mark_types):
                 [
                     (create_marks_and_reasoning_format(mark_types[key]), ...)
                     for key in response_keys
-                ]
-            )
+                ],
+            ),
         )
-        return create_model('Response', **response_fields)
+        return create_model("Response", **response_fields)
     else:
         return create_marks_and_reasoning_format(mark_types["_"])
 
 
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
 def parse_marks_from_markscheme(subquestion: str, markscheme: str):
-    extracted_marks = re.findall(r'(?:SC|M|A|B)\d+', markscheme)
+    extracted_marks = re.findall(r"(?:SC|M|A|B)\d+", markscheme)
     if not extracted_marks:
         return []
     marks_n_context = list()
@@ -267,8 +268,8 @@ def parse_marks_from_markscheme(subquestion: str, markscheme: str):
         index = markscheme.find(mark)
         chunk = markscheme[0:index]
         if i > 0:
-            prev_mark = extracted_marks[i-1]
-            marks_n_context[i-1][1] += chunk
+            prev_mark = extracted_marks[i - 1]
+            marks_n_context[i - 1][1] += chunk
         markscheme = markscheme[index:]
         marks_n_context.append([mark, chunk])
     marks_n_context[-1][1] += markscheme
@@ -291,7 +292,10 @@ def update_markscheme(subquestion: str, markscheme: str):
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return markscheme
-    markscheme = "{mark_types}With this in mind, marks should be awarded as follows:\n" + markscheme
+    markscheme = (
+        "{mark_types}With this in mind, marks should be awarded as follows:\n"
+        + markscheme
+    )
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
             key = "".join(c for c in mark if not c.isdigit())
@@ -317,10 +321,10 @@ def update_markscheme(subquestion: str, markscheme: str):
 
 @unify.traced(name="extract_mark_type_explanation_{marks_to_consider}")
 def extract_mark_type_explanation(markscheme: str, marks_to_consider=None):
-    m_marks = sorted(list(set(re.findall(r'M\d+', markscheme))))
-    a_marks = sorted(list(set(re.findall(r'A\d+', markscheme))))
-    b_marks = sorted(list(set(re.findall(r'B\d+', markscheme))))
-    sc_marks = sorted(list(set(re.findall(r'SC\d+', markscheme))))
+    m_marks = sorted(list(set(re.findall(r"M\d+", markscheme))))
+    a_marks = sorted(list(set(re.findall(r"A\d+", markscheme))))
+    b_marks = sorted(list(set(re.findall(r"B\d+", markscheme))))
+    sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return ""
     full_exp = """As a recap, the general guidelines for each of these mark types are as follows:
@@ -334,40 +338,45 @@ def extract_mark_type_explanation(markscheme: str, marks_to_consider=None):
             num_marks = int("".join(c for c in mark if c.isdigit()))
             exp = mark_types[key]
             exp = exp.replace(
-                "{num}", str(num_marks)
+                "{num}",
+                str(num_marks),
             ).replace(
-                "{num_marks}", "1 mark" if num_marks == 1 else f"{num_marks} marks"
+                "{num_marks}",
+                "1 mark" if num_marks == 1 else f"{num_marks} marks",
             )
             full_exp = full_exp.replace(
                 "{mark_types_explanation}",
-                key + ":/n" + exp + "\n\n{mark_types_explanation}"
+                key + ":/n" + exp + "\n\n{mark_types_explanation}",
             )
     return full_exp.replace("{mark_types_explanation}", "")
 
 
 @unify.traced(name="call_subq_agent_{subq}")
 def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
-    parsed_markscheme = parse_marks_from_markscheme(f"_{subq}" if subq != "_" else "", markscheme)
-    mark_agents = [
-        (k, agent.copy()) for k in
-        [itm[0] for itm in parsed_markscheme]
-    ]
-    [
-        agnt.set_response_format(ThoughtsAndAwardDecision)
-        for _, agnt in mark_agents
-    ]
+    parsed_markscheme = parse_marks_from_markscheme(
+        f"_{subq}" if subq != "_" else "",
+        markscheme,
+    )
+    mark_agents = [(k, agent.copy()) for k in [itm[0] for itm in parsed_markscheme]]
+    [agnt.set_response_format(ThoughtsAndAwardDecision) for _, agnt in mark_agents]
     for i, (k, v) in enumerate(parsed_markscheme):
         mark_agents[i][1].set_system_message(
             mark_sys_msg.replace(
-                "{mark}", k
-            ).replace(
-                "{markscheme}", markscheme
-            ).replace(
-                v, v.replace(k, f"**{k}** (to consider!)")
-            ).replace(
-                "{mark_types_explanation}",
-                extract_mark_type_explanation(markscheme, [k])
+                "{mark}",
+                k,
             )
+            .replace(
+                "{markscheme}",
+                markscheme,
+            )
+            .replace(
+                v,
+                v.replace(k, f"**{k}** (to consider!)"),
+            )
+            .replace(
+                "{mark_types_explanation}",
+                extract_mark_type_explanation(markscheme, [k]),
+            ),
         )
     if mark_agents:
         explanation = "An expert marker has already taken a look at the student's answer, and they have made the following observations for each of the candidate marks mentioned in the markscheme. You should pay special attention to these observations."
@@ -382,19 +391,24 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
                 keys.append(k)
                 continue
             keys.append(
-                k + f"({len([ky for ky in keys if k in ky])})"
+                k + f"({len([ky for ky in keys if k in ky])})",
             )
         mark_obs_dict = dict(zip(keys, vals))
-        mark_observations = explanation + "\n\n" + pretty_print_dict(
-            mark_obs_dict, indent=4
+        mark_observations = (
+            explanation
+            + "\n\n"
+            + pretty_print_dict(
+                mark_obs_dict,
+                indent=4,
+            )
         )
     else:
         mark_observations = ""
     subq_agent.set_system_message(
         subq_agent.system_message.replace(
             "{mark_observations}",
-            mark_observations
-        )
+            mark_observations,
+        ),
     )
     ret = subq_agent.generate(tags=[subq])
     if "```" in ret:
@@ -404,7 +418,7 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
         return ret
     ret["reasoning"] = {
         **mark_obs_dict,
-        "overall_thoughts": ret["reasoning"]
+        "overall_thoughts": ret["reasoning"],
     }
     return ret
 
@@ -419,75 +433,113 @@ def call_agent(
     sub_questions,
     markscheme,
     answer,
-    available_marks
+    available_marks,
 ):
     subq_agents = {k: agent.copy() for k in markscheme.keys()}
     with_subqs = len(markscheme) > 1
-    response_formats = {
-        k: MarksAndReasoning for k, v in markscheme.items()
-    }
+    response_formats = {k: MarksAndReasoning for k, v in markscheme.items()}
     [
         agnt.set_response_format(rf)
         for agnt, rf in zip(
-            subq_agents.values(), response_formats.values()
+            subq_agents.values(),
+            response_formats.values(),
         )
     ]
     mark_sys_msgs = list()
     for i, k in enumerate(markscheme.keys()):
         subq_agents[k].set_system_message(
             subq_system_message.replace(
-                "{subq}", k.replace("_", str(question_num))
-            ).replace(
-                "{question}", question,
-            ).replace(
-                "{subquestion}", sub_questions[k]
-            ).replace(
-                "{markscheme}", markscheme[k]
-            ).replace(
+                "{subq}",
+                k.replace("_", str(question_num)),
+            )
+            .replace(
+                "{question}",
+                question,
+            )
+            .replace(
+                "{subquestion}",
+                sub_questions[k],
+            )
+            .replace(
+                "{markscheme}",
+                markscheme[k],
+            )
+            .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(markscheme[k])
-            ).replace(
-                "{answer}", answer[k]
-            ).replace(
+                extract_mark_type_explanation(markscheme[k]),
+            )
+            .replace(
+                "{answer}",
+                answer[k],
+            )
+            .replace(
                 "{available_marks}",
-                str(available_marks[k.replace("_", "total")])
-            ).replace(
+                str(available_marks[k.replace("_", "total")]),
+            )
+            .replace(
                 "{output_response_explanation}",
-                output_response_explanation
-            ).replace(
-            "{prior_context}", (prior_context_exp + pretty_print_dict(
-              {
-                  k: {
-                      "sub-question": sub_questions[k],
-                      "markscheme": markscheme[k],
-                      "answer": answer[k]
-                  } for k in list(sub_questions.keys())[0:i]
-              },
-              indent=4
-            )) if with_subqs and i > 0 else ""
-          )
+                output_response_explanation,
+            )
+            .replace(
+                "{prior_context}",
+                (
+                    (
+                        prior_context_exp
+                        + pretty_print_dict(
+                            {
+                                k: {
+                                    "sub-question": sub_questions[k],
+                                    "markscheme": markscheme[k],
+                                    "answer": answer[k],
+                                }
+                                for k in list(sub_questions.keys())[0:i]
+                            },
+                            indent=4,
+                        )
+                    )
+                    if with_subqs and i > 0
+                    else ""
+                ),
+            ),
         )
         mark_sys_msgs.append(
             mark_system_message.replace(
-                "{subq}", k.replace("_", str(question_num))
-            ).replace(
-                "{question}", textwrap.indent(question, " " * 4),
-            ).replace(
-                "{subquestion}", textwrap.indent(sub_questions[k], " " * 4),
-            ).replace(
-                "{answer}", textwrap.indent(answer[k], " " * 4),
-            ).replace(
-            "{prior_context}", (prior_context_exp + pretty_print_dict(
-              {
-                  k: {
-                      "sub-question": sub_questions[k],
-                      "markscheme": markscheme[k],
-                      "answer": answer[k]
-                  } for k in list(sub_questions.keys())[0:i]
-              },
-              indent=4
-            )) if with_subqs and i > 0 else ""
-          )
+                "{subq}",
+                k.replace("_", str(question_num)),
+            )
+            .replace(
+                "{question}",
+                textwrap.indent(question, " " * 4),
+            )
+            .replace(
+                "{subquestion}",
+                textwrap.indent(sub_questions[k], " " * 4),
+            )
+            .replace(
+                "{answer}",
+                textwrap.indent(answer[k], " " * 4),
+            )
+            .replace(
+                "{prior_context}",
+                (
+                    (
+                        prior_context_exp
+                        + pretty_print_dict(
+                            {
+                                k: {
+                                    "sub-question": sub_questions[k],
+                                    "markscheme": markscheme[k],
+                                    "answer": answer[k],
+                                }
+                                for k in list(sub_questions.keys())[0:i]
+                            },
+                            indent=4,
+                        )
+                    )
+                    if with_subqs and i > 0
+                    else ""
+                ),
+            ),
         )
     rets = unify.map(
         lambda *a: call_subq_agent(example_id, *a),
@@ -513,7 +565,7 @@ def evaluate(
     correct_marks,
     per_question_breakdown,
     _subq_system_message,
-    _mark_system_message
+    _mark_system_message,
 ):
     pred_marks = call_agent(
         example_id,
@@ -524,12 +576,12 @@ def evaluate(
         sub_questions,
         markscheme,
         student_answer,
-        available_marks
+        available_marks,
     )
     pred_marks_total = sum([v["marks"] for v in pred_marks.values()])
     diff = {
-        k: vcor["marks"] - vpred["marks"] for (k, vcor), (_, vpred) in
-        zip(correct_marks.items(), pred_marks.items())
+        k: vcor["marks"] - vpred["marks"]
+        for (k, vcor), (_, vpred) in zip(correct_marks.items(), pred_marks.items())
     }
     error = {k: abs(v) for k, v in diff.items()}
     diff_total = sum(diff.values())
@@ -538,11 +590,12 @@ def evaluate(
         k: {
             **per_question_breakdown[k],
             "predicted_marks": pm,
-            "diff": d
-        } for (k, pqb), pm, d in zip(
+            "diff": d,
+        }
+        for (k, pqb), pm, d in zip(
             per_question_breakdown.items(),
             pred_marks.values(),
-            diff.values()
+            diff.values(),
         )
     }
     return error
@@ -559,6 +612,13 @@ with unify.Experiment(
 ):
     unify.map(
         evaluate,
-        [dict(**d.entries, _subq_system_message=subq_system_message, _mark_system_message=mark_system_message) for d in test_set_10],
+        [
+            dict(
+                **d.entries,
+                _subq_system_message=subq_system_message,
+                _mark_system_message=mark_system_message,
+            )
+            for d in test_set_10
+        ],
         name="Evals",
     )
