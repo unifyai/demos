@@ -14,13 +14,13 @@ unify.set_context("Evals")
 agent = unify.Unify("o3-mini@openai", traced=True, cache="read-only")
 
 
-# if os.path.exists(".cache.json"):
-#     os.remove(".cache.json")
-# wget.download(
-#     "https://raw.githubusercontent.com/"
-#     "unifyai/demos/refs/heads/main/"
-#     "marking_assistant/.cache.json",
-# )
+if os.path.exists(".cache.json"):
+    os.remove(".cache.json")
+wget.download(
+    "https://raw.githubusercontent.com/"
+    "unifyai/demos/refs/heads/main/"
+    "marking_assistant/.cache.json",
+)
 
 
 test_set_10 = unify.download_dataset("TestSet10")
