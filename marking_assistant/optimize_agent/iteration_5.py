@@ -182,7 +182,7 @@ mark_types = {
 }
 
 
-@unify.traced(name="update_markscheme_{subquestion}")
+@unify.traced(name="update_markscheme{subquestion}")
 def update_markscheme(subquestion: str, markscheme: str):
     m_marks = sorted(list(set(re.findall(r"M\d+", markscheme))))
     a_marks = sorted(list(set(re.findall(r"A\d+", markscheme))))
@@ -237,7 +237,7 @@ def call_agent(
         )
     else:
         output_response_exp = output_response_explanations["without_subqs"]
-    markscheme = {k: update_markscheme(k, v) for k, v in markscheme.items()}
+    markscheme = {k: update_markscheme(f"_{k}" if k != "_" else "", v) for k, v in markscheme.items()}
     local_agent.set_system_message(
         system_msg.replace(
             "{question}",
