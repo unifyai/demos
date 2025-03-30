@@ -348,11 +348,7 @@ def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_co
 
 
 @unify.traced(name="call_subq_agent_{subq}")
-def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
-    parsed_markscheme = parse_marks_from_markscheme(
-        f"_{subq}" if subq != "_" else "",
-        markscheme,
-    )
+def call_subq_agent(example_id, subq, subq_agent, markscheme, parsed_markscheme, mark_sys_msg):
     mark_agents = [[k, agent.copy()] for k in [itm[0] for itm in parsed_markscheme]]
     [agnt.set_response_format(ThoughtsAndAwardDecision) for _, agnt in mark_agents]
     for i, (k, v) in enumerate(parsed_markscheme):
@@ -441,7 +437,19 @@ def call_agent(
         )
     ]
     mark_sys_msgs = list()
+    parsed_markschemes = list()
     for i, k in enumerate(markscheme.keys()):
+        parsed_markscheme = parse_marks_from_markscheme(
+            f"_{k}" if k != "_" else "",
+            markscheme[k],
+        )
+        parsed_markschemes.append(parsed_markscheme)
+        this_markscheme = markscheme[k]
+        for i, (mark, chunk) in enumerate(parsed_markscheme):
+            this_markscheme = this_markscheme.replace(
+                chunk,
+                chunk.replace(mark, f"{mark}({len([m for m, _ in parsed_markscheme[0:i] if m == mark])})")
+            )
         subq_agents[k].set_system_message(
             subq_system_message.replace(
                 "{subq}",
@@ -457,7 +465,7 @@ def call_agent(
             )
             .replace(
                 "{markscheme}",
-                textwrap.indent(markscheme[k], " " * 4),
+                textwrap.indent(this_markscheme, " " * 4),
             )
             .replace(
                 "{mark_types_explanation}",
@@ -541,6 +549,7 @@ def call_agent(
         list(sub_questions.keys()),
         list(subq_agents.values()),
         list(markscheme.values()),
+        parsed_markschemes,
         mark_sys_msgs,
         from_args=True,
         name=f"Evals[{example_id}]->SubQAgent",
@@ -598,7 +607,7 @@ def evaluate(
 
 with unify.Experiment(
     "queries_per_mark",
-    overwrite=True,
+    overwrite=True
 ), unify.Params(
     subq_system_message=subq_system_message,
     mark_system_message=mark_system_message,
