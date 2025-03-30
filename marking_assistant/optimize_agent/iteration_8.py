@@ -320,7 +320,7 @@ def call_agent(example_id, system_msg, question_num, question, sub_questions, ma
           )
         )
     rets = unify.map(
-        lambda a: a.generate(),
+        lambda a: a.generate(tags=[k]),
         list(agents.values()),
         name=f"Evals[{example_id}]->SubQAgent"
     )
