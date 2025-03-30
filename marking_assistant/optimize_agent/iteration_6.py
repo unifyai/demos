@@ -378,7 +378,7 @@ def evaluate(
             diff.values(),
         )
     }
-    return error
+    return error_total
 
 
 with unify.Experiment(

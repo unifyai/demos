@@ -5,7 +5,7 @@ import textwrap
 
 import unify
 import wget
-from pydantic import BaseModel, create_model
+from pydantic import BaseModel
 
 unify.activate("MarkingAssistant")
 unify.set_context("Evals")
@@ -554,7 +554,7 @@ def evaluate(
             diff.values(),
         )
     }
-    return error
+    return error_total
 
 
 with unify.Experiment(

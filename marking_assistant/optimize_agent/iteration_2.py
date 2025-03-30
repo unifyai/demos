@@ -199,7 +199,7 @@ def evaluate(
             error_total = abs(diff_total)
             break
     pred_marks = {"_": {"marks": pred_marks_total, "rationale": pred_marks}}
-    return
+    return error_total
 
 
 with unify.Experiment("add_marking_guidelines", overwrite=True), unify.Params(

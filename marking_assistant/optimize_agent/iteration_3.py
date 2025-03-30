@@ -260,7 +260,7 @@ def evaluate(
             diff.values(),
         )
     }
-    return error
+    return error_total
 
 
 with unify.Experiment("add_structured_output", overwrite=True), unify.Params(
