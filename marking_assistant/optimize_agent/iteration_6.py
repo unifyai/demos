@@ -273,7 +273,7 @@ def call_agent(system_msg, question, sub_questions, markscheme, answer, availabl
     markscheme = {k: update_markscheme(f"_{k}" if k != "_" else "", v) for k, v in markscheme.items()}
     local_agent.set_system_message(
         system_msg.replace(
-            "{question}", question
+            "{question}", textwrap.indent(question, " " * 4),
         ).replace(
             "{markscheme}", pretty_print_dict(markscheme, indent=4)
         ).replace(
