@@ -195,8 +195,7 @@ The markscheme for this specific question, with the mark in question {mark} expr
 {markscheme}
 
 {mark_types_explanation}
-
-You should populate the `thoughts` field with your thoughts on the whether the specific mark identified within the markscheme should be awarded for the student's answer. The mark might be irrelevant given the student's approach or answer, in which case just respond `False` for the `should_award` field, and explain this in the `thoughts` field. Please think carefully about your decision for the mark, considering the general guidelines.
+You should populate the `thoughts` field with your thoughts on the whether the specific mark {mark} identified within the markscheme should be awarded for the student's answer. This {mark} mark might be irrelevant given the student's approach or answer, in which case just respond `False` for the `should_award` field, and explain this in the `thoughts` field. Please think carefully about your decision for awarding this {mark} mark, considering the general guidelines.
 """.replace(
     "{general_guidelines}",
     general_guidelines,
@@ -327,8 +326,7 @@ def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_co
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return ""
-    full_exp = """As a recap, the general guidelines for this mark type are as follows:
-{mark_types_explanation}"""
+    full_exp = "As a recap, {mark_types_explanation}"
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
             if marks_to_consider and mark not in marks_to_consider:
@@ -345,7 +343,7 @@ def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_co
             )
             full_exp = full_exp.replace(
                 "{mark_types_explanation}",
-                exp + "\n\n{mark_types_explanation}",
+                exp + "\n{mark_types_explanation}",
             )
     return full_exp.replace("{mark_types_explanation}", "")
 
@@ -376,7 +374,7 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
             )
             .replace(
                 "{mark_types_explanation}",
-                textwrap.indent(extract_mark_type_explanation(f"_{k}({i})" if k != "_" else "", markscheme, [k]), " " * 4),
+                extract_mark_type_explanation(f"_{k}({i})" if k != "_" else "", markscheme, [k]),
             ),
         )
     if mark_agents:
