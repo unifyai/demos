@@ -195,23 +195,6 @@ def create_marks_and_reasoning_format(mark_types):
     )
 
 
-@unify.traced(name="create_response_format_{mark_types}")
-def create_response_format(response_keys, mark_types):
-    if response_keys:
-        response_fields = dict(
-            zip(
-                response_keys,
-                [
-                    (create_marks_and_reasoning_format(mark_types[key]), ...)
-                    for key in response_keys
-                ],
-            ),
-        )
-        return create_model("Response", **response_fields)
-    else:
-        return create_marks_and_reasoning_format(mark_types["_"])
-
-
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
 def parse_marks_from_markscheme(subquestion: str, markscheme: str):
     extracted_marks = re.findall(r"(?:SC|M|A|B)\d+", markscheme)
