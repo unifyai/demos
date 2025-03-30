@@ -228,26 +228,6 @@ class ThoughtsAndAwardDecision(BaseModel):
     should_award: bool
 
 
-@unify.traced(name="create_per_mark_reasoning_format_{mark_types}")
-def create_per_mark_reasoning_format(mark_types):
-    response_fields = dict(
-        zip(
-            mark_types + ["overall_thoughts"],
-            [(ThoughtsAndAwardDecision, ...)] * len(mark_types) + [(str, ...)],
-        ),
-    )
-    return create_model("PerMarkReasoning", **response_fields)
-
-
-@unify.traced(name="create_marks_and_reasoning_format_{mark_types}")
-def create_marks_and_reasoning_format(mark_types):
-    return create_model(
-        "MarksAndReasoning",
-        reasoning=(create_per_mark_reasoning_format(mark_types), ...),
-        marks=(int, ...),
-    )
-
-
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
 def parse_marks_from_markscheme(subquestion: str, markscheme: str):
     extracted_marks = re.findall(r"(?:SC|M|A|B)\d+", markscheme)
