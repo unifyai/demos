@@ -349,7 +349,7 @@ def extract_mark_type_explanation(markscheme: str, marks_to_consider=None):
 def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
     parsed_markscheme = parse_marks_from_markscheme(f"_{subq}" if subq != "_" else "", markscheme)
     mark_agents = [
-        [k, agent.copy()] for k in
+        (k, agent.copy()) for k in
         [itm[0] for itm in parsed_markscheme]
     ]
     [
@@ -372,9 +372,9 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
     if mark_agents:
         explanation = "An expert marker has already taken a look at the student's answer, and they have made the following observations for each of the candidate marks mentioned in the markscheme. You should pay special attention to these observations."
         vals = unify.map(
-            lambda a: json.loads(a.generate()),
-            [agnt for _, agnt in mark_agents],
-            name=f"Evals[{example_id}]->SubQAgent[{subq}]->MarkAgent"
+            lambda m, a: json.loads(a.generate(tags=[m])),
+            mark_agents,
+            name=f"Evals[{example_id}]->SubQAgent[{subq}]->MarkAgent",
         )
         keys = list()
         for k, _ in mark_agents:
@@ -396,7 +396,7 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
             mark_observations
         )
     )
-    ret = subq_agent.generate()
+    ret = subq_agent.generate(tags=[subq])
     if "```" in ret:
         ret = ret.split("```")[-2].lstrip("json")
     ret = json.loads(ret)
@@ -496,7 +496,7 @@ def call_agent(
         list(markscheme.values()),
         mark_sys_msgs,
         from_args=True,
-        name=f"Evals[{example_id}]->SubQAgent"
+        name=f"Evals[{example_id}]->SubQAgent",
     )
     return dict(zip(markscheme.keys(), rets))
 
