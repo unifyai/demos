@@ -327,8 +327,7 @@ def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_co
     sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
     if not any(m_marks + a_marks + b_marks + sc_marks):
         return ""
-    full_exp = """As a recap, the general guidelines for each of these mark types are as follows:
-
+    full_exp = """As a recap, the general guidelines for this mark type are as follows:
 {mark_types_explanation}"""
     for marks in (m_marks, a_marks, b_marks, sc_marks):
         for mark in marks:
@@ -346,7 +345,7 @@ def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_co
             )
             full_exp = full_exp.replace(
                 "{mark_types_explanation}",
-                key + ":/n" + exp + "\n\n{mark_types_explanation}",
+                exp + "\n\n{mark_types_explanation}",
             )
     return full_exp.replace("{mark_types_explanation}", "")
 
@@ -367,15 +366,17 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
             )
             .replace(
                 "{markscheme}",
-                markscheme,
-            )
-            .replace(
-                v,
-                v.replace(k, f"**{k}** (to consider!)"),
+                textwrap.indent(
+                    markscheme.replace(
+                        v,
+                        v.replace(k, f"**{k}** (to consider!)"),
+                    ),
+                    " " * 4
+                ),
             )
             .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(f"_{k}({i})" if k != "_" else "", markscheme, [k]),
+                textwrap.indent(extract_mark_type_explanation(f"_{k}({i})" if k != "_" else "", markscheme, [k]), " " * 4),
             ),
         )
     if mark_agents:
@@ -454,23 +455,23 @@ def call_agent(
             )
             .replace(
                 "{question}",
-                question,
+                textwrap.indent(question, " " * 4),
             )
             .replace(
                 "{subquestion}",
-                sub_questions[k],
+                textwrap.indent(sub_questions[k], " " * 4),
             )
             .replace(
                 "{markscheme}",
-                markscheme[k],
+                textwrap.indent(markscheme[k], " " * 4),
             )
             .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(f"_{k}" if k != "_" else "", markscheme[k]),
+                textwrap.indent(extract_mark_type_explanation(f"_{k}" if k != "_" else "", markscheme[k]), " " * 4),
             )
             .replace(
                 "{answer}",
-                answer[k],
+                textwrap.indent(answer[k], " " * 4),
             )
             .replace(
                 "{available_marks}",
