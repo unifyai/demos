@@ -357,7 +357,7 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
         f"_{subq}" if subq != "_" else "",
         markscheme,
     )
-    mark_agents = [(k, agent.copy()) for k in [itm[0] for itm in parsed_markscheme]]
+    mark_agents = [[k, agent.copy()] for k in [itm[0] for itm in parsed_markscheme]]
     [agnt.set_response_format(ThoughtsAndAwardDecision) for _, agnt in mark_agents]
     for i, (k, v) in enumerate(parsed_markscheme):
         mark_agents[i][1].set_system_message(
@@ -375,14 +375,14 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
             )
             .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(f"_{k}" if k != "_" else "", markscheme, [k]),
+                extract_mark_type_explanation(f"_{k}({i})" if k != "_" else "", markscheme, [k]),
             ),
         )
     if mark_agents:
         explanation = "An expert marker has already taken a look at the student's answer, and they have made the following observations for each of the candidate marks mentioned in the markscheme. You should pay special attention to these observations."
         vals = unify.map(
-            lambda m, a: json.loads(a.generate(tags=[m])),
-            mark_agents,
+            lambda i, m, a: json.loads(a.generate(tags=[m + f"{(i)}"])),
+            [tuple([i] + item) for i, item in enumerate(mark_agents)],
             name=f"Evals[{example_id}]->SubQAgent[{subq}]->MarkAgent",
         )
         keys = list()
