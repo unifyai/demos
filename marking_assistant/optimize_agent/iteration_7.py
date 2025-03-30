@@ -25,19 +25,6 @@ wget.download(
 test_set_10 = unify.download_dataset("TestSet10")
 
 
-def pretty_print_dict(d, indent=0):
-    output = ""
-    for key, value in d.items():
-        if key != "_":
-            output += " " * indent + str(key) + ":\n"
-        if isinstance(value, dict):
-            output += pretty_print_dict(value, indent=indent + (4 * int(key != "_")))
-        else:
-            for line in str(value).splitlines():
-                output += " " * (indent + 4) + line + "\n"
-    return output
-
-
 general_guidelines = """----
 
 1.
@@ -182,23 +169,6 @@ def create_marks_and_reasoning_format(mark_types):
         reasoning=(create_per_mark_reasoning_format(mark_types), ...),
         marks=(int, ...),
     )
-
-
-@unify.traced(name="create_response_format_{mark_types}")
-def create_response_format(response_keys, mark_types):
-    if response_keys:
-        response_fields = dict(
-            zip(
-                response_keys,
-                [
-                    (create_marks_and_reasoning_format(mark_types[key]), ...)
-                    for key in response_keys
-                ],
-            ),
-        )
-        return create_model("Response", **response_fields)
-    else:
-        return create_marks_and_reasoning_format(mark_types["_"])
 
 
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
