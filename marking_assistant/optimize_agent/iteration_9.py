@@ -319,8 +319,8 @@ def update_markscheme(subquestion: str, markscheme: str):
     return markscheme
 
 
-@unify.traced(name="extract_mark_type_explanation_{marks_to_consider}")
-def extract_mark_type_explanation(markscheme: str, marks_to_consider=None):
+@unify.traced(name="extract_mark_type_explanation{subquestion}")
+def extract_mark_type_explanation(subquestion: str, markscheme: str, marks_to_consider=None):
     m_marks = sorted(list(set(re.findall(r"M\d+", markscheme))))
     a_marks = sorted(list(set(re.findall(r"A\d+", markscheme))))
     b_marks = sorted(list(set(re.findall(r"B\d+", markscheme))))
@@ -375,7 +375,7 @@ def call_subq_agent(example_id, subq, subq_agent, markscheme, mark_sys_msg):
             )
             .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(markscheme, [k]),
+                extract_mark_type_explanation(f"_{k}" if k != "_" else "", markscheme, [k]),
             ),
         )
     if mark_agents:
@@ -466,7 +466,7 @@ def call_agent(
             )
             .replace(
                 "{mark_types_explanation}",
-                extract_mark_type_explanation(markscheme[k]),
+                extract_mark_type_explanation(f"_{k}" if k != "_" else "", markscheme[k]),
             )
             .replace(
                 "{answer}",
