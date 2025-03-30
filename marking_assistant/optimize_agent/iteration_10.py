@@ -248,23 +248,6 @@ def create_marks_and_reasoning_format(mark_types):
     )
 
 
-@unify.traced(name="create_response_format_{mark_types}")
-def create_response_format(response_keys, mark_types):
-    if response_keys:
-        response_fields = dict(
-            zip(
-                response_keys,
-                [
-                    (create_marks_and_reasoning_format(mark_types[key]), ...)
-                    for key in response_keys
-                ],
-            ),
-        )
-        return create_model("Response", **response_fields)
-    else:
-        return create_marks_and_reasoning_format(mark_types["_"])
-
-
 @unify.traced(name="parse_marks_from_markscheme{subquestion}")
 def parse_marks_from_markscheme(subquestion: str, markscheme: str):
     extracted_marks = re.findall(r"(?:SC|M|A|B)\d+", markscheme)
@@ -288,41 +271,6 @@ mark_types = {
     "B": "B{num} ({num_marks}) should be awarded for the correct final answer, a partially correct answer, or a correct intermediate stage (depending on how this is expressed and explained below). B{num} is independent of M (method) marks.",
     "SC": "SC{num} ({num_marks}) should be awarded for the special cases explained below, which are worthy of some credit.",
 }
-
-
-@unify.traced(name="update_markscheme{subquestion}")
-def update_markscheme(subquestion: str, markscheme: str):
-    m_marks = sorted(list(set(re.findall(r"M\d+", markscheme))))
-    a_marks = sorted(list(set(re.findall(r"A\d+", markscheme))))
-    b_marks = sorted(list(set(re.findall(r"B\d+", markscheme))))
-    sc_marks = sorted(list(set(re.findall(r"SC\d+", markscheme))))
-    if not any(m_marks + a_marks + b_marks + sc_marks):
-        return markscheme
-    markscheme = (
-        "{mark_types}With this in mind, marks should be awarded as follows:\n"
-        + markscheme
-    )
-    for marks in (m_marks, a_marks, b_marks, sc_marks):
-        for mark in marks:
-            key = "".join(c for c in mark if not c.isdigit())
-            num_marks = int("".join(c for c in mark if c.isdigit()))
-            explanation = mark_types[key]
-            explanation = explanation.replace(
-                "{num}",
-                str(num_marks),
-            ).replace(
-                "{num_marks}",
-                "1 mark" if num_marks == 1 else f"{num_marks} marks",
-            )
-            markscheme = markscheme.replace(
-                "{mark_types}",
-                explanation + "\n{mark_types}",
-            )
-    markscheme = markscheme.replace(
-        "{mark_types}",
-        "",
-    )
-    return markscheme
 
 
 @unify.traced(name="extract_mark_type_explanation{subquestion}")
