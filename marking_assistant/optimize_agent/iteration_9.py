@@ -207,7 +207,7 @@ All of the *preceeding* sub-questions, their specific markschemes and the studen
 """
 
 
-output_response_explanation = "You should populate the `reasoning` field with your general thoughts on each individual mark identified in the markscheme, and also a decision as to whether each of these mark should be awarded. These marks are not necessarily cumulative with regards to the marks to award, and some may be irrelevant given the student's approach or answer, in which case just respond `False` for the `should_award` field. Finally, you should put the total number of marks to award in the `marks` field."
+output_response_explanation = "You should populate the `reasoning` field with your general thoughts on each individual mark identified in the markscheme, and also a decision as to whether each of these mark should be awarded. These marks are not necessarily cumulative with regards to the marks to award, and some may be irrelevant given the student's approach or answer. Finally, you should put the total number of marks to award in the `marks` field."
 
 
 class MarksAndReasoning(BaseModel):
