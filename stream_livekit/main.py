@@ -14,8 +14,7 @@ from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from typing import AsyncIterable
 import unify
 
-unify.activate("Unity")
-unify.set_context("Calls", overwrite=True)
+unify.activate("Stream LiveKit")
 unify.initialize_async_logger()
 
 load_dotenv()

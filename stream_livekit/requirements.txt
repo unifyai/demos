@@ -79,7 +79,8 @@ transformers==4.51.3
 types-protobuf==4.25.0.20240417
 typing-extensions==4.13.2
 typing-inspection==0.4.0
-unifyai @ file:///Users/djl11/unify
+# -e ../../unify # dev mode
+git+https://github.com/unifyai/unify # deploy mode
 urllib3==2.4.0
 watchfiles==1.0.5
 websockets==15.0.1
