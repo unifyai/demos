@@ -1,0 +1,32 @@
+From this directory:
+
+
+Create file for environment variables:
+```
+touch .env
+```
+
+Add the following to your new .env file:
+
+```
+OPENAI_API_KEY=<Your OpenAI API Key>
+GMAIL_ADDRESS=<Your GMail Address>
+GMAIL_PASSWORD=<Your GMail Password>
+```
+
+The set up the virtual environment:
+```bash
+uv venv .browser_use
+source .browser_use/bin/activate
+uv pip install -r requirements.txt
+```
+
+Run the demo:
+```python
+python main.py console
+```
+
+Check your new "Stream LiveKit" interface in [the console](https://console.unify.ai) to see the live call logs.
+
+See this link for more details:
+https://docs.livekit.io/agents/start/voice-ai/
