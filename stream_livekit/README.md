@@ -35,5 +35,7 @@ Run the demo:
 python main.py console
 ```
 
+Check your new "Stream LiveKit" interface in [the console](https://console.unify.ai) to see the live call logs.
+
 See this link for more details:
 https://docs.livekit.io/agents/start/voice-ai/
