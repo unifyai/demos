@@ -1,19 +1,26 @@
 """
-Overlay numbered boxes on clickable elements in/near the viewport.
-The overlay is refreshed every REFRESH_INTERVAL seconds so that
-scrolling, dynamic DOM changes,   etc. are reflected automatically.
+Live overlay of clickable elements with interactive terminal control.
+
+ • The overlay and the numbered list refresh every REFRESH_INTERVAL seconds,
+   so scrolling or DOM changes are reflected automatically.
+ • In the terminal just type the desired number and press <Enter>;
+   the element is clicked in the browser.
+ • Type q (or quit / exit) to close everything.
 
     pip install playwright && playwright install
 """
 
 from math import floor
 import time
+import sys
+import threading
+import queue
 from playwright.sync_api import sync_playwright
 
 URL              = "https://unify.ai"
 MARGIN           = 100     # px overscan above / below viewport
 ANIMATION_WAIT   = 2       # initial wait for in‑page animations (s)
-REFRESH_INTERVAL = 0.5     # HOW OFTEN TO RE-COMPUTE (s)
+REFRESH_INTERVAL = 0.5     # overlay & list refresh cadence (s)
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
@@ -28,7 +35,7 @@ a[href]:visible,
 # ----------  JS helpers  ----------------------------------------------------
 
 ELEMENT_INFO_JS = """
-el => {
+(el) => {
   function hasFixedAncestor(node){
     while (node && node !== document.body && node !== document.documentElement){
       const pos = getComputedStyle(node).position;
@@ -39,7 +46,7 @@ el => {
   }
 
   const r = el.getBoundingClientRect();
-  if (!r.width || !r.height) return null;          // hidden / zero‑size
+  if (!r.width || !r.height) return null;     // hidden / zero‑size
 
   return {
     fixed : hasFixedAncestor(el),
@@ -59,13 +66,11 @@ el => {
 }
 """
 
-# One‑shot script that *keeps* the two root containers and just clears / repaints.
 UPDATE_OVERLAY_JS = """
 (boxes) => {
   let rootPage  = document.getElementById("__pw_rootPage__");
   let rootFixed = document.getElementById("__pw_rootFixed__");
 
-  // First run – create roots
   if (!rootPage) {
     rootPage  = Object.assign(document.createElement('div'), {
       id:"__pw_rootPage__",  style:"position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646"
@@ -75,7 +80,6 @@ UPDATE_OVERLAY_JS = """
     });
     document.body.append(rootPage, rootFixed);
   } else {
-    // Subsequent runs – purge previous children
     rootPage.replaceChildren();
     rootFixed.replaceChildren();
   }
@@ -104,6 +108,7 @@ UPDATE_OVERLAY_JS = """
 # ----------  Python helpers  -------------------------------------------------
 
 def collect_elements(page):
+    """Return a list of dicts each containing element handle + meta info."""
     vp = page.evaluate("() => ({w:innerWidth, h:innerHeight})")
     vL, vT = -MARGIN, -MARGIN
     vR, vB = vp["w"] + MARGIN, vp["h"] + MARGIN
@@ -116,28 +121,39 @@ def collect_elements(page):
         vl, vt, w, hgt = info["vleft"], info["vtop"], info["width"], info["height"]
         if (vl + w) < vL or vl > vR or (vt + hgt) < vT or vt > vB:
             continue
+        info["handle"] = handle            # keep handle for later click
         elems.append(info)
     return elems
 
 
 def build_boxes(elements):
-    boxes = []
-    for idx, e in enumerate(elements, 1):
-        boxes.append(
-            dict(i=idx,
-                 fixed=e['fixed'],
-                 px=floor(e['vleft']), py=floor(e['vtop']),
-                 x =floor(e['left']),  y =floor(e['top']),
-                 w =floor(e['width']), h =floor(e['height']))
-        )
-    return boxes
+    return [
+        dict(i=idx,
+             fixed=e['fixed'],
+             px=floor(e['vleft']), py=floor(e['vtop']),
+             x =floor(e['left']),  y =floor(e['top']),
+             w =floor(e['width']), h =floor(e['height']))
+        for idx, e in enumerate(elements, 1)
+    ]
 
 
 def serialise(boxes):
-    """Lightweight tuple serialisation so we can detect changes quickly."""
+    """Tiny serialisation to detect visual changes quickly."""
     return tuple((b['fixed'], b['x'], b['y'], b['w'], b['h']) for b in boxes)
 
-# ----------  Main  ----------------------------------------------------------
+
+# ----------  Input thread  ---------------------------------------------------
+
+def start_input_listener(q):
+    """Background thread reading from stdin and pushing complete lines to q."""
+    def _reader():
+        for line in sys.stdin:
+            q.put(line.strip())
+    t = threading.Thread(target=_reader, daemon=True)
+    t.start()
+
+
+# ----------  Main  -----------------------------------------------------------
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
@@ -145,22 +161,45 @@ with sync_playwright() as p:
     page.goto(URL, wait_until="domcontentloaded")
     page.wait_for_timeout(ANIMATION_WAIT * 1000)
 
-    print("\n👉  Overlays are live.  Scroll the page; they’ll refresh automatically.  Ctrl‑C to exit.")
+    print("\nScroll the page freely. Numbers update live.")
+    print("Type a number + <Enter> to click it, or q to quit.\n")
 
     last_snapshot = None
+    input_q = queue.Queue()
+    start_input_listener(input_q)
+
     try:
         while True:
             elements = collect_elements(page)
-            boxes     = build_boxes(elements)
-            snap      = serialise(boxes)
+            boxes    = build_boxes(elements)
+            snap     = serialise(boxes)
 
             if snap != last_snapshot:
-                # Optional: console listing (comment out if noisy)
-                print("\x1b[2J\x1b[H", end="")   # clear screen
+                # print live list (no screen clearing to avoid fighting with user typing)
+                print("\n" + "-"*40)
                 for b, e in zip(boxes, elements):
                     print(f"{b['i']:>2}. {e['label']}")
+                print("-"*40)
                 page.evaluate(UPDATE_OVERLAY_JS, boxes)
                 last_snapshot = snap
+
+            # handle any user inputs
+            while not input_q.empty():
+                cmd = input_q.get()
+                if cmd.lower() in {"q", "quit", "exit"}:
+                    raise KeyboardInterrupt
+                if not cmd.isdigit():
+                    print(f"! Not a number: {cmd}")
+                    continue
+                idx = int(cmd)
+                if 1 <= idx <= len(elements):
+                    try:
+                        elements[idx - 1]["handle"].click()
+                        print(f"✓ Clicked element #{idx}\n")
+                    except Exception as e:
+                        print(f"! Click failed: {e}\n")
+                else:
+                    print(f"! Index {idx} out of range\n")
 
             time.sleep(REFRESH_INTERVAL)
 
