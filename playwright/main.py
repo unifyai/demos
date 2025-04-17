@@ -1,18 +1,19 @@
 """
 Live overlay of clickable elements with interactive terminal control
-(including scroll + tab management).
+(including smooth scrolling & tab management).
 
     pip install playwright && playwright install
 """
 
 from math import floor
-import time, sys, threading, queue, re
+import time, sys, threading, queue, re, textwrap
 from playwright.sync_api import sync_playwright
 
 URL              = "https://unify.ai"
 MARGIN           = 100
 ANIMATION_WAIT   = 2
 REFRESH_INTERVAL = 0.5      # s
+SCROLL_DURATION  = 400      # ms – feel free to tweak
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
@@ -94,6 +95,24 @@ UPDATE_OVERLAY_JS = """
 }
 """
 
+# 🚩  **Updated helper**: receives a single object arg
+HANDLE_SCROLL_JS = """
+({delta, duration}) => {
+  const startY   = window.scrollY;
+  const targetY  = startY + delta;
+  const startTs  = performance.now();
+
+  function ease(p){ return p < .5 ? 2*p*p : -1 + (4 - 2*p)*p } // ease‑in‑out quad
+
+  function step(ts){
+    const p = Math.min(1, (ts - startTs) / duration);
+    window.scrollTo(0, startY + (targetY - startY) * ease(p));
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+"""
+
 # -------------------------  Python helpers  ---------------------------------
 
 def collect_elements(page):
@@ -147,7 +166,7 @@ def background_stdin(q):
 # -------------------------  Main  -------------------------------------------
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False, args=["--disable-web-security"])  # arg useful for some sites
+    browser = p.chromium.launch(headless=False)
     pages       = [browser.new_page()]
     active_page = pages[0]
     active_page.goto(URL, wait_until="domcontentloaded")
@@ -158,36 +177,42 @@ with sync_playwright() as p:
 
     last_snapshot = None
 
-    HELP_TXT = (
-        "\nCommands:  <num> | scroll up <px> | scroll down <px> | "
-        "new tab | close tab <text> | switch to tab <text> | q\n"
-    )
+    HELP_TXT = textwrap.dedent(f"""
+        Commands:
+          <num>                     – click numbered element
+          scroll up|down <px>       – smooth scroll
+          new tab                   – open about:blank
+          close tab <text>          – close first tab whose title contains text
+          switch to tab <text>      – activate matching tab
+          q                         – quit
+    """).strip()
 
     try:
         while True:
-            # refresh overlay on active page
-            elements = collect_elements(active_page)
-            boxes    = build_boxes(elements)
-            snap     = serialise(boxes)
-            if snap != last_snapshot:
-                print("\x1b[2J\x1b[H", end="")                                   # clear screen
-                print("Open tabs:")
-                print("\n".join(list_tabs(pages, active_page)))
-                print(HELP_TXT)
-                for b, e in zip(boxes, elements):
-                    print(f"{b['i']:>2}. {e['label']}")
-                active_page.evaluate(UPDATE_OVERLAY_JS, boxes)
-                last_snapshot = snap
+            if active_page:
+                elements = collect_elements(active_page)
+                boxes    = build_boxes(elements)
+                snap     = serialise(boxes)
+                if snap != last_snapshot:
+                    print("\x1b[2J\x1b[H", end="")   # clear TTY
+                    print("Open tabs:")
+                    print("\n".join(list_tabs(pages, active_page)))
+                    print("\n" + HELP_TXT + "\n")
+                    for b, e in zip(boxes, elements):
+                        print(f"{b['i']:>2}. {e['label']}")
+                    active_page.evaluate(UPDATE_OVERLAY_JS, boxes)
+                    last_snapshot = snap
 
-            # process pending commands
+            # process commands
             while not cmd_q.empty():
                 raw = cmd_q.get().strip()
-                if not raw:   # blank line from enter key
+                if not raw:
                     continue
-                if raw.lower() in {"q", "quit", "exit"}:
+                rlow = raw.lower()
+                if rlow in {"q", "quit", "exit"}:
                     raise KeyboardInterrupt
 
-                # number click?
+                # number click
                 if raw.isdigit():
                     idx = int(raw)
                     if 1 <= idx <= len(elements):
@@ -201,24 +226,24 @@ with sync_playwright() as p:
                     continue
 
                 # scroll
-                m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", raw, re.I)
-                if m:
-                    direction, px = m.group(1).lower(), int(m.group(2))
+                m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", rlow)
+                if m and active_page:
+                    direction, px = m.group(1), int(m.group(2))
                     delta = -px if direction == "up" else px
-                    active_page.evaluate(f"window.scrollBy(0,{delta})")
-                    last_snapshot = None  # force rediscovery
+                    active_page.evaluate(HANDLE_SCROLL_JS, {"delta": delta, "duration": SCROLL_DURATION})
+                    last_snapshot = None
                     continue
 
                 # new tab
-                if raw.lower() == "new tab":
+                if rlow == "new tab":
                     newp = browser.new_page()
                     pages.append(newp)
                     active_page = newp
                     last_snapshot = None
                     continue
 
-                # close tab {txt}
-                m = re.fullmatch(r"close\s+tab\s+(.+)", raw, re.I)
+                # close tab
+                m = re.fullmatch(r"close\s+tab\s+(.+)", rlow)
                 if m:
                     txt = m.group(1).strip().lower()
                     tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
@@ -231,8 +256,8 @@ with sync_playwright() as p:
                         print(f"! No tab matches '{txt}'")
                     continue
 
-                # switch to tab {txt}
-                m = re.fullmatch(r"switch\s+to\s+tab\s+(.+)", raw, re.I)
+                # switch tab
+                m = re.fullmatch(r"switch\s+to\s+tab\s+(.+)", rlow)
                 if m:
                     txt = m.group(1).strip().lower()
                     tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
