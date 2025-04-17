@@ -1,26 +1,18 @@
 """
-Live overlay of clickable elements with interactive terminal control.
-
- • The overlay and the numbered list refresh every REFRESH_INTERVAL seconds,
-   so scrolling or DOM changes are reflected automatically.
- • In the terminal just type the desired number and press <Enter>;
-   the element is clicked in the browser.
- • Type q (or quit / exit) to close everything.
+Live overlay of clickable elements with interactive terminal control
+(including scroll + tab management).
 
     pip install playwright && playwright install
 """
 
 from math import floor
-import time
-import sys
-import threading
-import queue
+import time, sys, threading, queue, re
 from playwright.sync_api import sync_playwright
 
 URL              = "https://unify.ai"
-MARGIN           = 100     # px overscan above / below viewport
-ANIMATION_WAIT   = 2       # initial wait for in‑page animations (s)
-REFRESH_INTERVAL = 0.5     # overlay & list refresh cadence (s)
+MARGIN           = 100
+ANIMATION_WAIT   = 2
+REFRESH_INTERVAL = 0.5      # s
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
@@ -32,7 +24,7 @@ a[href]:visible,
 [onclick]:visible
 """
 
-# ----------  JS helpers  ----------------------------------------------------
+# -----------------------------  JS snippets  --------------------------------
 
 ELEMENT_INFO_JS = """
 (el) => {
@@ -46,7 +38,7 @@ ELEMENT_INFO_JS = """
   }
 
   const r = el.getBoundingClientRect();
-  if (!r.width || !r.height) return null;     // hidden / zero‑size
+  if (!r.width || !r.height) return null;
 
   return {
     fixed : hasFixedAncestor(el),
@@ -71,17 +63,14 @@ UPDATE_OVERLAY_JS = """
   let rootPage  = document.getElementById("__pw_rootPage__");
   let rootFixed = document.getElementById("__pw_rootFixed__");
 
-  if (!rootPage) {
-    rootPage  = Object.assign(document.createElement('div'), {
-      id:"__pw_rootPage__",  style:"position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646"
-    });
-    rootFixed = Object.assign(document.createElement('div'), {
-      id:"__pw_rootFixed__", style:"position:fixed;inset:0;pointer-events:none;z-index:2147483647"
-    });
+  if (!rootPage){
+    rootPage  = Object.assign(document.createElement('div'),{
+      id:"__pw_rootPage__",  style:"position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646"});
+    rootFixed = Object.assign(document.createElement('div'),{
+      id:"__pw_rootFixed__", style:"position:fixed;inset:0;pointer-events:none;z-index:2147483647"});
     document.body.append(rootPage, rootFixed);
   } else {
-    rootPage.replaceChildren();
-    rootFixed.replaceChildren();
+    rootPage.replaceChildren(); rootFixed.replaceChildren();
   }
 
   boxes.forEach(({i,fixed,x,y,px,py,w,h}, n,{length})=>{
@@ -105,23 +94,20 @@ UPDATE_OVERLAY_JS = """
 }
 """
 
-# ----------  Python helpers  -------------------------------------------------
+# -------------------------  Python helpers  ---------------------------------
 
 def collect_elements(page):
-    """Return a list of dicts each containing element handle + meta info."""
     vp = page.evaluate("() => ({w:innerWidth, h:innerHeight})")
     vL, vT = -MARGIN, -MARGIN
-    vR, vB = vp["w"] + MARGIN, vp["h"] + MARGIN
+    vR, vB = vp['w'] + MARGIN, vp['h'] + MARGIN
 
     elems = []
-    for handle in page.locator(CLICKABLE_CSS).element_handles():
-        info = page.evaluate(ELEMENT_INFO_JS, handle)
-        if not info:
-            continue
-        vl, vt, w, hgt = info["vleft"], info["vtop"], info["width"], info["height"]
-        if (vl + w) < vL or vl > vR or (vt + hgt) < vT or vt > vB:
-            continue
-        info["handle"] = handle            # keep handle for later click
+    for h in page.locator(CLICKABLE_CSS).element_handles():
+        info = page.evaluate(ELEMENT_INFO_JS, h)
+        if not info: continue
+        vl, vt, w, hgt = info['vleft'], info['vtop'], info['width'], info['height']
+        if (vl + w) < vL or vl > vR or (vt + hgt) < vT or vt > vB: continue
+        info['handle'] = h
         elems.append(info)
     return elems
 
@@ -138,68 +124,127 @@ def build_boxes(elements):
 
 
 def serialise(boxes):
-    """Tiny serialisation to detect visual changes quickly."""
     return tuple((b['fixed'], b['x'], b['y'], b['w'], b['h']) for b in boxes)
 
 
-# ----------  Input thread  ---------------------------------------------------
+def list_tabs(pages, active):
+    res = []
+    for p in pages:
+        try:
+            title = p.title()
+        except Exception:
+            title = "<unavailable>"
+        marker = "*" if p is active else " "
+        res.append(f"{marker} {title}")
+    return res
 
-def start_input_listener(q):
-    """Background thread reading from stdin and pushing complete lines to q."""
-    def _reader():
-        for line in sys.stdin:
-            q.put(line.strip())
-    t = threading.Thread(target=_reader, daemon=True)
-    t.start()
+
+def background_stdin(q):
+    for line in sys.stdin:
+        q.put(line.rstrip("\n"))
 
 
-# ----------  Main  -----------------------------------------------------------
+# -------------------------  Main  -------------------------------------------
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(headless=False)
-    page    = browser.new_page()
-    page.goto(URL, wait_until="domcontentloaded")
-    page.wait_for_timeout(ANIMATION_WAIT * 1000)
+    browser = p.chromium.launch(headless=False, args=["--disable-web-security"])  # arg useful for some sites
+    pages       = [browser.new_page()]
+    active_page = pages[0]
+    active_page.goto(URL, wait_until="domcontentloaded")
+    active_page.wait_for_timeout(ANIMATION_WAIT * 1000)
 
-    print("\nScroll the page freely. Numbers update live.")
-    print("Type a number + <Enter> to click it, or q to quit.\n")
+    cmd_q = queue.Queue()
+    threading.Thread(target=background_stdin, args=(cmd_q,), daemon=True).start()
 
     last_snapshot = None
-    input_q = queue.Queue()
-    start_input_listener(input_q)
+
+    HELP_TXT = (
+        "\nCommands:  <num> | scroll up <px> | scroll down <px> | "
+        "new tab | close tab <text> | switch to tab <text> | q\n"
+    )
 
     try:
         while True:
-            elements = collect_elements(page)
+            # refresh overlay on active page
+            elements = collect_elements(active_page)
             boxes    = build_boxes(elements)
             snap     = serialise(boxes)
-
             if snap != last_snapshot:
-                # print live list (no screen clearing to avoid fighting with user typing)
-                print("\n" + "-"*40)
+                print("\x1b[2J\x1b[H", end="")                                   # clear screen
+                print("Open tabs:")
+                print("\n".join(list_tabs(pages, active_page)))
+                print(HELP_TXT)
                 for b, e in zip(boxes, elements):
                     print(f"{b['i']:>2}. {e['label']}")
-                print("-"*40)
-                page.evaluate(UPDATE_OVERLAY_JS, boxes)
+                active_page.evaluate(UPDATE_OVERLAY_JS, boxes)
                 last_snapshot = snap
 
-            # handle any user inputs
-            while not input_q.empty():
-                cmd = input_q.get()
-                if cmd.lower() in {"q", "quit", "exit"}:
-                    raise KeyboardInterrupt
-                if not cmd.isdigit():
-                    print(f"! Not a number: {cmd}")
+            # process pending commands
+            while not cmd_q.empty():
+                raw = cmd_q.get().strip()
+                if not raw:   # blank line from enter key
                     continue
-                idx = int(cmd)
-                if 1 <= idx <= len(elements):
-                    try:
-                        elements[idx - 1]["handle"].click()
-                        print(f"✓ Clicked element #{idx}\n")
-                    except Exception as e:
-                        print(f"! Click failed: {e}\n")
-                else:
-                    print(f"! Index {idx} out of range\n")
+                if raw.lower() in {"q", "quit", "exit"}:
+                    raise KeyboardInterrupt
+
+                # number click?
+                if raw.isdigit():
+                    idx = int(raw)
+                    if 1 <= idx <= len(elements):
+                        try:
+                            elements[idx-1]['handle'].click()
+                            print(f"✓ Clicked element #{idx}")
+                        except Exception as e:
+                            print(f"! Click failed: {e}")
+                    else:
+                        print(f"! Index {idx} out of range")
+                    continue
+
+                # scroll
+                m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", raw, re.I)
+                if m:
+                    direction, px = m.group(1).lower(), int(m.group(2))
+                    delta = -px if direction == "up" else px
+                    active_page.evaluate(f"window.scrollBy(0,{delta})")
+                    last_snapshot = None  # force rediscovery
+                    continue
+
+                # new tab
+                if raw.lower() == "new tab":
+                    newp = browser.new_page()
+                    pages.append(newp)
+                    active_page = newp
+                    last_snapshot = None
+                    continue
+
+                # close tab {txt}
+                m = re.fullmatch(r"close\s+tab\s+(.+)", raw, re.I)
+                if m:
+                    txt = m.group(1).strip().lower()
+                    tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
+                    if tgt:
+                        tgt.close()
+                        pages.remove(tgt)
+                        active_page = pages[-1] if pages else None
+                        last_snapshot = None
+                    else:
+                        print(f"! No tab matches '{txt}'")
+                    continue
+
+                # switch to tab {txt}
+                m = re.fullmatch(r"switch\s+to\s+tab\s+(.+)", raw, re.I)
+                if m:
+                    txt = m.group(1).strip().lower()
+                    tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
+                    if tgt:
+                        active_page = tgt
+                        active_page.bring_to_front()
+                        last_snapshot = None
+                    else:
+                        print(f"! No tab matches '{txt}'")
+                    continue
+
+                print(f"! Unrecognised command: {raw}")
 
             time.sleep(REFRESH_INTERVAL)
 
