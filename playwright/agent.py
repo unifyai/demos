@@ -5,6 +5,7 @@ from typing import Literal, Optional, List, Tuple
 from pydantic import BaseModel, Field, create_model
 
 from sys_msgs import INTERJECTION_TO_BROWSER_ACTION
+from helpers import _slug, _pascal
 
 import unify
 client = unify.Unify("o3-mini@openai")
@@ -82,12 +83,20 @@ class StopScrollingDown(BaseModel):
 
 
 def _construct_tab_actions(tabs: List[str], mode: str):
-    return {f"{mode.lower()}_tab_" + "_".join([wrd.lower() for wrd in title.split(" ")]):
-        create_model(
-            f"{mode.capitalize()}Tab" + "".join([wrd.capitalize() for wrd in title.split(" ")]), **_response_fields
+    if not tabs:
+        return {}
+
+    field_prefix  = f"{mode.lower()}_tab_"
+    model_prefix  = f"{mode.capitalize()}Tab"
+
+    return {
+        f"{field_prefix}{_slug(title)}": create_model(
+            f"{model_prefix}{_pascal(_slug(title))}",
+            **_response_fields,
         )
         for title in tabs
     }
+
 
 
 def _construct_close_tab_actions(tabs: List[str]):
@@ -98,13 +107,22 @@ def _construct_select_tab_actions(tabs: List[str]):
     return _construct_tab_actions(tabs, "Select")
 
 
-def _construct_select_button_actions(buttons: Optional[List[Tuple[int, str]]] = None):
-    return {f"click_button_" + "_".join([wrd.lower() for wrd in text.split(" ")]):
-        create_model(
-            f"ClickButton" + "".join([wrd.capitalize() for wrd in text.split(" ")]), **_response_fields
+def _construct_select_button_actions(
+    buttons: Optional[List[Tuple[int, str]]] = None
+):
+    if not buttons:
+        return {}
+
+    actions = {}
+    for _, raw_text in buttons:
+        slug = _slug(raw_text)
+        pascal = _pascal(slug)
+
+        actions[f"click_button_{slug}"] = create_model(
+            f"ClickButton{pascal}", **_response_fields
         )
-        for _, text in buttons
-    }
+
+    return actions
 
 def _construct_scroll_actions():
     if SCROLLING_STATE is None:
