@@ -1,21 +1,15 @@
-"""
-Live overlay of clickable elements with interactive terminal control,
-including smooth one‑off scrolls, continuous auto‑scroll, and tab management.
-
-    pip install playwright && playwright install
-"""
-
 from math import floor
 import time, sys, threading, queue, re, textwrap
+import tkinter as tk
+from tkinter import ttk
 from playwright.sync_api import sync_playwright
 
-URL              = "https://unify.ai"
-MARGIN           = 100
-ANIMATION_WAIT   = 2
-REFRESH_INTERVAL = 0.5      # s
-
-SCROLL_DURATION  = 400      # ms  (one‑off smooth scroll over this time)
-AUTO_SCROLL_SPEED = 50 / SCROLL_DURATION   # px / ms  → 0.25 → 250 px / s
+URL               = "https://unify.ai"
+MARGIN            = 100
+ANIMATION_WAIT    = 2
+REFRESH_INTERVAL  = 0.5      # s
+SCROLL_DURATION   = 400      # ms
+AUTO_SCROLL_SPEED = 100 / SCROLL_DURATION   # px / ms  ≈ 250 px / s
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
@@ -28,7 +22,6 @@ a[href]:visible,
 """
 
 # -----------------------------  JS snippets  --------------------------------
-
 ELEMENT_INFO_JS = """
 (el) => {
   function hasFixedAncestor(node){
@@ -39,24 +32,23 @@ ELEMENT_INFO_JS = """
     }
     return false;
   }
-
   const r = el.getBoundingClientRect();
   if (!r.width || !r.height) return null;
-
   return {
-    fixed : hasFixedAncestor(el),
-    vleft : r.left,
-    vtop  : r.top,
-    left  : r.left + scrollX,
-    top   : r.top  + scrollY,
-    width : r.width,
-    height: r.height,
-    label : (el.innerText.trim()           ||
-             el.getAttribute('aria-label') ||
-             el.getAttribute('alt')        ||
-             el.getAttribute('title')      ||
-             el.getAttribute('href')       ||
-             '<no label>')
+    fixed  : hasFixedAncestor(el),
+    hover  : el.matches(':hover'),
+    vleft  : r.left,
+    vtop   : r.top,
+    left   : r.left + scrollX,
+    top    : r.top  + scrollY,
+    width  : r.width,
+    height : r.height,
+    label  : (el.innerText.trim()           ||
+              el.getAttribute('aria-label') ||
+              el.getAttribute('alt')        ||
+              el.getAttribute('title')      ||
+              el.getAttribute('href')       ||
+              '<no label>')
   };
 }
 """
@@ -65,7 +57,6 @@ UPDATE_OVERLAY_JS = """
 (boxes) => {
   let rootPage  = document.getElementById("__pw_rootPage__");
   let rootFixed = document.getElementById("__pw_rootFixed__");
-
   if (!rootPage){
     rootPage  = Object.assign(document.createElement('div'),{
       id:"__pw_rootPage__",  style:"position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646"});
@@ -75,7 +66,6 @@ UPDATE_OVERLAY_JS = """
   } else {
     rootPage.replaceChildren(); rootFixed.replaceChildren();
   }
-
   boxes.forEach(({i,fixed,x,y,px,py,w,h}, n,{length})=>{
     const hue = 360*n/length;
     const div = document.createElement('div');
@@ -97,15 +87,12 @@ UPDATE_OVERLAY_JS = """
 }
 """
 
-# one‑off smooth scroll ------------------------------------------------------
 HANDLE_SCROLL_JS = """
 ({delta, duration}) => {
   const startY   = window.scrollY;
   const targetY  = startY + delta;
   const startTs  = performance.now();
-
   function ease(p){ return p < .5 ? 2*p*p : -1 + (4 - 2*p)*p }
-
   function step(ts){
     const p = Math.min(1, (ts - startTs) / duration);
     window.scrollTo(0, startY + (targetY - startY) * ease(p));
@@ -115,10 +102,8 @@ HANDLE_SCROLL_JS = """
 }
 """
 
-# continuous auto‑scroll -----------------------------------------------------
 AUTO_SCROLL_JS = """
 ({dir, speed}) => {
-  // helper to stop any existing auto‑scroll
   if (!window.__pw_stopAutoScroll){
     window.__pw_stopAutoScroll = () => {
       if (window.__pw_autoScrollId){
@@ -127,16 +112,10 @@ AUTO_SCROLL_JS = """
       }
     };
   }
-
-  // always stop previous loop first
   window.__pw_stopAutoScroll();
-
-  // if 'stop' requested, we’re done.
   if (dir === 'stop') return;
-
   const sign = dir === 'down' ? 1 : -1;
   let last   = performance.now();
-
   function step(ts){
     const dt = ts - last;
     last = ts;
@@ -148,12 +127,10 @@ AUTO_SCROLL_JS = """
 """
 
 # -------------------------  Python helpers  ---------------------------------
-
 def collect_elements(page):
     vp = page.evaluate("() => ({w:innerWidth, h:innerHeight})")
     vL, vT = -MARGIN, -MARGIN
     vR, vB = vp['w'] + MARGIN, vp['h'] + MARGIN
-
     elems = []
     for h in page.locator(CLICKABLE_CSS).element_handles():
         info = page.evaluate(ELEMENT_INFO_JS, h)
@@ -163,7 +140,6 @@ def collect_elements(page):
         info['handle'] = h
         elems.append(info)
     return elems
-
 
 def build_boxes(elements):
     return [
@@ -175,30 +151,14 @@ def build_boxes(elements):
         for idx, e in enumerate(elements, 1)
     ]
 
-
 def serialise(boxes):
     return tuple((b['fixed'], b['x'], b['y'], b['w'], b['h']) for b in boxes)
-
-
-def list_tabs(pages, active):
-    res = []
-    for p in pages:
-        try:
-            title = p.title()
-        except Exception:
-            title = "<unavailable>"
-        marker = "*" if p is active else " "
-        res.append(f"{marker} {title}")
-    return res
-
 
 def background_stdin(q):
     for line in sys.stdin:
         q.put(line.rstrip("\n"))
 
-
 # -------------------------  Main  -------------------------------------------
-
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=False)
     pages       = [browser.new_page()]
@@ -206,14 +166,47 @@ with sync_playwright() as p:
     active_page.goto(URL, wait_until="domcontentloaded")
     active_page.wait_for_timeout(ANIMATION_WAIT * 1000)
 
+    # --- Tk GUI -------------------------------------------------------------
+    root = tk.Tk()
+    root.title("Clickable elements")
+    root.geometry("500x400")
+    listbox = tk.Listbox(root, font=("Helvetica", 11))
+    listbox.pack(fill="both", expand=True, side="left")
+    scrollbar = ttk.Scrollbar(root, orient="vertical", command=listbox.yview)
+    scrollbar.pack(fill="y", side="right")
+    listbox.config(yscrollcommand=scrollbar.set)
+
+    latest_elements = []   # mutable list shared with handler
+
+    def refresh_gui():
+        elements = collect_elements(active_page) if active_page else []
+        boxes    = build_boxes(elements)
+        listbox.delete(0, "end")
+        for b, e in zip(boxes, elements):
+            label = f"{b['i']:>2}. {e['label']}" + (" (on hover)" if e['hover'] else "")
+            listbox.insert("end", label)
+        active_page.evaluate(UPDATE_OVERLAY_JS, boxes)
+        latest_elements[:] = elements      # <- mutate, don't rebind
+        root.after(int(REFRESH_INTERVAL*1000), refresh_gui)
+
+    def click_selected(evt=None):
+        if not latest_elements: return
+        sel = listbox.curselection()
+        if not sel: return
+        idx = sel[0]
+        if idx < len(latest_elements):
+            try: latest_elements[idx]['handle'].click()
+            except Exception as exc: print("Click failed:", exc)
+
+    listbox.bind("<Double-1>", click_selected)
+    listbox.bind("<Return>",   click_selected)
+    root.after(100, refresh_gui)
+
+    # ---- terminal thread ---------------------------------------------------
     cmd_q = queue.Queue()
     threading.Thread(target=background_stdin, args=(cmd_q,), daemon=True).start()
-
-    last_snapshot = None
-
-    HELP_TXT = textwrap.dedent(f"""
-        Commands:
-          <num>                     – click numbered element
+    HELP_TXT = textwrap.dedent("""
+        Terminal commands (optional):
           scroll up|down <px>       – smooth one‑off scroll
           start scroll up|down      – begin continuous auto‑scroll
           stop scroll               – halt auto‑scroll
@@ -222,114 +215,69 @@ with sync_playwright() as p:
           switch to tab <text>      – activate matching tab
           q                         – quit
     """).strip()
+    print(HELP_TXT)
 
-    try:
-        while True:
-            if active_page:
-                elements = collect_elements(active_page)
-                boxes    = build_boxes(elements)
-                snap     = serialise(boxes)
-                if snap != last_snapshot:
-                    print("\x1b[2J\x1b[H", end="")   # clear TTY
-                    print("Open tabs:")
-                    print("\n".join(list_tabs(pages, active_page)))
-                    print("\n" + HELP_TXT + "\n")
-                    for b, e in zip(boxes, elements):
-                        print(f"{b['i']:>2}. {e['label']}")
-                    active_page.evaluate(UPDATE_OVERLAY_JS, boxes)
-                    last_snapshot = snap
+    def process_commands():
+        global active_page, pages        # ← was “nonlocal …”, now global
+        while not cmd_q.empty():
+            raw  = cmd_q.get().strip()
+            if not raw:
+                continue
+            rlow = raw.lower()
+            if rlow in {"q", "quit", "exit"}:
+                root.quit()
+                return
+            # ── smooth scroll ────────────────────────────────────────────────
+            m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", rlow)
+            if m and active_page:
+                delta = (-1 if m.group(1) == "up" else 1) * int(m.group(2))
+                active_page.evaluate(
+                    HANDLE_SCROLL_JS,
+                    {"delta": delta, "duration": SCROLL_DURATION},
+                )
+                continue
+            # ── auto‑scroll ──────────────────────────────────────────────────
+            if rlow in {"start scroll up", "start scroll down"} and active_page:
+                dir_ = "up" if "up" in rlow else "down"
+                active_page.evaluate(
+                    AUTO_SCROLL_JS,
+                    {"dir": dir_, "speed": AUTO_SCROLL_SPEED},
+                )
+                continue
+            if rlow == "stop scroll" and active_page:
+                active_page.evaluate(AUTO_SCROLL_JS, {"dir": "stop", "speed": 0})
+                continue
+            # ── tab control ──────────────────────────────────────────────────
+            if rlow == "new tab":
+                newp = browser.new_page()
+                pages.append(newp)
+                active_page = newp
+                continue
+            m = re.fullmatch(r"close\s+tab\s+(.+)", rlow)
+            if m:
+                txt = m.group(1).lower()
+                tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
+                if tgt:
+                    tgt.close()
+                    pages.remove(tgt)
+                    active_page = pages[-1] if pages else None
+                else:
+                    print(f"No tab matches '{txt}'")
+                continue
+            m = re.fullmatch(r"switch\s+to\s+tab\s+(.+)", rlow)
+            if m:
+                txt = m.group(1).lower()
+                tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
+                if tgt:
+                    active_page = tgt
+                    active_page.bring_to_front()
+                else:
+                    print(f"No tab matches '{txt}'")
+                continue
+            print("Unrecognised:", raw)
+        root.after(100, process_commands)
 
-            # process commands
-            while not cmd_q.empty():
-                raw  = cmd_q.get().strip()
-                if not raw:
-                    continue
-                rlow = raw.lower()
-                if rlow in {"q", "quit", "exit"}:
-                    raise KeyboardInterrupt
-
-                # numbered click
-                if raw.isdigit() and active_page:
-                    idx = int(raw)
-                    if 1 <= idx <= len(elements):
-                        try:
-                            elements[idx-1]['handle'].click()
-                            print(f"✓ Clicked element #{idx}")
-                        except Exception as e:
-                            print(f"! Click failed: {e}")
-                    else:
-                        print(f"! Index {idx} out of range")
-                    continue
-
-                # one‑off smooth scroll
-                m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", rlow)
-                if m and active_page:
-                    direction, px = m.group(1), int(m.group(2))
-                    delta = -px if direction == "up" else px
-                    active_page.evaluate(HANDLE_SCROLL_JS,
-                                         {"delta": delta, "duration": SCROLL_DURATION})
-                    last_snapshot = None
-                    continue
-
-                # start auto‑scroll
-                if rlow in {"start scroll up", "start scroll down"} and active_page:
-                    dir_ = "up" if "up" in rlow else "down"
-                    active_page.evaluate(
-                        AUTO_SCROLL_JS,
-                        {"dir": dir_, "speed": AUTO_SCROLL_SPEED}
-                    )
-                    print(f"▶ Auto‑scroll {dir_} started")
-                    last_snapshot = None
-                    continue
-
-                # stop auto‑scroll
-                if rlow == "stop scroll" and active_page:
-                    active_page.evaluate(AUTO_SCROLL_JS,
-                                         {"dir": "stop", "speed": 0})
-                    print("■ Auto‑scroll stopped")
-                    last_snapshot = None
-                    continue
-
-                # new tab
-                if rlow == "new tab":
-                    newp = browser.new_page()
-                    pages.append(newp)
-                    active_page = newp
-                    last_snapshot = None
-                    continue
-
-                # close tab
-                m = re.fullmatch(r"close\s+tab\s+(.+)", rlow)
-                if m:
-                    txt = m.group(1).strip().lower()
-                    tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
-                    if tgt:
-                        tgt.close()
-                        pages.remove(tgt)
-                        active_page = pages[-1] if pages else None
-                        last_snapshot = None
-                    else:
-                        print(f"! No tab matches '{txt}'")
-                    continue
-
-                # switch tab
-                m = re.fullmatch(r"switch\s+to\s+tab\s+(.+)", rlow)
-                if m:
-                    txt = m.group(1).strip().lower()
-                    tgt = next((pg for pg in pages if txt in pg.title().lower()), None)
-                    if tgt:
-                        active_page = tgt
-                        active_page.bring_to_front()
-                        last_snapshot = None
-                    else:
-                        print(f"! No tab matches '{txt}'")
-                    continue
-
-                print(f"! Unrecognised command: {raw}")
-
-            time.sleep(REFRESH_INTERVAL)
-
-    except KeyboardInterrupt:
-        pass
-    finally:
-        browser.close()
+    root.after(100, process_commands)
+    root.protocol("WM_DELETE_WINDOW", root.quit)
+    try: root.mainloop()
+    finally: browser.close()
