@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from enum import Enum
 from typing import Literal, Optional, List, Tuple
 from pydantic import BaseModel, Field, create_model
@@ -148,12 +149,21 @@ def _construct_scroll_actions():
 
 def parse_instruction(text: str, tabs: List[str], screenshot: bytes, buttons: Optional[List[Tuple[int, str]]] = None) -> Optional[Action]:
     response_format = create_model(
-        "Selection",
-        new_tab=(NewTab, ...),
-        **_construct_select_tab_actions(tabs),
-        **_construct_close_tab_actions(tabs),
-        **_construct_scroll_actions(),
-        **_construct_select_button_actions(buttons)
+        "ActionSelection",
+        tab_actions=create_model(
+            "TabActions",
+            new_tab=(NewTab, ...),
+            **_construct_select_tab_actions(tabs),
+            **_construct_close_tab_actions(tabs),
+        ),
+        scroll_actions=create_model(
+            "ScrollActions",
+            **_construct_scroll_actions(),
+        ),
+        button_actions=create_model(
+            "ButtonActions",
+            **_construct_select_button_actions(buttons),
+        ),
     )
     client.set_response_format(response_format)
     ret = client.generate(text)
