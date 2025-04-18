@@ -193,7 +193,9 @@ class ControlPanel(tk.Tk):
                 payload = self.up_q.get_nowait()
                 self.elements = payload.get("elements", [])
                 self.tab_titles = payload.get("tabs", [])
-                self.screenshot = payload.get("screenshot", b"")
+                img = payload.get("screenshot", b"")
+                if img:
+                    self.screenshot = img
                 updated = True
             except queue.Empty:
                 break

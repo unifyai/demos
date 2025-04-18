@@ -13,6 +13,7 @@ from tempfile import mkdtemp
 from typing import Callable
 
 from playwright.sync_api import sync_playwright, Error as PWError
+from mirror import MirrorPage
 
 from browser_utils import launch_persistent, collect_elements, build_boxes, paint_overlay
 from commands import CommandRunner
@@ -52,6 +53,7 @@ class BrowserWorker(threading.Thread):
             page.goto(self.start_url, wait_until="domcontentloaded")
 
             self.runner = CommandRunner(ctx, log_fn=self.log)
+            mirror = MirrorPage(pw, page)
             last_elements: list[dict] = []
 
             try:
@@ -98,7 +100,7 @@ class BrowserWorker(threading.Thread):
                     ]
 
                     try:
-                        screenshot_bytes = self.runner.active.screenshot(
+                        screenshot_bytes = mirror.screenshot(
                             full_page=False, type="png"
                         )
                     except Exception:
@@ -109,13 +111,18 @@ class BrowserWorker(threading.Thread):
                         "tabs": tab_titles,
                         "screenshot": screenshot_bytes,
                     }
-                    try:
-                        self.update_q.put_nowait(payload)
-                    except queue.Full:
-                        pass
-
+                    while True:                       # keep only the latest payload
+                        try:
+                            self.update_q.put_nowait(payload)
+                            break
+                        except queue.Full:
+                            try:
+                                self.update_q.get_nowait()   # discard oldest
+                            except queue.Empty:
+                                pass
                     time.sleep(self.refresh_interval)
 
             finally:
+                mirror.close()
                 ctx.close()
                 profile_dir.unlink(missing_ok=True)

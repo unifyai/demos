@@ -76,4 +76,5 @@ def parse_instruction(text: str, buttons: Optional[List[Tuple[int, str]]] = None
     if screenshot:
         with open("img.png", "wb") as fp:
             fp.write(screenshot)
+    breakpoint()
     pass
