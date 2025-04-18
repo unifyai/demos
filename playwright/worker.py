@@ -99,12 +99,7 @@ class BrowserWorker(threading.Thread):
                         pg.title() or "<untitled>" for pg in self.runner.ctx.pages
                     ]
 
-                    try:
-                        screenshot_bytes = mirror.screenshot(
-                            full_page=False, type="png"
-                        )
-                    except Exception:
-                        screenshot_bytes = b""
+                    screenshot_bytes = mirror.screenshot()
 
                     payload = {
                         "elements": elements_lite,
