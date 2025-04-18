@@ -88,12 +88,21 @@ class BrowserWorker(threading.Thread):
                     # -- 2) refresh overlay ------------------------------
                     last_elements = collect_elements(self.runner.active)
                     paint_overlay(self.runner.active, build_boxes(last_elements))
-                    lite = [
+                    # ---------- package GUI update --------------------
+                    elements_lite = [
                         (i + 1, e["label"], e["hover"])
                         for i, e in enumerate(last_elements)
                     ]
+                    tab_titles = [
+                        pg.title() or "<untitled>" for pg in self.runner.ctx.pages
+                    ]
+
+                    payload = {
+                        "elements": elements_lite,
+                        "tabs": tab_titles,
+                    }
                     try:
-                        self.update_q.put_nowait(lite)
+                        self.update_q.put_nowait(payload)
                     except queue.Full:
                         pass
 

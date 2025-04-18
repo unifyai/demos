@@ -37,6 +37,7 @@ class ControlPanel(tk.Tk):
         self.cmd_q = command_q        # GUI → worker
         self.up_q = update_q          # worker → GUI
         self.elements: list[tuple[int, str, bool]] = []
+        self.tab_titles: list[str] = []
 
         self._build_widgets()
         self.after(self.REFRESH_INTERVAL_MS, self._poll_updates)
@@ -128,7 +129,14 @@ class ControlPanel(tk.Tk):
 
         # free English → LLM  (catch & show full trace) ------------------
         try:
-            action = parse_instruction(text, debug=True)
+            # extract (idx, label) pairs for buttons visible in GUI list
+            btns = [(idx, label) for idx, label, _hover in self.elements]
+            action = parse_instruction(
+                text,
+                buttons=btns,
+                tabs=self.tab_titles,
+                debug=True,
+            )
         except Exception:
             tb = traceback.format_exc()
             self._log_trace(tb)
@@ -181,7 +189,9 @@ class ControlPanel(tk.Tk):
         updated = False
         while True:
             try:
-                self.elements = self.up_q.get_nowait()
+                payload = self.up_q.get_nowait()
+                self.elements = payload.get("elements", [])
+                self.tab_titles = payload.get("tabs", [])
                 updated = True
             except queue.Empty:
                 break
