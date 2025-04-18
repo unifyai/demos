@@ -63,7 +63,17 @@ class BrowserWorker(threading.Thread):
                         except queue.Empty:
                             break
 
-                        if cmd.startswith("click "):
+                        if cmd.startswith("click button "):
+                            needle = cmd[len("click button "):].strip().lower()
+                            hit = next(
+                                (el for el in last_elements if needle in el["label"].lower()),
+                                None
+                            )
+                            if hit:
+                                hit["handle"].click()
+                            else:
+                                self.log(f"No visible element contains “{needle}”")
+                        elif cmd.startswith("click "):
                             try:
                                 idx = int(cmd.split()[1])
                                 if 1 <= idx <= len(last_elements):
