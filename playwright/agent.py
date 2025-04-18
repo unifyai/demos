@@ -147,7 +147,6 @@ def _construct_scroll_actions():
 
 
 def parse_instruction(text: str, tabs: List[str], screenshot: bytes, buttons: Optional[List[Tuple[int, str]]] = None) -> Optional[Action]:
-    breakpoint()
     response_format = create_model(
         "Selection",
         new_tab=(NewTab, ...),
@@ -158,5 +157,4 @@ def parse_instruction(text: str, tabs: List[str], screenshot: bytes, buttons: Op
     )
     client.set_response_format(response_format)
     ret = client.generate(text)
-    breakpoint()
     return ret
