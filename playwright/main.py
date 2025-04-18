@@ -15,7 +15,7 @@ ANIMATION_WAIT   = 2
 REFRESH_INTERVAL = 0.5      # s
 
 SCROLL_DURATION  = 400      # ms  (one‑off smooth scroll over this time)
-AUTO_SCROLL_SPEED = 100 / SCROLL_DURATION   # px / ms  → 0.25 → 250 px / s
+AUTO_SCROLL_SPEED = 50 / SCROLL_DURATION   # px / ms  → 0.25 → 250 px / s
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
