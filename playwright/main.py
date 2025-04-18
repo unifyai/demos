@@ -6,6 +6,9 @@ No Playwright code touches the Tk thread.
 import queue
 from pathlib import Path
 
+from dotenv import load_dotenv  # pip install python-dotenv
+load_dotenv()   
+
 from gui import ControlPanel
 from worker import BrowserWorker
 

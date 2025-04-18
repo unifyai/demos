@@ -1,22 +1,24 @@
 """
-Small wrapper around OpenAI ChatCompletion that converts free‑form English
-into a structured action object *matching* CommandRunner’s capabilities.
+Agent — plain English ➜ structured Action   (OpenAI‑Python ≥ 1.0.0)
+
+* Uses the new `openai.OpenAI()` client
+* Adds `click_button` + `button_text` to the schema
+* Keeps the rest of the interface unchanged
 """
 
 from __future__ import annotations
 
 import json
 from enum import Enum
-from typing import Literal, Optional, TypedDict
+from typing import Literal, Optional
 
-import openai
+from openai import OpenAI, OpenAIError
 from pydantic import BaseModel, Field, ValidationError
 
-
-# ---------- pydantic output schema -----------------------------------------
+# ---------------------------------------------------------------------- schema
 class ActionName(str, Enum):
-    click_button = "click_button"
-    scroll = "scroll"          # one‑off smooth scroll
+    click_button = "click_button"   # NEW
+    scroll = "scroll"
     start_scroll = "start_scroll"
     stop_scroll = "stop_scroll"
     new_tab = "new_tab"
@@ -25,75 +27,59 @@ class ActionName(str, Enum):
 
 
 class Action(BaseModel):
-    """Structured command returned by the LLM."""
     action: ActionName
-    direction: Optional[Literal["up", "down"]] = None
-    pixels: Optional[int] = Field(
-        None, ge=1, description="number of pixels for a single scroll"
-    )
-    tab_text: Optional[str] = None
+    # click_button
     button_text: Optional[str] = None
+    # scrolling
+    direction: Optional[Literal["up", "down"]] = None
+    pixels: Optional[int] = Field(None, ge=1)
+    # tab ops
+    tab_text: Optional[str] = None
 
 
-# ---------- prompt pieces ---------------------------------------------------
+# ---------------------------------------------------------------------- prompt
 _SYSTEM_PROMPT = """\
-You are a controller that maps plain‑English user requests to structured\
- browser actions.
+You convert plain‑English requests into JSON commands.
 
-Available *actions* and their arguments:
+Allowed *actions*:
 
-• click_button      button_text(str) – click the first visible element
-                    whose (innerText | aria‑label | title | alt | href)
-                    contains the substring, case‑insensitive.
-                    example: {"action":"click_button","button_text":"accept"}
+• click_button   button_text(str) — click first visible element whose text/label
+                 contains this substring, case‑insensitive.
+• scroll         direction(up|down) pixels(int>0)
+• start_scroll   direction(up|down)
+• stop_scroll    –
+• new_tab        –
+• close_tab      tab_text(optional) – substring of tab title; if omitted close active.
+• switch_tab     tab_text(str)
 
-• scroll            direction(up|down)  pixels(int>0)
-                    example: {"action":"scroll","direction":"down","pixels":300}
-
-• start_scroll      direction(up|down)
-                    example: {"action":"start_scroll","direction":"down"}
-
-• stop_scroll       (no args)
-                    example: {"action":"stop_scroll"}
-
-• new_tab           (no args)
-
-• close_tab         tab_text(optional str) – substring of tab title. If omitted,
-                    close the active tab.
-
-• switch_tab        tab_text(str) – substring of desired tab title.
-
-Rules:
-1. Choose the single best action for the request.
-2. Return ONLY valid JSON matching the schema with double quotes.
-3. Do NOT wrap JSON in markdown.
+Return ONLY valid JSON, no markdown, exactly matching the schema.
 """
 
-_MODEL = "o3-mini"
-_TOOL_ID = "action_schema"  # OpenAI tool calling (optional but nice)
-
-_TOOL_SPEC: list[dict[str, str]] = [
+_TOOL_ID = "action_schema"
+_TOOL_SPEC = [
     {
         "type": "function",
         "function": {
             "name": _TOOL_ID,
             "description": "Structured browser action",
-            "parameters": Action.schema(),
+            "parameters": Action.schema(),  # <- pydantic → JSON schema
         },
     }
 ]
 
+# single, reusable client
+_client = OpenAI()   # uses OPENAI_API_KEY from env / config
 
-# ---------- public helper ---------------------------------------------------
+
+# ---------------------------------------------------------------- parse helper
 def parse_instruction(text: str, *, debug: bool = False) -> Action | None:
     """
-    Ask the model to convert `text` into an `Action`.
-    Returns None on failure.
+    Convert free‑text `text` into an `Action` or return None on failure.
+    If debug=True, exceptions are re‑raised for the caller to handle.
     """
     try:
-        chat = openai.ChatCompletion.create(
-            model=_MODEL,
-            temperature=0,
+        resp = _client.chat.completions.create(
+            model="o3-mini",
             tools=_TOOL_SPEC,
             tool_choice={"type": "function", "function": {"name": _TOOL_ID}},
             messages=[
@@ -101,19 +87,14 @@ def parse_instruction(text: str, *, debug: bool = False) -> Action | None:
                 {"role": "user", "content": text},
             ],
         )
-        func_call = chat.choices[0].message.tool_calls[0]
-        payload = json.loads(func_call.function.arguments)
+        args_json = resp.choices[0].message.tool_calls[0].function.arguments
+        payload = json.loads(args_json)
         return Action.model_validate(payload)
-    except (KeyError, IndexError, ValidationError, openai.OpenAIError) as e:
+
+    except (IndexError, KeyError, ValidationError, OpenAIError, json.JSONDecodeError) as e:
         if debug:
             raise
         return None
 
 
-# quick manual test
-if __name__ == "__main__":
-    import os, sys
-
-    if not os.getenv("OPENAI_API_KEY"):
-        sys.exit("Set OPENAI_API_KEY first")
-    print(parse_instruction("could you scroll down a bit more?"))
+# ----------------------------------------------------------------
