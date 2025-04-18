@@ -85,7 +85,7 @@ _TOOL_SPEC: list[dict[str, str]] = [
 
 
 # ---------- public helper ---------------------------------------------------
-def parse_instruction(text: str) -> Action | None:
+def parse_instruction(text: str, *, debug: bool = False) -> Action | None:
     """
     Ask the model to convert `text` into an `Action`.
     Returns None on failure.
@@ -105,7 +105,8 @@ def parse_instruction(text: str) -> Action | None:
         payload = json.loads(func_call.function.arguments)
         return Action.model_validate(payload)
     except (KeyError, IndexError, ValidationError, openai.OpenAIError) as e:
-        # optional: log/print e for debugging
+        if debug:
+            raise
         return None
 
 

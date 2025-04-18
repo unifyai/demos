@@ -10,6 +10,11 @@ Tk‑based front‑end.
 
 from __future__ import annotations
 
+import traceback
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+
 import queue
 import tkinter as tk
 from tkinter import scrolledtext, ttk
@@ -121,8 +126,14 @@ class ControlPanel(tk.Tk):
             self._queue_command(text)
             return
 
-        # free English → LLM --------------------------------------------
-        action = parse_instruction(text)
+        # free English → LLM  (catch & show full trace) ------------------
+        try:
+            action = parse_instruction(text, debug=True)
+        except Exception:
+            tb = traceback.format_exc()
+            self._log_trace(tb)
+            return
+
         if not action:
             self._log("❗ Could not interpret instruction")
             return
@@ -189,3 +200,20 @@ class ControlPanel(tk.Tk):
         self.log.insert("end", msg + "\n")
         self.log.configure(state="disabled")
         self.log.yview_moveto(1.0)
+
+    # ---------- pretty traceback ------------------------------------------
+    def _log_trace(self, tb: str) -> None:
+        """
+        Insert a colourised traceback into the ScrolledText widget.
+        """
+        try:
+            html = highlight(tb, PythonLexer(), HtmlFormatter(nowrap=True))
+            # crude html→ansi strip: just remove <span … style="color:#RRGGBB">
+            import re, html as _html
+            ansi = re.sub(r"<[^>]+>", "", html)
+            ansi = _html.unescape(ansi)
+            self._log(ansi)
+        except Exception:
+            # fallback: plain
+            self._log(tb)
+
