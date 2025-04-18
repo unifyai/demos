@@ -89,7 +89,10 @@ class BrowserWorker(threading.Thread):
 
                     # -- 2) refresh overlay ------------------------------
                     last_elements = collect_elements(self.runner.active)
-                    paint_overlay(self.runner.active, build_boxes(last_elements))
+                    boxes = build_boxes(last_elements)
+                    # draw overlay both in the UI page and the headless mirror
+                    paint_overlay(self.runner.active, boxes)   # visible window
+                    paint_overlay(mirror.page, boxes)   
                     # ---------- package GUI update --------------------
                     elements_lite = [
                         (i + 1, e["label"], e["hover"])
