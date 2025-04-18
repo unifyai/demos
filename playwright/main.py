@@ -1,27 +1,28 @@
 """
-Playwright helper with a friendlier Tkinter GUI.
+GUI helper for Playwright pages
 
- • Live list of clickable elements (double‑click to click in page)
- • Smooth one‑off scroll, continuous auto‑scroll
- • Tab management
- • Text‑command entry + quick‑action buttons
+ • Persistent Chromium context → “New tab” adds a real tab
+ • Live list of clickable elements (double‑click to click)
+ • Smooth one‑off scroll + continuous auto‑scroll
+ • Command entry + quick buttons + scrolling log
 """
 
 from math import floor
+from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, scrolledtext
-import threading, queue, re, textwrap, sys
+import tempfile, shutil
+import re, textwrap
 from playwright.sync_api import sync_playwright
 
-# ────────────── tunables ────────────────────────────────────────────────────
+# ───────── configuration ─────────
 URL               = "https://unify.ai"
-MARGIN            = 100
-ANIMATION_WAIT    = 2
-REFRESH_INTERVAL  = 0.5      # s
-SCROLL_DURATION   = 400      # ms
-AUTO_SCROLL_SPEED = 100 / SCROLL_DURATION   # px / ms  ≈ 250 px / s
+MARGIN            = 100          # overscan px around viewport
+ANIMATION_WAIT    = 2            # s to wait after page load
+REFRESH_INTERVAL  = 0.5          # s GUI update cadence
+SCROLL_DURATION   = 400          # ms for smooth scroll
+AUTO_SCROLL_SPEED = 100/SCROLL_DURATION  # px / ms  ≈ 250 px / s
 
-# ────────────── playwright element CSS ──────────────────────────────────────
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
 input[type=button]:not([disabled]):visible,
@@ -32,66 +33,63 @@ a[href]:visible,
 [onclick]:visible
 """
 
-# ────────────── JavaScript helpers ──────────────────────────────────────────
+# ───────── JavaScript snippets ─────────
 ELEMENT_INFO_JS = """
 (el) => {
-  function hasFixedAncestor(node){
-    while (node && node !== document.body && node !== document.documentElement){
-      const p = getComputedStyle(node).position;
-      if (p === 'fixed' || p === 'sticky') return true;
-      node = node.parentElement;
+  function hasFixedAncestor(n){
+    while(n && n!==document.body && n!==document.documentElement){
+      const p=getComputedStyle(n).position;
+      if(p==='fixed'||p==='sticky') return true;
+      n=n.parentElement;
     }
     return false;
   }
-  const r = el.getBoundingClientRect();
-  if (!r.width || !r.height) return null;
+  const r=el.getBoundingClientRect();
+  if(!r.width||!r.height) return null;
   return {
-    fixed  : hasFixedAncestor(el),
-    hover  : el.matches(':hover'),
-    vleft  : r.left,
-    vtop   : r.top,
-    left   : r.left + scrollX,
-    top    : r.top  + scrollY,
-    width  : r.width,
-    height : r.height,
-    label  : (el.innerText.trim()           ||
-              el.getAttribute('aria-label') ||
-              el.getAttribute('alt')        ||
-              el.getAttribute('title')      ||
-              el.getAttribute('href')       ||
-              '<no label>')
+    fixed:hasFixedAncestor(el),
+    hover:el.matches(':hover'),
+    vleft:r.left, vtop:r.top,
+    left:r.left+scrollX, top:r.top+scrollY,
+    width:r.width, height:r.height,
+    label:(el.innerText.trim()||
+           el.getAttribute('aria-label')||
+           el.getAttribute('alt')||
+           el.getAttribute('title')||
+           el.getAttribute('href')||
+           '<no label>')
   };
 }
 """
 
 UPDATE_OVERLAY_JS = """
-(boxes) => {
-  let rootPage  = document.getElementById("__pw_rootPage__");
-  let rootFixed = document.getElementById("__pw_rootFixed__");
-  if (!rootPage){
-    rootPage  = Object.assign(document.createElement('div'),{
-      id:"__pw_rootPage__",  style:"position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646"});
-    rootFixed = Object.assign(document.createElement('div'),{
-      id:"__pw_rootFixed__", style:"position:fixed;inset:0;pointer-events:none;z-index:2147483647"});
-    document.body.append(rootPage, rootFixed);
-  } else {
-    rootPage.replaceChildren(); rootFixed.replaceChildren();
-  }
-  boxes.forEach(({i,fixed,x,y,px,py,w,h}, n,{length})=>{
-    const hue = 360*n/length;
-    const div = document.createElement('div');
-    div.style.cssText = `
+(boxes)=>{
+  let rootPage=document.getElementById('__pw_rootPage__');
+  let rootFixed=document.getElementById('__pw_rootFixed__');
+  if(!rootPage){
+    rootPage=Object.assign(document.createElement('div'),{
+      id:'__pw_rootPage__',
+      style:'position:absolute;left:0;top:0;pointer-events:none;z-index:2147483646'});
+    rootFixed=Object.assign(document.createElement('div'),{
+      id:'__pw_rootFixed__',
+      style:'position:fixed;inset:0;pointer-events:none;z-index:2147483647'});
+    document.body.append(rootPage,rootFixed);
+  }else{rootPage.replaceChildren();rootFixed.replaceChildren();}
+  boxes.forEach(({i,fixed,x,y,px,py,w,h},n,{length})=>{
+    const hue=360*n/length;
+    const div=document.createElement('div');
+    div.style.cssText=`
       position:${fixed?'fixed':'absolute'};
-      left:${fixed?px:x}px; top:${fixed?py:y}px;
-      width:${w}px; height:${h}px;
-      outline:2px solid hsl(${h} 100% 50%);
-      background:hsl(${h} 100% 50% / .12);
+      left:${fixed?px:x}px;top:${fixed?py:y}px;
+      width:${w}px;height:${h}px;
+      outline:2px solid hsl(${hue} 100% 50%);
+      background:hsl(${hue} 100% 50%/.12);
       font:700 12px/1 sans-serif;
-      color:hsl(${h} 100% 30%);
+      color:hsl(${hue} 100% 30%);
     `;
-    const tag = document.createElement('span');
-    tag.textContent = i;
-    tag.style.cssText = "position:absolute;left:0;top:0;background:#fff;padding:0 2px";
+    const tag=document.createElement('span');
+    tag.textContent=i;
+    tag.style.cssText='position:absolute;left:0;top:0;background:#fff;padding:0 2px';
     div.append(tag);
     (fixed?rootFixed:rootPage).append(div);
   });
@@ -99,14 +97,12 @@ UPDATE_OVERLAY_JS = """
 """
 
 HANDLE_SCROLL_JS = """
-({delta, duration}) => {
-  const startY   = window.scrollY;
-  const targetY  = startY + delta;
-  const startTs  = performance.now();
-  const ease = p => p<.5 ? 2*p*p : -1+(4-2*p)*p;
-  const step = ts=>{
-    const p = Math.min(1,(ts-startTs)/duration);
-    window.scrollTo(0,startY+(targetY-startY)*ease(p));
+({delta,duration})=>{
+  const y0=scrollY, y1=y0+delta, t0=performance.now();
+  const ease=p=>p<.5?2*p*p:-1+(4-2*p)*p;
+  const step=ts=>{
+    const p=Math.min(1,(ts-t0)/duration);
+    scrollTo(0,y0+(y1-y0)*ease(p));
     if(p<1)requestAnimationFrame(step);
   };
   requestAnimationFrame(step);
@@ -115,23 +111,25 @@ HANDLE_SCROLL_JS = """
 
 AUTO_SCROLL_JS = """
 ({dir,speed})=>{
-  if(!window.__pw_stop){window.__pw_stop=()=>{cancelAnimationFrame(window.__pw_id);}}
-  window.__pw_stop();
-  if(dir==='stop')return;
-  const sign=dir==='down'?1:-1;let last=performance.now();
+  if(!window.__as_stop){
+    window.__as_stop=()=>{cancelAnimationFrame(window.__as_id);};
+  }
+  window.__as_stop();
+  if(dir==='stop') return;
+  const s=dir==='down'?1:-1; let last=performance.now();
   const step=ts=>{
-    const dt=ts-last;last=ts;
-    window.scrollBy(0,sign*speed*dt);
-    window.__pw_id=requestAnimationFrame(step);
+    const dt=ts-last; last=ts;
+    scrollBy(0,s*speed*dt);
+    window.__as_id=requestAnimationFrame(step);
   };
-  window.__pw_id=requestAnimationFrame(step);
+  window.__as_id=requestAnimationFrame(step);
 }
 """
 
-# ────────────── helpers ─────────────────────────────────────────────────────
+# ───────── Python helpers ─────────
 def collect_elements(page):
     vp = page.evaluate("()=>({w:innerWidth,h:innerHeight})")
-    vL,vT = -MARGIN,-MARGIN ; vR,vB = vp['w']+MARGIN, vp['h']+MARGIN
+    vL,vT = -MARGIN,-MARGIN; vR,vB = vp['w']+MARGIN, vp['h']+MARGIN
     elems=[]
     for h in page.locator(CLICKABLE_CSS).element_handles():
         info = page.evaluate(ELEMENT_INFO_JS,h)
@@ -142,79 +140,86 @@ def collect_elements(page):
     return elems
 
 def build_boxes(elements):
-    from math import floor
-    return [dict(i=i+1,fixed=e['fixed'],px=floor(e['vleft']),py=floor(e['vtop']),
-                 x=floor(e['left']),y=floor(e['top']),
-                 w=floor(e['width']),h=floor(e['height']))
+    return [dict(i=i+1,
+                 fixed=e['fixed'],
+                 px=floor(e['vleft']), py=floor(e['vtop']),
+                 x=floor(e['left']), y=floor(e['top']),
+                 w=floor(e['width']), h=floor(e['height']))
             for i,e in enumerate(elements)]
 
-# ────────────── GUI application class ───────────────────────────────────────
+# ───────── Tkinter GUI class ─────────
 class ControlPanel(tk.Tk):
-    def __init__(self, browser, page):
+    def __init__(self, ctx, first_page):
         super().__init__()
-        self.browser, self.page = browser, page
-        self.pages=[page]; self.active=page
-        self.elements=[]
-        self.title("Playwright helper")
-        self.geometry("800x500")
+        self.ctx      = ctx
+        self.active   = first_page
+        self.elements = []
 
-        # layout
+        self.title("Playwright helper")
+        self.geometry("900x550")
+
+        # layout grid
         self.columnconfigure(0, weight=3)
         self.columnconfigure(1, weight=2)
         self.rowconfigure(0, weight=1)
         self.rowconfigure(1, weight=0)
 
-        # listbox
+        # --- element list --------------------------------------------------
         self.listbox=tk.Listbox(self,font=("Helvetica",11))
         self.listbox.grid(row=0,column=0,sticky="nsew")
-        self.listbox.bind("<Double-1>", self.on_list_click)
-        self.listbox.bind("<Return>",   self.on_list_click)
-        scr=ttk.Scrollbar(self,orient="vertical",command=self.listbox.yview)
-        scr.grid(row=0,column=0,sticky="nse")
-        self.listbox.config(yscrollcommand=scr.set)
+        self.listbox.bind("<Double-1>", self.list_click)
+        self.listbox.bind("<Return>",   self.list_click)
+        sb=ttk.Scrollbar(self,orient="vertical",command=self.listbox.yview)
+        sb.grid(row=0,column=0,sticky="nse")
+        self.listbox.config(yscrollcommand=sb.set)
 
-        # right side: log + buttons
+        # --- right panel (log + buttons) -----------------------------------
         right=tk.Frame(self); right.grid(row=0,column=1,sticky="nsew")
         right.rowconfigure(0,weight=3); right.rowconfigure(1,weight=1)
         right.columnconfigure(0,weight=1)
 
-        self.log=scrolledtext.ScrolledText(right,height=8,state="disabled")
+        # log
+        self.log=scrolledtext.ScrolledText(right,state="disabled",height=8)
         self.log.grid(row=0,column=0,sticky="nsew",padx=5,pady=5)
 
+        # buttons
         btns=tk.Frame(right); btns.grid(row=1,column=0,padx=5,pady=5,sticky="nsew")
         for i in range(2): btns.columnconfigure(i,weight=1)
-        ttk.Button(btns,text="▲ Scroll 100",command=lambda:self.command("scroll up 100")).grid(row=0,column=0,sticky="ew")
-        ttk.Button(btns,text="▼ Scroll 100",command=lambda:self.command("scroll down 100")).grid(row=0,column=1,sticky="ew")
-        ttk.Button(btns,text="Start ▲",command=lambda:self.command("start scroll up")).grid(row=1,column=0,sticky="ew")
-        ttk.Button(btns,text="Start ▼",command=lambda:self.command("start scroll down")).grid(row=1,column=1,sticky="ew")
-        ttk.Button(btns,text="Stop scroll",command=lambda:self.command("stop scroll")).grid(row=2,column=0,columnspan=2,sticky="ew")
-        ttk.Button(btns,text="New tab",command=lambda:self.command("new tab")).grid(row=3,column=0,sticky="ew")
-        ttk.Button(btns,text="Close tab",command=lambda:self.command(f"close tab {self.active.title()}")).grid(row=3,column=1,sticky="ew")
+        ttk.Button(btns,text="▲ Scroll 100",
+                   command=lambda:self.run_cmd("scroll up 100")).grid(row=0,column=0,sticky="ew")
+        ttk.Button(btns,text="▼ Scroll 100",
+                   command=lambda:self.run_cmd("scroll down 100")).grid(row=0,column=1,sticky="ew")
+        ttk.Button(btns,text="Start ▲",
+                   command=lambda:self.run_cmd("start scroll up")).grid(row=1,column=0,sticky="ew")
+        ttk.Button(btns,text="Start ▼",
+                   command=lambda:self.run_cmd("start scroll down")).grid(row=1,column=1,sticky="ew")
+        ttk.Button(btns,text="Stop scroll",
+                   command=lambda:self.run_cmd("stop scroll")).grid(row=2,column=0,columnspan=2,sticky="ew")
+        ttk.Button(btns,text="New tab",
+                   command=lambda:self.run_cmd("new tab")).grid(row=3,column=0,sticky="ew")
+        ttk.Button(btns,text="Close tab",
+                   command=lambda:self.run_cmd(f"close tab {self.active.title()}")).grid(row=3,column=1,sticky="ew")
 
-        # command entry
-        bar=tk.Frame(self); bar.grid(row=1,column=0,columnspan=2,sticky="ew",padx=5,pady=3)
-        bar.columnconfigure(0,weight=1)
+        # --- command bar ----------------------------------------------------
+        bar=tk.Frame(self); bar.grid(row=1,column=0,columnspan=2,sticky="ew",padx=5,pady=4)
+        bar.columnconfigure(1,weight=1)
         tk.Label(bar,text="Command:").grid(row=0,column=0,sticky="w")
         self.cmd_var=tk.StringVar()
-        cmd_entry=tk.Entry(bar,textvariable=self.cmd_var)
-        cmd_entry.grid(row=0,column=1,sticky="ew")
-        cmd_entry.bind("<Return>", lambda e:self.send_command())
-        ttk.Button(bar,text="Send",command=self.send_command).grid(row=0,column=2,sticky="e")
+        entry=tk.Entry(bar,textvariable=self.cmd_var)
+        entry.grid(row=0,column=1,sticky="ew")
+        entry.bind("<Return>",lambda e:self.send_cmd())
+        ttk.Button(bar,text="Send",command=self.send_cmd).grid(row=0,column=2,sticky="e")
 
-        # kick off periodic updates
+        # kickoff periodic GUI refresh
         self.after(100, self.refresh)
 
-    # ── GUI helpers ────────────────────────────────────────────────────────
+    # —— GUI mechanics —————————————————————————————————————————
     def log_msg(self,msg):
-        self.log.configure(state="normal"); self.log.insert("end",msg+"\n"); self.log.configure(state="disabled")
+        self.log.configure(state="normal")
+        self.log.insert("end",msg+"\n"); self.log.configure(state="disabled")
         self.log.yview_moveto(1.0)
 
-    def send_command(self):
-        cmd=self.cmd_var.get().strip()
-        if cmd: self.command(cmd)
-        self.cmd_var.set("")
-
-    def on_list_click(self,_):
+    def list_click(self,_event):
         sel=self.listbox.curselection()
         if sel and sel[0]<len(self.elements):
             try:
@@ -222,9 +227,15 @@ class ControlPanel(tk.Tk):
             except Exception as e:
                 self.log_msg(f"Click failed: {e}")
 
-    # ── periodic update ────────────────────────────────────────────────────
+    def send_cmd(self):
+        cmd=self.cmd_var.get().strip()
+        if cmd: self.run_cmd(cmd)
+        self.cmd_var.set("")
+
+    # —— periodic refresh ————————————————————————————————
     def refresh(self):
-        elems=collect_elements(self.active) if self.active else []
+        if not self.active: return
+        elems=collect_elements(self.active)
         boxes=build_boxes(elems)
         self.listbox.delete(0,"end")
         for b,e in zip(boxes,elems):
@@ -232,52 +243,64 @@ class ControlPanel(tk.Tk):
             self.listbox.insert("end",txt)
         self.active.evaluate(UPDATE_OVERLAY_JS,boxes)
         self.elements=elems
-        self.after(int(REFRESH_INTERVAL*1000),self.refresh)
+        self.after(int(REFRESH_INTERVAL*1000), self.refresh)
 
-    # ── command dispatcher ────────────────────────────────────────────────
-    def command(self,raw):
+    # —— command dispatcher ——————————————————————————————
+    def run_cmd(self,raw):
         self.log_msg(f"> {raw}")
-        rlow=raw.lower()
+        r=raw.lower()
         # smooth scroll
-        m=re.fullmatch(r"scroll\s+(up|down)\s+(\d+)",rlow)
-        if m and self.active:
+        m=re.fullmatch(r"scroll\s+(up|down)\s+(\d+)",r)
+        if m:
             delta=(-1 if m.group(1)=="up" else 1)*int(m.group(2))
             self.active.evaluate(HANDLE_SCROLL_JS,{"delta":delta,"duration":SCROLL_DURATION})
             return
-        # auto‑scroll
-        if rlow in {"start scroll up","start scroll down"} and self.active:
-            dir_="up" if "up" in rlow else "down"
+        # auto scroll
+        if r in {"start scroll up","start scroll down"}:
+            dir_="up" if "up" in r else "down"
             self.active.evaluate(AUTO_SCROLL_JS,{"dir":dir_,"speed":AUTO_SCROLL_SPEED})
             return
-        if rlow=="stop scroll" and self.active:
+        if r=="stop scroll":
             self.active.evaluate(AUTO_SCROLL_JS,{"dir":"stop","speed":0}); return
-        # tab ops
-        if rlow=="new tab":
-            newp=self.browser.new_page(); self.pages.append(newp); self.active=newp
-            self.log_msg(f"New tab: {newp.title() or '<blank>'}"); return
-        m=re.fullmatch(r"close\s+tab\s+(.+)",rlow)
+        # new tab
+        if r=="new tab":
+            newp=self.ctx.new_page()
+            self.active=newp
+            self.log_msg("Opened new tab"); return
+        # close tab
+        m=re.fullmatch(r"close\s+tab\s+(.+)",r)
         if m:
             txt=m.group(1).strip().lower()
-            tgt=next((pg for pg in self.pages if txt in pg.title().lower()),None)
+            tgt=next((pg for pg in self.ctx.pages if txt in (pg.title() or "").lower()),None)
             if tgt:
-                tgt.close(); self.pages.remove(tgt)
-                self.active=self.pages[-1] if self.pages else None
-                self.log_msg("Tab closed"); return
-            self.log_msg("No tab matches"); return
-        m=re.fullmatch(r"switch\s+to\s+tab\s+(.+)",rlow)
+                tgt.close(); self.log_msg("Tab closed")
+                self.active=self.ctx.pages[0] if self.ctx.pages else None
+            else: self.log_msg("No tab matches")
+            return
+        # switch tab
+        m=re.fullmatch(r"switch\s+to\s+tab\s+(.+)",r)
         if m:
             txt=m.group(1).strip().lower()
-            tgt=next((pg for pg in self.pages if txt in pg.title().lower()),None)
+            tgt=next((pg for pg in self.ctx.pages if txt in (pg.title() or "").lower()),None)
             if tgt:
-                self.active=tgt; tgt.bring_to_front(); self.log_msg(f"Switched to {tgt.title()}"); return
-            self.log_msg("No tab matches"); return
+                self.active=tgt; tgt.bring_to_front(); self.log_msg("Switched tab")
+            else: self.log_msg("No tab matches")
+            return
         self.log_msg("Unrecognised command")
 
-# ────────────── boot everything ─────────────────────────────────────────────
+# ───────── main bootstrap ─────────
 with sync_playwright() as p:
-    browser=p.chromium.launch(headless=False)
-    page=browser.new_page(); page.goto(URL,wait_until="domcontentloaded")
-    page.wait_for_timeout(ANIMATION_WAIT*1000)
-    app=ControlPanel(browser,page)
-    try: app.mainloop()
-    finally: browser.close()
+    profile_dir = Path(tempfile.mkdtemp(prefix="pw_profile_"))
+    ctx = p.chromium.launch_persistent_context(profile_dir, headless=False)
+    # ensure at least one page
+    if not ctx.pages: first_page = ctx.new_page()
+    else: first_page = ctx.pages[0]
+    first_page.goto(URL, wait_until="domcontentloaded")
+    first_page.wait_for_timeout(ANIMATION_WAIT*1000)
+
+    gui = ControlPanel(ctx, first_page)
+    try:
+        gui.mainloop()
+    finally:
+        ctx.close()
+        shutil.rmtree(profile_dir, ignore_errors=True)
