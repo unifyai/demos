@@ -12,11 +12,16 @@ from pathlib import Path
 from tempfile import mkdtemp
 from typing import Callable
 
-from playwright.sync_api import sync_playwright, Error as PWError
-from mirror import MirrorPage
-
-from browser_utils import launch_persistent, collect_elements, build_boxes, paint_overlay
+from browser_utils import (
+    build_boxes,
+    collect_elements,
+    launch_persistent,
+    paint_overlay,
+)
 from commands import CommandRunner
+from mirror import MirrorPage
+from playwright.sync_api import Error as PWError
+from playwright.sync_api import sync_playwright
 
 
 class BrowserWorker(threading.Thread):
@@ -48,7 +53,7 @@ class BrowserWorker(threading.Thread):
         profile_dir = Path(mkdtemp(prefix="pw_profile_"))
 
         with sync_playwright() as pw:
-            ctx = launch_persistent(pw)           # context + first window
+            ctx = launch_persistent(pw)  # context + first window
             page = ctx.pages[0] if ctx.pages else ctx.new_page()
             page.goto(self.start_url, wait_until="domcontentloaded")
 
@@ -66,10 +71,14 @@ class BrowserWorker(threading.Thread):
                             break
 
                         if cmd.startswith("click button "):
-                            needle = cmd[len("click button "):].strip().lower()
+                            needle = cmd[len("click button ") :].strip().lower()
                             hit = next(
-                                (el for el in last_elements if needle in el["label"].lower()),
-                                None
+                                (
+                                    el
+                                    for el in last_elements
+                                    if needle in el["label"].lower()
+                                ),
+                                None,
                             )
                             if hit:
                                 hit["handle"].click()
@@ -91,8 +100,8 @@ class BrowserWorker(threading.Thread):
                     last_elements = collect_elements(self.runner.active)
                     boxes = build_boxes(last_elements)
                     # draw overlay both in the UI page and the headless mirror
-                    paint_overlay(self.runner.active, boxes)   # visible window
-                    paint_overlay(mirror.page, boxes)   
+                    paint_overlay(self.runner.active, boxes)  # visible window
+                    paint_overlay(mirror.page, boxes)
                     # ---------- package GUI update --------------------
                     elements_lite = [
                         (i + 1, e["label"], e["hover"])
@@ -109,13 +118,13 @@ class BrowserWorker(threading.Thread):
                         "tabs": tab_titles,
                         "screenshot": screenshot_bytes,
                     }
-                    while True:                       # keep only the latest payload
+                    while True:  # keep only the latest payload
                         try:
                             self.update_q.put_nowait(payload)
                             break
                         except queue.Full:
                             try:
-                                self.update_q.get_nowait()   # discard oldest
+                                self.update_q.get_nowait()  # discard oldest
                             except queue.Empty:
                                 pass
                     time.sleep(self.refresh_interval)

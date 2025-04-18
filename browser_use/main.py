@@ -1,14 +1,17 @@
-from langchain_openai import ChatOpenAI
 from browser_use import Agent
 from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+
 load_dotenv()
 
-import unify
 import asyncio
+
+import unify
 
 unify.activate("Browser Use")
 
 llm = ChatOpenAI(model="gpt-4o")
+
 
 @unify.traced
 async def main():
@@ -18,5 +21,6 @@ async def main():
     )
     result = await agent.run()
     print(result)
+
 
 asyncio.run(main())

@@ -4,12 +4,12 @@ Command‑parsing and dispatch logic.  All browser‑side actions live here.
 
 import re
 
-from playwright.sync_api import Page, BrowserContext
-from js_snippets import HANDLE_SCROLL_JS, AUTO_SCROLL_JS
-from browser_utils import collect_elements, build_boxes, paint_overlay
+from browser_utils import build_boxes, collect_elements, paint_overlay
+from js_snippets import AUTO_SCROLL_JS, HANDLE_SCROLL_JS
+from playwright.sync_api import BrowserContext, Page
 
-SCROLL_DURATION = 400           # ms
-AUTO_SCROLL_SPEED = 100 / 400   # px / ms  ≈ 250 px / s
+SCROLL_DURATION = 400  # ms
+AUTO_SCROLL_SPEED = 100 / 400  # px / ms  ≈ 250 px / s
 
 
 class CommandRunner:
@@ -70,7 +70,8 @@ class CommandRunner:
         if m:
             delta = (-1 if m.group(1) == "up" else 1) * int(m.group(2))
             self.active.evaluate(
-                HANDLE_SCROLL_JS, {"delta": delta, "duration": SCROLL_DURATION}
+                HANDLE_SCROLL_JS,
+                {"delta": delta, "duration": SCROLL_DURATION},
             )
             return
         # auto scroll ------------------------------------------------------

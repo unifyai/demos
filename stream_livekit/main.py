@@ -1,18 +1,12 @@
 import os
-from dotenv import load_dotenv
-
-from livekit import agents
-from livekit.agents import AgentSession, Agent, RoomInputOptions
-from livekit.plugins import (
-    openai,
-    cartesia,
-    deepgram,
-    noise_cancellation,
-    silero,
-)
-from livekit.plugins.turn_detector.multilingual import MultilingualModel
 from typing import AsyncIterable
+
 import unify
+from dotenv import load_dotenv
+from livekit import agents
+from livekit.agents import Agent, AgentSession, RoomInputOptions
+from livekit.plugins import cartesia, deepgram, noise_cancellation, openai, silero
+from livekit.plugins.turn_detector.multilingual import MultilingualModel
 
 unify.activate("Stream LiveKit")
 unify.initialize_async_logger()

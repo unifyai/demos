@@ -8,12 +8,13 @@ import json
 from enum import Enum
 from typing import Literal, Optional
 
-from openai import OpenAI, OpenAIError
-from pydantic import BaseModel, Field, ValidationError
+from openai import OpenAI
+from pydantic import BaseModel, Field
+
 
 # ---------------------------------------------------------------------- schema
 class ActionName(str, Enum):
-    click_button = "click_button"   # NEW
+    click_button = "click_button"  # NEW
     scroll = "scroll"
     start_scroll = "start_scroll"
     stop_scroll = "stop_scroll"
@@ -60,11 +61,11 @@ _TOOL_SPEC = [
             "description": "Structured browser action",
             "parameters": Action.schema(),  # <- pydantic → JSON schema
         },
-    }
+    },
 ]
 
 # single, reusable client
-_client = OpenAI()   # uses OPENAI_API_KEY from env / config
+_client = OpenAI()  # uses OPENAI_API_KEY from env / config
 
 
 # ---------------------------------------------------------------- parse helper

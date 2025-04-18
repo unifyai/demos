@@ -1,14 +1,11 @@
 import re
 import unicodedata
-from typing import List, Tuple, Optional
 
 
 def _slug(text: str) -> str:
     # ➊ Normalise to NFKD, then drop any non‑ASCII code‑points
     ascii_only = (
-        unicodedata.normalize("NFKD", text)
-        .encode("ascii", "ignore")
-        .decode("ascii")
+        unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
     )
 
     # ➋ Collapse every run of “not [A‑Za‑z0‑9_]” into one _

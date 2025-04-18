@@ -6,9 +6,8 @@ from math import floor
 from pathlib import Path
 from tempfile import mkdtemp
 
-from playwright.sync_api import BrowserContext, Page
-
 from js_snippets import ELEMENT_INFO_JS, UPDATE_OVERLAY_JS
+from playwright.sync_api import BrowserContext, Page
 
 MARGIN = 100  # overscan around viewport
 
@@ -61,7 +60,7 @@ def build_boxes(elements: list[dict]) -> list[dict]:
                 y=floor(e["top"]),
                 w=floor(e["width"]),
                 h=floor(e["height"]),
-            )
+            ),
         )
     return boxes
 

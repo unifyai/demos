@@ -6,11 +6,6 @@ without disturbing the UI.
 
 from __future__ import annotations
 
-import asyncio
-from pathlib import Path
-from tempfile import mkdtemp
-from typing import Optional
-
 from playwright.sync_api import Browser, BrowserContext, Page, Playwright
 
 
@@ -54,7 +49,6 @@ class MirrorPage:
         except Exception:
             pass  # ignore—just try the screenshot anyway
         return self.page.screenshot(type="png", full_page=False)
-
 
     def close(self):
         self._ctx.close()

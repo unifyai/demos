@@ -10,17 +10,16 @@ Tk‑based front‑end.
 
 from __future__ import annotations
 
-import traceback
-from pygments import highlight
-from pygments.lexers import PythonLexer
-from pygments.formatters import HtmlFormatter
-
 import queue
 import tkinter as tk
+import traceback
 from tkinter import scrolledtext, ttk
 from typing import Any
 
 from agent import Action, parse_instruction
+from pygments import highlight
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import PythonLexer
 
 
 class ControlPanel(tk.Tk):
@@ -34,8 +33,8 @@ class ControlPanel(tk.Tk):
         update_q: "queue.Queue[list[tuple[int, str, bool]]]",
     ):
         super().__init__()
-        self.cmd_q = command_q        # GUI → worker
-        self.up_q = update_q          # worker → GUI
+        self.cmd_q = command_q  # GUI → worker
+        self.up_q = update_q  # worker → GUI
         self.elements: list[tuple[int, str, bool]] = []
         self.screenshot: bytes = b""
         self.tab_titles: list[str] = []
@@ -78,7 +77,9 @@ class ControlPanel(tk.Tk):
 
         def make(r: int, c: int, txt: str, cmd: str) -> None:
             ttk.Button(
-                btns, text=txt, command=lambda: self._handle_input(cmd)
+                btns,
+                text=txt,
+                command=lambda: self._handle_input(cmd),
             ).grid(row=r, column=c, sticky="ew")
 
         make(0, 0, "▲ Scroll 100", "scroll up 100")
@@ -99,7 +100,8 @@ class ControlPanel(tk.Tk):
         entry.grid(row=0, column=1, sticky="ew")
         entry.bind("<Return>", lambda _e: self._send_from_entry())
         ttk.Button(bar, text="Send", command=self._send_from_entry).grid(
-            row=0, column=2
+            row=0,
+            column=2,
         )
 
     # ---------------------------------------------------------------- events
@@ -123,7 +125,7 @@ class ControlPanel(tk.Tk):
         self._log(f"> {text}")
         low = text.lower()
         if low.startswith(
-            ("scroll", "start scroll", "stop scroll", "new tab", "close tab", "switch")
+            ("scroll", "start scroll", "stop scroll", "new tab", "close tab", "switch"),
         ):
             self._queue_command(text)
             return
@@ -169,11 +171,7 @@ class ControlPanel(tk.Tk):
             case "new_tab":
                 return "new tab"
             case "close_tab":
-                return (
-                    f"close tab {act.tab_text}"
-                    if act.tab_text
-                    else "close tab"
-                )
+                return f"close tab {act.tab_text}" if act.tab_text else "close tab"
             case "switch_tab" if act.tab_text:
                 return f"switch to tab {act.tab_text}"
         return None
@@ -204,7 +202,8 @@ class ControlPanel(tk.Tk):
             self.listbox.delete(0, "end")
             for idx, label, hover in self.elements:
                 self.listbox.insert(
-                    "end", f"{idx:>2}. {label}" + (" (on hover)" if hover else "")
+                    "end",
+                    f"{idx:>2}. {label}" + (" (on hover)" if hover else ""),
                 )
         self.after(self.REFRESH_INTERVAL_MS, self._poll_updates)
 
@@ -223,11 +222,12 @@ class ControlPanel(tk.Tk):
         try:
             html = highlight(tb, PythonLexer(), HtmlFormatter(nowrap=True))
             # crude html→ansi strip: just remove <span … style="color:#RRGGBB">
-            import re, html as _html
+            import html as _html
+            import re
+
             ansi = re.sub(r"<[^>]+>", "", html)
             ansi = _html.unescape(ansi)
             self._log(ansi)
         except Exception:
             # fallback: plain
             self._log(tb)
-
