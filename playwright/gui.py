@@ -134,9 +134,9 @@ class ControlPanel(tk.Tk):
             btns = [(idx, label) for idx, label, _hover in self.elements]
             action = parse_instruction(
                 text,
-                buttons=btns,
                 tabs=self.tab_titles,
                 screenshot=self.screenshot,
+                buttons=btns,
             )
         except Exception:
             tb = traceback.format_exc()
