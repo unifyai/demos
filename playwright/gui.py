@@ -37,6 +37,7 @@ class ControlPanel(tk.Tk):
         self.cmd_q = command_q        # GUI → worker
         self.up_q = update_q          # worker → GUI
         self.elements: list[tuple[int, str, bool]] = []
+        self.screenshot: bytes = b""
         self.tab_titles: list[str] = []
 
         self._build_widgets()
@@ -135,6 +136,7 @@ class ControlPanel(tk.Tk):
                 text,
                 buttons=btns,
                 tabs=self.tab_titles,
+                screenshot=self.screenshot,
             )
         except Exception:
             tb = traceback.format_exc()
@@ -191,6 +193,7 @@ class ControlPanel(tk.Tk):
                 payload = self.up_q.get_nowait()
                 self.elements = payload.get("elements", [])
                 self.tab_titles = payload.get("tabs", [])
+                self.screenshot = payload.get("screenshot", b"")
                 updated = True
             except queue.Empty:
                 break

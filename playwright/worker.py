@@ -97,9 +97,17 @@ class BrowserWorker(threading.Thread):
                         pg.title() or "<untitled>" for pg in self.runner.ctx.pages
                     ]
 
+                    try:
+                        screenshot_bytes = self.runner.active.screenshot(
+                            full_page=False, type="png"
+                        )
+                    except Exception:
+                        screenshot_bytes = b""
+
                     payload = {
                         "elements": elements_lite,
                         "tabs": tab_titles,
+                        "screenshot": screenshot_bytes,
                     }
                     try:
                         self.update_q.put_nowait(payload)

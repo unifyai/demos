@@ -72,5 +72,8 @@ class NewTab(BaseModel):
     apply: bool
 
 
-def parse_instruction(text: str, buttons: Optional[List[Tuple[int, str]]] = None, tabs: Optional[List[str]] = None) -> Optional[Action]:
+def parse_instruction(text: str, buttons: Optional[List[Tuple[int, str]]] = None, tabs: Optional[List[str]] = None, screenshot: Optional[bytes] = None) -> Optional[Action]:
+    if screenshot:
+        with open("img.png", "wb") as fp:
+            fp.write(screenshot)
     pass
