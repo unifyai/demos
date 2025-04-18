@@ -135,7 +135,6 @@ class ControlPanel(tk.Tk):
                 text,
                 buttons=btns,
                 tabs=self.tab_titles,
-                debug=True,
             )
         except Exception:
             tb = traceback.format_exc()
