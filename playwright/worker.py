@@ -1,0 +1,94 @@
+"""
+BrowserWorker now starts *its own* Playwright instance inside the
+background thread, so every Playwright call stays on the same thread.
+"""
+
+from __future__ import annotations
+
+import queue
+import threading
+import time
+from pathlib import Path
+from tempfile import mkdtemp
+from typing import Callable
+
+from playwright.sync_api import sync_playwright, Error as PWError
+
+from browser_utils import launch_persistent, collect_elements, build_boxes, paint_overlay
+from commands import CommandRunner
+
+
+class BrowserWorker(threading.Thread):
+    def __init__(
+        self,
+        command_q: "queue.Queue[str]",
+        update_q: "queue.Queue[list]",
+        start_url: str,
+        refresh_interval: float = 0.5,
+        log: Callable[[str], None] | None = None,
+    ):
+        super().__init__(daemon=True)
+        self.command_q = command_q
+        self.update_q = update_q
+        self.start_url = start_url
+        self.refresh_interval = refresh_interval
+        self.log = log or (lambda *_: None)
+        self._stop = threading.Event()
+
+        # will be initialised inside `run`
+        self.runner: CommandRunner | None = None
+
+    # ------------------------------------------------------------------ API
+    def stop(self) -> None:
+        self._stop.set()
+
+    # ------------------------------------------------------------------ run
+    def run(self) -> None:
+        profile_dir = Path(mkdtemp(prefix="pw_profile_"))
+
+        with sync_playwright() as pw:
+            ctx = launch_persistent(pw)           # context + first window
+            page = ctx.pages[0] if ctx.pages else ctx.new_page()
+            page.goto(self.start_url, wait_until="domcontentloaded")
+
+            self.runner = CommandRunner(ctx, log_fn=self.log)
+            last_elements: list[dict] = []
+
+            try:
+                while not self._stop.is_set():
+                    # -- 1) drain commands --------------------------------
+                    while True:
+                        try:
+                            cmd = self.command_q.get_nowait()
+                        except queue.Empty:
+                            break
+
+                        if cmd.startswith("click "):
+                            try:
+                                idx = int(cmd.split()[1])
+                                if 1 <= idx <= len(last_elements):
+                                    last_elements[idx - 1]["handle"].click()
+                                else:
+                                    self.log("Click index out of range")
+                            except (ValueError, PWError) as exc:
+                                self.log(f"Click failed: {exc}")
+                        else:
+                            self.runner.run(cmd)
+
+                    # -- 2) refresh overlay ------------------------------
+                    last_elements = collect_elements(self.runner.active)
+                    paint_overlay(self.runner.active, build_boxes(last_elements))
+                    lite = [
+                        (i + 1, e["label"], e["hover"])
+                        for i, e in enumerate(last_elements)
+                    ]
+                    try:
+                        self.update_q.put_nowait(lite)
+                    except queue.Full:
+                        pass
+
+                    time.sleep(self.refresh_interval)
+
+            finally:
+                ctx.close()
+                profile_dir.unlink(missing_ok=True)
