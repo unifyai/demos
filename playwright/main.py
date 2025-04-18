@@ -1,6 +1,6 @@
 """
-Live overlay of clickable elements with interactive terminal control
-(including smooth scrolling & tab management).
+Live overlay of clickable elements with interactive terminal control,
+including smooth one‑off scrolls, continuous auto‑scroll, and tab management.
 
     pip install playwright && playwright install
 """
@@ -13,7 +13,9 @@ URL              = "https://unify.ai"
 MARGIN           = 100
 ANIMATION_WAIT   = 2
 REFRESH_INTERVAL = 0.5      # s
-SCROLL_DURATION  = 400      # ms – feel free to tweak
+
+SCROLL_DURATION  = 400      # ms  (one‑off smooth scroll over this time)
+AUTO_SCROLL_SPEED = 100 / SCROLL_DURATION   # px / ms  → 0.25 → 250 px / s
 
 CLICKABLE_CSS = """
 button:not([disabled]):visible,
@@ -95,14 +97,14 @@ UPDATE_OVERLAY_JS = """
 }
 """
 
-# 🚩  **Updated helper**: receives a single object arg
+# one‑off smooth scroll ------------------------------------------------------
 HANDLE_SCROLL_JS = """
 ({delta, duration}) => {
   const startY   = window.scrollY;
   const targetY  = startY + delta;
   const startTs  = performance.now();
 
-  function ease(p){ return p < .5 ? 2*p*p : -1 + (4 - 2*p)*p } // ease‑in‑out quad
+  function ease(p){ return p < .5 ? 2*p*p : -1 + (4 - 2*p)*p }
 
   function step(ts){
     const p = Math.min(1, (ts - startTs) / duration);
@@ -110,6 +112,38 @@ HANDLE_SCROLL_JS = """
     if (p < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
+}
+"""
+
+# continuous auto‑scroll -----------------------------------------------------
+AUTO_SCROLL_JS = """
+({dir, speed}) => {
+  // helper to stop any existing auto‑scroll
+  if (!window.__pw_stopAutoScroll){
+    window.__pw_stopAutoScroll = () => {
+      if (window.__pw_autoScrollId){
+        cancelAnimationFrame(window.__pw_autoScrollId);
+        window.__pw_autoScrollId = null;
+      }
+    };
+  }
+
+  // always stop previous loop first
+  window.__pw_stopAutoScroll();
+
+  // if 'stop' requested, we’re done.
+  if (dir === 'stop') return;
+
+  const sign = dir === 'down' ? 1 : -1;
+  let last   = performance.now();
+
+  function step(ts){
+    const dt = ts - last;
+    last = ts;
+    window.scrollBy(0, sign * speed * dt);
+    window.__pw_autoScrollId = requestAnimationFrame(step);
+  }
+  window.__pw_autoScrollId = requestAnimationFrame(step);
 }
 """
 
@@ -180,7 +214,9 @@ with sync_playwright() as p:
     HELP_TXT = textwrap.dedent(f"""
         Commands:
           <num>                     – click numbered element
-          scroll up|down <px>       – smooth scroll
+          scroll up|down <px>       – smooth one‑off scroll
+          start scroll up|down      – begin continuous auto‑scroll
+          stop scroll               – halt auto‑scroll
           new tab                   – open about:blank
           close tab <text>          – close first tab whose title contains text
           switch to tab <text>      – activate matching tab
@@ -205,15 +241,15 @@ with sync_playwright() as p:
 
             # process commands
             while not cmd_q.empty():
-                raw = cmd_q.get().strip()
+                raw  = cmd_q.get().strip()
                 if not raw:
                     continue
                 rlow = raw.lower()
                 if rlow in {"q", "quit", "exit"}:
                     raise KeyboardInterrupt
 
-                # number click
-                if raw.isdigit():
+                # numbered click
+                if raw.isdigit() and active_page:
                     idx = int(raw)
                     if 1 <= idx <= len(elements):
                         try:
@@ -225,12 +261,32 @@ with sync_playwright() as p:
                         print(f"! Index {idx} out of range")
                     continue
 
-                # scroll
+                # one‑off smooth scroll
                 m = re.fullmatch(r"scroll\s+(up|down)\s+(\d+)", rlow)
                 if m and active_page:
                     direction, px = m.group(1), int(m.group(2))
                     delta = -px if direction == "up" else px
-                    active_page.evaluate(HANDLE_SCROLL_JS, {"delta": delta, "duration": SCROLL_DURATION})
+                    active_page.evaluate(HANDLE_SCROLL_JS,
+                                         {"delta": delta, "duration": SCROLL_DURATION})
+                    last_snapshot = None
+                    continue
+
+                # start auto‑scroll
+                if rlow in {"start scroll up", "start scroll down"} and active_page:
+                    dir_ = "up" if "up" in rlow else "down"
+                    active_page.evaluate(
+                        AUTO_SCROLL_JS,
+                        {"dir": dir_, "speed": AUTO_SCROLL_SPEED}
+                    )
+                    print(f"▶ Auto‑scroll {dir_} started")
+                    last_snapshot = None
+                    continue
+
+                # stop auto‑scroll
+                if rlow == "stop scroll" and active_page:
+                    active_page.evaluate(AUTO_SCROLL_JS,
+                                         {"dir": "stop", "speed": 0})
+                    print("■ Auto‑scroll stopped")
                     last_snapshot = None
                     continue
 
