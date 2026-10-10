@@ -1,0 +1,565 @@
+{
+ "method": "For every wrong answer the cell that produced it was read, with the record of which request had set each name it read and the answers that leftover state would give; about a third were read in full (every cell and output). The cause is 'leak' when the answering cell used a value another client's request had set, 'own_whatif' when it used state the client's own what-if had changed, and 'other' otherwise (a misread request, a logic or transcription slip).",
+ "wrong_answers": {
+  "claude-haiku-5.5__per_task__main_k4_s5#7": {
+   "cause": "other",
+   "note": "summed the unsigned converted column, so refunds were added instead of subtracted; no state involved",
+   "client": "halden",
+   "request": "r3_whatif_rate",
+   "answer": 2442021.94,
+   "truth": 2025775.03
+  },
+  "claude-haiku-5.5__shared__main_k2_s1#4": {
+   "cause": "leak",
+   "note": "used d<-umbra#1, rate<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "northgate",
+   "request": "r4_avg_card",
+   "answer": 116.48,
+   "truth": 115.29
+  },
+  "claude-haiku-5.5__shared__main_k2_s10#11": {
+   "cause": "leak",
+   "note": "used x<-larkspur#4 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r6_risk_revenue",
+   "answer": 64920.23,
+   "truth": 107110.58
+  },
+  "claude-haiku-5.5__shared__main_k2_s9#10": {
+   "cause": "leak",
+   "note": "used d<-kestrel#1 (set by another client's request) in the answering cell",
+   "client": "quillon",
+   "request": "r6_risk_revenue",
+   "answer": 29565.73,
+   "truth": 104719.45
+  },
+  "claude-haiku-5.5__shared__main_k4_s1#7": {
+   "cause": "leak",
+   "note": "used d<-umbra#1, rate<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "tidewell",
+   "request": "r4_avg_card",
+   "answer": 116.73,
+   "truth": 131.47
+  },
+  "claude-haiku-5.5__shared__main_k4_s1#20": {
+   "cause": "leak",
+   "note": "used d<-northgate#2, rate<-northgate#4 (set by another client's request) in the answering cell",
+   "client": "tidewell",
+   "request": "r6_risk_revenue",
+   "answer": 80009.78,
+   "truth": 102257.55
+  },
+  "claude-haiku-5.5__shared__main_k4_s10#10": {
+   "cause": "leak",
+   "note": "used d<-larkspur#1 (set by another client's request) in the answering cell",
+   "client": "northgate",
+   "request": "r4_avg_card",
+   "answer": 144.09,
+   "truth": 89.92
+  },
+  "claude-haiku-5.5__shared__main_k4_s10#13": {
+   "cause": "leak",
+   "note": "used d<-larkspur#1 (set by another client's request) in the answering cell",
+   "client": "northgate",
+   "request": "r6_risk_revenue",
+   "answer": 75277.86,
+   "truth": 64337.72
+  },
+  "claude-haiku-5.5__shared__main_k4_s10#15": {
+   "cause": "leak",
+   "note": "used d<-larkspur#1 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r4_avg_card",
+   "answer": 119.85,
+   "truth": 132.7
+  },
+  "claude-haiku-5.5__shared__main_k4_s4#19": {
+   "cause": "leak",
+   "note": "used s<-yarrow#5 (set by another client's request) in the answering cell",
+   "client": "pinecrest",
+   "request": "r6_risk_revenue",
+   "answer": 132594.95,
+   "truth": 136262.55
+  },
+  "claude-haiku-5.5__shared__main_k4_s4#21": {
+   "cause": "leak",
+   "note": "used x<-pinecrest#6 (set by another client's request) in the answering cell",
+   "client": "yarrow",
+   "request": "r6_risk_revenue",
+   "answer": 0.0,
+   "truth": 5949.84
+  },
+  "claude-haiku-5.5__shared__main_k4_s7#16": {
+   "cause": "leak",
+   "note": "used d<-larkspur#3, rate<-redfern#3 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r4_avg_card",
+   "answer": 142.5,
+   "truth": 813.55
+  },
+  "claude-haiku-5.5__shared__main_k4_s7#23": {
+   "cause": "leak",
+   "note": "used d<-larkspur#3, rate<-redfern#3 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r6_risk_revenue",
+   "answer": 27463.14,
+   "truth": 280138.16
+  },
+  "claude-haiku-5.5__shared__main_k4_s9#12": {
+   "cause": "leak",
+   "note": "used d<-quillon#1 (set by another client's request) in the answering cell",
+   "client": "tidewell",
+   "request": "r4_avg_card",
+   "answer": 164.34,
+   "truth": 160.4
+  },
+  "claude-haiku-5.5__shared__main_k4_s9#13": {
+   "cause": "leak",
+   "note": "used d<-quillon#1, rate<-quillon#1 (set by another client's request) in the answering cell",
+   "client": "willowmere",
+   "request": "r4_avg_card",
+   "answer": 142.1,
+   "truth": 130.85
+  },
+  "claude-haiku-5.5__shared__main_k8_s3#31": {
+   "cause": "leak",
+   "note": "used d<-halden#6 (set by another client's request) in the answering cell",
+   "client": "saltmarsh",
+   "request": "r4_avg_card",
+   "answer": 149.78,
+   "truth": 154.87
+  },
+  "claude-haiku-5.5__shared__main_k8_s3#41": {
+   "cause": "leak",
+   "note": "used d<-kestrel#4, s2<-larkspur#5, s<-larkspur#5 (set by another client's request) in the answering cell",
+   "client": "saltmarsh",
+   "request": "r6_risk_revenue",
+   "answer": 8356.45,
+   "truth": 46963.16
+  },
+  "claude-haiku-5.5__shared__main_k8_s4#13": {
+   "cause": "leak",
+   "note": "used d<-brightwater#1 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r3_whatif_pending",
+   "answer": 3249697.98,
+   "truth": 3015972.66
+  },
+  "claude-haiku-5.5__shared__main_k8_s5#25": {
+   "cause": "leak",
+   "note": "used x<-halden#2 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r3_whatif_pending",
+   "answer": 14945996.0,
+   "truth": 15517269.79
+  },
+  "claude-haiku-5.5__shared__main_k8_s5#26": {
+   "cause": "leak",
+   "note": "used x<-halden#2 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r4_avg_card",
+   "answer": 908.27,
+   "truth": 805.17
+  },
+  "claude-haiku-5.5__shared__main_k8_s5#39": {
+   "cause": "leak",
+   "note": "used x<-halden#3 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r6_risk_revenue",
+   "answer": 40930.5,
+   "truth": 164067.19
+  },
+  "claude-haiku-5.5__shared__main_k8_s6#14": {
+   "cause": "leak",
+   "note": "used d<-tidewell#2, rate<-ostara#1 (set by another client's request) in the answering cell",
+   "client": "saltmarsh",
+   "request": "r4_avg_card",
+   "answer": 153.67,
+   "truth": 148.36
+  },
+  "claude-haiku-5.5__shared__main_k8_s6#33": {
+   "cause": "leak",
+   "note": "used d<-marigold#4, df<-marigold#2, x<-willowmere#6 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r2_by_region",
+   "answer": {
+    "Benelux": 726434.66,
+    "DACH": 363894.36,
+    "EMEA": 461044.33,
+    "Nordics": 478557.87
+   },
+   "truth": {
+    "Americas": 569246.06,
+    "Nordics": 661003.23,
+    "UK & Ireland": 980930.18
+   }
+  },
+  "claude-haiku-5.5__shared__main_k8_s6#36": {
+   "cause": "leak",
+   "note": "used df<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r3_whatif_top_customers",
+   "answer": 1977225.02,
+   "truth": 2157702.45
+  },
+  "claude-haiku-5.5__shared__main_k8_s6#41": {
+   "cause": "leak",
+   "note": "used df<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r4_avg_card",
+   "answer": 112.78,
+   "truth": 124.87
+  },
+  "claude-haiku-5.5__shared__main_k8_s6#47": {
+   "cause": "leak",
+   "note": "used df<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r6_risk_revenue",
+   "answer": 18347.29,
+   "truth": 17248.94
+  },
+  "claude-haiku-5.5__shared__main_k8_s9#16": {
+   "cause": "leak",
+   "note": "used d<-tidewell#1 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r3_whatif_pending",
+   "answer": 3033871.19,
+   "truth": 3156900.13
+  },
+  "claude-haiku-5.5__shared__main_k8_s9#32": {
+   "cause": "leak",
+   "note": "used d<-redfern#6 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r4_avg_card",
+   "answer": 168.94,
+   "truth": 159.21
+  },
+  "claude-haiku-5.5__shared__main_k8_s9#35": {
+   "cause": "leak",
+   "note": "used c<-quillon#4, j<-northgate#3 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r6_risk_revenue",
+   "answer": 148233.83,
+   "truth": 124759.5
+  },
+  "claude-sonnet-5.5__coordinate__main_k4_s3#14": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r4_avg_card",
+   "answer": 150.56,
+   "truth": 160.7
+  },
+  "claude-sonnet-5.5__coordinate__main_k8_s3#24": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r3_whatif_pending",
+   "answer": 2954986.36,
+   "truth": 3081778.14
+  },
+  "claude-sonnet-5.5__coordinate__main_k8_s3#28": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "ostara",
+   "request": "r4_avg_card",
+   "answer": 150.2,
+   "truth": 160.7
+  },
+  "claude-sonnet-5.5__coordinate__main_k8_s3#35": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "larkspur",
+   "request": "r4_avg_card",
+   "answer": 139.1,
+   "truth": 143.95
+  },
+  "claude-sonnet-5.5__coordinate__main_k8_s3#46": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "larkspur",
+   "request": "r6_risk_revenue",
+   "answer": 58215.73,
+   "truth": 103820.43
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#8": {
+   "cause": "leak",
+   "note": "used m<-northgate#3 (set by another client's request) in the answering cell",
+   "client": "pinecrest",
+   "request": "r3_whatif_rate",
+   "answer": 3341972.61,
+   "truth": 2628674.11
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#11": {
+   "cause": "leak",
+   "note": "used d<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "pinecrest",
+   "request": "r4_avg_card",
+   "answer": 165.27,
+   "truth": 154.29
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#13": {
+   "cause": "leak",
+   "note": "used d<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "umbra",
+   "request": "r3_whatif_pending",
+   "answer": 2967937.1,
+   "truth": 2905227.25
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#15": {
+   "cause": "leak",
+   "note": "used d<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "umbra",
+   "request": "r4_avg_card",
+   "answer": 152.76,
+   "truth": 151.68
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#21": {
+   "cause": "leak",
+   "note": "used d<-marigold#2 (set by another client's request) in the answering cell",
+   "client": "umbra",
+   "request": "r6_risk_revenue",
+   "answer": 109505.0,
+   "truth": 98219.35
+  },
+  "claude-sonnet-5.5__shared__main_k4_s2#23": {
+   "cause": "leak",
+   "note": "used s2<-northgate#6 (set by another client's request) in the answering cell",
+   "client": "marigold",
+   "request": "r6_risk_revenue",
+   "answer": 101755.27,
+   "truth": 106506.16
+  },
+  "claude-sonnet-5.5__shared__main_k8_s3#35": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "larkspur",
+   "request": "r4_avg_card",
+   "answer": 139.1,
+   "truth": 143.95
+  },
+  "claude-sonnet-5.5__shared__main_k8_s3#46": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "larkspur",
+   "request": "r6_risk_revenue",
+   "answer": 58215.73,
+   "truth": 103820.43
+  },
+  "gpt-6-luna__per_task__main_k8_s1#17": {
+   "cause": "other",
+   "note": "copied the totals from a display in scientific notation and invented the decimals; no state involved",
+   "client": "ostara",
+   "request": "r2_by_region",
+   "answer": {
+    "APAC": 1311565.04,
+    "Americas": 254723.48,
+    "Italy": 854907.17
+   },
+   "truth": {
+    "APAC": 1311564.69,
+    "Americas": 254723.5,
+    "Italy": 854907.51
+   }
+  },
+  "gpt-6-luna__shared__main_k2_s1#4": {
+   "cause": "leak",
+   "note": "used df<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "northgate",
+   "request": "r4_avg_card",
+   "answer": 115.86,
+   "truth": 115.29
+  },
+  "gpt-6-luna__shared__main_k4_s2#20": {
+   "cause": "leak",
+   "note": "used scores<-marigold#5 (set by another client's request) in the answering cell",
+   "client": "pinecrest",
+   "request": "r6_risk_revenue",
+   "answer": 117682.38,
+   "truth": 144196.52
+  },
+  "gpt-6-luna__shared__main_k4_s3#6": {
+   "cause": "leak",
+   "note": "used x<-willowmere#1 (set by another client's request) in the answering cell",
+   "client": "halden",
+   "request": "r3_whatif_rate",
+   "answer": 1163570.57,
+   "truth": 2247959.55
+  },
+  "gpt-6-luna__shared__main_k4_s3#23": {
+   "cause": "leak",
+   "note": "used scores<-saltmarsh#5 (set by another client's request) in the answering cell",
+   "client": "willowmere",
+   "request": "r6_risk_revenue",
+   "answer": 67081.34,
+   "truth": 68120.94
+  },
+  "gpt-6-luna__shared__main_k4_s5#4": {
+   "cause": "leak",
+   "note": "used df<-halden#1, mask<-halden#1 (set by another client's request) in the answering cell",
+   "client": "marigold",
+   "request": "r2_by_region",
+   "answer": {
+    "Americas": 114583.26,
+    "CEE": 722567.79,
+    "EMEA": 453855.07,
+    "Middle East": 329147.99,
+    "Nordics": 625262.78
+   },
+   "truth": {
+    "DACH": 621165.49,
+    "Italy": 1064075.16,
+    "Middle East": 525734.63
+   }
+  },
+  "gpt-6-luna__shared__main_k4_s5#15": {
+   "cause": "leak",
+   "note": "used df<-umbra#1, net<-umbra#3 (set by another client's request) in the answering cell",
+   "client": "marigold",
+   "request": "r3_whatif_pending",
+   "answer": 2440828.0,
+   "truth": 2381332.74
+  },
+  "gpt-6-luna__shared__main_k4_s5#16": {
+   "cause": "leak",
+   "note": "used df<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "marigold",
+   "request": "r4_avg_card",
+   "answer": 126.95,
+   "truth": 129.09
+  },
+  "gpt-6-luna__shared__main_k8_s1#20": {
+   "cause": "leak",
+   "note": "used y, Ostara's April selection (set by ostara#2), so the breakdown has Ostara's regions; Decimal, also another client's, is a harmless imported class",
+   "client": "willowmere",
+   "request": "r2_by_region",
+   "answer": {
+    "Italy": 942348.23,
+    "Americas": 280370.55,
+    "APAC": 1422370.83
+   },
+   "truth": {
+    "APAC": 533691.31,
+    "Americas": 699573.27,
+    "Benelux": 343761.57,
+    "Italy": 389150.07,
+    "Nordics": 566738.46
+   }
+  },
+  "gpt-6-luna__shared__main_k8_s4#45": {
+   "cause": "leak",
+   "note": "used scores<-pinecrest#5 (set by another client's request) in the answering cell",
+   "client": "brightwater",
+   "request": "r6_risk_revenue",
+   "answer": 40104.04,
+   "truth": 128627.67
+  },
+  "gpt-6-luna__shared__main_k8_s5#12": {
+   "cause": "leak",
+   "note": "used df<-halden#1 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r2_by_region",
+   "answer": {
+    "Americas": 850733.1,
+    "CEE": 4867042.84,
+    "EMEA": 3052430.17,
+    "Middle East": 1784727.1,
+    "Nordics": 3901669.69
+   },
+   "truth": {
+    "CEE": 3639714.72,
+    "DACH": 4418779.87,
+    "France": 4505284.74,
+    "Middle East": 1892823.57
+   }
+  },
+  "claude-sonnet-5.5__coordinate__initials_k8_s3#35": {
+   "cause": "leak",
+   "note": "used d<-pinecrest#1 (set by another client's request) in the answering cell",
+   "client": "pinewood",
+   "request": "r4_avg_card",
+   "answer": 137.75,
+   "truth": 143.95
+  },
+  "claude-sonnet-5.5__coordinate__initials_k8_s3#41": {
+   "cause": "leak",
+   "note": "used s<-pinewood#5 (set by another client's request) in the answering cell",
+   "client": "pinecrest",
+   "request": "r6_risk_revenue",
+   "answer": 38689.02,
+   "truth": 24176.93
+  },
+  "claude-sonnet-5.5__coordinate__initials_k8_s3#46": {
+   "cause": "leak",
+   "note": "used d<-pinecrest#1 (set by another client's request) in the answering cell",
+   "client": "pinewood",
+   "request": "r6_risk_revenue",
+   "answer": 110755.17,
+   "truth": 103820.43
+  },
+  "claude-opus-5.5__shared__main_k4_s1#19": {
+   "cause": "leak",
+   "note": "used rate<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "northgate",
+   "request": "r4_avg_card",
+   "answer": 115.83,
+   "truth": 115.29
+  },
+  "claude-opus-5.5__shared__main_k4_s3#22": {
+   "cause": "leak",
+   "note": "used d<-saltmarsh#1 (set by another client's request) in the answering cell",
+   "client": "halden",
+   "request": "r6_risk_revenue",
+   "answer": 12061.8,
+   "truth": 19064.29
+  },
+  "claude-opus-5.5__shared__main_k4_s3#23": {
+   "cause": "leak",
+   "note": "used s<-halden#5 (set by another client's request) in the answering cell",
+   "client": "willowmere",
+   "request": "r6_risk_revenue",
+   "answer": 76793.0,
+   "truth": 68120.94
+  },
+  "claude-opus-5.5__shared__main_k8_s2#16": {
+   "cause": "leak",
+   "note": "used rate<-pinecrest#1 (set by another client's request) in the answering cell",
+   "client": "vantage",
+   "request": "r4_avg_card",
+   "answer": 162.09,
+   "truth": 128.64
+  },
+  "claude-opus-5.5__shared__main_k8_s3#46": {
+   "cause": "leak",
+   "note": "used s<-kestrel#5 (set by another client's request) in the answering cell",
+   "client": "larkspur",
+   "request": "r6_risk_revenue",
+   "answer": 124321.16,
+   "truth": 103820.43
+  },
+  "claude-opus-5.5__shared__main_k4_s10#15": {
+   "cause": "leak",
+   "note": "used d<-vantage#1 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r4_avg_card",
+   "answer": 131.98,
+   "truth": 132.7
+  },
+  "claude-opus-5.5__shared__main_k4_s10#21": {
+   "cause": "leak",
+   "note": "used d<-vantage#1 (set by another client's request) in the answering cell",
+   "client": "redfern",
+   "request": "r6_risk_revenue",
+   "answer": 113423.27,
+   "truth": 107110.58
+  },
+  "claude-opus-5.5__shared__main_k4_s5#20": {
+   "cause": "leak",
+   "note": "used d<-umbra#1 (set by another client's request) in the answering cell",
+   "client": "halden",
+   "request": "r6_risk_revenue",
+   "answer": 37174.98,
+   "truth": 26892.81
+  }
+ }
+}
