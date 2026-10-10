@@ -13,4 +13,6 @@ Read `README.md` first: its rules bind every experiment here.
   only through `bin/with-openrouter-key`.
 - `runs/` stays out of git (`.gitignore`); the concept's `runs.tar.zst` is the
   committed copy of it. Rebuild the archive whenever the runs change:
-  `tar -cf - runs | zstd -19 -T0 -o runs.tar.zst`.
+  `tar -cf - runs | zstd -19 -T0 -o runs.tar.zst`. Over 45 MB, commit it in
+  parts instead (`split -b 45m runs.tar.zst runs.tar.zst.part-`); the
+  README says how.

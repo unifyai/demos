@@ -74,7 +74,12 @@ bin/with-openrouter-key       runs a command with the key in its environment
 Run records are too large for git loose (one concept wrote 180 MB in 20,000
 files), so `runs/` is ignored and each concept commits `runs.tar.zst` instead,
 about 70 times smaller: make it with `tar -cf - runs | zstd -19 -T0 -o runs.tar.zst`
-and restore it with `zstd -dc runs.tar.zst | tar -xf -`.
+and restore it with `zstd -dc runs.tar.zst | tar -xf -`. An archive over 45 MB is
+committed in parts instead, since GitHub refuses files over 100 MB and warns
+over 50 MB: `split -b 45m runs.tar.zst runs.tar.zst.part-`, with `runs.tar.zst`
+itself in the concept's `.gitignore`; restore with
+`cat runs.tar.zst.part-* | zstd -dc | tar -xf -` (memory-consolidation does
+this).
 
 A new concept's `pyproject.toml` depends on the shared package like this:
 
