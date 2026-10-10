@@ -52,7 +52,10 @@ code rather than to the archive.
    to the concept's ledger with its exact cost. Never print, log or store the
    key.
 8. **Budget per concept:** aim under $50 of model spend; stop and report before
-   $80.
+   $80. Runs on the older models of the short-lived amendment of 9 October,
+   kept apart and out of every analysis, do not count against the $80: that
+   detour was the lead's, not the concept's (decided when the round was picked
+   up after a usage limit cut it off).
 
 ## Layout
 

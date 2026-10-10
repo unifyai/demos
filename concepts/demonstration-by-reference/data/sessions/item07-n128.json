@@ -1,0 +1,2270 @@
+{
+ "item": 7,
+ "size": 128,
+ "answer": [
+  "EVT-2732",
+  "OPS-651",
+  "PPL-139",
+  "PPL-307"
+ ],
+ "evidence": [
+  "f022",
+  "f052",
+  "f083",
+  "f115"
+ ],
+ "request": "Please set next week's queue to the tasks I picked out for next week while I was sharing my screen, in the order I gave them. Replace whatever is in the queue now.",
+ "meta": {
+  "k": 4,
+  "keys": [
+   "EVT-2732",
+   "OPS-651",
+   "PPL-139",
+   "PPL-307"
+  ],
+  "styles": [
+   "detail",
+   "detail",
+   "lag",
+   "hover"
+  ],
+  "not_this": [],
+  "correction": null,
+  "done": null,
+  "later": "OPS-2707",
+  "n_script": 32,
+  "duration_s": 193.6
+ },
+ "frames": [
+  {
+   "id": "f000",
+   "t": 0.0,
+   "said": "right, let me show you what's on for next week",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 17,
+    "hover": null,
+    "cursor": [
+     1060,
+     99
+    ]
+   },
+   "role": "intro",
+   "task": null
+  },
+  {
+   "id": "f001",
+   "t": 1.9,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     886,
+     116
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f002",
+   "t": 3.4,
+   "said": "where's it gone",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onb",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1114,
+     96
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f003",
+   "t": 4.6,
+   "said": "where was it",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onbo",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1043,
+     100
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f004",
+   "t": 5.6,
+   "said": "right",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onboa",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1034,
+     98
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f005",
+   "t": 7.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onboarding",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": "PPL-2793",
+    "cursor": [
+     429,
+     272
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2793"
+  },
+  {
+   "id": "f006",
+   "t": 9.1,
+   "said": "where's the one I want",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "PPL-2558",
+    "scroll": 0,
+    "cursor": [
+     442,
+     665
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2558"
+  },
+  {
+   "id": "f007",
+   "t": 10.3,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "OPS",
+    "scroll": 0,
+    "hover": "OPS-651",
+    "cursor": [
+     499,
+     275
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-651"
+  },
+  {
+   "id": "f008",
+   "t": 11.2,
+   "said": "first let me find it",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "OPS",
+    "scroll": 0,
+    "hover": "OPS-1133",
+    "cursor": [
+     410,
+     346
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1133"
+  },
+  {
+   "id": "f009",
+   "t": 13.1,
+   "said": "uh, where",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "OPS",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     932,
+     442
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f010",
+   "t": 15.3,
+   "said": "sorry, it's slow today",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "OPS",
+    "scroll": 0,
+    "hover": "OPS-2698",
+    "cursor": [
+     407,
+     580
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-2698"
+  },
+  {
+   "id": "f011",
+   "t": 16.5,
+   "said": "then I'll show you the rest",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "OPS",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     650,
+     594
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f012",
+   "t": 17.3,
+   "said": "sorry, my wifi is a bit slow",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onb",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1022,
+     103
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f013",
+   "t": 18.8,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onboard",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1009,
+     108
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f014",
+   "t": 20.3,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onboarding",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1139,
+     100
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f015",
+   "t": 22.3,
+   "said": "bear with me",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "onboarding",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": "PPL-2793",
+    "cursor": [
+     515,
+     276
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2793"
+  },
+  {
+   "id": "f016",
+   "t": 23.7,
+   "said": "",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     873,
+     708
+    ],
+    "channel": "general",
+    "scroll": 2,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f017",
+   "t": 25.4,
+   "said": "where was it",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     664,
+     208
+    ],
+    "channel": "ops",
+    "scroll": 3,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f018",
+   "t": 26.3,
+   "said": "hmm",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     1162,
+     473
+    ],
+    "channel": "ops",
+    "scroll": 1,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f019",
+   "t": 27.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     403,
+     125
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f020",
+   "t": 28.8,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": null,
+    "cursor": [
+     369,
+     141
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f021",
+   "t": 30.1,
+   "said": "where is it",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     581,
+     374
+    ],
+    "selected": "EVT-2732"
+   },
+   "role": "noise",
+   "task": "EVT-2732"
+  },
+  {
+   "id": "f022",
+   "t": 31.7,
+   "said": "the first one is this",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "EVT-2732",
+    "scroll": 0,
+    "cursor": [
+     333,
+     188
+    ]
+   },
+   "role": "key",
+   "task": "EVT-2732"
+  },
+  {
+   "id": "f023",
+   "t": 33.1,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     958,
+     99
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f024",
+   "t": 34.7,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "PPL-2793",
+    "scroll": 0,
+    "cursor": [
+     362,
+     686
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2793"
+  },
+  {
+   "id": "f025",
+   "t": 36.2,
+   "said": "where was it",
+   "spec": {
+    "app": "mail",
+    "open": 4,
+    "scroll": 3,
+    "cursor": [
+     909,
+     263
+    ],
+    "tracker_page": "PPL-2793"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f026",
+   "t": 37.8,
+   "said": "ignore that",
+   "spec": {
+    "app": "mail",
+    "open": 13,
+    "scroll": 5,
+    "cursor": [
+     356,
+     295
+    ],
+    "tracker_page": "PPL-2793"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f027",
+   "t": 39.0,
+   "said": "",
+   "spec": {
+    "app": "mail",
+    "open": 9,
+    "scroll": 5,
+    "cursor": [
+     1131,
+     350
+    ],
+    "tracker_page": "PPL-2793"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f028",
+   "t": 40.0,
+   "said": "one moment",
+   "spec": {
+    "app": "mail",
+    "open": 6,
+    "scroll": 0,
+    "cursor": [
+     369,
+     327
+    ],
+    "tracker_page": "PPL-2793"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f029",
+   "t": 41.5,
+   "said": "one moment",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-1120",
+    "scroll": 0,
+    "cursor": [
+     428,
+     594
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1120"
+  },
+  {
+   "id": "f030",
+   "t": 42.5,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-1120",
+    "scroll": 1,
+    "cursor": [
+     1109,
+     726
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1120"
+  },
+  {
+   "id": "f031",
+   "t": 43.9,
+   "said": "ignore that",
+   "spec": {
+    "app": "mail",
+    "open": 4,
+    "scroll": 5,
+    "cursor": [
+     356,
+     336
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f032",
+   "t": 45.8,
+   "said": "this is the one about the venue",
+   "spec": {
+    "app": "mail",
+    "open": 4,
+    "scroll": 5,
+    "cursor": [
+     916,
+     695
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f033",
+   "t": 46.8,
+   "said": "",
+   "spec": {
+    "app": "mail",
+    "open": 12,
+    "scroll": 3,
+    "cursor": [
+     321,
+     415
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f034",
+   "t": 48.8,
+   "said": "it was here somewhere",
+   "spec": {
+    "app": "mail",
+    "open": 12,
+    "scroll": 0,
+    "cursor": [
+     778,
+     652
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f035",
+   "t": 50.4,
+   "said": "let me just reply to this later",
+   "spec": {
+    "app": "mail",
+    "open": 3,
+    "scroll": 3,
+    "cursor": [
+     926,
+     523
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f036",
+   "t": 51.8,
+   "said": "this one's from Priya",
+   "spec": {
+    "app": "mail",
+    "open": 0,
+    "scroll": 5,
+    "cursor": [
+     225,
+     179
+    ],
+    "tracker_page": "OPS-1120"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f037",
+   "t": 52.6,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "r",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     981,
+     108
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f038",
+   "t": 53.8,
+   "said": "hmm",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "ro",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1040,
+     98
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f039",
+   "t": 54.8,
+   "said": "it was here somewhere",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "rot",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     949,
+     96
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f040",
+   "t": 56.7,
+   "said": "hang on",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "rota",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": "OPS-2707",
+    "cursor": [
+     457,
+     271
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-2707"
+  },
+  {
+   "id": "f041",
+   "t": 57.9,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "he",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     972,
+     104
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f042",
+   "t": 59.1,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "headshots",
+    "typing": true,
+    "sidebar": "All tasks",
+    "cursor": [
+     1040,
+     98
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f043",
+   "t": 60.8,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "search": "headshots",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     726,
+     598
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f044",
+   "t": 62.8,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     695,
+     553
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f045",
+   "t": 64.3,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     423,
+     774
+    ],
+    "scroll": 300,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f046",
+   "t": 65.6,
+   "said": "people are asking about this",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     1076,
+     660
+    ],
+    "channel": "general",
+    "scroll": 1,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f047",
+   "t": 67.7,
+   "said": "",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     678,
+     680
+    ],
+    "channel": "ops",
+    "scroll": 1,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f048",
+   "t": 69.8,
+   "said": "people are asking about this",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     928,
+     602
+    ],
+    "channel": "general",
+    "scroll": 2,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f049",
+   "t": 71.7,
+   "said": "right",
+   "spec": {
+    "app": "mail",
+    "cursor": [
+     459,
+     371
+    ],
+    "open": 4,
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f050",
+   "t": 73.8,
+   "said": "right",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     909,
+     121
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f051",
+   "t": 75.8,
+   "said": "one sec",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 10,
+    "hover": null,
+    "cursor": [
+     510,
+     445
+    ],
+    "selected": "OPS-651"
+   },
+   "role": "noise",
+   "task": "OPS-651"
+  },
+  {
+   "id": "f052",
+   "t": 77.9,
+   "said": "and then this",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-651",
+    "scroll": 0,
+    "cursor": [
+     529,
+     765
+    ]
+   },
+   "role": "key",
+   "task": "OPS-651"
+  },
+  {
+   "id": "f053",
+   "t": 79.3,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": null,
+    "cursor": [
+     834,
+     90
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f054",
+   "t": 80.1,
+   "said": "this is the planning doc",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     493,
+     701
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f055",
+   "t": 81.1,
+   "said": "so this is the week",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     721,
+     459
+    ],
+    "week": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f056",
+   "t": 82.2,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     851,
+     461
+    ],
+    "scroll": 300,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f057",
+   "t": 84.4,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     1084,
+     637
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f058",
+   "t": 85.5,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "FIN-2876",
+    "scroll": 0,
+    "cursor": [
+     1052,
+     549
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-2876"
+  },
+  {
+   "id": "f059",
+   "t": 86.8,
+   "said": "then I'll show you the rest",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-1263",
+    "scroll": 0,
+    "cursor": [
+     1137,
+     507
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1263"
+  },
+  {
+   "id": "f060",
+   "t": 88.3,
+   "said": "one moment",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-1263",
+    "scroll": 1,
+    "cursor": [
+     936,
+     314
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1263"
+  },
+  {
+   "id": "f061",
+   "t": 89.8,
+   "said": "this one has a long checklist",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "FIN-1085",
+    "scroll": 0,
+    "cursor": [
+     796,
+     295
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-1085"
+  },
+  {
+   "id": "f062",
+   "t": 90.7,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "FIN-1085",
+    "scroll": 1,
+    "cursor": [
+     1056,
+     746
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-1085"
+  },
+  {
+   "id": "f063",
+   "t": 92.7,
+   "said": "",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     982,
+     479
+    ],
+    "channel": "ops",
+    "scroll": 3,
+    "tracker_page": "FIN-1085"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f064",
+   "t": 94.4,
+   "said": "sorry, that's just my inbox",
+   "spec": {
+    "app": "mail",
+    "open": 1,
+    "scroll": 3,
+    "cursor": [
+     642,
+     158
+    ],
+    "tracker_page": "FIN-1085"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f065",
+   "t": 95.7,
+   "said": "this is the one about the venue",
+   "spec": {
+    "app": "mail",
+    "open": 14,
+    "scroll": 5,
+    "cursor": [
+     1053,
+     539
+    ],
+    "tracker_page": "FIN-1085"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f066",
+   "t": 97.7,
+   "said": "this one's from Priya",
+   "spec": {
+    "app": "mail",
+    "open": 3,
+    "scroll": 5,
+    "cursor": [
+     615,
+     328
+    ],
+    "tracker_page": "FIN-1085"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f067",
+   "t": 99.0,
+   "said": "can you see my screen ok?",
+   "spec": {
+    "app": "mail",
+    "open": 13,
+    "scroll": 0,
+    "cursor": [
+     1017,
+     276
+    ],
+    "tracker_page": "FIN-1085"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f068",
+   "t": 100.1,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 3,
+    "hover": "OPS-651",
+    "cursor": [
+     572,
+     685
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-651"
+  },
+  {
+   "id": "f069",
+   "t": 101.3,
+   "said": "I can never find anything in here",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 5,
+    "hover": "FIN-2410",
+    "cursor": [
+     481,
+     480
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-2410"
+  },
+  {
+   "id": "f070",
+   "t": 103.5,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 9,
+    "hover": null,
+    "cursor": [
+     1178,
+     539
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f071",
+   "t": 105.5,
+   "said": "bear with me",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 7,
+    "hover": "OPS-240",
+    "cursor": [
+     441,
+     475
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-240"
+  },
+  {
+   "id": "f072",
+   "t": 107.5,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": "PPL-2699",
+    "cursor": [
+     446,
+     613
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2699"
+  },
+  {
+   "id": "f073",
+   "t": 108.9,
+   "said": "this view always resets",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-302",
+    "scroll": 0,
+    "cursor": [
+     606,
+     256
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-302"
+  },
+  {
+   "id": "f074",
+   "t": 110.6,
+   "said": "hang on",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-302",
+    "scroll": 1,
+    "cursor": [
+     966,
+     412
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-302"
+  },
+  {
+   "id": "f075",
+   "t": 112.7,
+   "said": "these are all the finance ones",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 7,
+    "hover": "OPS-1263",
+    "cursor": [
+     566,
+     647
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1263"
+  },
+  {
+   "id": "f076",
+   "t": 114.2,
+   "said": "this list is a mess",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 18,
+    "hover": "OPS-2707",
+    "cursor": [
+     485,
+     512
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-2707"
+  },
+  {
+   "id": "f077",
+   "t": 116.2,
+   "said": "this view always resets",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 6,
+    "hover": "FIN-2410",
+    "cursor": [
+     441,
+     443
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-2410"
+  },
+  {
+   "id": "f078",
+   "t": 117.9,
+   "said": "where's the one I want",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 20,
+    "hover": null,
+    "cursor": [
+     933,
+     340
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f079",
+   "t": 119.0,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 7,
+    "hover": "OPS-1263",
+    "cursor": [
+     532,
+     652
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1263"
+  },
+  {
+   "id": "f080",
+   "t": 121.0,
+   "said": "right",
+   "spec": {
+    "app": "mail",
+    "cursor": [
+     580,
+     758
+    ],
+    "open": 6,
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f081",
+   "t": 123.0,
+   "said": "erm",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     561,
+     124
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f082",
+   "t": 125.2,
+   "said": "next up is\u2026",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 17,
+    "hover": null,
+    "cursor": [
+     260,
+     143
+    ]
+   },
+   "role": "key",
+   "task": null
+  },
+  {
+   "id": "f083",
+   "t": 126.0,
+   "said": "this one",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "PPL-139",
+    "scroll": 0,
+    "cursor": [
+     1037,
+     645
+    ]
+   },
+   "role": "key-next",
+   "task": "PPL-139"
+  },
+  {
+   "id": "f084",
+   "t": 127.6,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": null,
+    "cursor": [
+     900,
+     105
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f085",
+   "t": 129.1,
+   "said": "bear with me",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     1137,
+     354
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f086",
+   "t": 130.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     1084,
+     155
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f087",
+   "t": 132.4,
+   "said": "where is it",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 16,
+    "hover": null,
+    "cursor": [
+     1021,
+     144
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f088",
+   "t": 133.4,
+   "said": "this one can wait, it's not for next week",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 18,
+    "hover": "OPS-2707",
+    "cursor": [
+     510,
+     514
+    ]
+   },
+   "role": "later",
+   "task": "OPS-2707"
+  },
+  {
+   "id": "f089",
+   "t": 135.2,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-2707",
+    "scroll": 0,
+    "cursor": [
+     964,
+     761
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-2707"
+  },
+  {
+   "id": "f090",
+   "t": 137.2,
+   "said": "sorry, my wifi is a bit slow",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     941,
+     161
+    ],
+    "scroll": 150,
+    "tracker_page": "OPS-2707"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f091",
+   "t": 138.1,
+   "said": "oh, this has moved since yesterday",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 17,
+    "hover": null,
+    "cursor": [
+     651,
+     399
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f092",
+   "t": 140.2,
+   "said": "this view always resets",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 5,
+    "hover": null,
+    "cursor": [
+     634,
+     262
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f093",
+   "t": 141.9,
+   "said": "hmm",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 10,
+    "hover": null,
+    "cursor": [
+     858,
+     560
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f094",
+   "t": 143.1,
+   "said": "let me scroll down",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 19,
+    "hover": "PPL-1926",
+    "cursor": [
+     534,
+     680
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-1926"
+  },
+  {
+   "id": "f095",
+   "t": 144.0,
+   "said": "this is the one about the venue",
+   "spec": {
+    "app": "mail",
+    "open": 1,
+    "scroll": 0,
+    "cursor": [
+     392,
+     251
+    ],
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f096",
+   "t": 145.5,
+   "said": "can you see my screen ok?",
+   "spec": {
+    "app": "mail",
+    "open": 6,
+    "scroll": 5,
+    "cursor": [
+     248,
+     621
+    ],
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f097",
+   "t": 147.2,
+   "said": "",
+   "spec": {
+    "app": "mail",
+    "open": 2,
+    "scroll": 0,
+    "cursor": [
+     1100,
+     472
+    ],
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f098",
+   "t": 148.7,
+   "said": "this is the email about it",
+   "spec": {
+    "app": "mail",
+    "open": 2,
+    "scroll": 0,
+    "cursor": [
+     301,
+     770
+    ],
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f099",
+   "t": 149.7,
+   "said": "who made this one?",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "PPL",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     1115,
+     110
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f100",
+   "t": 150.7,
+   "said": "oh, this has moved since yesterday",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "PPL",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     886,
+     179
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f101",
+   "t": 151.9,
+   "said": "the search is so slow",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "PPL",
+    "scroll": 0,
+    "hover": "PPL-1926",
+    "cursor": [
+     472,
+     380
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-1926"
+  },
+  {
+   "id": "f102",
+   "t": 153.7,
+   "said": "these are all the finance ones",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 13,
+    "hover": null,
+    "cursor": [
+     1194,
+     638
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f103",
+   "t": 155.6,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 3,
+    "hover": "FIN-1325",
+    "cursor": [
+     427,
+     482
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-1325"
+  },
+  {
+   "id": "f104",
+   "t": 157.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "PPL-2699",
+    "scroll": 0,
+    "cursor": [
+     379,
+     469
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2699"
+  },
+  {
+   "id": "f105",
+   "t": 159.1,
+   "said": "so",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "PPL-2699",
+    "scroll": 1,
+    "cursor": [
+     1036,
+     780
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-2699"
+  },
+  {
+   "id": "f106",
+   "t": 160.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "VEN",
+    "scroll": 0,
+    "hover": "VEN-1424",
+    "cursor": [
+     482,
+     274
+    ]
+   },
+   "role": "noise",
+   "task": "VEN-1424"
+  },
+  {
+   "id": "f107",
+   "t": 162.4,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "VEN",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     359,
+     557
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f108",
+   "t": 163.3,
+   "said": "I can never find anything in here",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "VEN",
+    "scroll": 0,
+    "hover": "VEN-1424",
+    "cursor": [
+     519,
+     271
+    ]
+   },
+   "role": "noise",
+   "task": "VEN-1424"
+  },
+  {
+   "id": "f109",
+   "t": 164.8,
+   "said": "where's the one I want",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "VEN",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     618,
+     581
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f110",
+   "t": 166.3,
+   "said": "let me find it",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-1355",
+    "scroll": 0,
+    "cursor": [
+     831,
+     624
+    ]
+   },
+   "role": "noise",
+   "task": "OPS-1355"
+  },
+  {
+   "id": "f111",
+   "t": 168.1,
+   "said": "where's it gone",
+   "spec": {
+    "app": "mail",
+    "open": 5,
+    "scroll": 3,
+    "cursor": [
+     412,
+     673
+    ],
+    "tracker_page": "OPS-1355"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f112",
+   "t": 169.3,
+   "said": "erm",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     739,
+     463
+    ],
+    "week": 0,
+    "tracker_page": "OPS-1355"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f113",
+   "t": 170.9,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     561,
+     329
+    ],
+    "scroll": 0,
+    "tracker_page": "OPS-1355"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f114",
+   "t": 172.7,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": null,
+    "cursor": [
+     1110,
+     89
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f115",
+   "t": 174.5,
+   "said": "and finally this one",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 22,
+    "hover": "PPL-307",
+    "cursor": [
+     494,
+     442
+    ]
+   },
+   "role": "key",
+   "task": "PPL-307"
+  },
+  {
+   "id": "f116",
+   "t": 176.0,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 22,
+    "hover": "PPL-307",
+    "cursor": [
+     478,
+     442
+    ]
+   },
+   "role": "noise",
+   "task": "PPL-307"
+  },
+  {
+   "id": "f117",
+   "t": 177.3,
+   "said": "hang on",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     843,
+     750
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f118",
+   "t": 178.8,
+   "said": "so",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     719,
+     175
+    ],
+    "channel": "ops",
+    "scroll": 1,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f119",
+   "t": 180.9,
+   "said": "sorry, just chat",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     725,
+     420
+    ],
+    "channel": "ops",
+    "scroll": 3,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f120",
+   "t": 182.2,
+   "said": "",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     391,
+     710
+    ],
+    "channel": "general",
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f121",
+   "t": 184.2,
+   "said": "this view always resets",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "FIN-953",
+    "scroll": 0,
+    "cursor": [
+     1146,
+     280
+    ]
+   },
+   "role": "noise",
+   "task": "FIN-953"
+  },
+  {
+   "id": "f122",
+   "t": 186.2,
+   "said": "",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     705,
+     260
+    ],
+    "week": 0,
+    "tracker_page": "FIN-953"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f123",
+   "t": 187.2,
+   "said": "let me scroll down",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     274,
+     568
+    ],
+    "week": 1,
+    "tracker_page": "FIN-953"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f124",
+   "t": 188.3,
+   "said": "",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     781,
+     300
+    ],
+    "week": 0,
+    "tracker_page": "FIN-953"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f125",
+   "t": 189.5,
+   "said": "",
+   "spec": {
+    "app": "mail",
+    "cursor": [
+     241,
+     462
+    ],
+    "open": 4,
+    "scroll": 0,
+    "tracker_page": "FIN-953"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f126",
+   "t": 190.8,
+   "said": "um",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     323,
+     364
+    ],
+    "channel": "ops",
+    "scroll": 0,
+    "tracker_page": "FIN-953"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f127",
+   "t": 192.0,
+   "said": "ok, I think that's everything",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     580,
+     159
+    ]
+   },
+   "role": "outro",
+   "task": null
+  }
+ ]
+}

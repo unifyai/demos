@@ -1,0 +1,384 @@
+{
+ "item": 0,
+ "size": 20,
+ "answer": [
+  "VEN-456",
+  "OPS-2288",
+  "FIN-2461"
+ ],
+ "evidence": [
+  "f005",
+  "f010",
+  "f015"
+ ],
+ "request": "Please set next week's queue to the tasks I picked out for next week while I was sharing my screen, in the order I gave them. Replace whatever is in the queue now.",
+ "meta": {
+  "k": 3,
+  "keys": [
+   "VEN-456",
+   "OPS-2288",
+   "FIN-2461"
+  ],
+  "styles": [
+   "detail",
+   "detail",
+   "detail"
+  ],
+  "not_this": [],
+  "correction": null,
+  "n_script": 20,
+  "duration_s": 28.7
+ },
+ "frames": [
+  {
+   "id": "f000",
+   "t": 0.0,
+   "said": "right, let me show you what's on for next week",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     377,
+     104
+    ]
+   },
+   "role": "intro",
+   "task": null
+  },
+  {
+   "id": "f001",
+   "t": 1.4,
+   "said": "sorry, my wifi is a bit slow",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     513,
+     143
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f002",
+   "t": 3.5,
+   "said": "",
+   "spec": {
+    "app": "mail",
+    "cursor": [
+     1053,
+     428
+    ],
+    "open": 9,
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f003",
+   "t": 4.7,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     570,
+     143
+    ],
+    "scroll": 150,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f004",
+   "t": 6.4,
+   "said": "one sec",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 23,
+    "hover": null,
+    "cursor": [
+     430,
+     682
+    ],
+    "selected": "VEN-456"
+   },
+   "role": "noise",
+   "task": "VEN-456"
+  },
+  {
+   "id": "f005",
+   "t": 7.9,
+   "said": "this one first",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "VEN-456",
+    "scroll": 0,
+    "cursor": [
+     805,
+     284
+    ]
+   },
+   "role": "key",
+   "task": "VEN-456"
+  },
+  {
+   "id": "f006",
+   "t": 8.7,
+   "said": "",
+   "spec": {
+    "app": "calendar",
+    "cursor": [
+     672,
+     659
+    ],
+    "week": 0,
+    "tracker_page": "VEN-456"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f007",
+   "t": 10.1,
+   "said": "sorry, my wifi is a bit slow",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 17,
+    "hover": null,
+    "cursor": [
+     1195,
+     108
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f008",
+   "t": 11.2,
+   "said": "one moment",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     689,
+     123
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f009",
+   "t": 12.9,
+   "said": "one sec",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 10,
+    "hover": null,
+    "cursor": [
+     506,
+     647
+    ],
+    "selected": "OPS-2288"
+   },
+   "role": "noise",
+   "task": "OPS-2288"
+  },
+  {
+   "id": "f010",
+   "t": 14.3,
+   "said": "after that, this",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "OPS-2288",
+    "scroll": 0,
+    "cursor": [
+     326,
+     471
+    ]
+   },
+   "role": "key",
+   "task": "OPS-2288"
+  },
+  {
+   "id": "f011",
+   "t": 16.1,
+   "said": "",
+   "spec": {
+    "app": "chat",
+    "cursor": [
+     479,
+     191
+    ],
+    "channel": "ops",
+    "scroll": 0,
+    "tracker_page": "OPS-2288"
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f012",
+   "t": 17.2,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     385,
+     88
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f013",
+   "t": 18.5,
+   "said": "",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     783,
+     626
+    ],
+    "scroll": 0,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f014",
+   "t": 19.3,
+   "said": "one sec",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     462,
+     580
+    ],
+    "selected": "FIN-2461"
+   },
+   "role": "noise",
+   "task": "FIN-2461"
+  },
+  {
+   "id": "f015",
+   "t": 20.7,
+   "said": "and the last one is this",
+   "spec": {
+    "app": "tracker",
+    "view": "detail",
+    "task": "FIN-2461",
+    "scroll": 0,
+    "cursor": [
+     426,
+     715
+    ]
+   },
+   "role": "key",
+   "task": "FIN-2461"
+  },
+  {
+   "id": "f016",
+   "t": 22.8,
+   "said": "hmm",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 17,
+    "hover": null,
+    "cursor": [
+     775,
+     117
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f017",
+   "t": 24.1,
+   "said": "one moment",
+   "spec": {
+    "app": "doc",
+    "cursor": [
+     504,
+     167
+    ],
+    "scroll": 150,
+    "tracker_page": null
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f018",
+   "t": 25.6,
+   "said": "",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 0,
+    "hover": null,
+    "cursor": [
+     701,
+     101
+    ]
+   },
+   "role": "noise",
+   "task": null
+  },
+  {
+   "id": "f019",
+   "t": 26.6,
+   "said": "ok, I think that's everything",
+   "spec": {
+    "app": "tracker",
+    "view": "list",
+    "sidebar": "All tasks",
+    "scroll": 8,
+    "hover": null,
+    "cursor": [
+     469,
+     92
+    ]
+   },
+   "role": "outro",
+   "task": null
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+data/frames/
+.venv/
+__pycache__/
+data/frames_half/
