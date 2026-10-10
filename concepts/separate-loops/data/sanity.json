@@ -1,0 +1,1176 @@
+[
+ {
+  "id": "sanity-A-s0",
+  "condition": "sanity",
+  "family": "A",
+  "seed": 0,
+  "latency": "sanity",
+  "cap_s": 240,
+  "idle_s": 10,
+  "sites": {
+   "messaging": {
+    "contacts": [
+     {
+      "name": "Elena Iyer",
+      "first_name": "Elena",
+      "status": "active",
+      "city": "London",
+      "bio": "Into cycling and jazz."
+     },
+     {
+      "name": "Callum Ahmed",
+      "first_name": "Callum",
+      "status": "active",
+      "city": "London",
+      "bio": "Learning Spanish."
+     },
+     {
+      "name": "Marcus Silva",
+      "first_name": "Marcus",
+      "status": "active",
+      "city": "London",
+      "bio": "Keeps bees."
+     },
+     {
+      "name": "Aisha Novak",
+      "first_name": "Aisha",
+      "status": "away until 5 November",
+      "city": "London",
+      "bio": "Teaches yoga."
+     },
+     {
+      "name": "Alice Patel",
+      "first_name": "Alice",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Tom Byrne",
+      "first_name": "Tom",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Kai Patel",
+      "first_name": "Kai",
+      "status": "active",
+      "city": "London",
+      "bio": "Teaches yoga."
+     },
+     {
+      "name": "Lucia Novak",
+      "first_name": "Lucia",
+      "status": "active",
+      "city": "London",
+      "bio": "Collects vinyl."
+     },
+     {
+      "name": "Owen Reyes",
+      "first_name": "Owen",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Grace Dubois",
+      "first_name": "Grace",
+      "status": "active",
+      "city": "London",
+      "bio": "Amateur photographer."
+     },
+     {
+      "name": "Jonah Lowe",
+      "first_name": "Jonah",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Ben Grant",
+      "first_name": "Ben",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Sam Rivera",
+      "first_name": "Sam",
+      "status": "active",
+      "city": "London",
+      "bio": "Volunteers at the food bank."
+     }
+    ],
+    "groups": {
+     "book club": [
+      "Elena Iyer",
+      "Callum Ahmed",
+      "Marcus Silva",
+      "Aisha Novak"
+     ],
+     "climbing group": [
+      "Alice Patel",
+      "Tom Byrne",
+      "Kai Patel",
+      "Lucia Novak",
+      "Owen Reyes",
+      "Grace Dubois"
+     ]
+    }
+   },
+   "booking": {
+    "restaurants": [
+     {
+      "price": 49,
+      "max_party": 7,
+      "veg": 0,
+      "role": "dearer",
+      "id": "R01",
+      "name": "Moss",
+      "cuisine": "Japanese",
+      "area": "Soho",
+      "street": "Carlisle St",
+      "mains": 7
+     },
+     {
+      "price": 44,
+      "max_party": 5,
+      "veg": 5,
+      "role": "dearer",
+      "id": "R02",
+      "name": "Silver Birch",
+      "cuisine": "Japanese",
+      "area": "Soho",
+      "street": "Frith St",
+      "mains": 8
+     },
+     {
+      "price": 24,
+      "max_party": 4,
+      "veg": 5,
+      "role": "full",
+      "id": "R03",
+      "name": "The Orchard",
+      "cuisine": "Japanese",
+      "area": "Soho",
+      "street": "Lexington St",
+      "mains": 12
+     },
+     {
+      "price": 26,
+      "max_party": 5,
+      "veg": 5,
+      "role": "answer",
+      "id": "R04",
+      "name": "The Pantry",
+      "cuisine": "Japanese",
+      "area": "Soho",
+      "street": "Broadwick St",
+      "mains": 11
+     },
+     {
+      "id": "R05",
+      "name": "The Lantern",
+      "cuisine": "Lebanese",
+      "area": "Hackney",
+      "street": "Darnley Rd",
+      "price": 34,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R06",
+      "name": "Saltbox",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Saltoun Rd",
+      "price": 45,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R07",
+      "name": "Olive & Ash",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Saltoun Rd",
+      "price": 57,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R08",
+      "name": "Market Hall",
+      "cuisine": "Italian",
+      "area": "Shoreditch",
+      "street": "Calvert Ave",
+      "price": 24,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     }
+    ],
+    "slot": {
+     "weekday": "thursday",
+     "date": 29,
+     "time": 1200
+    }
+   },
+   "shop": {
+    "catalog": [
+     {
+      "id": "P102",
+      "name": "Coffee beans, 1kg bag, Northline",
+      "type": "espresso",
+      "price": 25.54,
+      "in_stock": true
+     },
+     {
+      "id": "P103",
+      "name": "Coffee beans, 1kg bag, Crest",
+      "type": "espresso",
+      "price": 32.07,
+      "in_stock": true
+     },
+     {
+      "id": "P101",
+      "name": "Coffee beans, 1kg bag, ValueLine",
+      "type": "espresso",
+      "price": 20.58,
+      "in_stock": false
+     },
+     {
+      "id": "P104",
+      "name": "A4 copier paper, box of 5 reams, Prima",
+      "type": "printer paper",
+      "price": 27.61,
+      "in_stock": true
+     },
+     {
+      "id": "P105",
+      "name": "A4 copier paper, box of 5 reams, ValueLine",
+      "type": "printer paper",
+      "price": 34.53,
+      "in_stock": true
+     },
+     {
+      "id": "P106",
+      "name": "A4 copier paper, box of 5 reams, Northline",
+      "type": "printer paper",
+      "price": 44.06,
+      "in_stock": true
+     },
+     {
+      "id": "P107",
+      "name": "Whiteboard markers, assorted, pack of 8, Crest",
+      "type": "dry wipe",
+      "price": 19.65,
+      "in_stock": false
+     },
+     {
+      "id": "P108",
+      "name": "Whiteboard markers, assorted, pack of 8, Staplex",
+      "type": "dry wipe",
+      "price": 23.86,
+      "in_stock": true
+     },
+     {
+      "id": "P109",
+      "name": "Whiteboard markers, assorted, pack of 8, Prima",
+      "type": "dry wipe",
+      "price": 30.9,
+      "in_stock": true
+     },
+     {
+      "id": "P111",
+      "name": "USB-C cables, 1m, pack of 3, OfficeBasics",
+      "type": "charger",
+      "price": 20.46,
+      "in_stock": true
+     },
+     {
+      "id": "P110",
+      "name": "USB-C cables, 1m, pack of 3, Crest",
+      "type": "charger",
+      "price": 16.61,
+      "in_stock": false
+     },
+     {
+      "id": "P112",
+      "name": "USB-C cables, 1m, pack of 3, ValueLine",
+      "type": "charger",
+      "price": 25.77,
+      "in_stock": true
+     },
+     {
+      "id": "P115",
+      "name": "Staples 26/6, box of 5000, Staplex",
+      "type": "stapler",
+      "price": 23.3,
+      "in_stock": true
+     },
+     {
+      "id": "P113",
+      "name": "Staples 26/6, box of 5000, ValueLine",
+      "type": "stapler",
+      "price": 14.08,
+      "in_stock": true
+     },
+     {
+      "id": "P114",
+      "name": "Staples 26/6, box of 5000, OfficeBasics",
+      "type": "stapler",
+      "price": 17.57,
+      "in_stock": true
+     }
+    ]
+   }
+  },
+  "request": "Could you invite everyone in my book club, and my neighbour Sam Rivera, to a quiz night on Friday 23 October at 12pm at Victoria Park by the bandstand? Please send each person their own short message, using their first name. Check each group member's profile before you message them, and skip anyone who is away; tell me who you skipped.",
+  "script": [
+   {
+    "kind": "status",
+    "text": "How's it going? Who have you messaged so far?",
+    "trigger": {
+     "site": "messaging",
+     "tool": "messaging_send_message",
+     "distinct": "to",
+     "count": 2,
+     "task": "main"
+    },
+    "min_gap": 3,
+    "max_wait": 30
+   }
+  ],
+  "facts": "Your neighbour is Sam Rivera.",
+  "person_name": "Oscar Webb",
+  "unrelated_answer": "210",
+  "main": {
+   "family": "A",
+   "site": "messaging",
+   "label": "invitations",
+   "expect": {
+    "family": "A",
+    "group": "book club",
+    "members": [
+     "Elena Iyer",
+     "Callum Ahmed",
+     "Marcus Silva",
+     "Aisha Novak"
+    ],
+    "away": [
+     "Aisha Novak"
+    ],
+    "sam": "Sam Rivera",
+    "wrong_sam": null,
+    "old_time": 720,
+    "new_time": 810,
+    "drop": null,
+    "event": "a quiz night",
+    "day": "Friday 23 October",
+    "gap": false
+   },
+   "progress": {
+    "site": "messaging",
+    "tool": "messaging_send_message",
+    "distinct": "to"
+   }
+  },
+  "second": null
+ },
+ {
+  "id": "sanity-B-s0",
+  "condition": "sanity",
+  "family": "B",
+  "seed": 0,
+  "latency": "sanity",
+  "cap_s": 240,
+  "idle_s": 10,
+  "sites": {
+   "messaging": {
+    "contacts": [
+     {
+      "name": "Chloe Ndlovu",
+      "first_name": "Chloe",
+      "status": "active",
+      "city": "London",
+      "bio": "Teaches yoga."
+     },
+     {
+      "name": "Erin Patel",
+      "first_name": "Erin",
+      "status": "active",
+      "city": "London",
+      "bio": "Collects vinyl."
+     },
+     {
+      "name": "Nadia Osei",
+      "first_name": "Nadia",
+      "status": "active",
+      "city": "London",
+      "bio": "Restores old bikes."
+     },
+     {
+      "name": "Ben Fischer",
+      "first_name": "Ben",
+      "status": "active",
+      "city": "London",
+      "bio": "Learning Spanish."
+     },
+     {
+      "name": "Pablo Webb",
+      "first_name": "Pablo",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Aisha Lowe",
+      "first_name": "Aisha",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Nina Webb",
+      "first_name": "Nina",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Dev Bianchi",
+      "first_name": "Dev",
+      "status": "active",
+      "city": "London",
+      "bio": "Keeps bees."
+     },
+     {
+      "name": "Tariq Novak",
+      "first_name": "Tariq",
+      "status": "active",
+      "city": "London",
+      "bio": "Restores old bikes."
+     },
+     {
+      "name": "Owen Ndlovu",
+      "first_name": "Owen",
+      "status": "active",
+      "city": "London",
+      "bio": "Volunteers at the food bank."
+     },
+     {
+      "name": "Zoe Chen",
+      "first_name": "Zoe",
+      "status": "active",
+      "city": "London",
+      "bio": "Loves board games."
+     },
+     {
+      "name": "Amara Romero",
+      "first_name": "Amara",
+      "status": "active",
+      "city": "London",
+      "bio": "Restores old bikes."
+     },
+     {
+      "name": "Sam Rivera",
+      "first_name": "Sam",
+      "status": "active",
+      "city": "London",
+      "bio": "Volunteers at the food bank."
+     },
+     {
+      "name": "Priya Osei",
+      "first_name": "Priya",
+      "status": "active",
+      "city": "London",
+      "bio": "Training for a marathon."
+     }
+    ],
+    "groups": {
+     "film club": [
+      "Chloe Ndlovu",
+      "Erin Patel",
+      "Nadia Osei",
+      "Ben Fischer"
+     ],
+     "choir": [
+      "Pablo Webb",
+      "Aisha Lowe",
+      "Nina Webb",
+      "Dev Bianchi",
+      "Tariq Novak",
+      "Owen Ndlovu"
+     ]
+    }
+   },
+   "booking": {
+    "restaurants": [
+     {
+      "price": 24,
+      "max_party": 4,
+      "veg": 3,
+      "role": "full",
+      "id": "R01",
+      "name": "Copper Pot",
+      "cuisine": "Greek",
+      "area": "Camden",
+      "street": "Jamestown Rd",
+      "mains": 11
+     },
+     {
+      "price": 46,
+      "max_party": 5,
+      "veg": 3,
+      "role": "answer",
+      "id": "R02",
+      "name": "The Courtyard",
+      "cuisine": "Greek",
+      "area": "Camden",
+      "street": "Delancey St",
+      "mains": 10
+     },
+     {
+      "price": 51,
+      "max_party": 7,
+      "veg": 1,
+      "role": "dearer",
+      "id": "R03",
+      "name": "Five Spoons",
+      "cuisine": "Greek",
+      "area": "Camden",
+      "street": "Oval Rd",
+      "mains": 12
+     },
+     {
+      "price": 59,
+      "max_party": 8,
+      "veg": 1,
+      "role": "dearer",
+      "id": "R04",
+      "name": "Red Kite",
+      "cuisine": "Greek",
+      "area": "Camden",
+      "street": "Albert St",
+      "mains": 7
+     },
+     {
+      "id": "R05",
+      "name": "Ember",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Tunstall Rd",
+      "price": 56,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R06",
+      "name": "The Granary",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Rushcroft Rd",
+      "price": 41,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R07",
+      "name": "Sable",
+      "cuisine": "Thai",
+      "area": "Islington",
+      "street": "Danbury St",
+      "price": 24,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R08",
+      "name": "North Star",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Somerleyton Rd",
+      "price": 55,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     }
+    ],
+    "slot": {
+     "weekday": "saturday",
+     "date": 24,
+     "time": 1140
+    }
+   },
+   "shop": {
+    "catalog": [
+     {
+      "id": "P102",
+      "name": "Printer labels, A4, pack of 100 sheets, Staplex",
+      "type": "sticker",
+      "price": 39.35,
+      "in_stock": true
+     },
+     {
+      "id": "P103",
+      "name": "Printer labels, A4, pack of 100 sheets, OfficeBasics",
+      "type": "sticker",
+      "price": 50.33,
+      "in_stock": true
+     },
+     {
+      "id": "P101",
+      "name": "Printer labels, A4, pack of 100 sheets, Northline",
+      "type": "sticker",
+      "price": 31.83,
+      "in_stock": false
+     },
+     {
+      "id": "P105",
+      "name": "Whiteboard markers, assorted, pack of 8, Northline",
+      "type": "dry wipe",
+      "price": 38.37,
+      "in_stock": true
+     },
+     {
+      "id": "P106",
+      "name": "Whiteboard markers, assorted, pack of 8, Crest",
+      "type": "dry wipe",
+      "price": 48.01,
+      "in_stock": true
+     },
+     {
+      "id": "P104",
+      "name": "Whiteboard markers, assorted, pack of 8, OfficeBasics",
+      "type": "dry wipe",
+      "price": 30.29,
+      "in_stock": true
+     },
+     {
+      "id": "P107",
+      "name": "Highlighters, assorted, pack of 10, Prima",
+      "type": "highlighter pens",
+      "price": 39.68,
+      "in_stock": true
+     },
+     {
+      "id": "P108",
+      "name": "Highlighters, assorted, pack of 10, Staplex",
+      "type": "highlighter pens",
+      "price": 49.58,
+      "in_stock": true
+     },
+     {
+      "id": "P109",
+      "name": "Highlighters, assorted, pack of 10, ValueLine",
+      "type": "highlighter pens",
+      "price": 63.03,
+      "in_stock": true
+     },
+     {
+      "id": "P111",
+      "name": "C5 envelopes, white, box of 500, Staplex",
+      "type": "envelope",
+      "price": 38.85,
+      "in_stock": true
+     },
+     {
+      "id": "P112",
+      "name": "C5 envelopes, white, box of 500, ValueLine",
+      "type": "envelope",
+      "price": 49.84,
+      "in_stock": true
+     },
+     {
+      "id": "P110",
+      "name": "C5 envelopes, white, box of 500, Crest",
+      "type": "envelope",
+      "price": 31.82,
+      "in_stock": true
+     },
+     {
+      "id": "P115",
+      "name": "Ballpoint pens, black, box of 50, OfficeBasics",
+      "type": "biro",
+      "price": 46.65,
+      "in_stock": true
+     },
+     {
+      "id": "P114",
+      "name": "Ballpoint pens, black, box of 50, ValueLine",
+      "type": "biro",
+      "price": 37.14,
+      "in_stock": true
+     },
+     {
+      "id": "P113",
+      "name": "Ballpoint pens, black, box of 50, Prima",
+      "type": "biro",
+      "price": 29.94,
+      "in_stock": true
+     }
+    ]
+   }
+  },
+  "request": "Please find me a table for 5 at a Greek restaurant in Camden on Saturday 24 October at 7pm. Check availability at every place the search finds, hold the cheapest one that has a table for us, in my name (Freya Brennan), and then share the booking with Priya Osei. My number is 07700 900990.",
+  "script": [
+   {
+    "kind": "status",
+    "text": "How's it going? Which places have you checked so far?",
+    "trigger": {
+     "site": "booking",
+     "tool": "booking_check_availability",
+     "distinct": null,
+     "count": 2,
+     "task": "main"
+    },
+    "min_gap": 3,
+    "max_wait": 30
+   }
+  ],
+  "facts": "Your name is Freya Brennan. Your mobile number is 07700 900990.",
+  "person_name": "Freya Brennan",
+  "unrelated_answer": "36",
+  "main": {
+   "family": "B",
+   "site": "booking",
+   "label": "table booking",
+   "expect": {
+    "family": "B",
+    "party": 5,
+    "final_party": 5,
+    "veg_min": 0,
+    "answer_id": "R02",
+    "answer": "The Courtyard",
+    "dropped": null,
+    "dropped_id": null,
+    "phone": "07700 900990",
+    "friend": "Priya Osei",
+    "name": "Freya Brennan",
+    "weekday": "saturday",
+    "date": 24,
+    "time": 1140,
+    "gap": false
+   },
+   "progress": {
+    "site": "booking",
+    "tool": "booking_check_availability",
+    "distinct": null
+   }
+  },
+  "second": null
+ },
+ {
+  "id": "sanity-C-s0",
+  "condition": "sanity",
+  "family": "C",
+  "seed": 0,
+  "latency": "sanity",
+  "cap_s": 240,
+  "idle_s": 10,
+  "sites": {
+   "messaging": {
+    "contacts": [
+     {
+      "name": "Kai Larsen",
+      "first_name": "Kai",
+      "status": "active",
+      "city": "London",
+      "bio": "Loves board games."
+     },
+     {
+      "name": "Callum Iyer",
+      "first_name": "Callum",
+      "status": "active",
+      "city": "London",
+      "bio": "Keeps bees."
+     },
+     {
+      "name": "Ravi Jensen",
+      "first_name": "Ravi",
+      "status": "active",
+      "city": "London",
+      "bio": "Teaches yoga."
+     },
+     {
+      "name": "Freya Romero",
+      "first_name": "Freya",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Amara Lowe",
+      "first_name": "Amara",
+      "status": "active",
+      "city": "London",
+      "bio": "Teaches yoga."
+     },
+     {
+      "name": "Kofi Okafor",
+      "first_name": "Kofi",
+      "status": "active",
+      "city": "London",
+      "bio": "Plays five-a-side on Tuesdays."
+     },
+     {
+      "name": "Nina Ahmed",
+      "first_name": "Nina",
+      "status": "active",
+      "city": "London",
+      "bio": "Collects vinyl."
+     },
+     {
+      "name": "Lucia Kowalski",
+      "first_name": "Lucia",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Erin Jensen",
+      "first_name": "Erin",
+      "status": "active",
+      "city": "London",
+      "bio": "Volunteers at the food bank."
+     },
+     {
+      "name": "Mei Dubois",
+      "first_name": "Mei",
+      "status": "active",
+      "city": "London",
+      "bio": "Keeps bees."
+     },
+     {
+      "name": "Theo Reyes",
+      "first_name": "Theo",
+      "status": "active",
+      "city": "London",
+      "bio": "Learning Spanish."
+     },
+     {
+      "name": "Oscar Wu",
+      "first_name": "Oscar",
+      "status": "active",
+      "city": "London",
+      "bio": "Runs a bakery on weekends."
+     },
+     {
+      "name": "Sam Rivera",
+      "first_name": "Sam",
+      "status": "active",
+      "city": "London",
+      "bio": "Learning Spanish."
+     }
+    ],
+    "groups": {
+     "running club": [
+      "Kai Larsen",
+      "Callum Iyer",
+      "Ravi Jensen",
+      "Freya Romero"
+     ],
+     "choir": [
+      "Amara Lowe",
+      "Kofi Okafor",
+      "Nina Ahmed",
+      "Lucia Kowalski",
+      "Erin Jensen",
+      "Mei Dubois"
+     ]
+    }
+   },
+   "booking": {
+    "restaurants": [
+     {
+      "price": 32,
+      "max_party": 5,
+      "veg": 3,
+      "role": "answer",
+      "id": "R01",
+      "name": "Oak & Barrel",
+      "cuisine": "Thai",
+      "area": "Islington",
+      "street": "Canonbury Ln",
+      "mains": 11
+     },
+     {
+      "price": 52,
+      "max_party": 6,
+      "veg": 2,
+      "role": "dearer",
+      "id": "R02",
+      "name": "Copper Pot",
+      "cuisine": "Thai",
+      "area": "Islington",
+      "street": "Islington Park St",
+      "mains": 9
+     },
+     {
+      "price": 59,
+      "max_party": 8,
+      "veg": 5,
+      "role": "dearer",
+      "id": "R03",
+      "name": "Wildflower",
+      "cuisine": "Thai",
+      "area": "Islington",
+      "street": "Barnsbury St",
+      "mains": 7
+     },
+     {
+      "price": 22,
+      "max_party": 3,
+      "veg": 4,
+      "role": "full",
+      "id": "R04",
+      "name": "Silver Birch",
+      "cuisine": "Thai",
+      "area": "Islington",
+      "street": "St Peter's St",
+      "mains": 9
+     },
+     {
+      "id": "R05",
+      "name": "Blackbird",
+      "cuisine": "Japanese",
+      "area": "Soho",
+      "street": "Carlisle St",
+      "price": 42,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R06",
+      "name": "The Courtyard",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Atlantic Rd",
+      "price": 57,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R07",
+      "name": "The Lantern",
+      "cuisine": "Greek",
+      "area": "Camden",
+      "street": "Albert St",
+      "price": 46,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     },
+     {
+      "id": "R08",
+      "name": "Five Spoons",
+      "cuisine": "Indian",
+      "area": "Brixton",
+      "street": "Market Row",
+      "price": 24,
+      "max_party": 10,
+      "veg": 4,
+      "mains": 9,
+      "role": "elsewhere"
+     }
+    ],
+    "slot": {
+     "weekday": "thursday",
+     "date": 12,
+     "time": 1170
+    }
+   },
+   "shop": {
+    "catalog": [
+     {
+      "id": "P101",
+      "name": "Tea bags, box of 1100, Staplex",
+      "type": "tea",
+      "price": 7.69,
+      "in_stock": true
+     },
+     {
+      "id": "P103",
+      "name": "Tea bags, box of 1100, OfficeBasics",
+      "type": "tea",
+      "price": 11.47,
+      "in_stock": true
+     },
+     {
+      "id": "P102",
+      "name": "Tea bags, box of 1100, ValueLine",
+      "type": "tea",
+      "price": 9.7,
+      "in_stock": true
+     },
+     {
+      "id": "P104",
+      "name": "Lever arch files, A4, pack of 10, ValueLine",
+      "type": "folder",
+      "price": 31.17,
+      "in_stock": true
+     },
+     {
+      "id": "P105",
+      "name": "Lever arch files, A4, pack of 10, Staplex",
+      "type": "folder",
+      "price": 39.0,
+      "in_stock": true
+     },
+     {
+      "id": "P106",
+      "name": "Lever arch files, A4, pack of 10, Crest",
+      "type": "folder",
+      "price": 50.29,
+      "in_stock": true
+     },
+     {
+      "id": "P109",
+      "name": "Sticky notes, yellow, pack of 12 pads, Northline",
+      "type": "post-it",
+      "price": 32.59,
+      "in_stock": true
+     },
+     {
+      "id": "P108",
+      "name": "Sticky notes, yellow, pack of 12 pads, Staplex",
+      "type": "post-it",
+      "price": 25.59,
+      "in_stock": true
+     },
+     {
+      "id": "P107",
+      "name": "Sticky notes, yellow, pack of 12 pads, ValueLine",
+      "type": "post-it",
+      "price": 20.79,
+      "in_stock": false
+     },
+     {
+      "id": "P111",
+      "name": "C5 envelopes, white, box of 500, Staplex",
+      "type": "envelope",
+      "price": 7.6,
+      "in_stock": true
+     },
+     {
+      "id": "P110",
+      "name": "C5 envelopes, white, box of 500, Northline",
+      "type": "envelope",
+      "price": 6.33,
+      "in_stock": false
+     },
+     {
+      "id": "P112",
+      "name": "C5 envelopes, white, box of 500, Crest",
+      "type": "envelope",
+      "price": 9.84,
+      "in_stock": true
+     },
+     {
+      "id": "P115",
+      "name": "Masking tape, pack of 6 rolls, Prima",
+      "type": "tape",
+      "price": 22.99,
+      "in_stock": true
+     },
+     {
+      "id": "P114",
+      "name": "Masking tape, pack of 6 rolls, Staplex",
+      "type": "tape",
+      "price": 17.88,
+      "in_stock": true
+     },
+     {
+      "id": "P113",
+      "name": "Masking tape, pack of 6 rolls, OfficeBasics",
+      "type": "tape",
+      "price": 14.54,
+      "in_stock": true
+     }
+    ]
+   }
+  },
+  "request": "Please order these for the office from the stationery shop: 2 x tea bags (box of 1,100); 3 x lever-arch files (pack of 10); 2 x yellow sticky notes (pack of 12 pads); 5 x C5 envelopes (box of 500). For each one, pick the cheapest option that's in stock. Then check out with delivery to 57 Clifton Street, London EC2A 8HQ, and tell me the order number and the total. Our purchase-order number is PO-9398.",
+  "script": [
+   {
+    "kind": "status",
+    "text": "How's it going? What's in the cart so far?",
+    "trigger": {
+     "site": "shop",
+     "tool": "shop_add_to_cart",
+     "distinct": null,
+     "count": 2,
+     "task": "main"
+    },
+    "min_gap": 3,
+    "max_wait": 30
+   }
+  ],
+  "facts": "The purchase-order number for this order is PO-9398.",
+  "person_name": "Ravi Price",
+  "unrelated_answer": "36",
+  "main": {
+   "family": "C",
+   "site": "shop",
+   "label": "office order",
+   "expect": {
+    "family": "C",
+    "order": {
+     "P101": 2,
+     "P104": 3,
+     "P108": 2,
+     "P111": 5
+    },
+    "po": "PO-9398",
+    "address": "57 Clifton Street, London EC2A 8HQ",
+    "p_item": "P101",
+    "p_old": 2,
+    "p_new": 5,
+    "y_item": null,
+    "z_item": "P113",
+    "best": {
+     "tea bags (box of 1,100)": "P101",
+     "lever-arch files (pack of 10)": "P104",
+     "yellow sticky notes (pack of 12 pads)": "P108",
+     "C5 envelopes (box of 500)": "P111",
+     "masking tape (pack of 6 rolls)": "P113"
+    },
+    "qty": {
+     "tea bags (box of 1,100)": 2,
+     "lever-arch files (pack of 10)": 3,
+     "yellow sticky notes (pack of 12 pads)": 2,
+     "C5 envelopes (box of 500)": 5,
+     "masking tape (pack of 6 rolls)": 4
+    },
+    "gap": false
+   },
+   "progress": {
+    "site": "shop",
+    "tool": "shop_add_to_cart",
+    "distinct": null
+   }
+  },
+  "second": null
+ }
+]

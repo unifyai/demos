@@ -1,0 +1,22 @@
+[project]
+name = "separate-loops"
+version = "0.1.0"
+description = "Talking and acting in separate loops, joined by a steerable handle, against the strongest simple alternatives"
+requires-python = ">=3.12"
+dependencies = ["demos-common"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv.sources]
+demos-common = { path = "../../common", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/separate_loops"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
