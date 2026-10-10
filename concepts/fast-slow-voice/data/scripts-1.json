@@ -1,0 +1,8891 @@
+[
+{
+"id": "s1-00",
+"seed": 1000,
+"episodes": [
+"repeat_request",
+"followup_ref",
+"multihop",
+"interrupt",
+"withdraw"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's the gate code for the Racine warehouse? Sofia sent it to me at some point.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Sorry, what was that code again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1r"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "I need Ronan Vance's number, can you find it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "And their email, please?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "How much do we owe Emeka Lindgren's company?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "When's the car service on Wednesday again?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Sorry, you cut out there. Can you say that again?",
+"kind": "interrupt_repeat",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "answer"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "What does the unpaid invoice from Ashby & Cole come to?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Actually, never mind, I've just found it in my notes.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q6"
+]
+},
+{
+"id": "t16",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "code_latest",
+"text": "What's the gate code for the Racine warehouse? Sofia sent it to me at some point.",
+"gold": "8167#",
+"keys": [
+"8167"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Sofia Ibrahim",
+"thing": "code",
+"extra": {
+"old": "9760"
+}
+},
+{
+"id": "q1r",
+"kind": "repeat",
+"text": "Sorry, what was that code again?",
+"gold": "8167#",
+"keys": [
+"8167"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Sofia Ibrahim",
+"thing": "code",
+"extra": {
+"repeats": "q1"
+}
+},
+{
+"id": "q2",
+"kind": "phone",
+"text": "I need Ronan Vance's number, can you find it?",
+"gold": "872-555-0105",
+"keys": [
+"8725550105"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Ronan Vance",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q3",
+"kind": "email_followup",
+"text": "And their email, please?",
+"gold": "ronan.vance@juniperhealth.example",
+"keys": [
+"ronan.vance@juniperhealth.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Ronan Vance",
+"thing": "email",
+"extra": {
+"refers_to": "q2"
+}
+},
+{
+"id": "q4",
+"kind": "invoice_via_contact",
+"text": "How much do we owe Emeka Lindgren's company?",
+"gold": "$6,009.74",
+"keys": [
+"600974"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Emeka Lindgren",
+"thing": "amount",
+"extra": {
+"vendor": "Corvid Systems"
+}
+},
+{
+"id": "q5",
+"kind": "meeting_time",
+"text": "When's the car service on Wednesday again?",
+"gold": "11:25 am",
+"keys": [
+"11:25"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-14"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_unpaid",
+"text": "What does the unpaid invoice from Ashby & Cole come to?",
+"gold": "$4,141.52",
+"keys": [
+"414152"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {
+"withdrawn": true
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Sofia",
+"last": "Ibrahim",
+"company": "Westgate Insurance",
+"role": "operations lead",
+"city": "Oak Park",
+"mobile": "773-555-0159",
+"email": "sofia.ibrahim@westgate.example"
+},
+{
+"id": "c0002",
+"first": "Ronan",
+"last": "Vance",
+"company": "Juniper Health",
+"role": "finance director",
+"city": "Naperville",
+"mobile": "872-555-0105",
+"email": "ronan.vance@juniperhealth.example"
+},
+{
+"id": "c0003",
+"first": "Emeka",
+"last": "Lindgren",
+"company": "Corvid Systems",
+"role": "finance director",
+"city": "Chicago",
+"mobile": "331-555-0159",
+"email": "emeka.lindgren@corvid.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "11:25 am",
+"end": "12:10 pm",
+"title": "Car service",
+"attendees": [],
+"location": "1563 N Wells St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Sofia Ibrahim",
+"date": "2026-09-18",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Racine warehouse",
+"body": "Hi Sam, the gate code for the Racine St warehouse is 9760#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Sofia Ibrahim",
+"date": "2026-10-09",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Racine warehouse gate",
+"body": "Heads up: we changed the gate code at the Racine St warehouse. The new code is 8167#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Corvid Systems",
+"number": "INV-2783",
+"amount": "$2,944.21",
+"issued": "2026-09-10",
+"due": "2026-10-10",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Corvid Systems",
+"number": "INV-5685",
+"amount": "$1,273.71",
+"issued": "2026-08-11",
+"due": "2026-09-10",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Corvid Systems",
+"number": "INV-6145",
+"amount": "$6,009.74",
+"issued": "2026-10-09",
+"due": "2026-11-08",
+"status": "unpaid"
+},
+{
+"id": "i0004",
+"vendor": "Ashby & Cole",
+"number": "INV-5593",
+"amount": "$5,240.67",
+"issued": "2026-09-05",
+"due": "2026-10-05",
+"status": "paid"
+},
+{
+"id": "i0005",
+"vendor": "Ashby & Cole",
+"number": "INV-1195",
+"amount": "$873.13",
+"issued": "2026-08-08",
+"due": "2026-09-07",
+"status": "paid"
+},
+{
+"id": "i0006",
+"vendor": "Ashby & Cole",
+"number": "INV-8369",
+"amount": "$7,136.47",
+"issued": "2026-07-12",
+"due": "2026-08-11",
+"status": "paid"
+},
+{
+"id": "i0007",
+"vendor": "Ashby & Cole",
+"number": "INV-4735",
+"amount": "$4,141.52",
+"issued": "2026-10-08",
+"due": "2026-11-07",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-14",
+"11:25 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"car service"
+]
+],
+"reserved_vendors": [
+"Ashby & Cole",
+"Corvid Systems"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Racine"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Emeka Lindgren",
+"Ronan Vance",
+"Sofia Ibrahim"
+],
+"used_mobiles": [
+"331-555-0159",
+"773-555-0159",
+"872-555-0105"
+]
+},
+{
+"id": "s1-01",
+"seed": 1001,
+"episodes": [
+"simple",
+"action",
+"smalltalk_during",
+"topic_change",
+"multihop"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava, it's Sam. How are you doing today?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's my flight number for Raleigh on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Can you text Theo Russo and tell them I'm running about ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "What's the booking reference for Avenue Bistro on Thursday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Ugh, the traffic this morning is terrible.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Where's my board meeting on Friday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Oh, and while you're at it, who am I meeting at 11:15 on Friday? And can you give me their number?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4",
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "How much do we owe Amara Marsh's company?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "flight_number",
+"text": "What's my flight number for Raleigh on Wednesday?",
+"gold": "UA 2375",
+"keys": [
+"UA2375"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Raleigh"
+}
+},
+{
+"id": "q2",
+"kind": "text_late",
+"text": "Can you text Theo Russo and tell them I'm running about ten minutes late?",
+"gold": "text sent to Theo Russo",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Theo Russo",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q3",
+"kind": "booking_ref",
+"text": "What's the booking reference for Avenue Bistro on Thursday?",
+"gold": "4JGS5E",
+"keys": [
+"4JGS5E"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Avenue Bistro"
+}
+},
+{
+"id": "q4",
+"kind": "meeting_place",
+"text": "Where's my board meeting on Friday?",
+"gold": "710 W Kinzie St",
+"keys": [
+"710",
+"kinzie"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-16"
+}
+},
+{
+"id": "q5",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 11:15 on Friday? And can you give me their number?",
+"gold": "Malik Carvalho, 872-555-0168",
+"keys": [
+"8725550168"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Malik Carvalho",
+"thing": "number",
+"extra": {
+"date": "2026-10-16",
+"name_key": "carvalho"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_via_contact",
+"text": "How much do we owe Amara Marsh's company?",
+"gold": "$2,753.32",
+"keys": [
+"275332"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Amara Marsh",
+"thing": "amount",
+"extra": {
+"vendor": "Redfern Electrical"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Theo",
+"last": "Russo",
+"company": "Harbor Point Legal",
+"role": "finance director",
+"city": "Skokie",
+"mobile": "262-555-0119",
+"email": "theo.russo@harborpoint.example"
+},
+{
+"id": "c0002",
+"first": "Malik",
+"last": "Carvalho",
+"company": "Northwind Logistics",
+"role": "sales lead",
+"city": "Evanston",
+"mobile": "872-555-0168",
+"email": "malik.carvalho@northwind-logistics.example"
+},
+{
+"id": "c0003",
+"first": "Amara",
+"last": "Marsh",
+"company": "Redfern Electrical",
+"role": "office manager",
+"city": "Evanston",
+"mobile": "312-555-0178",
+"email": "amara.marsh@redfern.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-16",
+"start": "9:20 am",
+"end": "10:50 am",
+"title": "Board meeting",
+"attendees": [],
+"location": "710 W Kinzie St"
+},
+{
+"id": "e0002",
+"date": "2026-10-16",
+"start": "11:15 am",
+"end": "11:45 am",
+"title": "Meeting with Malik Carvalho",
+"attendees": [
+"Malik Carvalho"
+],
+"location": "Northwind Logistics office"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Avenue Bistro",
+"date": "2026-10-05",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Avenue Bistro is confirmed",
+"body": "Dear Sam, your table for 4 at Avenue Bistro on Thursday 15 October at 7:30 pm is confirmed. Booking reference: 4JGS5E. We look forward to seeing you."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Redfern Electrical",
+"number": "INV-6888",
+"amount": "$5,222.25",
+"issued": "2026-09-04",
+"due": "2026-10-04",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Redfern Electrical",
+"number": "INV-8406",
+"amount": "$876.35",
+"issued": "2026-08-13",
+"due": "2026-09-12",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Redfern Electrical",
+"number": "INV-3414",
+"amount": "$2,753.32",
+"issued": "2026-10-07",
+"due": "2026-11-06",
+"status": "unpaid"
+}
+],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "UA",
+"number": "UA 2375",
+"date": "2026-10-14",
+"depart": "2:00 pm",
+"origin": "ORD",
+"destination": "Raleigh (RDU)",
+"confirmation": "L4Z3ND"
+}
+],
+"reserved_slots": [
+[
+"2026-10-16",
+"11:15 am"
+],
+[
+"2026-10-16",
+"9:20 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-16",
+"board meeting"
+]
+],
+"reserved_vendors": [
+"Redfern Electrical"
+],
+"reserved_restaurants": [
+"Avenue Bistro"
+],
+"reserved_streets": [
+"Kinzie"
+],
+"reserved_trip_days": [
+[
+"2026-10-14",
+"Raleigh"
+]
+]
+},
+"used_names": [
+"Amara Marsh",
+"Malik Carvalho",
+"Theo Russo"
+],
+"used_mobiles": [
+"262-555-0119",
+"312-555-0178",
+"872-555-0168"
+]
+},
+{
+"id": "s1-02",
+"seed": 1002,
+"episodes": [
+"repeat_request",
+"topic_change",
+"interrupt",
+"followup_ref",
+"simple"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's Ingrid's number? Ingrid from Corvid, I mean.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Sorry, what was that number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1r"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "What's the gate code for the Superior warehouse? Abby sent it to me at some point.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Oh, and while you're at it, what's the address for the vendor demo on Thursday?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2",
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Can you give me Oliver Ibrahim's cell number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Sorry, one sec. Okay, carry on.",
+"kind": "interrupt_resume",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "any"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Who am I meeting at 9:40 on Friday? And can you give me their number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Great, and their email address?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "How much do we still owe Riverside Clinic?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q7"
+],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q7"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t17",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "phone_ambig",
+"text": "What's Ingrid's number? Ingrid from Corvid, I mean.",
+"gold": "262-555-0179",
+"keys": [
+"2625550179"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Ingrid Ng",
+"thing": "number",
+"extra": {
+"distractor": "Ingrid Adeyemi"
+}
+},
+{
+"id": "q1r",
+"kind": "repeat",
+"text": "Sorry, what was that number again?",
+"gold": "262-555-0179",
+"keys": [
+"2625550179"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Ingrid Ng",
+"thing": "number",
+"extra": {
+"repeats": "q1"
+}
+},
+{
+"id": "q2",
+"kind": "code_latest",
+"text": "What's the gate code for the Superior warehouse? Abby sent it to me at some point.",
+"gold": "6109#",
+"keys": [
+"6109"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Abby Bakshi",
+"thing": "code",
+"extra": {
+"old": "3662"
+}
+},
+{
+"id": "q3",
+"kind": "meeting_place",
+"text": "What's the address for the vendor demo on Thursday?",
+"gold": "393 W Kinzie St",
+"keys": [
+"393",
+"kinzie"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-15"
+}
+},
+{
+"id": "q4",
+"kind": "phone",
+"text": "Can you give me Oliver Ibrahim's cell number?",
+"gold": "872-555-0176",
+"keys": [
+"8725550176"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Oliver Ibrahim",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 9:40 on Friday? And can you give me their number?",
+"gold": "Rhea Chen, 773-555-0197",
+"keys": [
+"7735550197"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Rhea Chen",
+"thing": "number",
+"extra": {
+"date": "2026-10-16",
+"name_key": "chen"
+}
+},
+{
+"id": "q6",
+"kind": "email_followup",
+"text": "Great, and their email address?",
+"gold": "rhea.chen@kestrel.example",
+"keys": [
+"rhea.chen@kestrel.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Rhea Chen",
+"thing": "email",
+"extra": {
+"refers_to": "q5"
+}
+},
+{
+"id": "q7",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Riverside Clinic?",
+"gold": "$946.79",
+"keys": [
+"94679"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Ingrid",
+"last": "Ng",
+"company": "Corvid Systems",
+"role": "procurement lead",
+"city": "Milwaukee",
+"mobile": "262-555-0179",
+"email": "ingrid.ng@corvid.example"
+},
+{
+"id": "c0002",
+"first": "Ingrid",
+"last": "Adeyemi",
+"company": "Granite Peak Capital",
+"role": "engineer",
+"city": "Skokie",
+"mobile": "312-555-0130",
+"email": "ingrid.adeyemi@granitepeak.example"
+},
+{
+"id": "c0003",
+"first": "Abby",
+"last": "Bakshi",
+"company": "Northwind Logistics",
+"role": "operations lead",
+"city": "Milwaukee",
+"mobile": "872-555-0196",
+"email": "abby.bakshi@northwind-logistics.example"
+},
+{
+"id": "c0004",
+"first": "Oliver",
+"last": "Ibrahim",
+"company": "Saffron Office Supplies",
+"role": "sales lead",
+"city": "Skokie",
+"mobile": "872-555-0176",
+"email": "oliver.ibrahim@saffron.example"
+},
+{
+"id": "c0005",
+"first": "Rhea",
+"last": "Chen",
+"company": "Kestrel Security",
+"role": "account manager",
+"city": "Chicago",
+"mobile": "773-555-0197",
+"email": "rhea.chen@kestrel.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-15",
+"start": "4:25 pm",
+"end": "5:55 pm",
+"title": "Vendor demo",
+"attendees": [],
+"location": "393 W Kinzie St"
+},
+{
+"id": "e0002",
+"date": "2026-10-16",
+"start": "9:40 am",
+"end": "10:10 am",
+"title": "Meeting with Rhea Chen",
+"attendees": [
+"Rhea Chen"
+],
+"location": "Sam's office"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Abby Bakshi",
+"date": "2026-09-08",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Superior warehouse",
+"body": "Hi Sam, the gate code for the Superior St warehouse is 3662#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Abby Bakshi",
+"date": "2026-10-08",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Superior warehouse gate",
+"body": "Heads up: we changed the gate code at the Superior St warehouse. The new code is 6109#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Riverside Clinic",
+"number": "INV-3949",
+"amount": "$7,766.03",
+"issued": "2026-09-09",
+"due": "2026-10-09",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Riverside Clinic",
+"number": "INV-2505",
+"amount": "$1,170.46",
+"issued": "2026-08-12",
+"due": "2026-09-11",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Riverside Clinic",
+"number": "INV-1167",
+"amount": "$946.79",
+"issued": "2026-10-06",
+"due": "2026-11-05",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-15",
+"4:25 pm"
+],
+[
+"2026-10-16",
+"9:40 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-15",
+"vendor demo"
+]
+],
+"reserved_vendors": [
+"Riverside Clinic"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Kinzie",
+"Superior"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Abby Bakshi",
+"Ingrid Adeyemi",
+"Ingrid Ng",
+"Oliver Ibrahim",
+"Rhea Chen"
+],
+"used_mobiles": [
+"262-555-0179",
+"312-555-0130",
+"773-555-0197",
+"872-555-0176",
+"872-555-0196"
+]
+},
+{
+"id": "s1-03",
+"seed": 1003,
+"episodes": [
+"action",
+"smalltalk_during",
+"withdraw",
+"topic_change",
+"followup_ref"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "Could you send Maya Castillo a text saying I'll be ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "When's the vet appointment on Friday again?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Sorry, I'm just getting into the car, give me a second.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "What's the booking reference for The Long Table on Thursday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Actually, forget that one, it doesn't matter now.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q3"
+]
+},
+{
+"id": "t9",
+"text": "Which flight am I on to Kansas City on Friday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Oh, and while you're at it, what's Emeka's number? Emeka from Riverside, I mean.",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4",
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Can you give me Victor Vance's cell number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "And what's their email?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q7"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q7"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "text_late",
+"text": "Could you send Maya Castillo a text saying I'll be ten minutes late?",
+"gold": "text sent to Maya Castillo",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Maya Castillo",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q2",
+"kind": "meeting_time",
+"text": "When's the vet appointment on Friday again?",
+"gold": "2:20 pm",
+"keys": [
+"2:20",
+"14:20"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-16"
+}
+},
+{
+"id": "q3",
+"kind": "booking_ref",
+"text": "What's the booking reference for The Long Table on Thursday?",
+"gold": "WQAJ3X",
+"keys": [
+"WQAJ3X"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "The Long Table",
+"withdrawn": true
+}
+},
+{
+"id": "q4",
+"kind": "flight_number",
+"text": "Which flight am I on to Kansas City on Friday?",
+"gold": "UA 1197",
+"keys": [
+"UA1197"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Kansas City"
+}
+},
+{
+"id": "q5",
+"kind": "phone_ambig",
+"text": "What's Emeka's number? Emeka from Riverside, I mean.",
+"gold": "262-555-0195",
+"keys": [
+"2625550195"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Emeka Ito",
+"thing": "number",
+"extra": {
+"distractor": "Emeka Brandt"
+}
+},
+{
+"id": "q6",
+"kind": "phone",
+"text": "Can you give me Victor Vance's cell number?",
+"gold": "331-555-0155",
+"keys": [
+"3315550155"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Victor Vance",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q7",
+"kind": "email_followup",
+"text": "And what's their email?",
+"gold": "victor.vance@quarrylane.example",
+"keys": [
+"victor.vance@quarrylane.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Victor Vance",
+"thing": "email",
+"extra": {
+"refers_to": "q6"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Maya",
+"last": "Castillo",
+"company": "Fernhill Catering",
+"role": "analyst",
+"city": "Naperville",
+"mobile": "331-555-0158",
+"email": "maya.castillo@fernhill.example"
+},
+{
+"id": "c0002",
+"first": "Emeka",
+"last": "Ito",
+"company": "Riverside Clinic",
+"role": "procurement lead",
+"city": "Evanston",
+"mobile": "262-555-0195",
+"email": "emeka.ito@riversideclinic.example"
+},
+{
+"id": "c0003",
+"first": "Emeka",
+"last": "Brandt",
+"company": "Meridian Facilities",
+"role": "project manager",
+"city": "Evanston",
+"mobile": "312-555-0148",
+"email": "emeka.brandt@meridianfm.example"
+},
+{
+"id": "c0004",
+"first": "Victor",
+"last": "Vance",
+"company": "Quarry Lane Studio",
+"role": "procurement lead",
+"city": "Skokie",
+"mobile": "331-555-0155",
+"email": "victor.vance@quarrylane.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-16",
+"start": "2:20 pm",
+"end": "3:05 pm",
+"title": "Vet appointment",
+"attendees": [],
+"location": "459 N Division St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "The Long Table",
+"date": "2026-10-11",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at The Long Table is confirmed",
+"body": "Dear Sam, your table for 4 at The Long Table on Thursday 15 October at 7:30 pm is confirmed. Booking reference: WQAJ3X. We look forward to seeing you."
+}
+],
+"invoices": [],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "UA",
+"number": "UA 1197",
+"date": "2026-10-16",
+"depart": "2:35 pm",
+"origin": "ORD",
+"destination": "Kansas City (MCI)",
+"confirmation": "JS25NN"
+}
+],
+"reserved_slots": [
+[
+"2026-10-16",
+"2:20 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-16",
+"vet appointment"
+]
+],
+"reserved_vendors": [],
+"reserved_restaurants": [
+"The Long Table"
+],
+"reserved_streets": [],
+"reserved_trip_days": [
+[
+"2026-10-16",
+"Kansas City"
+]
+]
+},
+"used_names": [
+"Emeka Brandt",
+"Emeka Ito",
+"Maya Castillo",
+"Victor Vance"
+],
+"used_mobiles": [
+"262-555-0195",
+"312-555-0148",
+"331-555-0155",
+"331-555-0158"
+]
+},
+{
+"id": "s1-04",
+"seed": 1004,
+"episodes": [
+"simple",
+"action",
+"smalltalk_during",
+"repeat_request",
+"interrupt"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's Lucas's number? Lucas from Cobalt, I mean.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Can you text Oliver Pereira and tell them I'm running about ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "When's the eye test on Tuesday again?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Sorry, I'm just getting into the car, give me a second.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "What's my flight number for Nashville on Tuesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Sorry, what was that flight number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q4r"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Freya Oduya's firm sent us an invoice we haven't paid. How much is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Sorry, one sec. Okay, carry on.",
+"kind": "interrupt_resume",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "any"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "phone_ambig",
+"text": "What's Lucas's number? Lucas from Cobalt, I mean.",
+"gold": "630-555-0198",
+"keys": [
+"6305550198"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Lucas Ortega",
+"thing": "number",
+"extra": {
+"distractor": "Lucas Brennan"
+}
+},
+{
+"id": "q2",
+"kind": "text_late",
+"text": "Can you text Oliver Pereira and tell them I'm running about ten minutes late?",
+"gold": "text sent to Oliver Pereira",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Oliver Pereira",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q3",
+"kind": "meeting_time",
+"text": "When's the eye test on Tuesday again?",
+"gold": "2:25 pm",
+"keys": [
+"2:25",
+"14:25"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-13"
+}
+},
+{
+"id": "q4",
+"kind": "flight_number",
+"text": "What's my flight number for Nashville on Tuesday?",
+"gold": "WN 306",
+"keys": [
+"WN306"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Nashville"
+}
+},
+{
+"id": "q4r",
+"kind": "repeat",
+"text": "Sorry, what was that flight number again?",
+"gold": "WN 306",
+"keys": [
+"WN306"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"repeats": "q4"
+}
+},
+{
+"id": "q5",
+"kind": "invoice_via_contact",
+"text": "Freya Oduya's firm sent us an invoice we haven't paid. How much is it?",
+"gold": "$1,681.96",
+"keys": [
+"168196"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Freya Oduya",
+"thing": "amount",
+"extra": {
+"vendor": "Oakleaf Furniture"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Lucas",
+"last": "Ortega",
+"company": "Cobalt Analytics",
+"role": "office manager",
+"city": "Milwaukee",
+"mobile": "630-555-0198",
+"email": "lucas.ortega@cobalt.example"
+},
+{
+"id": "c0002",
+"first": "Lucas",
+"last": "Brennan",
+"company": "Pinecrest Realty",
+"role": "sales lead",
+"city": "Milwaukee",
+"mobile": "312-555-0189",
+"email": "lucas.brennan@pinecrest.example"
+},
+{
+"id": "c0003",
+"first": "Oliver",
+"last": "Pereira",
+"company": "Redfern Electrical",
+"role": "finance director",
+"city": "Milwaukee",
+"mobile": "312-555-0118",
+"email": "oliver.pereira@redfern.example"
+},
+{
+"id": "c0004",
+"first": "Freya",
+"last": "Oduya",
+"company": "Oakleaf Furniture",
+"role": "engineer",
+"city": "Naperville",
+"mobile": "872-555-0130",
+"email": "freya.oduya@oakleaf.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-13",
+"start": "2:25 pm",
+"end": "3:10 pm",
+"title": "Eye test",
+"attendees": [],
+"location": "1429 N Ogden St"
+}
+],
+"messages": [],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Oakleaf Furniture",
+"number": "INV-8739",
+"amount": "$2,117.55",
+"issued": "2026-09-10",
+"due": "2026-10-10",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Oakleaf Furniture",
+"number": "INV-1336",
+"amount": "$5,162.97",
+"issued": "2026-08-11",
+"due": "2026-09-10",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Oakleaf Furniture",
+"number": "INV-9728",
+"amount": "$4,047.31",
+"issued": "2026-07-12",
+"due": "2026-08-11",
+"status": "paid"
+},
+{
+"id": "i0004",
+"vendor": "Oakleaf Furniture",
+"number": "INV-1508",
+"amount": "$1,681.96",
+"issued": "2026-10-01",
+"due": "2026-10-31",
+"status": "unpaid"
+}
+],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "WN",
+"number": "WN 306",
+"date": "2026-10-13",
+"depart": "12:15 pm",
+"origin": "ORD",
+"destination": "Nashville (BNA)",
+"confirmation": "BRB2U6"
+}
+],
+"reserved_slots": [
+[
+"2026-10-13",
+"2:25 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-13",
+"eye test"
+]
+],
+"reserved_vendors": [
+"Oakleaf Furniture"
+],
+"reserved_restaurants": [],
+"reserved_streets": [],
+"reserved_trip_days": [
+[
+"2026-10-13",
+"Nashville"
+]
+]
+},
+"used_names": [
+"Freya Oduya",
+"Lucas Brennan",
+"Lucas Ortega",
+"Oliver Pereira"
+],
+"used_mobiles": [
+"312-555-0118",
+"312-555-0189",
+"630-555-0198",
+"872-555-0130"
+]
+},
+{
+"id": "s1-05",
+"seed": 1005,
+"episodes": [
+"multihop",
+"smalltalk_during",
+"followup_ref",
+"topic_change",
+"withdraw"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "I've got something at 2:10 on Wednesday, who's that with? I'll need their number too.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Fatima texted me the gate code for the Division warehouse, what is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Hang on, my coffee's just arrived.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Can you get me Imani's cell? The Imani at Saffron.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "And their email, please?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Can you find the booking ref for dinner at Kiku on Friday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Oh, and while you're at it, how much do we still owe Riverside Clinic?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5",
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "What's the address for the site visit on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q7"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Oh wait, don't worry about that, I've got it.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q7"
+]
+},
+{
+"id": "t15",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "meeting_who_phone",
+"text": "I've got something at 2:10 on Wednesday, who's that with? I'll need their number too.",
+"gold": "Peter Toivonen, 847-555-0145",
+"keys": [
+"8475550145"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Peter Toivonen",
+"thing": "number",
+"extra": {
+"date": "2026-10-14",
+"name_key": "toivonen"
+}
+},
+{
+"id": "q2",
+"kind": "code_latest",
+"text": "Fatima texted me the gate code for the Division warehouse, what is it?",
+"gold": "6573#",
+"keys": [
+"6573"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Fatima Becker",
+"thing": "code",
+"extra": {
+"old": "1906"
+}
+},
+{
+"id": "q3",
+"kind": "phone_ambig",
+"text": "Can you get me Imani's cell? The Imani at Saffron.",
+"gold": "708-555-0145",
+"keys": [
+"7085550145"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Imani Callahan",
+"thing": "number",
+"extra": {
+"distractor": "Imani Ortega"
+}
+},
+{
+"id": "q4",
+"kind": "email_followup",
+"text": "And their email, please?",
+"gold": "imani.callahan@saffron.example",
+"keys": [
+"imani.callahan@saffron.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Imani Callahan",
+"thing": "email",
+"extra": {
+"refers_to": "q3"
+}
+},
+{
+"id": "q5",
+"kind": "booking_ref",
+"text": "Can you find the booking ref for dinner at Kiku on Friday?",
+"gold": "XUGBZ3",
+"keys": [
+"XUGBZ3"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Kiku"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Riverside Clinic?",
+"gold": "$6,756.09",
+"keys": [
+"675609"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q7",
+"kind": "meeting_place",
+"text": "What's the address for the site visit on Wednesday?",
+"gold": "369 W Damen St",
+"keys": [
+"369",
+"damen"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-14",
+"withdrawn": true
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Peter",
+"last": "Toivonen",
+"company": "Oakleaf Furniture",
+"role": "engineer",
+"city": "Skokie",
+"mobile": "847-555-0145",
+"email": "peter.toivonen@oakleaf.example"
+},
+{
+"id": "c0002",
+"first": "Fatima",
+"last": "Becker",
+"company": "Oakleaf Furniture",
+"role": "operations lead",
+"city": "Milwaukee",
+"mobile": "262-555-0105",
+"email": "fatima.becker@oakleaf.example"
+},
+{
+"id": "c0003",
+"first": "Imani",
+"last": "Callahan",
+"company": "Saffron Office Supplies",
+"role": "finance director",
+"city": "Skokie",
+"mobile": "708-555-0145",
+"email": "imani.callahan@saffron.example"
+},
+{
+"id": "c0004",
+"first": "Imani",
+"last": "Ortega",
+"company": "Delta Freight",
+"role": "account manager",
+"city": "Oak Park",
+"mobile": "847-555-0135",
+"email": "imani.ortega@deltafreight.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "2:10 pm",
+"end": "2:40 pm",
+"title": "Meeting with Peter Toivonen",
+"attendees": [
+"Peter Toivonen"
+],
+"location": "Zoom"
+},
+{
+"id": "e0002",
+"date": "2026-10-14",
+"start": "1:40 pm",
+"end": "3:10 pm",
+"title": "Site visit",
+"attendees": [],
+"location": "369 W Damen St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Fatima Becker",
+"date": "2026-09-07",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Division warehouse",
+"body": "Hi Sam, the gate code for the Division St warehouse is 1906#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Fatima Becker",
+"date": "2026-10-10",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Division warehouse gate",
+"body": "Heads up: we changed the gate code at the Division St warehouse. The new code is 6573#. The old one no longer works."
+},
+{
+"id": "m0003",
+"sender": "Kiku",
+"date": "2026-10-07",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Kiku is confirmed",
+"body": "Dear Sam, your table for 4 at Kiku on Friday 16 October at 7:30 pm is confirmed. Booking reference: XUGBZ3. We look forward to seeing you."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Riverside Clinic",
+"number": "INV-9803",
+"amount": "$7,505.35",
+"issued": "2026-09-05",
+"due": "2026-10-05",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Riverside Clinic",
+"number": "INV-1562",
+"amount": "$5,838.22",
+"issued": "2026-08-11",
+"due": "2026-09-10",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Riverside Clinic",
+"number": "INV-8509",
+"amount": "$6,756.09",
+"issued": "2026-10-09",
+"due": "2026-11-08",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-14",
+"1:40 pm"
+],
+[
+"2026-10-14",
+"2:10 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"site visit"
+]
+],
+"reserved_vendors": [
+"Riverside Clinic"
+],
+"reserved_restaurants": [
+"Kiku"
+],
+"reserved_streets": [
+"Damen",
+"Division"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Fatima Becker",
+"Imani Callahan",
+"Imani Ortega",
+"Peter Toivonen"
+],
+"used_mobiles": [
+"262-555-0105",
+"708-555-0145",
+"847-555-0135",
+"847-555-0145"
+]
+},
+{
+"id": "s1-06",
+"seed": 1006,
+"episodes": [
+"multihop",
+"interrupt",
+"repeat_request",
+"action",
+"simple"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hey Ava, Sam here. How are things?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "How much do we owe Omar Kovac's company?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Zara texted me the gate code for the Clybourn warehouse, what is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Sorry, sorry, say that again?",
+"kind": "interrupt_repeat",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "answer"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "What's my flight number for Minneapolis on Thursday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Sorry, what was that flight number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q3r"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Can you text Esther Ito and tell them I'm running about ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "What time is my dentist appointment on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "invoice_via_contact",
+"text": "How much do we owe Omar Kovac's company?",
+"gold": "$8,333.53",
+"keys": [
+"833353"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Omar Kovac",
+"thing": "amount",
+"extra": {
+"vendor": "Halden Partners"
+}
+},
+{
+"id": "q2",
+"kind": "code_latest",
+"text": "Zara texted me the gate code for the Clybourn warehouse, what is it?",
+"gold": "2500#",
+"keys": [
+"2500"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Zara Nowak",
+"thing": "code",
+"extra": {
+"old": "5728"
+}
+},
+{
+"id": "q3",
+"kind": "flight_number",
+"text": "What's my flight number for Minneapolis on Thursday?",
+"gold": "DL 1752",
+"keys": [
+"DL1752"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Minneapolis"
+}
+},
+{
+"id": "q3r",
+"kind": "repeat",
+"text": "Sorry, what was that flight number again?",
+"gold": "DL 1752",
+"keys": [
+"DL1752"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"repeats": "q3"
+}
+},
+{
+"id": "q4",
+"kind": "text_late",
+"text": "Can you text Esther Ito and tell them I'm running about ten minutes late?",
+"gold": "text sent to Esther Ito",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Esther Ito",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "meeting_time",
+"text": "What time is my dentist appointment on Wednesday?",
+"gold": "9:20 am",
+"keys": [
+"9:20"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-14"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Omar",
+"last": "Kovac",
+"company": "Halden Partners",
+"role": "account manager",
+"city": "Evanston",
+"mobile": "262-555-0141",
+"email": "omar.kovac@halden.example"
+},
+{
+"id": "c0002",
+"first": "Zara",
+"last": "Nowak",
+"company": "Northwind Logistics",
+"role": "operations lead",
+"city": "Oak Park",
+"mobile": "312-555-0105",
+"email": "zara.nowak@northwind-logistics.example"
+},
+{
+"id": "c0003",
+"first": "Esther",
+"last": "Ito",
+"company": "Kestrel Security",
+"role": "procurement lead",
+"city": "Evanston",
+"mobile": "414-555-0110",
+"email": "esther.ito@kestrel.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "9:20 am",
+"end": "10:05 am",
+"title": "Dentist appointment",
+"attendees": [],
+"location": "1704 N Halsted St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Zara Nowak",
+"date": "2026-09-20",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Clybourn warehouse",
+"body": "Hi Sam, the gate code for the Clybourn St warehouse is 5728#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Zara Nowak",
+"date": "2026-10-06",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Clybourn warehouse gate",
+"body": "Heads up: we changed the gate code at the Clybourn St warehouse. The new code is 2500#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Halden Partners",
+"number": "INV-9486",
+"amount": "$9,672.79",
+"issued": "2026-09-09",
+"due": "2026-10-09",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Halden Partners",
+"number": "INV-3476",
+"amount": "$6,444.91",
+"issued": "2026-08-09",
+"due": "2026-09-08",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Halden Partners",
+"number": "INV-7649",
+"amount": "$8,333.53",
+"issued": "2026-10-08",
+"due": "2026-11-07",
+"status": "unpaid"
+}
+],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "DL",
+"number": "DL 1752",
+"date": "2026-10-15",
+"depart": "8:15 am",
+"origin": "ORD",
+"destination": "Minneapolis (MSP)",
+"confirmation": "4M7S5G"
+}
+],
+"reserved_slots": [
+[
+"2026-10-14",
+"9:20 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"dentist appointment"
+]
+],
+"reserved_vendors": [
+"Halden Partners"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Clybourn"
+],
+"reserved_trip_days": [
+[
+"2026-10-15",
+"Minneapolis"
+]
+]
+},
+"used_names": [
+"Esther Ito",
+"Omar Kovac",
+"Zara Nowak"
+],
+"used_mobiles": [
+"262-555-0141",
+"312-555-0105",
+"414-555-0110"
+]
+},
+{
+"id": "s1-07",
+"seed": 1007,
+"episodes": [
+"repeat_request",
+"multihop",
+"topic_change",
+"action",
+"withdraw"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava, it's Sam. How are you doing today?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's the booking reference for Ember Grill on Thursday?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Sorry, what was that reference again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1r"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Who am I meeting at 9:55 on Thursday? And can you give me their number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "How much do we still owe Ironbridge Engineering?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Oh, and while you're at it, what's the address for the supplier review on Friday?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3",
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Can you text Clara Bennett and tell them I'm running about ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Can you give me Naomi Mahler's cell number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Actually, never mind, I've just found it in my notes.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q6"
+]
+},
+{
+"id": "t15",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "booking_ref",
+"text": "What's the booking reference for Ember Grill on Thursday?",
+"gold": "6UCC5N",
+"keys": [
+"6UCC5N"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Ember Grill"
+}
+},
+{
+"id": "q1r",
+"kind": "repeat",
+"text": "Sorry, what was that reference again?",
+"gold": "6UCC5N",
+"keys": [
+"6UCC5N"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"repeats": "q1"
+}
+},
+{
+"id": "q2",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 9:55 on Thursday? And can you give me their number?",
+"gold": "Andre Osei, 630-555-0181",
+"keys": [
+"6305550181"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Andre Osei",
+"thing": "number",
+"extra": {
+"date": "2026-10-15",
+"name_key": "osei"
+}
+},
+{
+"id": "q3",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Ironbridge Engineering?",
+"gold": "$1,572.56",
+"keys": [
+"157256"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q4",
+"kind": "meeting_place",
+"text": "What's the address for the supplier review on Friday?",
+"gold": "2589 W Racine St",
+"keys": [
+"2589",
+"racine"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-16"
+}
+},
+{
+"id": "q5",
+"kind": "text_late",
+"text": "Can you text Clara Bennett and tell them I'm running about ten minutes late?",
+"gold": "text sent to Clara Bennett",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Clara Bennett",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q6",
+"kind": "phone",
+"text": "Can you give me Naomi Mahler's cell number?",
+"gold": "630-555-0171",
+"keys": [
+"6305550171"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Naomi Mahler",
+"thing": "number",
+"extra": {
+"withdrawn": true
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Andre",
+"last": "Osei",
+"company": "Vantage Telecom",
+"role": "project manager",
+"city": "Oak Park",
+"mobile": "630-555-0181",
+"email": "andre.osei@vantagetel.example"
+},
+{
+"id": "c0002",
+"first": "Clara",
+"last": "Bennett",
+"company": "Delta Freight",
+"role": "sales lead",
+"city": "Oak Park",
+"mobile": "414-555-0100",
+"email": "clara.bennett@deltafreight.example"
+},
+{
+"id": "c0003",
+"first": "Naomi",
+"last": "Mahler",
+"company": "Corvid Systems",
+"role": "partner",
+"city": "Naperville",
+"mobile": "630-555-0171",
+"email": "naomi.mahler@corvid.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-15",
+"start": "9:55 am",
+"end": "10:25 am",
+"title": "Meeting with Andre Osei",
+"attendees": [
+"Andre Osei"
+],
+"location": "Zoom"
+},
+{
+"id": "e0002",
+"date": "2026-10-16",
+"start": "1:50 pm",
+"end": "3:20 pm",
+"title": "Supplier review",
+"attendees": [],
+"location": "2589 W Racine St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Ember Grill",
+"date": "2026-10-08",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Ember Grill is confirmed",
+"body": "Dear Sam, your table for 4 at Ember Grill on Thursday 15 October at 7:30 pm is confirmed. Booking reference: 6UCC5N. We look forward to seeing you."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Ironbridge Engineering",
+"number": "INV-7446",
+"amount": "$3,275.56",
+"issued": "2026-09-05",
+"due": "2026-10-05",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Ironbridge Engineering",
+"number": "INV-5374",
+"amount": "$9,244.35",
+"issued": "2026-08-07",
+"due": "2026-09-06",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Ironbridge Engineering",
+"number": "INV-7166",
+"amount": "$3,138.08",
+"issued": "2026-07-14",
+"due": "2026-08-13",
+"status": "paid"
+},
+{
+"id": "i0004",
+"vendor": "Ironbridge Engineering",
+"number": "INV-4016",
+"amount": "$1,572.56",
+"issued": "2026-10-03",
+"due": "2026-11-02",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-15",
+"9:55 am"
+],
+[
+"2026-10-16",
+"1:50 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-16",
+"supplier review"
+]
+],
+"reserved_vendors": [
+"Ironbridge Engineering"
+],
+"reserved_restaurants": [
+"Ember Grill"
+],
+"reserved_streets": [
+"Racine"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Andre Osei",
+"Clara Bennett",
+"Naomi Mahler"
+],
+"used_mobiles": [
+"414-555-0100",
+"630-555-0171",
+"630-555-0181"
+]
+},
+{
+"id": "s1-08",
+"seed": 1008,
+"episodes": [
+"smalltalk_during",
+"interrupt",
+"simple",
+"followup_ref",
+"topic_change"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "Wei texted me the gate code for the Superior warehouse, what is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Ugh, the traffic this morning is terrible.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "How much do we still owe Bluestem Software?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Hang on, sorry, someone's at the door. Okay, go on.",
+"kind": "interrupt_resume",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "any"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "What's the address for the site visit on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "I need Chloe Kovac's number, can you find it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Great, and their email address?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Beatriz Lindgren's firm sent us an invoice we haven't paid. How much is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Oh, and while you're at it, what's the booking reference for Kiku on Friday?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q7"
+],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6",
+"q7"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "code_latest",
+"text": "Wei texted me the gate code for the Superior warehouse, what is it?",
+"gold": "6648#",
+"keys": [
+"6648"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Wei Novak",
+"thing": "code",
+"extra": {
+"old": "2845"
+}
+},
+{
+"id": "q2",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Bluestem Software?",
+"gold": "$5,925.29",
+"keys": [
+"592529"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q3",
+"kind": "meeting_place",
+"text": "What's the address for the site visit on Wednesday?",
+"gold": "1897 W Elston St",
+"keys": [
+"1897",
+"elston"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-14"
+}
+},
+{
+"id": "q4",
+"kind": "phone",
+"text": "I need Chloe Kovac's number, can you find it?",
+"gold": "262-555-0141",
+"keys": [
+"2625550141"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Chloe Kovac",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "email_followup",
+"text": "Great, and their email address?",
+"gold": "chloe.kovac@meridianfm.example",
+"keys": [
+"chloe.kovac@meridianfm.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Chloe Kovac",
+"thing": "email",
+"extra": {
+"refers_to": "q4"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_via_contact",
+"text": "Beatriz Lindgren's firm sent us an invoice we haven't paid. How much is it?",
+"gold": "$5,536.11",
+"keys": [
+"553611"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Beatriz Lindgren",
+"thing": "amount",
+"extra": {
+"vendor": "Pinecrest Realty"
+}
+},
+{
+"id": "q7",
+"kind": "booking_ref",
+"text": "What's the booking reference for Kiku on Friday?",
+"gold": "QCHG8S",
+"keys": [
+"QCHG8S"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Kiku"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Wei",
+"last": "Novak",
+"company": "Osprey Couriers",
+"role": "operations lead",
+"city": "Chicago",
+"mobile": "872-555-0186",
+"email": "wei.novak@osprey.example"
+},
+{
+"id": "c0002",
+"first": "Chloe",
+"last": "Kovac",
+"company": "Meridian Facilities",
+"role": "sales lead",
+"city": "Naperville",
+"mobile": "262-555-0141",
+"email": "chloe.kovac@meridianfm.example"
+},
+{
+"id": "c0003",
+"first": "Beatriz",
+"last": "Lindgren",
+"company": "Pinecrest Realty",
+"role": "sales lead",
+"city": "Chicago",
+"mobile": "331-555-0164",
+"email": "beatriz.lindgren@pinecrest.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "10:05 am",
+"end": "11:35 am",
+"title": "Site visit",
+"attendees": [],
+"location": "1897 W Elston St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Wei Novak",
+"date": "2026-09-22",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Superior warehouse",
+"body": "Hi Sam, the gate code for the Superior St warehouse is 2845#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Wei Novak",
+"date": "2026-10-06",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Superior warehouse gate",
+"body": "Heads up: we changed the gate code at the Superior St warehouse. The new code is 6648#. The old one no longer works."
+},
+{
+"id": "m0003",
+"sender": "Kiku",
+"date": "2026-10-11",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Kiku is confirmed",
+"body": "Dear Sam, your table for 4 at Kiku on Friday 16 October at 7:30 pm is confirmed. Booking reference: QCHG8S. We look forward to seeing you."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Bluestem Software",
+"number": "INV-4567",
+"amount": "$1,802.40",
+"issued": "2026-09-12",
+"due": "2026-10-12",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Bluestem Software",
+"number": "INV-4768",
+"amount": "$4,235.69",
+"issued": "2026-08-12",
+"due": "2026-09-11",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Bluestem Software",
+"number": "INV-2760",
+"amount": "$5,925.29",
+"issued": "2026-10-04",
+"due": "2026-11-03",
+"status": "unpaid"
+},
+{
+"id": "i0004",
+"vendor": "Pinecrest Realty",
+"number": "INV-5900",
+"amount": "$923.68",
+"issued": "2026-09-10",
+"due": "2026-10-10",
+"status": "paid"
+},
+{
+"id": "i0005",
+"vendor": "Pinecrest Realty",
+"number": "INV-9187",
+"amount": "$3,209.31",
+"issued": "2026-08-10",
+"due": "2026-09-09",
+"status": "paid"
+},
+{
+"id": "i0006",
+"vendor": "Pinecrest Realty",
+"number": "INV-8396",
+"amount": "$5,536.11",
+"issued": "2026-10-04",
+"due": "2026-11-03",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-14",
+"10:05 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"site visit"
+]
+],
+"reserved_vendors": [
+"Bluestem Software",
+"Pinecrest Realty"
+],
+"reserved_restaurants": [
+"Kiku"
+],
+"reserved_streets": [
+"Elston",
+"Superior"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Beatriz Lindgren",
+"Chloe Kovac",
+"Wei Novak"
+],
+"used_mobiles": [
+"262-555-0141",
+"331-555-0164",
+"872-555-0186"
+]
+},
+{
+"id": "s1-09",
+"seed": 1009,
+"episodes": [
+"multihop",
+"smalltalk_during",
+"action",
+"withdraw",
+"repeat_request"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Morning, Ava! How's it going?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "Who am I meeting at 11:15 on Wednesday? And can you give me their number?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "What's Fatima's number? Fatima from Juniper, I mean.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Ugh, the traffic this morning is terrible.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Could you send Hana Ferreira a text saying I'll be ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "When's the car service on Thursday again?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Oh wait, don't worry about that, I've got it.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q4"
+]
+},
+{
+"id": "t11",
+"text": "What's my flight number for Phoenix on Tuesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Sorry, what was that flight number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q5r"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 11:15 on Wednesday? And can you give me their number?",
+"gold": "Nina Kim, 872-555-0164",
+"keys": [
+"8725550164"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Nina Kim",
+"thing": "number",
+"extra": {
+"date": "2026-10-14",
+"name_key": "kim"
+}
+},
+{
+"id": "q2",
+"kind": "phone_ambig",
+"text": "What's Fatima's number? Fatima from Juniper, I mean.",
+"gold": "331-555-0195",
+"keys": [
+"3315550195"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Fatima Kim",
+"thing": "number",
+"extra": {
+"distractor": "Fatima Fischer"
+}
+},
+{
+"id": "q3",
+"kind": "text_late",
+"text": "Could you send Hana Ferreira a text saying I'll be ten minutes late?",
+"gold": "text sent to Hana Ferreira",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Hana Ferreira",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q4",
+"kind": "meeting_time",
+"text": "When's the car service on Thursday again?",
+"gold": "11:50 am",
+"keys": [
+"11:50"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-15",
+"withdrawn": true
+}
+},
+{
+"id": "q5",
+"kind": "flight_number",
+"text": "What's my flight number for Phoenix on Tuesday?",
+"gold": "WN 2287",
+"keys": [
+"WN2287"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Phoenix"
+}
+},
+{
+"id": "q5r",
+"kind": "repeat",
+"text": "Sorry, what was that flight number again?",
+"gold": "WN 2287",
+"keys": [
+"WN2287"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"repeats": "q5"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Nina",
+"last": "Kim",
+"company": "Northwind Logistics",
+"role": "office manager",
+"city": "Naperville",
+"mobile": "872-555-0164",
+"email": "nina.kim@northwind-logistics.example"
+},
+{
+"id": "c0002",
+"first": "Fatima",
+"last": "Kim",
+"company": "Juniper Health",
+"role": "analyst",
+"city": "Evanston",
+"mobile": "331-555-0195",
+"email": "fatima.kim@juniperhealth.example"
+},
+{
+"id": "c0003",
+"first": "Fatima",
+"last": "Fischer",
+"company": "Ironbridge Engineering",
+"role": "partner",
+"city": "Oak Park",
+"mobile": "224-555-0101",
+"email": "fatima.fischer@ironbridge.example"
+},
+{
+"id": "c0004",
+"first": "Hana",
+"last": "Ferreira",
+"company": "Corvid Systems",
+"role": "finance director",
+"city": "Naperville",
+"mobile": "312-555-0121",
+"email": "hana.ferreira@corvid.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "11:15 am",
+"end": "11:45 am",
+"title": "Meeting with Nina Kim",
+"attendees": [
+"Nina Kim"
+],
+"location": "Sam's office"
+},
+{
+"id": "e0002",
+"date": "2026-10-15",
+"start": "11:50 am",
+"end": "12:35 pm",
+"title": "Car service",
+"attendees": [],
+"location": "982 N Ogden St"
+}
+],
+"messages": [],
+"invoices": [],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "WN",
+"number": "WN 2287",
+"date": "2026-10-13",
+"depart": "11:40 am",
+"origin": "ORD",
+"destination": "Phoenix (PHX)",
+"confirmation": "EAR65V"
+}
+],
+"reserved_slots": [
+[
+"2026-10-14",
+"11:15 am"
+],
+[
+"2026-10-15",
+"11:50 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-15",
+"car service"
+]
+],
+"reserved_vendors": [],
+"reserved_restaurants": [],
+"reserved_streets": [],
+"reserved_trip_days": [
+[
+"2026-10-13",
+"Phoenix"
+]
+]
+},
+"used_names": [
+"Fatima Fischer",
+"Fatima Kim",
+"Hana Ferreira",
+"Nina Kim"
+],
+"used_mobiles": [
+"224-555-0101",
+"312-555-0121",
+"331-555-0195",
+"872-555-0164"
+]
+},
+{
+"id": "s1-10",
+"seed": 1010,
+"episodes": [
+"withdraw",
+"followup_ref",
+"interrupt",
+"simple",
+"topic_change"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Morning, Ava! How's it going?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's the booking reference for Casa Morena on Thursday?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Actually, forget that one, it doesn't matter now.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q1"
+]
+},
+{
+"id": "t4",
+"text": "What's Hassan's number? Hassan from Saffron, I mean.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "And what's their email?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "How much do we still owe Kestrel Security?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Sorry, you cut out there. Can you say that again?",
+"kind": "interrupt_repeat",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "answer"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "What's the address for the site visit on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Clara Rahman's firm sent us an invoice we haven't paid. How much is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Oh, and while you're at it, what's my flight number for Pittsburgh on Thursday?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q7"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6",
+"q7"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "booking_ref",
+"text": "What's the booking reference for Casa Morena on Thursday?",
+"gold": "454LK5",
+"keys": [
+"454LK5"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Casa Morena",
+"withdrawn": true
+}
+},
+{
+"id": "q2",
+"kind": "phone_ambig",
+"text": "What's Hassan's number? Hassan from Saffron, I mean.",
+"gold": "872-555-0150",
+"keys": [
+"8725550150"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Hassan Marsh",
+"thing": "number",
+"extra": {
+"distractor": "Hassan Ng"
+}
+},
+{
+"id": "q3",
+"kind": "email_followup",
+"text": "And what's their email?",
+"gold": "hassan.marsh@saffron.example",
+"keys": [
+"hassan.marsh@saffron.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Hassan Marsh",
+"thing": "email",
+"extra": {
+"refers_to": "q2"
+}
+},
+{
+"id": "q4",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Kestrel Security?",
+"gold": "$8,128.24",
+"keys": [
+"812824"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "meeting_place",
+"text": "What's the address for the site visit on Wednesday?",
+"gold": "1034 W Jackson St",
+"keys": [
+"1034",
+"jackson"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-14"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_via_contact",
+"text": "Clara Rahman's firm sent us an invoice we haven't paid. How much is it?",
+"gold": "$7,425.02",
+"keys": [
+"742502"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Clara Rahman",
+"thing": "amount",
+"extra": {
+"vendor": "Lumen Print Co"
+}
+},
+{
+"id": "q7",
+"kind": "flight_number",
+"text": "What's my flight number for Pittsburgh on Thursday?",
+"gold": "UA 545",
+"keys": [
+"UA545"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Pittsburgh"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Hassan",
+"last": "Marsh",
+"company": "Saffron Office Supplies",
+"role": "project manager",
+"city": "Skokie",
+"mobile": "872-555-0150",
+"email": "hassan.marsh@saffron.example"
+},
+{
+"id": "c0002",
+"first": "Hassan",
+"last": "Ng",
+"company": "Kestrel Security",
+"role": "partner",
+"city": "Milwaukee",
+"mobile": "414-555-0166",
+"email": "hassan.ng@kestrel.example"
+},
+{
+"id": "c0003",
+"first": "Clara",
+"last": "Rahman",
+"company": "Lumen Print Co",
+"role": "finance director",
+"city": "Oak Park",
+"mobile": "872-555-0141",
+"email": "clara.rahman@lumenprint.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "9:40 am",
+"end": "11:10 am",
+"title": "Site visit",
+"attendees": [],
+"location": "1034 W Jackson St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Casa Morena",
+"date": "2026-10-08",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Casa Morena is confirmed",
+"body": "Dear Sam, your table for 4 at Casa Morena on Thursday 15 October at 7:30 pm is confirmed. Booking reference: 454LK5. We look forward to seeing you."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Kestrel Security",
+"number": "INV-3358",
+"amount": "$5,598.85",
+"issued": "2026-09-10",
+"due": "2026-10-10",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Kestrel Security",
+"number": "INV-1416",
+"amount": "$2,300.57",
+"issued": "2026-08-11",
+"due": "2026-09-10",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Kestrel Security",
+"number": "INV-2754",
+"amount": "$7,642.54",
+"issued": "2026-07-08",
+"due": "2026-08-07",
+"status": "paid"
+},
+{
+"id": "i0004",
+"vendor": "Kestrel Security",
+"number": "INV-1459",
+"amount": "$8,128.24",
+"issued": "2026-10-09",
+"due": "2026-11-08",
+"status": "unpaid"
+},
+{
+"id": "i0005",
+"vendor": "Lumen Print Co",
+"number": "INV-8800",
+"amount": "$4,291.84",
+"issued": "2026-09-05",
+"due": "2026-10-05",
+"status": "paid"
+},
+{
+"id": "i0006",
+"vendor": "Lumen Print Co",
+"number": "INV-7109",
+"amount": "$2,181.78",
+"issued": "2026-08-13",
+"due": "2026-09-12",
+"status": "paid"
+},
+{
+"id": "i0007",
+"vendor": "Lumen Print Co",
+"number": "INV-4593",
+"amount": "$7,425.02",
+"issued": "2026-10-08",
+"due": "2026-11-07",
+"status": "unpaid"
+}
+],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "UA",
+"number": "UA 545",
+"date": "2026-10-15",
+"depart": "6:55 am",
+"origin": "ORD",
+"destination": "Pittsburgh (PIT)",
+"confirmation": "2HXPRD"
+}
+],
+"reserved_slots": [
+[
+"2026-10-14",
+"9:40 am"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"site visit"
+]
+],
+"reserved_vendors": [
+"Kestrel Security",
+"Lumen Print Co"
+],
+"reserved_restaurants": [
+"Casa Morena"
+],
+"reserved_streets": [
+"Jackson"
+],
+"reserved_trip_days": [
+[
+"2026-10-15",
+"Pittsburgh"
+]
+]
+},
+"used_names": [
+"Clara Rahman",
+"Hassan Marsh",
+"Hassan Ng"
+],
+"used_mobiles": [
+"414-555-0166",
+"872-555-0141",
+"872-555-0150"
+]
+},
+{
+"id": "s1-11",
+"seed": 1011,
+"episodes": [
+"repeat_request",
+"multihop",
+"smalltalk_during",
+"action",
+"simple"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hey Ava, Sam here. How are things?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "Who am I meeting at 2:20 on Friday? And can you give me their number?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Sorry, what was that number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q1r"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "How much do we owe Viktor Reyes's company?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Caleb texted me the gate code for the Elston warehouse, what is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Sorry, I'm just getting into the car, give me a second.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Could you send Diego Mahler a text saying I'll be ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Can you give me Yuki Duarte's cell number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 2:20 on Friday? And can you give me their number?",
+"gold": "Jenna Lindgren, 224-555-0151",
+"keys": [
+"2245550151"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Jenna Lindgren",
+"thing": "number",
+"extra": {
+"date": "2026-10-16",
+"name_key": "lindgren"
+}
+},
+{
+"id": "q1r",
+"kind": "repeat",
+"text": "Sorry, what was that number again?",
+"gold": "Jenna Lindgren, 224-555-0151",
+"keys": [
+"2245550151"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Jenna Lindgren",
+"thing": "number",
+"extra": {
+"repeats": "q1"
+}
+},
+{
+"id": "q2",
+"kind": "invoice_via_contact",
+"text": "How much do we owe Viktor Reyes's company?",
+"gold": "$4,809.62",
+"keys": [
+"480962"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Viktor Reyes",
+"thing": "amount",
+"extra": {
+"vendor": "Westgate Insurance"
+}
+},
+{
+"id": "q3",
+"kind": "code_latest",
+"text": "Caleb texted me the gate code for the Elston warehouse, what is it?",
+"gold": "5175#",
+"keys": [
+"5175"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Caleb Duarte",
+"thing": "code",
+"extra": {
+"old": "4832"
+}
+},
+{
+"id": "q4",
+"kind": "text_late",
+"text": "Could you send Diego Mahler a text saying I'll be ten minutes late?",
+"gold": "text sent to Diego Mahler",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Diego Mahler",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "phone",
+"text": "Can you give me Yuki Duarte's cell number?",
+"gold": "872-555-0118",
+"keys": [
+"8725550118"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Yuki Duarte",
+"thing": "number",
+"extra": {}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Jenna",
+"last": "Lindgren",
+"company": "Granite Peak Capital",
+"role": "procurement lead",
+"city": "Milwaukee",
+"mobile": "224-555-0151",
+"email": "jenna.lindgren@granitepeak.example"
+},
+{
+"id": "c0002",
+"first": "Viktor",
+"last": "Reyes",
+"company": "Westgate Insurance",
+"role": "partner",
+"city": "Chicago",
+"mobile": "414-555-0127",
+"email": "viktor.reyes@westgate.example"
+},
+{
+"id": "c0003",
+"first": "Caleb",
+"last": "Duarte",
+"company": "Kestrel Security",
+"role": "operations lead",
+"city": "Milwaukee",
+"mobile": "773-555-0133",
+"email": "caleb.duarte@kestrel.example"
+},
+{
+"id": "c0004",
+"first": "Diego",
+"last": "Mahler",
+"company": "Ashby & Cole",
+"role": "project manager",
+"city": "Evanston",
+"mobile": "773-555-0165",
+"email": "diego.mahler@ashbycole.example"
+},
+{
+"id": "c0005",
+"first": "Yuki",
+"last": "Duarte",
+"company": "Halden Partners",
+"role": "sales lead",
+"city": "Evanston",
+"mobile": "872-555-0118",
+"email": "yuki.duarte@halden.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-16",
+"start": "2:20 pm",
+"end": "2:50 pm",
+"title": "Meeting with Jenna Lindgren",
+"attendees": [
+"Jenna Lindgren"
+],
+"location": "Sam's office"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Caleb Duarte",
+"date": "2026-09-07",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Elston warehouse",
+"body": "Hi Sam, the gate code for the Elston St warehouse is 4832#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Caleb Duarte",
+"date": "2026-10-09",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Elston warehouse gate",
+"body": "Heads up: we changed the gate code at the Elston St warehouse. The new code is 5175#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Westgate Insurance",
+"number": "INV-6734",
+"amount": "$5,306.84",
+"issued": "2026-09-03",
+"due": "2026-10-03",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Westgate Insurance",
+"number": "INV-8806",
+"amount": "$9,099.98",
+"issued": "2026-08-13",
+"due": "2026-09-12",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Westgate Insurance",
+"number": "INV-9769",
+"amount": "$4,809.62",
+"issued": "2026-10-07",
+"due": "2026-11-06",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-16",
+"2:20 pm"
+]
+],
+"reserved_titles": [],
+"reserved_vendors": [
+"Westgate Insurance"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Elston"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Caleb Duarte",
+"Diego Mahler",
+"Jenna Lindgren",
+"Viktor Reyes",
+"Yuki Duarte"
+],
+"used_mobiles": [
+"224-555-0151",
+"414-555-0127",
+"773-555-0133",
+"773-555-0165",
+"872-555-0118"
+]
+},
+{
+"id": "s1-12",
+"seed": 1012,
+"episodes": [
+"withdraw",
+"multihop",
+"topic_change",
+"smalltalk_during",
+"repeat_request"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hey Ava, Sam here. How are things?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What time is my eye test on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Oh wait, don't worry about that, I've got it.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q1"
+]
+},
+{
+"id": "t4",
+"text": "Who am I meeting at 1:40 on Wednesday? And can you give me their number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "I need Lucas Ng's number, can you find it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Oh, and while you're at it, how much do we still owe Redfern Electrical?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3",
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Which flight am I on to Portland on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Hang on, my coffee's just arrived.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "What's Kofi's number? Kofi from Harbor, I mean.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Sorry, what was that number again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q6r"
+],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "meeting_time",
+"text": "What time is my eye test on Wednesday?",
+"gold": "1:15 pm",
+"keys": [
+"1:15",
+"13:15"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-14",
+"withdrawn": true
+}
+},
+{
+"id": "q2",
+"kind": "meeting_who_phone",
+"text": "Who am I meeting at 1:40 on Wednesday? And can you give me their number?",
+"gold": "Graham Barros, 630-555-0182",
+"keys": [
+"6305550182"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Graham Barros",
+"thing": "number",
+"extra": {
+"date": "2026-10-14",
+"name_key": "barros"
+}
+},
+{
+"id": "q3",
+"kind": "phone",
+"text": "I need Lucas Ng's number, can you find it?",
+"gold": "708-555-0161",
+"keys": [
+"7085550161"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Lucas Ng",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q4",
+"kind": "invoice_unpaid",
+"text": "How much do we still owe Redfern Electrical?",
+"gold": "$2,484.53",
+"keys": [
+"248453"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "flight_number",
+"text": "Which flight am I on to Portland on Wednesday?",
+"gold": "UA 1208",
+"keys": [
+"UA1208"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Portland"
+}
+},
+{
+"id": "q6",
+"kind": "phone_ambig",
+"text": "What's Kofi's number? Kofi from Harbor, I mean.",
+"gold": "630-555-0118",
+"keys": [
+"6305550118"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Kofi Park",
+"thing": "number",
+"extra": {
+"distractor": "Kofi Petrov"
+}
+},
+{
+"id": "q6r",
+"kind": "repeat",
+"text": "Sorry, what was that number again?",
+"gold": "630-555-0118",
+"keys": [
+"6305550118"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Kofi Park",
+"thing": "number",
+"extra": {
+"repeats": "q6"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Graham",
+"last": "Barros",
+"company": "Granite Peak Capital",
+"role": "office manager",
+"city": "Skokie",
+"mobile": "630-555-0182",
+"email": "graham.barros@granitepeak.example"
+},
+{
+"id": "c0002",
+"first": "Lucas",
+"last": "Ng",
+"company": "Quarry Lane Studio",
+"role": "partner",
+"city": "Evanston",
+"mobile": "708-555-0161",
+"email": "lucas.ng@quarrylane.example"
+},
+{
+"id": "c0003",
+"first": "Kofi",
+"last": "Park",
+"company": "Harbor Point Legal",
+"role": "finance director",
+"city": "Milwaukee",
+"mobile": "630-555-0118",
+"email": "kofi.park@harborpoint.example"
+},
+{
+"id": "c0004",
+"first": "Kofi",
+"last": "Petrov",
+"company": "Mapleton Supply",
+"role": "account manager",
+"city": "Milwaukee",
+"mobile": "773-555-0198",
+"email": "kofi.petrov@mapleton.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "1:15 pm",
+"end": "2:00 pm",
+"title": "Eye test",
+"attendees": [],
+"location": "952 N Wells St"
+},
+{
+"id": "e0002",
+"date": "2026-10-14",
+"start": "1:40 pm",
+"end": "2:10 pm",
+"title": "Meeting with Graham Barros",
+"attendees": [
+"Graham Barros"
+],
+"location": "Sam's office"
+}
+],
+"messages": [],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Redfern Electrical",
+"number": "INV-7377",
+"amount": "$9,571.39",
+"issued": "2026-09-03",
+"due": "2026-10-03",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Redfern Electrical",
+"number": "INV-3066",
+"amount": "$5,351.65",
+"issued": "2026-08-05",
+"due": "2026-09-04",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Redfern Electrical",
+"number": "INV-5684",
+"amount": "$2,484.53",
+"issued": "2026-10-01",
+"due": "2026-10-31",
+"status": "unpaid"
+}
+],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "UA",
+"number": "UA 1208",
+"date": "2026-10-14",
+"depart": "7:30 am",
+"origin": "ORD",
+"destination": "Portland (PDX)",
+"confirmation": "DMRX3G"
+}
+],
+"reserved_slots": [
+[
+"2026-10-14",
+"1:15 pm"
+],
+[
+"2026-10-14",
+"1:40 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"eye test"
+]
+],
+"reserved_vendors": [
+"Redfern Electrical"
+],
+"reserved_restaurants": [],
+"reserved_streets": [],
+"reserved_trip_days": [
+[
+"2026-10-14",
+"Portland"
+]
+]
+},
+"used_names": [
+"Graham Barros",
+"Kofi Park",
+"Kofi Petrov",
+"Lucas Ng"
+],
+"used_mobiles": [
+"630-555-0118",
+"630-555-0182",
+"708-555-0161",
+"773-555-0198"
+]
+},
+{
+"id": "s1-13",
+"seed": 1013,
+"episodes": [
+"interrupt",
+"followup_ref",
+"action",
+"repeat_request",
+"multihop"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava. Good morning, how are you?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "What's the gate code for the Lake warehouse? Mei sent it to me at some point.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Sorry, you cut out there. Can you say that again?",
+"kind": "interrupt_repeat",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "answer"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "I've got something at 1:10 on Wednesday, who's that with? I'll need their number too.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "And their email, please?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Could you send Luis Lindqvist a text saying I'll be ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "When's the eye test on Tuesday again?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Sorry, what was that time again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q5r"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Got it, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Diego Park's firm sent us an invoice we haven't paid. How much is it?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "multihop",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "multihop",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "code_latest",
+"text": "What's the gate code for the Lake warehouse? Mei sent it to me at some point.",
+"gold": "7302#",
+"keys": [
+"7302"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Mei Abara",
+"thing": "code",
+"extra": {
+"old": "1910"
+}
+},
+{
+"id": "q2",
+"kind": "meeting_who_phone",
+"text": "I've got something at 1:10 on Wednesday, who's that with? I'll need their number too.",
+"gold": "Graham Delgado, 847-555-0137",
+"keys": [
+"8475550137"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Graham Delgado",
+"thing": "number",
+"extra": {
+"date": "2026-10-14",
+"name_key": "delgado"
+}
+},
+{
+"id": "q3",
+"kind": "email_followup",
+"text": "And their email, please?",
+"gold": "graham.delgado@quarrylane.example",
+"keys": [
+"graham.delgado@quarrylane.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Graham Delgado",
+"thing": "email",
+"extra": {
+"refers_to": "q2"
+}
+},
+{
+"id": "q4",
+"kind": "text_late",
+"text": "Could you send Luis Lindqvist a text saying I'll be ten minutes late?",
+"gold": "text sent to Luis Lindqvist",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Luis Lindqvist",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q5",
+"kind": "meeting_time",
+"text": "When's the eye test on Tuesday again?",
+"gold": "4:20 pm",
+"keys": [
+"4:20",
+"16:20"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-13"
+}
+},
+{
+"id": "q5r",
+"kind": "repeat",
+"text": "Sorry, what was that time again?",
+"gold": "4:20 pm",
+"keys": [
+"4:20",
+"16:20"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"repeats": "q5"
+}
+},
+{
+"id": "q6",
+"kind": "invoice_via_contact",
+"text": "Diego Park's firm sent us an invoice we haven't paid. How much is it?",
+"gold": "$4,980.96",
+"keys": [
+"498096"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Diego Park",
+"thing": "amount",
+"extra": {
+"vendor": "Pinecrest Realty"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Mei",
+"last": "Abara",
+"company": "Meridian Facilities",
+"role": "operations lead",
+"city": "Skokie",
+"mobile": "262-555-0103",
+"email": "mei.abara@meridianfm.example"
+},
+{
+"id": "c0002",
+"first": "Graham",
+"last": "Delgado",
+"company": "Quarry Lane Studio",
+"role": "operations lead",
+"city": "Evanston",
+"mobile": "847-555-0137",
+"email": "graham.delgado@quarrylane.example"
+},
+{
+"id": "c0003",
+"first": "Luis",
+"last": "Lindqvist",
+"company": "Delta Freight",
+"role": "engineer",
+"city": "Chicago",
+"mobile": "708-555-0115",
+"email": "luis.lindqvist@deltafreight.example"
+},
+{
+"id": "c0004",
+"first": "Diego",
+"last": "Park",
+"company": "Pinecrest Realty",
+"role": "project manager",
+"city": "Skokie",
+"mobile": "331-555-0146",
+"email": "diego.park@pinecrest.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "1:10 pm",
+"end": "1:40 pm",
+"title": "Meeting with Graham Delgado",
+"attendees": [
+"Graham Delgado"
+],
+"location": "Sam's office"
+},
+{
+"id": "e0002",
+"date": "2026-10-13",
+"start": "4:20 pm",
+"end": "5:05 pm",
+"title": "Eye test",
+"attendees": [],
+"location": "2711 N Jackson St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Mei Abara",
+"date": "2026-09-15",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Lake warehouse",
+"body": "Hi Sam, the gate code for the Lake St warehouse is 1910#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Mei Abara",
+"date": "2026-10-08",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Lake warehouse gate",
+"body": "Heads up: we changed the gate code at the Lake St warehouse. The new code is 7302#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Pinecrest Realty",
+"number": "INV-2064",
+"amount": "$3,695.13",
+"issued": "2026-09-04",
+"due": "2026-10-04",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Pinecrest Realty",
+"number": "INV-5543",
+"amount": "$4,602.56",
+"issued": "2026-08-09",
+"due": "2026-09-08",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Pinecrest Realty",
+"number": "INV-8747",
+"amount": "$4,860.92",
+"issued": "2026-07-07",
+"due": "2026-08-06",
+"status": "paid"
+},
+{
+"id": "i0004",
+"vendor": "Pinecrest Realty",
+"number": "INV-5751",
+"amount": "$4,980.96",
+"issued": "2026-10-08",
+"due": "2026-11-07",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-13",
+"4:20 pm"
+],
+[
+"2026-10-14",
+"1:10 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-13",
+"eye test"
+]
+],
+"reserved_vendors": [
+"Pinecrest Realty"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Lake"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Diego Park",
+"Graham Delgado",
+"Luis Lindqvist",
+"Mei Abara"
+],
+"used_mobiles": [
+"262-555-0103",
+"331-555-0146",
+"708-555-0115",
+"847-555-0137"
+]
+},
+{
+"id": "s1-14",
+"seed": 1014,
+"episodes": [
+"topic_change",
+"smalltalk_during",
+"withdraw",
+"simple",
+"interrupt"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava, it's Sam. How are you doing today?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "Can you find the booking ref for dinner at Hearth & Vine on Friday?",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Oh, and while you're at it, what's the address for the vendor demo on Wednesday?",
+"kind": "topic_change",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "topic_change",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1",
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "topic_change",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "What's my flight number for Phoenix on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Ugh, the traffic this morning is terrible.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q3"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "What time is my eye test on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Actually, never mind, I've just found it in my notes.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q4"
+]
+},
+{
+"id": "t10",
+"text": "What's Oliver Ng's mobile number?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "simple",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q5"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "simple",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Can you get me Arjun's cell? The Arjun at Oakleaf.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t13",
+"text": "Hang on, sorry, someone's at the door. Okay, go on.",
+"kind": "interrupt_resume",
+"trigger": {
+"mode": "barge_answer",
+"gap": 0.6,
+"patience": 25.0,
+"delay": 1.2,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Great, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "any"
+},
+"expects_reply": false,
+"episode": "interrupt",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Right, that's all for now. Thanks, bye.",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "booking_ref",
+"text": "Can you find the booking ref for dinner at Hearth & Vine on Friday?",
+"gold": "C55M79",
+"keys": [
+"C55M79"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "reference",
+"extra": {
+"restaurant": "Hearth & Vine"
+}
+},
+{
+"id": "q2",
+"kind": "meeting_place",
+"text": "What's the address for the vendor demo on Wednesday?",
+"gold": "2224 W Morgan St",
+"keys": [
+"2224",
+"morgan"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-14"
+}
+},
+{
+"id": "q3",
+"kind": "flight_number",
+"text": "What's my flight number for Phoenix on Wednesday?",
+"gold": "AA 1103",
+"keys": [
+"AA1103"
+],
+"key_type": "code",
+"difficulty": "easy",
+"person": null,
+"thing": "flight number",
+"extra": {
+"city": "Phoenix"
+}
+},
+{
+"id": "q4",
+"kind": "meeting_time",
+"text": "What time is my eye test on Wednesday?",
+"gold": "1:50 pm",
+"keys": [
+"1:50",
+"13:50"
+],
+"key_type": "time",
+"difficulty": "easy",
+"person": null,
+"thing": "time",
+"extra": {
+"date": "2026-10-14",
+"withdrawn": true
+}
+},
+{
+"id": "q5",
+"kind": "phone",
+"text": "What's Oliver Ng's mobile number?",
+"gold": "224-555-0127",
+"keys": [
+"2245550127"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": "Oliver Ng",
+"thing": "number",
+"extra": {}
+},
+{
+"id": "q6",
+"kind": "phone_ambig",
+"text": "Can you get me Arjun's cell? The Arjun at Oakleaf.",
+"gold": "312-555-0192",
+"keys": [
+"3125550192"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Arjun Oyelaran",
+"thing": "number",
+"extra": {
+"distractor": "Arjun Quinn"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Oliver",
+"last": "Ng",
+"company": "Summit Cleaning",
+"role": "engineer",
+"city": "Chicago",
+"mobile": "224-555-0127",
+"email": "oliver.ng@summitclean.example"
+},
+{
+"id": "c0002",
+"first": "Arjun",
+"last": "Oyelaran",
+"company": "Oakleaf Furniture",
+"role": "partner",
+"city": "Milwaukee",
+"mobile": "312-555-0192",
+"email": "arjun.oyelaran@oakleaf.example"
+},
+{
+"id": "c0003",
+"first": "Arjun",
+"last": "Quinn",
+"company": "Westgate Insurance",
+"role": "operations lead",
+"city": "Naperville",
+"mobile": "262-555-0119",
+"email": "arjun.quinn@westgate.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-14",
+"start": "11:35 am",
+"end": "1:05 pm",
+"title": "Vendor demo",
+"attendees": [],
+"location": "2224 W Morgan St"
+},
+{
+"id": "e0002",
+"date": "2026-10-14",
+"start": "1:50 pm",
+"end": "2:35 pm",
+"title": "Eye test",
+"attendees": [],
+"location": "553 N Ashland St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Hearth & Vine",
+"date": "2026-10-07",
+"time": "2:05 pm",
+"channel": "email",
+"subject": "Your table at Hearth & Vine is confirmed",
+"body": "Dear Sam, your table for 4 at Hearth & Vine on Friday 16 October at 7:30 pm is confirmed. Booking reference: C55M79. We look forward to seeing you."
+}
+],
+"invoices": [],
+"trips": [
+{
+"id": "t0001",
+"kind": "flight",
+"carrier": "AA",
+"number": "AA 1103",
+"date": "2026-10-14",
+"depart": "7:10 am",
+"origin": "ORD",
+"destination": "Phoenix (PHX)",
+"confirmation": "T79Y5F"
+}
+],
+"reserved_slots": [
+[
+"2026-10-14",
+"11:35 am"
+],
+[
+"2026-10-14",
+"1:50 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"eye test"
+],
+[
+"2026-10-14",
+"vendor demo"
+]
+],
+"reserved_vendors": [],
+"reserved_restaurants": [
+"Hearth & Vine"
+],
+"reserved_streets": [
+"Morgan"
+],
+"reserved_trip_days": [
+[
+"2026-10-14",
+"Phoenix"
+]
+]
+},
+"used_names": [
+"Arjun Oyelaran",
+"Arjun Quinn",
+"Oliver Ng"
+],
+"used_mobiles": [
+"224-555-0127",
+"262-555-0119",
+"312-555-0192"
+]
+},
+{
+"id": "s1-15",
+"seed": 1015,
+"episodes": [
+"followup_ref",
+"action",
+"repeat_request",
+"withdraw",
+"smalltalk_during"
+],
+"turns": [
+{
+"id": "t1",
+"text": "Hi Ava, it's Sam. How are you doing today?",
+"kind": "greeting",
+"trigger": {
+"mode": "at",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.5,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "greeting",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t2",
+"text": "I've got something at 3:15 on Friday, who's that with? I'll need their number too.",
+"kind": "question",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.6,
+"patience": 6.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q1"
+],
+"withdraws": []
+},
+{
+"id": "t3",
+"text": "Great, and their email address?",
+"kind": "question",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q1"
+],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "followup_ref",
+"asks": [
+"q2"
+],
+"withdraws": []
+},
+{
+"id": "t4",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q2"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "followup_ref",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t5",
+"text": "Could you send Marcus Mendes a text saying I'll be ten minutes late?",
+"kind": "action",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "action",
+"asks": [
+"q3"
+],
+"withdraws": []
+},
+{
+"id": "t6",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_substance",
+"gap": 0.5,
+"patience": 15.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "action",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t7",
+"text": "What does the unpaid invoice from Harbor Point Legal come to?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q4"
+],
+"withdraws": []
+},
+{
+"id": "t8",
+"text": "Lovely, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t9",
+"text": "Sorry, what was that amount again?",
+"kind": "repeat_request",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 2.5,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "repeat_request",
+"asks": [
+"q4r"
+],
+"withdraws": []
+},
+{
+"id": "t10",
+"text": "Okay, thanks.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q4r"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "repeat_request",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t11",
+"text": "Where's my client workshop on Wednesday?",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [
+"q5"
+],
+"withdraws": []
+},
+{
+"id": "t12",
+"text": "Actually, never mind, I've just found it in my notes.",
+"kind": "withdraw",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "withdraw",
+"asks": [],
+"withdraws": [
+"q5"
+]
+},
+{
+"id": "t13",
+"text": "What's the gate code for the Fulton warehouse? Stefan sent it to me at some point.",
+"kind": "question",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "smalltalk_during",
+"asks": [
+"q6"
+],
+"withdraws": []
+},
+{
+"id": "t14",
+"text": "Sorry, I'm just walking into the office.",
+"kind": "aside",
+"trigger": {
+"mode": "after_any",
+"gap": 0.6,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t15",
+"text": "Perfect, thank you.",
+"kind": "ack",
+"trigger": {
+"mode": "after_answer",
+"gap": 0.5,
+"patience": 25.0,
+"delay": 0.0,
+"items": [
+"q6"
+],
+"since_prev": "none"
+},
+"expects_reply": false,
+"episode": "smalltalk_during",
+"asks": [],
+"withdraws": []
+},
+{
+"id": "t16",
+"text": "Okay, that's everything. Thanks, Ava, bye!",
+"kind": "closing",
+"trigger": {
+"mode": "after_any",
+"gap": 0.8,
+"patience": 3.0,
+"delay": 0.0,
+"items": [],
+"since_prev": "none"
+},
+"expects_reply": true,
+"episode": "closing",
+"asks": [],
+"withdraws": []
+}
+],
+"items": [
+{
+"id": "q1",
+"kind": "meeting_who_phone",
+"text": "I've got something at 3:15 on Friday, who's that with? I'll need their number too.",
+"gold": "Imani Oduya, 708-555-0135",
+"keys": [
+"7085550135"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Imani Oduya",
+"thing": "number",
+"extra": {
+"date": "2026-10-16",
+"name_key": "oduya"
+}
+},
+{
+"id": "q2",
+"kind": "email_followup",
+"text": "Great, and their email address?",
+"gold": "imani.oduya@meridianfm.example",
+"keys": [
+"imani.oduya@meridianfm.example"
+],
+"key_type": "email",
+"difficulty": "hard",
+"person": "Imani Oduya",
+"thing": "email",
+"extra": {
+"refers_to": "q1"
+}
+},
+{
+"id": "q3",
+"kind": "text_late",
+"text": "Could you send Marcus Mendes a text saying I'll be ten minutes late?",
+"gold": "text sent to Marcus Mendes",
+"keys": [],
+"key_type": "action",
+"difficulty": "easy",
+"person": "Marcus Mendes",
+"thing": "text",
+"extra": {}
+},
+{
+"id": "q4",
+"kind": "invoice_unpaid",
+"text": "What does the unpaid invoice from Harbor Point Legal come to?",
+"gold": "$3,478.28",
+"keys": [
+"347828"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {}
+},
+{
+"id": "q4r",
+"kind": "repeat",
+"text": "Sorry, what was that amount again?",
+"gold": "$3,478.28",
+"keys": [
+"347828"
+],
+"key_type": "digits",
+"difficulty": "easy",
+"person": null,
+"thing": "amount",
+"extra": {
+"repeats": "q4"
+}
+},
+{
+"id": "q5",
+"kind": "meeting_place",
+"text": "Where's my client workshop on Wednesday?",
+"gold": "631 W Kinzie St",
+"keys": [
+"631",
+"kinzie"
+],
+"key_type": "tokens",
+"difficulty": "easy",
+"person": null,
+"thing": "address",
+"extra": {
+"date": "2026-10-14",
+"withdrawn": true
+}
+},
+{
+"id": "q6",
+"kind": "code_latest",
+"text": "What's the gate code for the Fulton warehouse? Stefan sent it to me at some point.",
+"gold": "4642#",
+"keys": [
+"4642"
+],
+"key_type": "digits",
+"difficulty": "hard",
+"person": "Stefan Rahman",
+"thing": "code",
+"extra": {
+"old": "2307"
+}
+}
+],
+"planted": {
+"contacts": [
+{
+"id": "c0001",
+"first": "Imani",
+"last": "Oduya",
+"company": "Meridian Facilities",
+"role": "office manager",
+"city": "Milwaukee",
+"mobile": "708-555-0135",
+"email": "imani.oduya@meridianfm.example"
+},
+{
+"id": "c0002",
+"first": "Marcus",
+"last": "Mendes",
+"company": "Meridian Facilities",
+"role": "operations lead",
+"city": "Naperville",
+"mobile": "224-555-0152",
+"email": "marcus.mendes@meridianfm.example"
+},
+{
+"id": "c0003",
+"first": "Stefan",
+"last": "Rahman",
+"company": "Wildflower Events",
+"role": "operations lead",
+"city": "Chicago",
+"mobile": "708-555-0151",
+"email": "stefan.rahman@wildflower.example"
+}
+],
+"events": [
+{
+"id": "e0001",
+"date": "2026-10-16",
+"start": "3:15 pm",
+"end": "3:45 pm",
+"title": "Meeting with Imani Oduya",
+"attendees": [
+"Imani Oduya"
+],
+"location": "Meridian Facilities office"
+},
+{
+"id": "e0002",
+"date": "2026-10-14",
+"start": "1:25 pm",
+"end": "2:55 pm",
+"title": "Client workshop",
+"attendees": [],
+"location": "631 W Kinzie St"
+}
+],
+"messages": [
+{
+"id": "m0001",
+"sender": "Stefan Rahman",
+"date": "2026-09-15",
+"time": "10:12 am",
+"channel": "text",
+"subject": "Fulton warehouse",
+"body": "Hi Sam, the gate code for the Fulton St warehouse is 2307#. See you there."
+},
+{
+"id": "m0002",
+"sender": "Stefan Rahman",
+"date": "2026-10-09",
+"time": "4:47 pm",
+"channel": "text",
+"subject": "Fulton warehouse gate",
+"body": "Heads up: we changed the gate code at the Fulton St warehouse. The new code is 4642#. The old one no longer works."
+}
+],
+"invoices": [
+{
+"id": "i0001",
+"vendor": "Harbor Point Legal",
+"number": "INV-4767",
+"amount": "$6,707.31",
+"issued": "2026-09-12",
+"due": "2026-10-12",
+"status": "paid"
+},
+{
+"id": "i0002",
+"vendor": "Harbor Point Legal",
+"number": "INV-2890",
+"amount": "$1,010.37",
+"issued": "2026-08-07",
+"due": "2026-09-06",
+"status": "paid"
+},
+{
+"id": "i0003",
+"vendor": "Harbor Point Legal",
+"number": "INV-7971",
+"amount": "$3,478.28",
+"issued": "2026-10-05",
+"due": "2026-11-04",
+"status": "unpaid"
+}
+],
+"trips": [],
+"reserved_slots": [
+[
+"2026-10-14",
+"1:25 pm"
+],
+[
+"2026-10-16",
+"3:15 pm"
+]
+],
+"reserved_titles": [
+[
+"2026-10-14",
+"client workshop"
+]
+],
+"reserved_vendors": [
+"Harbor Point Legal"
+],
+"reserved_restaurants": [],
+"reserved_streets": [
+"Fulton",
+"Kinzie"
+],
+"reserved_trip_days": []
+},
+"used_names": [
+"Imani Oduya",
+"Marcus Mendes",
+"Stefan Rahman"
+],
+"used_mobiles": [
+"224-555-0152",
+"708-555-0135",
+"708-555-0151"
+]
+}
+]

@@ -1,0 +1,64 @@
+{
+ "models": {
+  "anthropic/claude-haiku-5.5": {
+   "a": 1.097,
+   "b": 0.0027,
+   "r": 128.0,
+   "rr": 145.1
+  },
+  "anthropic/claude-opus-4.6": {
+   "a": 1.337,
+   "b": 0.1211,
+   "r": 69.6,
+   "rr": 32.0
+  },
+  "anthropic/claude-opus-5.5": {
+   "a": 3.723,
+   "b": 0.0033,
+   "r": 2000.0,
+   "rr": 98.8
+  },
+  "anthropic/claude-sonnet-5.5": {
+   "a": 1.175,
+   "b": 0.0022,
+   "r": 89.0,
+   "rr": null
+  },
+  "openai/gpt-5-mini": {
+   "a": 0.701,
+   "b": 0.0074,
+   "r": 145.1,
+   "rr": null
+  },
+  "openai/gpt-5.4-mini": {
+   "a": 0.942,
+   "b": 0.0029,
+   "r": 149.5,
+   "rr": 149.0
+  },
+  "openai/gpt-5.6-terra": {
+   "a": 0.892,
+   "b": 0.0,
+   "r": 114.4,
+   "rr": 107.7
+  },
+  "openai/gpt-6-luna": {
+   "a": 1.158,
+   "b": 0.0,
+   "r": 103.9,
+   "rr": null
+  },
+  "openai/gpt-6.1-sol": {
+   "a": 1.286,
+   "b": 0.0,
+   "r": 55.7,
+   "rr": null
+  }
+ },
+ "tts": 0.25,
+ "agent_spw": 0.4,
+ "person_spw": 0.35,
+ "endpoint": 0.5,
+ "barge_reaction": 0.2,
+ "delay": {}
+}
