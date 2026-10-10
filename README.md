@@ -39,15 +39,15 @@ code rather than to the archive.
    (`common/src/demos_common/stats.py`), and accuracy, cost and latency side by
    side. If the idea loses, the README says so plainly. Never tune a setting
    until the idea wins.
-6. **Models: strength is an axis.** Stronger models need thinner harnesses,
-   so a design is judged first on the models it was built for (Dan, 9 October
-   2026). The headline runs on the models of the design's own time (what its
-   original code used, or that month's frontier), on two families where the
-   budget allows. Today's cheap tier and, on the headline comparison, today's
-   frontier are further points on the same axis, showing whether the design's
-   advantage holds or fades as models get stronger. Every arm in a condition
-   uses the same model. A judge comes from a different family from the model
-   under test where possible, and is checked by hand on a sample.
+6. **Models: today's, with strength as an axis.** Only models someone would
+   reasonably choose today, on the cost and quality frontier; no older models,
+   and no backdating (Dan, 9 October 2026). Stronger models need thinner
+   harnesses, so each idea is tested at three tiers (below): its full design on
+   the cheap tier, on two families, and its headline comparison on the mid and
+   top tiers, showing whether its advantage holds or fades as models get
+   stronger. Every arm in a condition uses the same model. A judge comes from a
+   different family from the model under test where possible, and is checked
+   by hand on a sample.
 7. **Every model call goes through `demos_common.LLM`,** which writes each call
    to the concept's ledger with its exact cost. Never print, log or store the
    key.
@@ -91,31 +91,18 @@ machine is temporary: nothing may live only there.
 
 ## Models
 
-Each concept's era models (its headline), as the original code used them:
+OpenRouter list prices per million tokens on 9 October 2026 (all take images
+and about a million tokens of context):
 
-| Concept | Design's time | Era models |
-|---|---|---|
-| `skills-as-functions` | May 2025 | `openai/gpt-4.1`; `anthropic/claude-sonnet-4` |
-| `separate-loops` | June 2025 | `openai/o4-mini`; `anthropic/claude-sonnet-4` |
-| `conversation-context` | June 2025 | `openai/o4-mini` (delegated work), `openai/gpt-4.1` (caller); `anthropic/claude-sonnet-4` |
-| `memory-consolidation` | July 2025 | `openai/o4-mini`; `google/gemini-2.5-flash` or `anthropic/claude-sonnet-4` |
-| `linked-libraries` | October 2025 | `openai/gpt-5` (reasoning high); `anthropic/claude-sonnet-4.5` |
-| `demonstration-by-reference` | November to December 2025 | `openai/gpt-5` (reasoning high); `anthropic/claude-opus-4.5` or `claude-sonnet-4.5` |
-| `execution-coordinates` | January 2026 | `anthropic/claude-opus-4.5`; `openai/gpt-5.2` |
-| `fast-slow-voice` | February and June to July 2026 | fast `openai/gpt-5-mini` with slow `anthropic/claude-opus-4.6`; fast `openai/gpt-5.6-luna` with slow `openai/gpt-5.6-terra` |
-
-Today's models, for the cheap tier, the frontier and judges. OpenRouter list
-prices per million tokens on 9 October 2026 (all take images and about a
-million tokens of context unless noted):
-
-| Model | Input | Output | Use |
+| Tier | Models | Input | Output |
 |---|---|---|---|
-| `anthropic/claude-haiku-5.5` | $0.10 | $0.50 | cheap, fast workers and fast models |
-| `openai/gpt-6-luna` | $0.10 | $0.50 | the same, other family |
-| `google/gemini-3.8-flash` | $0.75 | $3.75 | a third family |
-| `anthropic/claude-sonnet-5.5` | $2 | $10 | capable agents |
-| `openai/gpt-6.1-sol` | $2 | $10 | capable agents, other family |
-| `anthropic/claude-opus-5.5` | $4 | $20 | the strongest, sparingly |
+| Cheap | `anthropic/claude-haiku-5.5`, `openai/gpt-6-luna` | $0.10 | $0.50 |
+| Mid | `anthropic/claude-sonnet-5.5`, `openai/gpt-6.1-sol` | $2 | $10 |
+| Top | `anthropic/claude-opus-5.5`, reasoning effort high | $4 | $20 |
+
+Older generations (GPT-5.x, Claude 4.x, Gemini 2.5 and earlier) are left out:
+nobody would choose them today at their price. The fast models in a spoken
+agent come from the cheap tier.
 
 ## Concepts
 
