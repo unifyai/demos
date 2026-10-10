@@ -1,0 +1,722 @@
+{
+ "size": "S",
+ "data_seed": 0,
+ "folders": {
+  "customer_success": {
+   "title": "Customer success",
+   "description": "Run business reviews and health checks for existing customers, survey them and handle cancellations. Use for looking after accounts after the sale."
+  },
+  "it": {
+   "title": "IT and accounts",
+   "description": "Order laptops, set up accounts and grant or remove access to systems. Use for IT requests from staff."
+  },
+  "procurement": {
+   "title": "Buying",
+   "description": "Raise purchase orders, buy and renew software subscriptions and order office supplies. Use when the company buys something."
+  },
+  "sales": {
+   "title": "Sales",
+   "description": "Manage deals in the CRM, book product demos, send quotes and order forms, and forecast the pipeline. Use for selling to prospects."
+  },
+  "support": {
+   "title": "Customer support",
+   "description": "Answer, escalate and close support tickets, and search the help centre. Use for customers' questions and problems."
+  }
+ },
+ "procedures": {
+  "create_quote": {
+   "folder": "sales",
+   "params": "prospect: str, plan: str, seats: int",
+   "returns": "str",
+   "doc": "Create a price quote for a prospect for a plan and number of seats, and send it to them. Returns the quote id.",
+   "task": "Send Kestrel Health a quote for 40 seats on the Growth plan.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "book_demo": {
+   "folder": "sales",
+   "params": "prospect: str, attendees: list[str], start: str",
+   "returns": "str",
+   "doc": "Book a product demo with a prospect and send them the invitation. Returns the event id.",
+   "task": "Book a product demo with the buyers at Orbit Retail for next Wednesday.",
+   "hidden": false,
+   "rules": [
+    "R03"
+   ]
+  },
+  "update_deal_stage": {
+   "folder": "sales",
+   "params": "deal_id: str, stage: str",
+   "returns": "None",
+   "doc": "Move a deal to a new stage in the CRM.",
+   "task": "Move the Kestrel Health deal to negotiation.",
+   "hidden": false,
+   "rules": []
+  },
+  "log_sales_call": {
+   "folder": "sales",
+   "params": "deal_id: str, notes: str",
+   "returns": "None",
+   "doc": "Log notes from a sales call against a deal in the CRM.",
+   "task": "Log my notes from today's call with Quarry & Co against their deal.",
+   "hidden": false,
+   "rules": []
+  },
+  "forecast_pipeline": {
+   "folder": "sales",
+   "params": "quarter: str",
+   "returns": "dict",
+   "doc": "Forecast how much of the sales pipeline will close in a quarter.",
+   "task": "What will we close this quarter? Give me the pipeline forecast.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "send_order_form": {
+   "folder": "sales",
+   "params": "customer: str, plan: str, seats: int",
+   "returns": "str",
+   "doc": "Send a customer the order form, the short contract they sign to buy a plan, with its price. Returns the document id.",
+   "task": "Kestrel Health agreed to the Growth plan for 40 seats; send them the paperwork to sign.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "export_contacts": {
+   "folder": "sales",
+   "params": "segment: str",
+   "returns": "str",
+   "doc": "Export the CRM's contacts in a segment, with names, emails and phone numbers, as a CSV file. Returns its path.",
+   "task": "Export all our contacts at retail prospects with their emails and phone numbers.",
+   "hidden": true,
+   "rules": []
+  },
+  "enrich_lead": {
+   "folder": "sales",
+   "params": "company: str",
+   "returns": "dict",
+   "doc": "Look up a prospect company's size, industry and the tools it uses.",
+   "task": "Find out how big Quarry & Co is and what they use for logistics today.",
+   "hidden": true,
+   "rules": []
+  },
+  "schedule_business_review": {
+   "folder": "customer_success",
+   "params": "customer: str, start: str",
+   "returns": "str",
+   "doc": "Schedule a quarterly business review with a customer and send them the invitation. Returns the event id.",
+   "task": "Set up Brightline Foods' quarterly business review for early next month.",
+   "hidden": false,
+   "rules": [
+    "R03"
+   ]
+  },
+  "cancel_subscription": {
+   "folder": "customer_success",
+   "params": "customer: str, reason: str, prorated_refund: bool",
+   "returns": "None",
+   "doc": "Cancel a customer's subscription, with a prorated refund of the unused time when asked.",
+   "task": "Orbit Retail is closing their account at the end of the month; cancel it and refund the unused time.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "send_nps_survey": {
+   "folder": "customer_success",
+   "params": "customers: list[str]",
+   "returns": "str",
+   "doc": "Send an NPS survey to a group of customers. Returns the survey id.",
+   "task": "Send this quarter's NPS survey to our enterprise customers.",
+   "hidden": false,
+   "rules": [
+    "R25"
+   ]
+  },
+  "request_customer_interview": {
+   "folder": "customer_success",
+   "params": "customer: str, topic: str",
+   "returns": "None",
+   "doc": "Ask a customer whether someone would talk to our product team about a topic.",
+   "task": "Ask Harbour Logistics if someone would talk to our product team about the new forecasting feature.",
+   "hidden": true,
+   "rules": [
+    "R25"
+   ]
+  },
+  "check_account_health": {
+   "folder": "customer_success",
+   "params": "customer: str",
+   "returns": "dict",
+   "doc": "Summarise a customer account's health: usage, open tickets and renewal date.",
+   "task": "How healthy is the Quarry & Co account: usage, tickets, renewal date?",
+   "hidden": false,
+   "rules": []
+  },
+  "respond_to_complaint": {
+   "folder": "customer_success",
+   "params": "customer: str, complaint: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft a reply to a customer's complaint. Returns the draft id.",
+   "task": "Brightline's COO wrote in angry about last week's missed delivery plans; draft our reply.",
+   "hidden": true,
+   "rules": [
+    "R17"
+   ]
+  },
+  "export_account_usage": {
+   "folder": "customer_success",
+   "params": "customer: str",
+   "returns": "str",
+   "doc": "Export a customer account's usage totals for the last 90 days (routes planned, warehouses, active seats). Returns the file's path.",
+   "task": "Get me Kestrel Health's product usage for the last 90 days.",
+   "hidden": true,
+   "rules": []
+  },
+  "ship_scanner_kit": {
+   "folder": "customer_success",
+   "params": "customer: str, address: str",
+   "returns": "str",
+   "doc": "Ship a kit of barcode scanners to a customer's warehouse. Returns the tracking number.",
+   "task": "Orbit Retail's new warehouse in Rotterdam needs a scanner kit; send one.",
+   "hidden": true,
+   "rules": []
+  },
+  "reply_to_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, points: list[str]",
+   "returns": "str",
+   "doc": "Reply to a customer on a support ticket. Returns the reply id.",
+   "task": "Answer ticket T-4410: the customer can't export their delivery report.",
+   "hidden": false,
+   "rules": [
+    "R17"
+   ]
+  },
+  "escalate_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, team: str, reason: str",
+   "returns": "None",
+   "doc": "Hand a support ticket to another internal team with a note on why.",
+   "task": "Ticket T-4412 looks like a bug in the routing engine; pass it to engineering.",
+   "hidden": false,
+   "rules": []
+  },
+  "close_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, resolution: str",
+   "returns": "None",
+   "doc": "Close a support ticket and record how it was resolved.",
+   "task": "Close T-4398; the customer confirmed it's fixed.",
+   "hidden": false,
+   "rules": []
+  },
+  "search_help_center": {
+   "folder": "support",
+   "params": "query: str",
+   "returns": "list[dict]",
+   "doc": "Search the help centre's articles.",
+   "task": "Do we have a help article that explains how to set delivery windows?",
+   "hidden": false,
+   "rules": []
+  },
+  "send_csat_survey": {
+   "folder": "support",
+   "params": "ticket_id: str",
+   "returns": "None",
+   "doc": "Send the customer on a ticket a short satisfaction survey.",
+   "task": "Ask the customer on T-4398 how we did.",
+   "hidden": true,
+   "rules": [
+    "R25"
+   ]
+  },
+  "merge_tickets": {
+   "folder": "support",
+   "params": "ticket_ids: list[str]",
+   "returns": "str",
+   "doc": "Merge duplicate support tickets into one. Returns the remaining ticket's id.",
+   "task": "T-4415 and T-4416 are the same problem from the same customer; combine them.",
+   "hidden": true,
+   "rules": []
+  },
+  "export_ticket_requesters": {
+   "folder": "support",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export everyone who opened a ticket in a period, with their name and email, as a CSV file. Returns its path.",
+   "task": "List everyone who opened a ticket last month, with their email, as a CSV.",
+   "hidden": true,
+   "rules": []
+  },
+  "raise_purchase_order": {
+   "folder": "procurement",
+   "params": "vendor: str, items: list[dict]",
+   "returns": "str",
+   "doc": "Raise a purchase order with a supplier for a list of items. Returns the PO number.",
+   "task": "Raise a PO for 12 standing desks from Fjord Office.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R22"
+   ]
+  },
+  "buy_software_subscription": {
+   "folder": "procurement",
+   "params": "product: str, seats: int",
+   "returns": "str",
+   "doc": "Buy a new subscription to a software product for a number of seats. Returns the order id.",
+   "task": "Get us 15 seats of Figma.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "renew_tool_subscription": {
+   "folder": "procurement",
+   "params": "product: str",
+   "returns": "str",
+   "doc": "Renew a software subscription we already pay for. Returns the order id.",
+   "task": "Our Notion subscription ends next week; renew it.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "order_office_supplies": {
+   "folder": "procurement",
+   "params": "items: list[str]",
+   "returns": "str",
+   "doc": "Order office supplies such as paper, coffee and stationery. Returns the order id.",
+   "task": "We're out of printer paper and coffee; order more.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "sign_vendor_agreement": {
+   "folder": "procurement",
+   "params": "vendor: str, agreement_id: str",
+   "returns": "None",
+   "doc": "Sign a supplier's agreement with them.",
+   "task": "Fjord Office sent their supply agreement; get it signed.",
+   "hidden": true,
+   "rules": []
+  },
+  "cancel_software_subscription": {
+   "folder": "procurement",
+   "params": "product: str",
+   "returns": "None",
+   "doc": "Cancel a software subscription we no longer use.",
+   "task": "We don't use Loom any more; stop paying for it.",
+   "hidden": true,
+   "rules": []
+  },
+  "compare_supplier_quotes": {
+   "folder": "procurement",
+   "params": "quotes: list[dict]",
+   "returns": "dict",
+   "doc": "Compare quotes from several suppliers and say which is the best value.",
+   "task": "Which of these three cleaning quotes is the best value?",
+   "hidden": true,
+   "rules": [
+    "R04"
+   ]
+  },
+  "grant_system_access": {
+   "folder": "it",
+   "params": "person: str, system: str, role: str",
+   "returns": "None",
+   "doc": "Give a colleague access to a system or shared drive with a given role.",
+   "task": "Give Ana Costa editor access to the design drive.",
+   "hidden": false,
+   "rules": []
+  },
+  "revoke_access": {
+   "folder": "it",
+   "params": "person: str, system: str",
+   "returns": "None",
+   "doc": "Remove someone's access to a system.",
+   "task": "Remove Mark's access to the finance system.",
+   "hidden": false,
+   "rules": []
+  },
+  "order_laptop": {
+   "folder": "it",
+   "params": "person: str, model: str",
+   "returns": "str",
+   "doc": "Buy a laptop for a colleague. Returns the order id.",
+   "task": "Ana starts on 1 December; order her a MacBook.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "create_email_account": {
+   "folder": "it",
+   "params": "person: str",
+   "returns": "str",
+   "doc": "Create a work email account for a new colleague. Returns the address.",
+   "task": "Set up a work email for Ana Costa.",
+   "hidden": false,
+   "rules": []
+  },
+  "ship_laptop": {
+   "folder": "it",
+   "params": "person: str, address: str",
+   "returns": "str",
+   "doc": "Ship a laptop to a colleague's address. Returns the tracking number.",
+   "task": "Send Ana's new laptop to her home in Porto.",
+   "hidden": true,
+   "rules": []
+  },
+  "reset_password": {
+   "folder": "it",
+   "params": "person: str, system: str",
+   "returns": "None",
+   "doc": "Reset a colleague's password for a system when they are locked out.",
+   "task": "Joe's locked out of the VPN; reset his password.",
+   "hidden": true,
+   "rules": []
+  }
+ },
+ "rules": {
+  "R03": {
+   "title": "Meetings with people outside the company",
+   "applies": "scheduling or moving any meeting with people outside the company, such as customer calls and business reviews, sales demos, job interviews, investor calls, media interviews and supplier or partner meetings",
+   "text": "Never schedule them on a Friday, and always put an agenda in the invitation.",
+   "change": {
+    "old": "never on a Friday",
+    "new": "never on a Monday (Fridays are now allowed)",
+    "direct": "Change our rule on meetings with people outside the company: they are now off limits on Mondays instead of Fridays. Fridays are fine again. Keep the agenda part.",
+    "passing": "By the way, meetings with people outside the company are now off limits on Mondays rather than Fridays; Fridays are fine again. Please keep that going forward."
+   }
+  },
+  "R04": {
+   "title": "Stating amounts of money",
+   "applies": "invoices and payment reminders, quotes and order forms, refunds and credit notes, pricing and sales decks, purchase orders, expense claims and spending reports, payslips and payroll cost reports, budgets and forecasts, revenue reports and profit and loss statements",
+   "text": "State every amount in US dollars with two decimals; if a figure was in another currency, convert it at the day's rate and name the rate.",
+   "change": {
+    "old": "state amounts in US dollars",
+    "new": "state amounts in euros (not US dollars)",
+    "direct": "Update our rule on stating amounts of money: we now state every amount in euros, not US dollars, still with two decimals and naming the rate when we convert.",
+    "passing": "Oh, and from now on we state every amount in euros rather than US dollars, still with two decimals and naming the rate when we convert. Please make sure that sticks for the future."
+   }
+  },
+  "R17": {
+   "title": "Replying to customers about problems",
+   "applies": "replies to support tickets and to customer complaints",
+   "text": "Reply within four working hours, and sign as 'The Fernhill Support Team'.",
+   "change": {
+    "old": "sign as 'The Fernhill Support Team'",
+    "new": "sign with the first name of the person who writes the reply",
+    "direct": "Change our rule on replying to customers about problems: replies are now signed with the first name of the person who writes them, instead of 'The Fernhill Support Team'.",
+    "passing": "Also, from now on we sign these with our own first names, not 'The Fernhill Support Team'. Please keep that going forward."
+   }
+  },
+  "R22": {
+   "title": "Buying things",
+   "applies": "buying things: purchase orders, new software subscriptions and renewals, office supplies, and equipment such as laptops",
+   "text": "Every purchase needs a purchase order approved by finance before ordering, and new software must be checked by IT first.",
+   "change": {
+    "old": "purchase orders approved by finance",
+    "new": "purchase orders approved by the budget owner",
+    "direct": "Change our purchasing rule: purchase orders are now approved by the budget owner instead of finance. The IT check stays.",
+    "passing": "By the way, purchase orders get approved by the budget owner now, not finance. Please make sure that sticks."
+   }
+  },
+  "R25": {
+   "title": "Surveying customers",
+   "applies": "NPS and satisfaction surveys, feedback requests and requests for customer interviews",
+   "text": "Send each customer at most one survey a quarter, with no more than five questions.",
+   "change": {
+    "old": "at most one survey a quarter",
+    "new": "at most one survey every six months",
+    "direct": "Change our rule on surveying customers: send each customer at most one survey every six months instead of one a quarter.",
+    "passing": "And from now on each customer gets at most one survey every six months, not one a quarter. Please make that stick."
+   }
+  }
+ },
+ "changes": [
+  {
+   "order": 0,
+   "rule": "R17",
+   "passing_procedure": "reply_to_ticket",
+   "direct_message": "Change our rule on replying to customers about problems: replies are now signed with the first name of the person who writes them, instead of 'The Fernhill Support Team'.",
+   "passing_message": "Answer ticket T-4410: the customer can't export their delivery report. Also, from now on we sign these with our own first names, not 'The Fernhill Support Team'. Please keep that going forward."
+  },
+  {
+   "order": 1,
+   "rule": "R22",
+   "passing_procedure": "renew_tool_subscription",
+   "direct_message": "Change our purchasing rule: purchase orders are now approved by the budget owner instead of finance. The IT check stays.",
+   "passing_message": "Our Notion subscription ends next week; renew it. By the way, purchase orders get approved by the budget owner now, not finance. Please make sure that sticks."
+  },
+  {
+   "order": 2,
+   "rule": "R04",
+   "passing_procedure": "create_quote",
+   "direct_message": "Update our rule on stating amounts of money: we now state every amount in euros, not US dollars, still with two decimals and naming the rate when we convert.",
+   "passing_message": "Send Kestrel Health a quote for 40 seats on the Growth plan. Oh, and from now on we state every amount in euros rather than US dollars, still with two decimals and naming the rate when we convert. Please make sure that sticks for the future."
+  },
+  {
+   "order": 3,
+   "rule": "R25",
+   "passing_procedure": "send_nps_survey",
+   "direct_message": "Change our rule on surveying customers: send each customer at most one survey every six months instead of one a quarter.",
+   "passing_message": "Send this quarter's NPS survey to our enterprise customers. And from now on each customer gets at most one survey every six months, not one a quarter. Please make that stick."
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t001",
+   "procedure": "reply_to_ticket",
+   "text": "Answer ticket T-4410: the customer can't export their delivery report.",
+   "rules": [
+    "R17"
+   ],
+   "changed_rules": [
+    "R17"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t002",
+   "procedure": "close_ticket",
+   "text": "Close T-4398; the customer confirmed it's fixed.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t003",
+   "procedure": "cancel_software_subscription",
+   "text": "We don't use Loom any more; stop paying for it.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t004",
+   "procedure": "log_sales_call",
+   "text": "Log my notes from today's call with Quarry & Co against their deal.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t005",
+   "procedure": "export_account_usage",
+   "text": "Get me Kestrel Health's product usage for the last 90 days.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t006",
+   "procedure": "book_demo",
+   "text": "Book a product demo with the buyers at Orbit Retail for next Wednesday.",
+   "rules": [
+    "R03"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t007",
+   "procedure": "export_ticket_requesters",
+   "text": "List everyone who opened a ticket last month, with their email, as a CSV.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t008",
+   "procedure": "forecast_pipeline",
+   "text": "What will we close this quarter? Give me the pipeline forecast.",
+   "rules": [
+    "R04"
+   ],
+   "changed_rules": [
+    "R04"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t009",
+   "procedure": "request_customer_interview",
+   "text": "Ask Harbour Logistics if someone would talk to our product team about the new forecasting feature.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t010",
+   "procedure": "update_deal_stage",
+   "text": "Move the Kestrel Health deal to negotiation.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t011",
+   "procedure": "send_nps_survey",
+   "text": "Send this quarter's NPS survey to our enterprise customers.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t012",
+   "procedure": "order_office_supplies",
+   "text": "We're out of printer paper and coffee; order more.",
+   "rules": [
+    "R22"
+   ],
+   "changed_rules": [
+    "R22"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t013",
+   "procedure": "buy_software_subscription",
+   "text": "Get us 15 seats of Figma.",
+   "rules": [
+    "R22"
+   ],
+   "changed_rules": [
+    "R22"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t014",
+   "procedure": "merge_tickets",
+   "text": "T-4415 and T-4416 are the same problem from the same customer; combine them.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t015",
+   "procedure": "cancel_subscription",
+   "text": "Orbit Retail is closing their account at the end of the month; cancel it and refund the unused time.",
+   "rules": [
+    "R04"
+   ],
+   "changed_rules": [
+    "R04"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t016",
+   "procedure": "schedule_business_review",
+   "text": "Set up Brightline Foods' quarterly business review for early next month.",
+   "rules": [
+    "R03"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t017",
+   "procedure": "raise_purchase_order",
+   "text": "Raise a PO for 12 standing desks from Fjord Office.",
+   "rules": [
+    "R04",
+    "R22"
+   ],
+   "changed_rules": [
+    "R04",
+    "R22"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t018",
+   "procedure": "respond_to_complaint",
+   "text": "Brightline's COO wrote in angry about last week's missed delivery plans; draft our reply.",
+   "rules": [
+    "R17"
+   ],
+   "changed_rules": [
+    "R17"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t019",
+   "procedure": "ship_laptop",
+   "text": "Send Ana's new laptop to her home in Porto.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t020",
+   "procedure": "enrich_lead",
+   "text": "Find out how big Quarry & Co is and what they use for logistics today.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t021",
+   "procedure": "send_order_form",
+   "text": "Kestrel Health agreed to the Growth plan for 40 seats; send them the paperwork to sign.",
+   "rules": [
+    "R04"
+   ],
+   "changed_rules": [
+    "R04"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t022",
+   "procedure": "check_account_health",
+   "text": "How healthy is the Quarry & Co account: usage, tickets, renewal date?",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t023",
+   "procedure": "send_csat_survey",
+   "text": "Ask the customer on T-4398 how we did.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t024",
+   "procedure": "order_laptop",
+   "text": "Ana starts on 1 December; order her a MacBook.",
+   "rules": [
+    "R22"
+   ],
+   "changed_rules": [
+    "R22"
+   ],
+   "hidden": false
+  }
+ ]
+}

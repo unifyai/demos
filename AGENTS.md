@@ -11,3 +11,6 @@ Read `README.md` first: its rules bind every experiment here.
   on the cloud machine.
 - Never print, log or commit a secret. The OpenRouter key reaches a process
   only through `bin/with-openrouter-key`.
+- `runs/` stays out of git (`.gitignore`); the concept's `runs.tar.zst` is the
+  committed copy of it. Rebuild the archive whenever the runs change:
+  `tar -cf - runs | zstd -19 -T0 -o runs.tar.zst`.

@@ -1,0 +1,30 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "procedure": [],
+ "rules": [
+  {
+   "procedure": "export_expense_report",
+   "doc": "Export a spending report of all staff expense claims over a period. Returns the file's path.",
+   "catalog": [
+    "R04"
+   ],
+   "model_says": [
+    "R04",
+    "R12"
+   ]
+  },
+  {
+   "procedure": "compare_supplier_quotes",
+   "doc": "Compare quotes from several suppliers and say which is the best value.",
+   "catalog": [],
+   "model_says": [
+    "R04"
+   ]
+  }
+ ],
+ "summary": {
+  "procedures": 193,
+  "procedure_agree": 193,
+  "rules_agree": 191
+ }
+}

@@ -6,3 +6,6 @@ __pycache__/
 .env.*
 *.egg-info/
 .DS_Store
+
+# Run records stay out of git; each concept commits runs.tar.zst, a zstd archive of runs/
+concepts/*/runs/

@@ -1,0 +1,206 @@
+{
+ "size": "sanity",
+ "data_seed": 0,
+ "folders": {
+  "marketing": {
+   "title": "Marketing email",
+   "description": "Send the newsletter and email campaigns to our mailing lists. Use for marketing email to customers and subscribers."
+  },
+  "website": {
+   "title": "Website and blog",
+   "description": "Publish posts on the company blog and case studies, and update pages on the website. Use when putting something on our site."
+  }
+ },
+ "procedures": {
+  "publish_blog_post": {
+   "folder": "website",
+   "params": "title: str, body: str, images: list[str]",
+   "returns": "str",
+   "doc": "Publish a post, with its images, on the company blog. Returns the post's URL.",
+   "task": "Publish a post on our blog about the warehouse rollout we just finished with Harbour Logistics, with the two photos from the site.",
+   "hidden": false,
+   "rules": [
+    "R05",
+    "R06"
+   ]
+  },
+  "update_website_page": {
+   "folder": "website",
+   "params": "page: str, content: str, images: list[str]",
+   "returns": "None",
+   "doc": "Replace the text and images of a page on the company website.",
+   "task": "Refresh the About page on our website with the new team photo and the updated company description.",
+   "hidden": false,
+   "rules": [
+    "R05",
+    "R06"
+   ]
+  },
+  "publish_case_study": {
+   "folder": "website",
+   "params": "customer: str, story: str, images: list[str]",
+   "returns": "str",
+   "doc": "Publish a case study about a customer's results as a page on the website, with its images. Returns its URL.",
+   "task": "Turn the Brightline Foods results into a case study on our site, with the photo of their depot.",
+   "hidden": false,
+   "rules": [
+    "R05",
+    "R06"
+   ]
+  },
+  "fix_broken_links": {
+   "folder": "website",
+   "params": "section: str",
+   "returns": "int",
+   "doc": "Find and fix broken links in one section of the website. Returns how many were fixed.",
+   "task": "Some links in the help centre are dead; sort them out.",
+   "hidden": true,
+   "rules": []
+  },
+  "redirect_url": {
+   "folder": "website",
+   "params": "old_path: str, new_path: str",
+   "returns": "None",
+   "doc": "Make an old website address send visitors to a new one.",
+   "task": "Point /pricing-2025 at the new /pricing page.",
+   "hidden": true,
+   "rules": []
+  },
+  "send_newsletter": {
+   "folder": "marketing",
+   "params": "subject: str, sections: list[str], images: list[str]",
+   "returns": "str",
+   "doc": "Send the newsletter, with its images, to the subscriber list. Returns the campaign id.",
+   "task": "Send out October's newsletter with the Lisbon office news, the new release and the photos from the meetup.",
+   "hidden": false,
+   "rules": [
+    "R05",
+    "R06"
+   ]
+  },
+  "send_campaign_email": {
+   "folder": "marketing",
+   "params": "segment: str, subject: str, body: str",
+   "returns": "str",
+   "doc": "Send a marketing email to one segment of the mailing list. Returns the campaign id.",
+   "task": "Email the trial users in the retail segment about the new inventory forecasting feature.",
+   "hidden": false,
+   "rules": [
+    "R06"
+   ]
+  },
+  "export_mailing_list": {
+   "folder": "marketing",
+   "params": "list_name: str",
+   "returns": "str",
+   "doc": "Export a mailing list, with subscribers' names and email addresses, as a CSV file. Returns its path.",
+   "task": "Export the newsletter subscriber list as a CSV.",
+   "hidden": true,
+   "rules": []
+  },
+  "add_subscribers": {
+   "folder": "marketing",
+   "params": "list_name: str, emails: list[str]",
+   "returns": "int",
+   "doc": "Add people to a mailing list. Returns how many were added.",
+   "task": "Add the twelve people who signed up at the Lisbon meetup to the newsletter list.",
+   "hidden": true,
+   "rules": []
+  },
+  "remove_bounced_addresses": {
+   "folder": "marketing",
+   "params": "list_name: str",
+   "returns": "int",
+   "doc": "Remove the addresses that bounce from a mailing list. Returns how many were removed.",
+   "task": "Clean the bounced addresses out of the product updates list.",
+   "hidden": true,
+   "rules": []
+  },
+  "pause_campaign": {
+   "folder": "marketing",
+   "params": "campaign_id: str",
+   "returns": "None",
+   "doc": "Stop a scheduled marketing email from going out.",
+   "task": "Hold campaign c_310; the discount code in it is wrong.",
+   "hidden": false,
+   "rules": []
+  }
+ },
+ "rules": {
+  "R05": {
+   "title": "Alt text for images",
+   "applies": "images in blog posts, newsletters, event pages and the pages of our website",
+   "text": "Every image needs alt text that describes it in under 125 characters.",
+   "change": {
+    "old": "alt text under 125 characters",
+    "new": "alt text under 80 characters",
+    "direct": "Change our alt text rule: alt text must now be under 80 characters instead of 125.",
+    "passing": "While you're at it: alt text now has to be under 80 characters, not 125. Please keep to that from now on."
+   }
+  },
+  "R06": {
+   "title": "Our product's name",
+   "applies": "copy we publish that names our product: website pages, blog posts, case studies, release notes, newsletters and marketing emails, press releases, job ads and sales decks",
+   "text": "Write the product's name as 'Atlas', never 'ATLAS' or 'the Atlas platform'.",
+   "change": {
+    "old": "the product is called 'Atlas'",
+    "new": "the product is called 'Atlas Cloud' (never just 'Atlas')",
+    "direct": "Our product has been renamed: update the rule on its name so it is written 'Atlas Cloud', never just 'Atlas', 'ATLAS' or 'the Atlas platform'.",
+    "passing": "Heads up, the product has been renamed: from now on it's 'Atlas Cloud', never just 'Atlas'. Please make sure that's how we write it from here on."
+   }
+  }
+ },
+ "changes": [
+  {
+   "order": 0,
+   "rule": "R06",
+   "passing_procedure": "publish_blog_post",
+   "direct_message": "Our product has been renamed: update the rule on its name so it is written 'Atlas Cloud', never just 'Atlas', 'ATLAS' or 'the Atlas platform'.",
+   "passing_message": "Publish a post on our blog about the warehouse rollout we just finished with Harbour Logistics, with the two photos from the site. Heads up, the product has been renamed: from now on it's 'Atlas Cloud', never just 'Atlas'. Please make sure that's how we write it from here on."
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t001",
+   "procedure": "fix_broken_links",
+   "text": "Some links in the help centre are dead; sort them out.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t002",
+   "procedure": "export_mailing_list",
+   "text": "Export the newsletter subscriber list as a CSV.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t003",
+   "procedure": "publish_case_study",
+   "text": "Turn the Brightline Foods results into a case study on our site, with the photo of their depot.",
+   "rules": [
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R06"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t004",
+   "procedure": "send_newsletter",
+   "text": "Send out October's newsletter with the Lisbon office news, the new release and the photos from the meetup.",
+   "rules": [
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R06"
+   ],
+   "hidden": false
+  }
+ ]
+}

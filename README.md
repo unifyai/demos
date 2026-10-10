@@ -63,9 +63,15 @@ common/                       shared, tested: demos_common.LLM (OpenRouter
 concepts/<name>/              one idea: pyproject.toml (own dependencies, with
                               demos-common as a path dependency), src/, tests/,
                               data/, runs/ (ledger and raw records), results.json,
-                              README.md (idea, plan, results, caveats, cost)
+                              README.md (idea, plan, results, caveats, cost),
+                              runs.tar.zst (runs/ archived for git)
 bin/with-openrouter-key       runs a command with the key in its environment
 ```
+
+Run records are too large for git loose (one concept wrote 180 MB in 20,000
+files), so `runs/` is ignored and each concept commits `runs.tar.zst` instead,
+about 70 times smaller: make it with `tar -cf - runs | zstd -19 -T0 -o runs.tar.zst`
+and restore it with `zstd -dc runs.tar.zst | tar -xf -`.
 
 A new concept's `pyproject.toml` depends on the shared package like this:
 

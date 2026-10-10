@@ -1,0 +1,10 @@
+{
+ "model": "openai/gpt-6.1-sol",
+ "procedure": [],
+ "rules": [],
+ "summary": {
+  "procedures": 193,
+  "procedure_agree": 193,
+  "rules_agree": 193
+ }
+}

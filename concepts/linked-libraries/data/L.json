@@ -1,0 +1,3267 @@
+{
+ "size": "L",
+ "data_seed": 0,
+ "folders": {
+  "analytics": {
+   "title": "Reports and dashboards",
+   "description": "Export reports of business metrics and refresh dashboards. Use when someone needs numbers."
+  },
+  "billing": {
+   "title": "Billing",
+   "description": "Create invoices, chase unpaid ones, and issue refunds and credit notes. Use when billing a customer or handling a customer's payment."
+  },
+  "board": {
+   "title": "Board",
+   "description": "Prepare board meetings: the board deck, pre-reads, minutes and written resolutions. Use for anything for the board of directors."
+  },
+  "calendar": {
+   "title": "Calendar",
+   "description": "Schedule, move and cancel meetings and find free time in people's calendars. Use when arranging a meeting or checking availability."
+  },
+  "customer_success": {
+   "title": "Customer success",
+   "description": "Run business reviews and health checks for existing customers, survey them and handle cancellations. Use for looking after accounts after the sale."
+  },
+  "email": {
+   "title": "Email",
+   "description": "Draft, send, forward and reply to internal email, and look up people's addresses. Use when writing to colleagues or answering a message."
+  },
+  "engineering": {
+   "title": "Engineering operations",
+   "description": "Deploy services, run database migrations, switch feature flags and roll back bad releases. Use for changes to our production systems."
+  },
+  "events": {
+   "title": "Events",
+   "description": "Publish event pages, announce webinars and handle registrations. Use for webinars, meetups and conferences."
+  },
+  "expenses": {
+   "title": "Expenses",
+   "description": "Submit and approve staff expense claims and report on spending. Use for out-of-pocket spending by staff."
+  },
+  "facilities": {
+   "title": "Office and facilities",
+   "description": "Book meeting rooms, register visitors, issue building passes and report office repairs. Use for anything about our office."
+  },
+  "finance": {
+   "title": "Finance",
+   "description": "Close the books, draft budgets and forecasts, and report profit and loss. Use for company accounts and planning."
+  },
+  "hr": {
+   "title": "People and HR",
+   "description": "Keep employee records up to date: salary changes, leave, performance reviews and leavers. Use for HR admin about current staff."
+  },
+  "investors": {
+   "title": "Investor relations",
+   "description": "Write updates for our investors, post on the investor portal and answer investors' questions. Use for anything for our investors."
+  },
+  "it": {
+   "title": "IT and accounts",
+   "description": "Order laptops, set up accounts and grant or remove access to systems. Use for IT requests from staff."
+  },
+  "legal": {
+   "title": "Contracts",
+   "description": "Send NDAs and customer contracts, renew them and keep the contract register. Use for legal paperwork with other companies."
+  },
+  "marketing": {
+   "title": "Marketing email",
+   "description": "Send the newsletter and email campaigns to our mailing lists. Use for marketing email to customers and subscribers."
+  },
+  "partners": {
+   "title": "Partnerships",
+   "description": "Sign partner agreements, meet partners, give them portal access and register the deals they bring. Use for working with partner companies."
+  },
+  "payables": {
+   "title": "Paying suppliers",
+   "description": "Pay supplier and contractor invoices, schedule payments and send wire transfers. Use when we owe someone money."
+  },
+  "payroll": {
+   "title": "Payroll",
+   "description": "Run the monthly payroll, produce payslips and pay bonuses. Use for paying staff their salaries."
+  },
+  "press": {
+   "title": "Press and media",
+   "description": "Write press releases, answer journalists, pitch stories and keep the media list. Use when dealing with the press."
+  },
+  "procurement": {
+   "title": "Buying",
+   "description": "Raise purchase orders, buy and renew software subscriptions and order office supplies. Use when the company buys something."
+  },
+  "recruiting": {
+   "title": "Recruiting",
+   "description": "Post job ads, schedule interviews and keep candidates moving through the hiring pipeline. Use for hiring new people."
+  },
+  "sales": {
+   "title": "Sales",
+   "description": "Manage deals in the CRM, book product demos, send quotes and order forms, and forecast the pipeline. Use for selling to prospects."
+  },
+  "security": {
+   "title": "Security and compliance",
+   "description": "Run access reviews, collect audit evidence and answer security questionnaires. Use for security and compliance work."
+  },
+  "slides": {
+   "title": "Slide decks",
+   "description": "Build slide decks for meetings, investors and prospects, add chart slides and export decks as PDF. Use when making or changing a presentation."
+  },
+  "social": {
+   "title": "Social media",
+   "description": "Post, schedule and reply on the company's social accounts. Use when something should go out on LinkedIn, X or Instagram."
+  },
+  "status": {
+   "title": "Service status",
+   "description": "Post outage and maintenance notices on the status page and email affected customers. Use when the service is down or changing."
+  },
+  "support": {
+   "title": "Customer support",
+   "description": "Answer, escalate and close support tickets, and search the help centre. Use for customers' questions and problems."
+  },
+  "travel": {
+   "title": "Travel",
+   "description": "Book flights, trains and hotels and send itineraries. Use when someone travels for work."
+  },
+  "website": {
+   "title": "Website and blog",
+   "description": "Publish posts on the company blog and case studies, and update pages on the website. Use when putting something on our site."
+  }
+ },
+ "procedures": {
+  "draft_email": {
+   "folder": "email",
+   "params": "to: list[str], subject: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft an internal email to colleagues from a list of points and save it as a draft. Returns the draft id.",
+   "task": "Write up a note to Sam and Priya with the three decisions from this morning's planning meeting, and leave it as a draft.",
+   "hidden": false,
+   "rules": []
+  },
+  "send_draft": {
+   "folder": "email",
+   "params": "draft_id: str",
+   "returns": "None",
+   "doc": "Send an email draft that is waiting in the outbox.",
+   "task": "The note to the ops team is sitting in drafts as d_771; go ahead and send it.",
+   "hidden": false,
+   "rules": []
+  },
+  "reply_to_thread": {
+   "folder": "email",
+   "params": "thread_id: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft a reply at the end of an internal email thread. Returns the draft id.",
+   "task": "Answer the last message in thread th_310 to say the team can do Thursday afternoon.",
+   "hidden": false,
+   "rules": []
+  },
+  "forward_email": {
+   "folder": "email",
+   "params": "message_id: str, to: list[str], note: str",
+   "returns": "str",
+   "doc": "Forward an email to colleagues with a short note on top. Returns the draft id.",
+   "task": "Pass message m_5512 on to Lena in finance with a line asking her to check the numbers.",
+   "hidden": false,
+   "rules": []
+  },
+  "lookup_contact": {
+   "folder": "email",
+   "params": "name: str",
+   "returns": "dict",
+   "doc": "Find a person in the address book by name and return their email address, company and role.",
+   "task": "What's the email address for Priya, the operations lead at Brightline Foods?",
+   "hidden": false,
+   "rules": []
+  },
+  "set_email_signature": {
+   "folder": "email",
+   "params": "text: str",
+   "returns": "None",
+   "doc": "Replace the signature added to the end of your outgoing email.",
+   "task": "Change my email sign-off to include my new job title, Head of Operations.",
+   "hidden": true,
+   "rules": []
+  },
+  "archive_old_threads": {
+   "folder": "email",
+   "params": "older_than_days: int",
+   "returns": "int",
+   "doc": "Archive inbox threads older than the given number of days. Returns how many were archived.",
+   "task": "My inbox is a mess; archive everything older than 90 days.",
+   "hidden": true,
+   "rules": []
+  },
+  "schedule_internal_meeting": {
+   "folder": "calendar",
+   "params": "attendees: list[str], start: str, minutes: int, agenda: str",
+   "returns": "str",
+   "doc": "Create a meeting with colleagues inside the company and invite them. Returns the event id.",
+   "task": "Set up a 45-minute retro with the platform team on Wednesday at 2pm.",
+   "hidden": false,
+   "rules": []
+  },
+  "schedule_external_meeting": {
+   "folder": "calendar",
+   "params": "company: str, attendees: list[str], start: str, minutes: int, agenda: str",
+   "returns": "str",
+   "doc": "Create a meeting with people from another company and send them the invitation, for outside meetings that no more specific procedure covers. Returns the event id.",
+   "task": "Set up an hour next week with our accountants at Moss & Pike to go through the year-end questions.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "reschedule_external_meeting": {
+   "folder": "calendar",
+   "params": "event_id: str, new_start: str",
+   "returns": "None",
+   "doc": "Move an existing meeting with people outside the company to a new time and send them the updated invitation.",
+   "task": "Move our call with the Brightline Foods team (event ev_204) to a later day this week.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "find_free_slot": {
+   "folder": "calendar",
+   "params": "people: list[str], minutes: int, within_days: int",
+   "returns": "list[str]",
+   "doc": "Find times when all the given colleagues are free for a meeting of this length.",
+   "task": "When are Sam, Lena and Joe all free for an hour in the next five days?",
+   "hidden": false,
+   "rules": []
+  },
+  "cancel_meeting": {
+   "folder": "calendar",
+   "params": "event_id: str, reason: str",
+   "returns": "None",
+   "doc": "Cancel a calendar event and tell everyone invited why.",
+   "task": "Cancel tomorrow's budget sync with the finance team (ev_310); the numbers aren't ready.",
+   "hidden": false,
+   "rules": []
+  },
+  "set_out_of_office": {
+   "folder": "calendar",
+   "params": "start: str, end: str, message: str",
+   "returns": "None",
+   "doc": "Turn on an automatic away reply and block your calendar for the dates.",
+   "task": "I'm off from 20 to 24 October; put up an away message and block my calendar.",
+   "hidden": true,
+   "rules": []
+  },
+  "block_focus_time": {
+   "folder": "calendar",
+   "params": "days: list[str], start: str, minutes: int",
+   "returns": "None",
+   "doc": "Block recurring focus time in your own calendar on the given weekdays.",
+   "task": "Protect my mornings: block 9 to 11 every Tuesday and Thursday for deep work.",
+   "hidden": true,
+   "rules": []
+  },
+  "build_deck": {
+   "folder": "slides",
+   "params": "title: str, sections: list[str]",
+   "returns": "str",
+   "doc": "Build a plain internal slide deck with a title slide and one slide per section. Returns the deck id.",
+   "task": "Make a short deck for Monday's all-hands with sections on hiring, the office move and the roadmap.",
+   "hidden": false,
+   "rules": []
+  },
+  "add_chart_slide": {
+   "folder": "slides",
+   "params": "deck_id: str, title: str, series: dict",
+   "returns": "None",
+   "doc": "Add a slide with a line chart of the given series to an existing deck.",
+   "task": "Add a chart of weekly active users over the last eight weeks to deck dk_9.",
+   "hidden": false,
+   "rules": []
+  },
+  "export_deck_pdf": {
+   "folder": "slides",
+   "params": "deck_id: str",
+   "returns": "str",
+   "doc": "Export a deck as a PDF file and return its path.",
+   "task": "I need deck dk_9 as a PDF to attach to an email.",
+   "hidden": false,
+   "rules": []
+  },
+  "build_investor_deck": {
+   "folder": "slides",
+   "params": "quarter: str, highlights: list[str]",
+   "returns": "str",
+   "doc": "Build the deck for the quarterly meeting with our investors from the quarter's highlights. Returns the deck id.",
+   "task": "Put together the deck for this quarter's investor meeting.",
+   "hidden": false,
+   "rules": [
+    "R01"
+   ]
+  },
+  "build_sales_deck": {
+   "folder": "slides",
+   "params": "prospect: str, plan: str",
+   "returns": "str",
+   "doc": "Build a sales deck for a prospect, with our product's features, the plan's price and reference customers. Returns the deck id.",
+   "task": "Make a pitch deck for Kestrel Health showing the Growth plan, its price and a couple of reference customers.",
+   "hidden": false,
+   "rules": [
+    "R02",
+    "R04",
+    "R06"
+   ]
+  },
+  "build_pricing_review_deck": {
+   "folder": "slides",
+   "params": "plans: list[str]",
+   "returns": "str",
+   "doc": "Build an internal deck comparing our plans and what each costs, for a pricing review. Returns the deck id.",
+   "task": "Make a few slides for the internal pricing review comparing our three plans and what each costs.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "add_customer_logo_slide": {
+   "folder": "slides",
+   "params": "deck_id: str, customers: list[str]",
+   "returns": "None",
+   "doc": "Add a slide of customer logos, each with the customer's name, to a deck we show outside the company.",
+   "task": "Add a slide with the logos of our five biggest customers to the sales deck dk_88.",
+   "hidden": true,
+   "rules": [
+    "R02"
+   ]
+  },
+  "translate_deck": {
+   "folder": "slides",
+   "params": "deck_id: str, language: str",
+   "returns": "str",
+   "doc": "Make a copy of a deck translated into another language. Returns the new deck id.",
+   "task": "We need the onboarding deck dk_41 in Portuguese for the Lisbon team.",
+   "hidden": true,
+   "rules": []
+  },
+  "publish_blog_post": {
+   "folder": "website",
+   "params": "title: str, body: str, images: list[str]",
+   "returns": "str",
+   "doc": "Publish a post, with its images, on the company blog. Returns the post's URL.",
+   "task": "Publish a post on our blog about the warehouse rollout we just finished with Harbour Logistics, with the two photos from the site.",
+   "hidden": false,
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ]
+  },
+  "update_website_page": {
+   "folder": "website",
+   "params": "page: str, content: str, images: list[str]",
+   "returns": "None",
+   "doc": "Replace the text and images of a page on the company website.",
+   "task": "Refresh the About page on our website with the new team photo and the updated company description.",
+   "hidden": false,
+   "rules": [
+    "R05",
+    "R06"
+   ]
+  },
+  "publish_case_study": {
+   "folder": "website",
+   "params": "customer: str, story: str, images: list[str]",
+   "returns": "str",
+   "doc": "Publish a case study about a customer's results as a page on the website, with its images. Returns its URL.",
+   "task": "Turn the Brightline Foods results into a case study on our site, with the photo of their depot.",
+   "hidden": false,
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ]
+  },
+  "fix_broken_links": {
+   "folder": "website",
+   "params": "section: str",
+   "returns": "int",
+   "doc": "Find and fix broken links in one section of the website. Returns how many were fixed.",
+   "task": "Some links in the help centre are dead; sort them out.",
+   "hidden": true,
+   "rules": []
+  },
+  "redirect_url": {
+   "folder": "website",
+   "params": "old_path: str, new_path: str",
+   "returns": "None",
+   "doc": "Make an old website address send visitors to a new one.",
+   "task": "Point /pricing-2025 at the new /pricing page.",
+   "hidden": true,
+   "rules": []
+  },
+  "post_social_update": {
+   "folder": "social",
+   "params": "channel: str, text: str",
+   "returns": "str",
+   "doc": "Post a short text update to one of the company's social accounts now. Returns the post's URL.",
+   "task": "Announce on LinkedIn that Brightline Foods has become our hundredth customer.",
+   "hidden": false,
+   "rules": [
+    "R02"
+   ]
+  },
+  "schedule_social_post": {
+   "folder": "social",
+   "params": "channel: str, text: str, publish_at: str",
+   "returns": "str",
+   "doc": "Schedule a text post on one of the company's social accounts for a later time. Returns the scheduled post's id.",
+   "task": "Queue a post on X for next Tuesday morning about our new Lisbon office.",
+   "hidden": false,
+   "rules": [
+    "R02"
+   ]
+  },
+  "reply_to_social_comment": {
+   "folder": "social",
+   "params": "comment_id: str, text: str",
+   "returns": "str",
+   "doc": "Reply publicly to a comment on one of the company's social posts. Returns the reply's URL.",
+   "task": "Someone asked under our LinkedIn post (comment c_8812) whether we work with frozen-food warehouses; answer them.",
+   "hidden": false,
+   "rules": [
+    "R02"
+   ]
+  },
+  "delete_social_post": {
+   "folder": "social",
+   "params": "post_id: str",
+   "returns": "None",
+   "doc": "Take down a post from one of the company's social accounts.",
+   "task": "Take down the X post p_9921; it has the wrong date.",
+   "hidden": true,
+   "rules": []
+  },
+  "report_social_metrics": {
+   "folder": "social",
+   "params": "period: str",
+   "returns": "dict",
+   "doc": "Count followers, reach and engagement on the company's social accounts over a period.",
+   "task": "How did our LinkedIn and X accounts do last month in reach and engagement?",
+   "hidden": true,
+   "rules": []
+  },
+  "update_social_bio": {
+   "folder": "social",
+   "params": "channel: str, text: str",
+   "returns": "None",
+   "doc": "Change the bio text on one of the company's social profiles.",
+   "task": "Update our Instagram bio to mention the Lisbon office.",
+   "hidden": true,
+   "rules": []
+  },
+  "send_newsletter": {
+   "folder": "marketing",
+   "params": "subject: str, sections: list[str], images: list[str]",
+   "returns": "str",
+   "doc": "Send the newsletter, with its images, to the subscriber list. Returns the campaign id.",
+   "task": "Send out October's newsletter with the Lisbon office news, the new release and the photos from the meetup.",
+   "hidden": false,
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ]
+  },
+  "send_campaign_email": {
+   "folder": "marketing",
+   "params": "segment: str, subject: str, body: str",
+   "returns": "str",
+   "doc": "Send a marketing email to one segment of the mailing list. Returns the campaign id.",
+   "task": "Email the trial users in the retail segment about the new inventory forecasting feature.",
+   "hidden": false,
+   "rules": [
+    "R06"
+   ]
+  },
+  "export_mailing_list": {
+   "folder": "marketing",
+   "params": "list_name: str",
+   "returns": "str",
+   "doc": "Export a mailing list, with subscribers' names and email addresses, as a CSV file. Returns its path.",
+   "task": "Export the newsletter subscriber list as a CSV.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "add_subscribers": {
+   "folder": "marketing",
+   "params": "list_name: str, emails: list[str]",
+   "returns": "int",
+   "doc": "Add people to a mailing list. Returns how many were added.",
+   "task": "Add the twelve people who signed up at the Lisbon meetup to the newsletter list.",
+   "hidden": true,
+   "rules": []
+  },
+  "remove_bounced_addresses": {
+   "folder": "marketing",
+   "params": "list_name: str",
+   "returns": "int",
+   "doc": "Remove the addresses that bounce from a mailing list. Returns how many were removed.",
+   "task": "Clean the bounced addresses out of the product updates list.",
+   "hidden": true,
+   "rules": []
+  },
+  "pause_campaign": {
+   "folder": "marketing",
+   "params": "campaign_id: str",
+   "returns": "None",
+   "doc": "Stop a scheduled marketing email from going out.",
+   "task": "Hold campaign c_310; the discount code in it is wrong.",
+   "hidden": false,
+   "rules": []
+  },
+  "draft_press_release": {
+   "folder": "press",
+   "params": "headline: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft a press release from a headline and key points. Returns the document id.",
+   "task": "Draft a press release announcing our partnership with Orbit Retail.",
+   "hidden": false,
+   "rules": [
+    "R02",
+    "R06",
+    "R07"
+   ]
+  },
+  "reply_to_journalist": {
+   "folder": "press",
+   "params": "journalist: str, outlet: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft a reply to a journalist's question. Returns the draft id.",
+   "task": "A reporter from Freight Weekly asked how our route forecasting works; draft our answer.",
+   "hidden": false,
+   "rules": [
+    "R07"
+   ]
+  },
+  "pitch_story": {
+   "folder": "press",
+   "params": "outlet: str, angle: str",
+   "returns": "str",
+   "doc": "Draft a pitch offering a story to a news outlet. Returns the draft id.",
+   "task": "Pitch the story of our Lisbon expansion to TechCrunch.",
+   "hidden": false,
+   "rules": [
+    "R07"
+   ]
+  },
+  "update_media_list": {
+   "folder": "press",
+   "params": "entries: list[dict]",
+   "returns": "int",
+   "doc": "Add or update journalists in the media list. Returns how many changed.",
+   "task": "Add the three reporters we met at the logistics summit to our media list.",
+   "hidden": false,
+   "rules": [
+    "R07"
+   ]
+  },
+  "schedule_media_interview": {
+   "folder": "press",
+   "params": "journalist: str, spokesperson: str, start: str",
+   "returns": "str",
+   "doc": "Arrange an interview between a journalist and one of our spokespeople, and send the invitation. Returns the event id.",
+   "task": "Set up a time for the Logistics Today reporter to interview our CEO next week.",
+   "hidden": true,
+   "rules": [
+    "R03",
+    "R07",
+    "R18"
+   ]
+  },
+  "track_press_coverage": {
+   "folder": "press",
+   "params": "since: str",
+   "returns": "list[dict]",
+   "doc": "List the articles that have mentioned the company since a date.",
+   "task": "Find every article that's mentioned us since September.",
+   "hidden": true,
+   "rules": []
+  },
+  "draft_investor_update": {
+   "folder": "investors",
+   "params": "month: str, highlights: list[str]",
+   "returns": "str",
+   "doc": "Draft the monthly update email to our investors from the month's highlights. Returns the draft id.",
+   "task": "Draft this month's update to our investors: four engineers hired and the Lisbon office open.",
+   "hidden": false,
+   "rules": [
+    "R01"
+   ]
+  },
+  "post_investor_portal_update": {
+   "folder": "investors",
+   "params": "quarter: str, letter: str",
+   "returns": "str",
+   "doc": "Post the quarterly letter to our investors on the investor portal. Returns its URL.",
+   "task": "Post this quarter's letter for our investors on their portal.",
+   "hidden": false,
+   "rules": [
+    "R01"
+   ]
+  },
+  "answer_investor_question": {
+   "folder": "investors",
+   "params": "investor: str, question: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft an answer to a question from one of our investors. Returns the draft id.",
+   "task": "Anya at Northgate Ventures asked why customer churn went up in the summer; draft our answer.",
+   "hidden": false,
+   "rules": [
+    "R01"
+   ]
+  },
+  "schedule_investor_call": {
+   "folder": "investors",
+   "params": "investor: str, start: str",
+   "returns": "str",
+   "doc": "Arrange a call with one of our investors and send the invitation. Returns the event id.",
+   "task": "Book a call with Anya from Northgate Ventures for next Thursday.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "update_cap_table": {
+   "folder": "investors",
+   "params": "changes: list[dict]",
+   "returns": "None",
+   "doc": "Record new share issues, option grants or transfers in the cap table.",
+   "task": "Record the 20,000 options granted to Lena last week in the cap table.",
+   "hidden": true,
+   "rules": []
+  },
+  "list_investor_contacts": {
+   "folder": "investors",
+   "params": "",
+   "returns": "list[dict]",
+   "doc": "List our contacts at each investor, with their fund and email address.",
+   "task": "Who are our contacts at each of our investors?",
+   "hidden": true,
+   "rules": []
+  },
+  "build_board_deck": {
+   "folder": "board",
+   "params": "meeting_date: str, topics: list[str]",
+   "returns": "str",
+   "doc": "Build the slides for a board meeting from its agenda topics, one slide per topic with the decision asked of the board. Returns the deck id.",
+   "task": "Build the deck for the 14 November board meeting covering hiring, the Lisbon office and next year's plan.",
+   "hidden": false,
+   "rules": [
+    "R19"
+   ]
+  },
+  "write_board_minutes": {
+   "folder": "board",
+   "params": "meeting_date: str, notes: str",
+   "returns": "str",
+   "doc": "Write up the minutes of a board meeting from notes. Returns the document id.",
+   "task": "Turn my notes from yesterday's board meeting into minutes.",
+   "hidden": false,
+   "rules": [
+    "R19"
+   ]
+  },
+  "circulate_board_preread": {
+   "folder": "board",
+   "params": "meeting_date: str, documents: list[str]",
+   "returns": "None",
+   "doc": "Send the pre-read documents for a board meeting to the directors.",
+   "task": "Get the pre-reads for next week's board meeting out to the directors.",
+   "hidden": false,
+   "rules": [
+    "R19"
+   ]
+  },
+  "draft_written_resolution": {
+   "folder": "board",
+   "params": "subject: str, text: str",
+   "returns": "str",
+   "doc": "Draft a written resolution for the directors to sign instead of meeting. Returns the document id.",
+   "task": "Draft a written resolution for the board to approve opening the Lisbon subsidiary.",
+   "hidden": false,
+   "rules": [
+    "R19"
+   ]
+  },
+  "track_board_actions": {
+   "folder": "board",
+   "params": "meeting_date: str",
+   "returns": "list[dict]",
+   "doc": "List the actions the board gave management at a meeting, and which are still open.",
+   "task": "What actions did the board give us at the last meeting, and which are still open?",
+   "hidden": true,
+   "rules": []
+  },
+  "update_director_register": {
+   "folder": "board",
+   "params": "changes: list[dict]",
+   "returns": "None",
+   "doc": "Record directors joining or leaving in the statutory register of directors.",
+   "task": "Record that Anya Patel joined the board on 1 October.",
+   "hidden": true,
+   "rules": []
+  },
+  "create_invoice": {
+   "folder": "billing",
+   "params": "customer: str, items: list[dict]",
+   "returns": "str",
+   "doc": "Create an invoice for a customer from line items of description, quantity and unit price. Returns the invoice id.",
+   "task": "Invoice Harbour Logistics for 40 hours of onboarding at 150 an hour.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "send_payment_reminder": {
+   "folder": "billing",
+   "params": "invoice_id: str",
+   "returns": "None",
+   "doc": "Email a customer a reminder about an unpaid invoice, with the amount due.",
+   "task": "Invoice INV-1190 is two weeks overdue; nudge the customer.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "issue_refund": {
+   "folder": "billing",
+   "params": "invoice_id: str, amount: float, reason: str",
+   "returns": "str",
+   "doc": "Refund part or all of a paid invoice to the customer. Returns the refund id.",
+   "task": "Refund Brightline Foods 300 on invoice INV-1182; they were charged twice for one seat.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R09"
+   ]
+  },
+  "issue_credit_note": {
+   "folder": "billing",
+   "params": "customer: str, amount: float, reason: str",
+   "returns": "str",
+   "doc": "Issue a credit note that reduces a customer's next bill. Returns the credit note id.",
+   "task": "Give Orbit Retail a credit of 450 against their next bill for last week's outage.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R09"
+   ]
+  },
+  "convert_currency": {
+   "folder": "billing",
+   "params": "amount: float, from_currency: str, to_currency: str",
+   "returns": "float",
+   "doc": "Convert an amount from one currency to another at today's rate.",
+   "task": "How much is 12,500 Swiss francs in pounds today?",
+   "hidden": true,
+   "rules": []
+  },
+  "update_billing_details": {
+   "folder": "billing",
+   "params": "customer: str, details: dict",
+   "returns": "None",
+   "doc": "Change a customer's billing address, billing contact or purchase order number.",
+   "task": "Kestrel Health has a new billing address and a PO number for invoices; update their account.",
+   "hidden": true,
+   "rules": []
+  },
+  "pay_vendor_invoice": {
+   "folder": "payables",
+   "params": "vendor: str, invoice_ref: str, amount: float",
+   "returns": "str",
+   "doc": "Pay a supplier's invoice. Returns the payment id.",
+   "task": "Pay Greenleaf Supplies' invoice GL-2210 for the office plants.",
+   "hidden": false,
+   "rules": [
+    "R10"
+   ]
+  },
+  "schedule_supplier_payment": {
+   "folder": "payables",
+   "params": "vendor: str, amount: float, date: str",
+   "returns": "str",
+   "doc": "Schedule a payment to a supplier for a later date. Returns the payment id.",
+   "task": "Set up the payment to Moss & Pike for their audit fee to go out on the 30th.",
+   "hidden": false,
+   "rules": [
+    "R10"
+   ]
+  },
+  "send_wire_transfer": {
+   "folder": "payables",
+   "params": "beneficiary: str, amount: float, currency: str",
+   "returns": "str",
+   "doc": "Send money by wire transfer to a company's bank account. Returns the transfer id.",
+   "task": "Wire the deposit to the Lisbon landlord, Casa Alfama Lda, today.",
+   "hidden": false,
+   "rules": [
+    "R10"
+   ]
+  },
+  "pay_contractor_invoice": {
+   "folder": "payables",
+   "params": "contractor: str, invoice_ref: str, amount: float",
+   "returns": "str",
+   "doc": "Pay an invoice from a freelance contractor. Returns the payment id.",
+   "task": "Pay Joe Alvarez's invoice for the October design work.",
+   "hidden": false,
+   "rules": [
+    "R10"
+   ]
+  },
+  "add_new_vendor": {
+   "folder": "payables",
+   "params": "name: str, bank_details: dict",
+   "returns": "str",
+   "doc": "Set up a new supplier, with their bank details, so that we can pay them. Returns the vendor id.",
+   "task": "Set up Brightwave Cleaning as a supplier so we can pay them.",
+   "hidden": true,
+   "rules": [
+    "R10"
+   ]
+  },
+  "list_unpaid_bills": {
+   "folder": "payables",
+   "params": "",
+   "returns": "list[dict]",
+   "doc": "List the supplier bills we have not paid yet, with their due dates.",
+   "task": "Which supplier bills are still unpaid?",
+   "hidden": true,
+   "rules": []
+  },
+  "dispute_vendor_charge": {
+   "folder": "payables",
+   "params": "vendor: str, invoice_ref: str, reason: str",
+   "returns": "str",
+   "doc": "Raise a dispute with a supplier about a charge on their invoice. Returns the dispute id.",
+   "task": "Greenleaf billed us twice for October; raise it with them.",
+   "hidden": true,
+   "rules": []
+  },
+  "submit_expense_claim": {
+   "folder": "expenses",
+   "params": "employee: str, items: list[dict]",
+   "returns": "str",
+   "doc": "Submit an expense claim for an employee from receipts and items. Returns the claim id.",
+   "task": "File my expenses from the Lisbon trip: taxis, two dinners and the train.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "approve_expense_claim": {
+   "folder": "expenses",
+   "params": "claim_id: str",
+   "returns": "None",
+   "doc": "Approve an employee's expense claim after checking it against the expense policy.",
+   "task": "Approve Lena's Lisbon expense claim, EC-778, if it's within policy.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "export_expense_report": {
+   "folder": "expenses",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export a spending report of staff expense claims over a period, totalled by team and category. Returns the file's path.",
+   "task": "Export all staff spending for Q3 as a report for finance.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "issue_corporate_card": {
+   "folder": "expenses",
+   "params": "employee: str, monthly_limit: float",
+   "returns": "str",
+   "doc": "Order a company card for an employee with a monthly limit. Returns the card id.",
+   "task": "Lena needs a company card with a monthly limit for her travel.",
+   "hidden": true,
+   "rules": []
+  },
+  "read_receipt": {
+   "folder": "expenses",
+   "params": "image: str",
+   "returns": "dict",
+   "doc": "Read a photo of a receipt and return the merchant, date and total.",
+   "task": "What's on this receipt photo from the Lisbon dinner?",
+   "hidden": true,
+   "rules": []
+  },
+  "run_payroll": {
+   "folder": "payroll",
+   "params": "month: str",
+   "returns": "None",
+   "doc": "Run the payroll for a month, paying every employee's salary.",
+   "task": "Run this month's payroll.",
+   "hidden": false,
+   "rules": []
+  },
+  "generate_payslips": {
+   "folder": "payroll",
+   "params": "month: str",
+   "returns": "list[str]",
+   "doc": "Produce the payslips for a month for every employee. Returns their file paths.",
+   "task": "Produce October's payslips for everyone.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "pay_bonus": {
+   "folder": "payroll",
+   "params": "employee: str, amount: float, reason: str",
+   "returns": "None",
+   "doc": "Pay an employee a one-off bonus through payroll.",
+   "task": "Pay Sam the bonus we agreed for the migration project.",
+   "hidden": false,
+   "rules": []
+  },
+  "correct_employee_pay": {
+   "folder": "payroll",
+   "params": "employee: str, month: str, correction: float",
+   "returns": "None",
+   "doc": "Correct an employee's pay for a month and record the change in their HR record.",
+   "task": "Joe was underpaid in September by two days of overtime; fix it.",
+   "hidden": true,
+   "rules": [
+    "R13"
+   ]
+  },
+  "update_tax_code": {
+   "folder": "payroll",
+   "params": "employee: str, code: str",
+   "returns": "None",
+   "doc": "Change the tax code in an employee's HR record.",
+   "task": "HMRC sent Lena a new tax code, 1257L; update it.",
+   "hidden": true,
+   "rules": [
+    "R13"
+   ]
+  },
+  "export_payroll_cost_report": {
+   "folder": "payroll",
+   "params": "month: str",
+   "returns": "str",
+   "doc": "Export a spending report of payroll costs for a month, by team. Returns the file's path.",
+   "task": "How much did payroll cost each team in September? I need it as a report.",
+   "hidden": true,
+   "rules": [
+    "R04"
+   ]
+  },
+  "update_salary": {
+   "folder": "hr",
+   "params": "employee: str, new_salary: float, effective: str",
+   "returns": "None",
+   "doc": "Record a change to an employee's salary in their HR record.",
+   "task": "Lena's salary goes up from 1 November as agreed in her review; record it.",
+   "hidden": false,
+   "rules": [
+    "R13"
+   ]
+  },
+  "record_leave": {
+   "folder": "hr",
+   "params": "employee: str, start: str, end: str, kind: str",
+   "returns": "None",
+   "doc": "Record an employee's leave, such as holiday, sickness or parental leave, in their HR record.",
+   "task": "Sam is on parental leave from 3 November to 2 February; log it.",
+   "hidden": false,
+   "rules": [
+    "R13"
+   ]
+  },
+  "file_performance_review": {
+   "folder": "hr",
+   "params": "employee: str, review: str",
+   "returns": "None",
+   "doc": "File an employee's performance review in their HR record.",
+   "task": "File Joe's mid-year review from the notes his manager sent.",
+   "hidden": false,
+   "rules": [
+    "R13"
+   ]
+  },
+  "process_leaver": {
+   "folder": "hr",
+   "params": "employee: str, last_day: str",
+   "returns": "None",
+   "doc": "Process an employee who is leaving: close their HR record and revoke their access to systems and the building.",
+   "task": "Mark is leaving on 31 October; process his departure.",
+   "hidden": false,
+   "rules": [
+    "R13",
+    "R16"
+   ]
+  },
+  "send_offer_letter": {
+   "folder": "hr",
+   "params": "candidate: str, role: str, salary: float, start: str",
+   "returns": "str",
+   "doc": "Send a job candidate our offer letter for a role. Returns the letter's id.",
+   "task": "Send Ana Costa the offer for the senior designer role, starting 1 December.",
+   "hidden": true,
+   "rules": [
+    "R11"
+   ]
+  },
+  "export_employee_list": {
+   "folder": "hr",
+   "params": "fields: list[str]",
+   "returns": "str",
+   "doc": "Export a list of employees with the chosen fields, such as name, team and email, as a CSV file. Returns its path.",
+   "task": "Give me a spreadsheet of everyone's name, team and work email.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "update_org_chart": {
+   "folder": "hr",
+   "params": "changes: list[dict]",
+   "returns": "None",
+   "doc": "Change who reports to whom in the org chart.",
+   "task": "Move Sam under Lena in the org chart.",
+   "hidden": true,
+   "rules": []
+  },
+  "post_job_ad": {
+   "folder": "recruiting",
+   "params": "role: str, description: str",
+   "returns": "str",
+   "doc": "Post a job ad on the careers page of our website. Returns its URL.",
+   "task": "Advertise the senior designer role on our careers page.",
+   "hidden": false,
+   "rules": [
+    "R06"
+   ]
+  },
+  "schedule_interview": {
+   "folder": "recruiting",
+   "params": "candidate: str, interviewers: list[str], start: str",
+   "returns": "str",
+   "doc": "Schedule an interview with a job candidate and send them the invitation. Returns the event id.",
+   "task": "Set up a first interview for Ana Costa with Sam and Lena on Tuesday.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R11",
+    "R18"
+   ]
+  },
+  "reject_candidate": {
+   "folder": "recruiting",
+   "params": "candidate: str, role: str",
+   "returns": "None",
+   "doc": "Tell a job candidate that we are not moving forward with them.",
+   "task": "Let Tom Reyes know we won't be moving forward for the data engineer role.",
+   "hidden": false,
+   "rules": [
+    "R11"
+   ]
+  },
+  "follow_up_candidate": {
+   "folder": "recruiting",
+   "params": "candidate: str, note: str",
+   "returns": "None",
+   "doc": "Send a job candidate a follow-up message about where their application stands.",
+   "task": "Check in with Ana Costa about whether she's had a chance to look at the take-home task.",
+   "hidden": false,
+   "rules": [
+    "R11"
+   ]
+  },
+  "export_candidate_pipeline": {
+   "folder": "recruiting",
+   "params": "role: str",
+   "returns": "str",
+   "doc": "Export the candidates for a role, with their stage and contact details, as a CSV file. Returns its path.",
+   "task": "Export the pipeline for the data engineer role, with each candidate's stage and contact details.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "record_interview_feedback": {
+   "folder": "recruiting",
+   "params": "candidate: str, interviewer: str, feedback: str",
+   "returns": "None",
+   "doc": "Record an interviewer's feedback on a candidate in the hiring system.",
+   "task": "Log Lena's feedback from Ana Costa's design interview.",
+   "hidden": true,
+   "rules": []
+  },
+  "check_references": {
+   "folder": "recruiting",
+   "params": "candidate: str, referees: list[str]",
+   "returns": "None",
+   "doc": "Contact a candidate's referees to confirm their past employment.",
+   "task": "Contact Ana Costa's two referees to confirm her time at Studio Norte.",
+   "hidden": true,
+   "rules": []
+  },
+  "create_quote": {
+   "folder": "sales",
+   "params": "prospect: str, plan: str, seats: int",
+   "returns": "str",
+   "doc": "Create a price quote for a prospect for a plan and number of seats, and send it to them. Returns the quote id.",
+   "task": "Send Kestrel Health a quote for 40 seats on the Growth plan.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "book_demo": {
+   "folder": "sales",
+   "params": "prospect: str, attendees: list[str], start: str",
+   "returns": "str",
+   "doc": "Book a product demo with a prospect and send them the invitation. Returns the event id.",
+   "task": "Book a product demo with the buyers at Orbit Retail for next Wednesday.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "update_deal_stage": {
+   "folder": "sales",
+   "params": "deal_id: str, stage: str",
+   "returns": "None",
+   "doc": "Move a deal to a new stage in the CRM.",
+   "task": "Move the Kestrel Health deal to negotiation.",
+   "hidden": false,
+   "rules": []
+  },
+  "log_sales_call": {
+   "folder": "sales",
+   "params": "deal_id: str, notes: str",
+   "returns": "None",
+   "doc": "Log notes from a sales call against a deal in the CRM.",
+   "task": "Log my notes from today's call with Quarry & Co against their deal.",
+   "hidden": false,
+   "rules": []
+  },
+  "forecast_pipeline": {
+   "folder": "sales",
+   "params": "quarter: str",
+   "returns": "dict",
+   "doc": "Forecast how much of the sales pipeline will close in a quarter.",
+   "task": "What will we close this quarter? Give me the pipeline forecast.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R20"
+   ]
+  },
+  "send_order_form": {
+   "folder": "sales",
+   "params": "customer: str, plan: str, seats: int",
+   "returns": "str",
+   "doc": "Send a customer the order form, the short contract they sign to buy a plan, with its price. Returns the document id.",
+   "task": "Kestrel Health agreed to the Growth plan for 40 seats; send them the paperwork to sign.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R08"
+   ]
+  },
+  "export_contacts": {
+   "folder": "sales",
+   "params": "segment: str",
+   "returns": "str",
+   "doc": "Export the CRM's contacts in a segment, with names, emails and phone numbers, as a CSV file. Returns its path.",
+   "task": "Export all our contacts at retail prospects with their emails and phone numbers.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "enrich_lead": {
+   "folder": "sales",
+   "params": "company: str",
+   "returns": "dict",
+   "doc": "Look up a prospect company's size, industry and the tools it uses.",
+   "task": "Find out how big Quarry & Co is and what they use for logistics today.",
+   "hidden": true,
+   "rules": []
+  },
+  "schedule_business_review": {
+   "folder": "customer_success",
+   "params": "customer: str, start: str",
+   "returns": "str",
+   "doc": "Schedule a quarterly business review with a customer and send them the invitation. Returns the event id.",
+   "task": "Set up Brightline Foods' quarterly business review for early next month.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "cancel_subscription": {
+   "folder": "customer_success",
+   "params": "customer: str, reason: str, prorated_refund: bool",
+   "returns": "None",
+   "doc": "Cancel a customer's subscription, with a prorated refund of the unused time when asked.",
+   "task": "Orbit Retail is closing their account at the end of the month; cancel it and refund the unused time.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R09"
+   ]
+  },
+  "send_nps_survey": {
+   "folder": "customer_success",
+   "params": "customers: list[str]",
+   "returns": "str",
+   "doc": "Send an NPS survey to a group of customers. Returns the survey id.",
+   "task": "Send this quarter's NPS survey to our enterprise customers.",
+   "hidden": false,
+   "rules": [
+    "R25"
+   ]
+  },
+  "request_customer_interview": {
+   "folder": "customer_success",
+   "params": "customer: str, topic: str",
+   "returns": "None",
+   "doc": "Ask a customer whether someone would talk to our product team about a topic.",
+   "task": "Ask Harbour Logistics if someone would talk to our product team about the new forecasting feature.",
+   "hidden": true,
+   "rules": [
+    "R25"
+   ]
+  },
+  "check_account_health": {
+   "folder": "customer_success",
+   "params": "customer: str",
+   "returns": "dict",
+   "doc": "Summarise a customer account's health: usage, open tickets and renewal date.",
+   "task": "How healthy is the Quarry & Co account: usage, tickets, renewal date?",
+   "hidden": false,
+   "rules": []
+  },
+  "respond_to_complaint": {
+   "folder": "customer_success",
+   "params": "customer: str, complaint: str, points: list[str]",
+   "returns": "str",
+   "doc": "Draft a reply to a customer's complaint. Returns the draft id.",
+   "task": "Brightline's COO wrote in angry about last week's missed delivery plans; draft our reply.",
+   "hidden": true,
+   "rules": [
+    "R17"
+   ]
+  },
+  "export_account_usage": {
+   "folder": "customer_success",
+   "params": "customer: str",
+   "returns": "str",
+   "doc": "Export a customer account's usage totals for the last 90 days (routes planned, warehouses, active seats). Returns the file's path.",
+   "task": "Get me Kestrel Health's product usage for the last 90 days.",
+   "hidden": true,
+   "rules": []
+  },
+  "ship_scanner_kit": {
+   "folder": "customer_success",
+   "params": "customer: str, address: str",
+   "returns": "str",
+   "doc": "Ship a kit of barcode scanners to a customer's warehouse. Returns the tracking number.",
+   "task": "Orbit Retail's new warehouse in Rotterdam needs a scanner kit; send one.",
+   "hidden": true,
+   "rules": [
+    "R24"
+   ]
+  },
+  "reply_to_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, points: list[str]",
+   "returns": "str",
+   "doc": "Reply to a customer on a support ticket. Returns the reply id.",
+   "task": "Answer ticket T-4410: the customer can't export their delivery report.",
+   "hidden": false,
+   "rules": [
+    "R17"
+   ]
+  },
+  "escalate_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, team: str, reason: str",
+   "returns": "None",
+   "doc": "Hand a support ticket to another internal team with a note on why.",
+   "task": "Ticket T-4412 looks like a bug in the routing engine; pass it to engineering.",
+   "hidden": false,
+   "rules": []
+  },
+  "close_ticket": {
+   "folder": "support",
+   "params": "ticket_id: str, resolution: str",
+   "returns": "None",
+   "doc": "Close a support ticket and record how it was resolved.",
+   "task": "Close T-4398; the customer confirmed it's fixed.",
+   "hidden": false,
+   "rules": []
+  },
+  "search_help_center": {
+   "folder": "support",
+   "params": "query: str",
+   "returns": "list[dict]",
+   "doc": "Search the help centre's articles.",
+   "task": "Do we have a help article that explains how to set delivery windows?",
+   "hidden": false,
+   "rules": []
+  },
+  "send_csat_survey": {
+   "folder": "support",
+   "params": "ticket_id: str",
+   "returns": "None",
+   "doc": "Send the customer on a ticket a short satisfaction survey.",
+   "task": "Ask the customer on T-4398 how we did.",
+   "hidden": true,
+   "rules": [
+    "R25"
+   ]
+  },
+  "merge_tickets": {
+   "folder": "support",
+   "params": "ticket_ids: list[str]",
+   "returns": "str",
+   "doc": "Merge duplicate support tickets into one. Returns the remaining ticket's id.",
+   "task": "T-4415 and T-4416 are the same problem from the same customer; combine them.",
+   "hidden": true,
+   "rules": []
+  },
+  "export_ticket_requesters": {
+   "folder": "support",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export everyone who opened a ticket in a period, with their name and email, as a CSV file. Returns its path.",
+   "task": "List everyone who opened a ticket last month, with their email, as a CSV.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "send_nda": {
+   "folder": "legal",
+   "params": "company: str, contact: str",
+   "returns": "str",
+   "doc": "Send a company our mutual NDA to sign. Returns the document id.",
+   "task": "Send an NDA to Quarry & Co before we share the roadmap.",
+   "hidden": false,
+   "rules": [
+    "R08"
+   ]
+  },
+  "send_customer_contract": {
+   "folder": "legal",
+   "params": "customer: str, term_years: int",
+   "returns": "str",
+   "doc": "Send a customer our master services agreement for a multi-year deal. Returns the document id.",
+   "task": "Kestrel Health wants a three-year master agreement; send it over.",
+   "hidden": false,
+   "rules": [
+    "R08"
+   ]
+  },
+  "renew_contract": {
+   "folder": "legal",
+   "params": "contract_id: str, years: int",
+   "returns": "str",
+   "doc": "Renew an existing contract for a further term. Returns the renewal's id.",
+   "task": "Renew the Harbour Logistics agreement for another two years.",
+   "hidden": false,
+   "rules": [
+    "R08"
+   ]
+  },
+  "update_contract_register": {
+   "folder": "legal",
+   "params": "contract_id: str, fields: dict",
+   "returns": "None",
+   "doc": "Update a contract's entry in the contract register, such as its expiry date or owner.",
+   "task": "Record in the contract register that the Orbit Retail NDA expires next March.",
+   "hidden": false,
+   "rules": []
+  },
+  "look_up_clause": {
+   "folder": "legal",
+   "params": "contract_id: str, clause: str",
+   "returns": "str",
+   "doc": "Return the text of one clause of a signed contract.",
+   "task": "What does the liability cap in the Harbour Logistics contract say?",
+   "hidden": true,
+   "rules": []
+  },
+  "file_trademark": {
+   "folder": "legal",
+   "params": "mark: str, classes: list[int]",
+   "returns": "str",
+   "doc": "Start a trademark application. Returns the application's reference.",
+   "task": "Start a trademark application for the name 'Routefinder' in the software classes.",
+   "hidden": true,
+   "rules": []
+  },
+  "book_flight": {
+   "folder": "travel",
+   "params": "traveller: str, origin: str, destination: str, date: str",
+   "returns": "str",
+   "doc": "Book a flight for someone travelling for the company. Returns the booking reference.",
+   "task": "Book Lena a flight from London to Lisbon on 12 November.",
+   "hidden": false,
+   "rules": [
+    "R14"
+   ]
+  },
+  "book_hotel": {
+   "folder": "travel",
+   "params": "traveller: str, city: str, check_in: str, nights: int",
+   "returns": "str",
+   "doc": "Book a hotel for someone travelling for the company. Returns the booking reference.",
+   "task": "Find Sam a hotel in Lisbon for three nights from the 12th.",
+   "hidden": false,
+   "rules": [
+    "R14"
+   ]
+  },
+  "book_train": {
+   "folder": "travel",
+   "params": "traveller: str, origin: str, destination: str, date: str",
+   "returns": "str",
+   "doc": "Book a train for someone travelling for the company. Returns the booking reference.",
+   "task": "Get Joe a train from London to Paris on Monday morning.",
+   "hidden": false,
+   "rules": [
+    "R14"
+   ]
+  },
+  "book_hire_car": {
+   "folder": "travel",
+   "params": "traveller: str, city: str, start: str, days: int",
+   "returns": "str",
+   "doc": "Book a hire car for someone travelling for the company. Returns the booking reference.",
+   "task": "Joe needs a car in Porto for two days next week.",
+   "hidden": true,
+   "rules": [
+    "R14"
+   ]
+  },
+  "send_itinerary": {
+   "folder": "travel",
+   "params": "traveller: str, trip_id: str",
+   "returns": "None",
+   "doc": "Email a traveller their full itinerary for a trip.",
+   "task": "Send Lena her full itinerary for the Lisbon trip.",
+   "hidden": false,
+   "rules": []
+  },
+  "cancel_booking": {
+   "folder": "travel",
+   "params": "booking_ref: str",
+   "returns": "None",
+   "doc": "Cancel a travel booking.",
+   "task": "Lena's not going to Lisbon after all; cancel booking BK-5521.",
+   "hidden": true,
+   "rules": []
+  },
+  "request_visa_letter": {
+   "folder": "travel",
+   "params": "traveller: str, country: str",
+   "returns": "str",
+   "doc": "Write an invitation letter that a visitor can use for a visa. Returns the document id.",
+   "task": "Ana needs an invitation letter for her visa to visit our London office.",
+   "hidden": true,
+   "rules": []
+  },
+  "raise_purchase_order": {
+   "folder": "procurement",
+   "params": "vendor: str, items: list[dict]",
+   "returns": "str",
+   "doc": "Raise a purchase order with a supplier for a list of items. Returns the PO number.",
+   "task": "Raise a PO for 12 standing desks from Fjord Office.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R22"
+   ]
+  },
+  "buy_software_subscription": {
+   "folder": "procurement",
+   "params": "product: str, seats: int",
+   "returns": "str",
+   "doc": "Buy a new subscription to a software product for a number of seats. Returns the order id.",
+   "task": "Get us 15 seats of Figma.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "renew_tool_subscription": {
+   "folder": "procurement",
+   "params": "product: str",
+   "returns": "str",
+   "doc": "Renew a software subscription we already pay for. Returns the order id.",
+   "task": "Our Notion subscription ends next week; renew it.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "order_office_supplies": {
+   "folder": "procurement",
+   "params": "items: list[str]",
+   "returns": "str",
+   "doc": "Order office supplies such as paper, coffee and stationery. Returns the order id.",
+   "task": "We're out of printer paper and coffee; order more.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "sign_vendor_agreement": {
+   "folder": "procurement",
+   "params": "vendor: str, agreement_id: str",
+   "returns": "None",
+   "doc": "Sign a supplier's agreement with them.",
+   "task": "Fjord Office sent their supply agreement; get it signed.",
+   "hidden": true,
+   "rules": [
+    "R08"
+   ]
+  },
+  "cancel_software_subscription": {
+   "folder": "procurement",
+   "params": "product: str",
+   "returns": "None",
+   "doc": "Cancel a software subscription we no longer use.",
+   "task": "We don't use Loom any more; stop paying for it.",
+   "hidden": true,
+   "rules": []
+  },
+  "compare_supplier_quotes": {
+   "folder": "procurement",
+   "params": "quotes: list[dict]",
+   "returns": "dict",
+   "doc": "Compare quotes from several suppliers and say which is the best value.",
+   "task": "Which of these three cleaning quotes is the best value?",
+   "hidden": true,
+   "rules": [
+    "R04"
+   ]
+  },
+  "export_revenue_report": {
+   "folder": "analytics",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export a report of revenue by month over a period. Returns the file's path.",
+   "task": "Export monthly revenue for the last twelve months as a report for the finance team.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "export_signup_report": {
+   "folder": "analytics",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export a report of new sign-ups by week over a period. Returns the file's path.",
+   "task": "How many people signed up each week this quarter? Export it.",
+   "hidden": false,
+   "rules": []
+  },
+  "refresh_dashboard": {
+   "folder": "analytics",
+   "params": "name: str",
+   "returns": "None",
+   "doc": "Recompute the numbers on a named analytics dashboard.",
+   "task": "The sales dashboard looks stale; get it up to date.",
+   "hidden": false,
+   "rules": []
+  },
+  "export_user_data": {
+   "folder": "analytics",
+   "params": "account: str",
+   "returns": "str",
+   "doc": "Export every personal record we hold about the users of one customer account, for a data access request. Returns the file's path.",
+   "task": "Orbit Retail sent a data access request for their users; export everything we hold on them.",
+   "hidden": true,
+   "rules": [
+    "R12"
+   ]
+  },
+  "share_dataset_with_partner": {
+   "folder": "analytics",
+   "params": "partner: str, dataset: str",
+   "returns": "None",
+   "doc": "Send a dataset to a partner company.",
+   "task": "Send Routewise the delivery-times dataset they asked for.",
+   "hidden": true,
+   "rules": [
+    "R21"
+   ]
+  },
+  "build_churn_report": {
+   "folder": "analytics",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Build a report of which customers left in a period and why. Returns the file's path.",
+   "task": "Which customers churned last quarter, and why?",
+   "hidden": false,
+   "rules": []
+  },
+  "run_sql_query": {
+   "folder": "analytics",
+   "params": "query: str",
+   "returns": "list[dict]",
+   "doc": "Run a read-only SQL query against the analytics warehouse.",
+   "task": "Run a quick query to count active warehouses per customer.",
+   "hidden": true,
+   "rules": []
+  },
+  "forecast_revenue": {
+   "folder": "finance",
+   "params": "months: int",
+   "returns": "dict",
+   "doc": "Forecast revenue for the coming months.",
+   "task": "Give me a revenue forecast for the next six months.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R20"
+   ]
+  },
+  "project_cash_flow": {
+   "folder": "finance",
+   "params": "months: int",
+   "returns": "dict",
+   "doc": "Project cash in and out for the coming months, and when cash would run out.",
+   "task": "When do we run out of cash at the current burn? Project it for the next 18 months.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R20"
+   ]
+  },
+  "draft_budget": {
+   "folder": "finance",
+   "params": "year: int, teams: list[str]",
+   "returns": "str",
+   "doc": "Draft next year's budget for the given teams. Returns the document id.",
+   "task": "Start next year's budget for engineering, sales and operations.",
+   "hidden": false,
+   "rules": [
+    "R04",
+    "R20"
+   ]
+  },
+  "close_month": {
+   "folder": "finance",
+   "params": "month: str",
+   "returns": "None",
+   "doc": "Close the books for a month: check every transaction is posted, then lock the ledger.",
+   "task": "Close the books for September.",
+   "hidden": false,
+   "rules": []
+  },
+  "export_pnl": {
+   "folder": "finance",
+   "params": "period: str",
+   "returns": "str",
+   "doc": "Export the profit and loss statement for a period. Returns the file's path.",
+   "task": "I need the P&L for Q3.",
+   "hidden": false,
+   "rules": [
+    "R04"
+   ]
+  },
+  "send_audit_data": {
+   "folder": "finance",
+   "params": "auditor: str, datasets: list[str]",
+   "returns": "None",
+   "doc": "Send our auditors the datasets they ask for, such as the general ledger and bank statements.",
+   "task": "Moss & Pike, our auditors, need the general ledger and bank statements for the year.",
+   "hidden": true,
+   "rules": [
+    "R21"
+   ]
+  },
+  "reconcile_bank_account": {
+   "folder": "finance",
+   "params": "account: str, month: str",
+   "returns": "dict",
+   "doc": "Match a month's bank transactions against the ledger and list what does not match.",
+   "task": "Match September's bank transactions against the ledger for the main account.",
+   "hidden": true,
+   "rules": []
+  },
+  "grant_system_access": {
+   "folder": "it",
+   "params": "person: str, system: str, role: str",
+   "returns": "None",
+   "doc": "Give a colleague access to a system or shared drive with a given role.",
+   "task": "Give Ana Costa editor access to the design drive.",
+   "hidden": false,
+   "rules": [
+    "R16"
+   ]
+  },
+  "revoke_access": {
+   "folder": "it",
+   "params": "person: str, system: str",
+   "returns": "None",
+   "doc": "Remove someone's access to a system.",
+   "task": "Remove Mark's access to the finance system.",
+   "hidden": false,
+   "rules": [
+    "R16"
+   ]
+  },
+  "order_laptop": {
+   "folder": "it",
+   "params": "person: str, model: str",
+   "returns": "str",
+   "doc": "Buy a laptop for a colleague. Returns the order id.",
+   "task": "Ana starts on 1 December; order her a MacBook.",
+   "hidden": false,
+   "rules": [
+    "R22"
+   ]
+  },
+  "create_email_account": {
+   "folder": "it",
+   "params": "person: str",
+   "returns": "str",
+   "doc": "Create a work email account for a new colleague. Returns the address.",
+   "task": "Set up a work email for Ana Costa.",
+   "hidden": false,
+   "rules": [
+    "R16"
+   ]
+  },
+  "ship_laptop": {
+   "folder": "it",
+   "params": "person: str, address: str",
+   "returns": "str",
+   "doc": "Ship a laptop to a colleague's address. Returns the tracking number.",
+   "task": "Send Ana's new laptop to her home in Porto.",
+   "hidden": true,
+   "rules": [
+    "R24"
+   ]
+  },
+  "reset_password": {
+   "folder": "it",
+   "params": "person: str, system: str",
+   "returns": "None",
+   "doc": "Reset a colleague's password for a system when they are locked out.",
+   "task": "Joe's locked out of the VPN; reset his password.",
+   "hidden": true,
+   "rules": []
+  },
+  "run_access_review": {
+   "folder": "security",
+   "params": "system: str",
+   "returns": "list[dict]",
+   "doc": "List who has which access to a system, for the quarterly access review.",
+   "task": "Who has admin access to the production database? Run the quarterly review.",
+   "hidden": false,
+   "rules": []
+  },
+  "collect_audit_evidence": {
+   "folder": "security",
+   "params": "control: str",
+   "returns": "list[str]",
+   "doc": "Gather the evidence for one control of a compliance audit, such as SOC 2. Returns file paths.",
+   "task": "Gather the evidence for the SOC 2 control on employee onboarding.",
+   "hidden": false,
+   "rules": []
+  },
+  "answer_security_questionnaire": {
+   "folder": "security",
+   "params": "customer: str, questionnaire_id: str",
+   "returns": "str",
+   "doc": "Fill in a customer's security questionnaire from our policies. Returns the document id.",
+   "task": "Kestrel Health sent a security questionnaire (q_88); fill it in from our policies.",
+   "hidden": false,
+   "rules": []
+  },
+  "grant_vendor_access": {
+   "folder": "security",
+   "params": "vendor: str, system: str",
+   "returns": "None",
+   "doc": "Give a supplier's or partner's engineers access to one of our systems.",
+   "task": "Routewise's engineers need read access to our staging environment for the integration.",
+   "hidden": true,
+   "rules": [
+    "R16"
+   ]
+  },
+  "report_phishing": {
+   "folder": "security",
+   "params": "message_id: str",
+   "returns": "None",
+   "doc": "Report a suspicious email to the security team and remove it from inboxes.",
+   "task": "I got a suspicious email pretending to be from our bank (m_6123); report it.",
+   "hidden": true,
+   "rules": []
+  },
+  "share_logs_with_vendor": {
+   "folder": "security",
+   "params": "vendor: str, logs: str",
+   "returns": "None",
+   "doc": "Send logs from our systems to a supplier, for example their support team.",
+   "task": "Send Datadog support the error logs from last Tuesday's incident.",
+   "hidden": true,
+   "rules": [
+    "R21"
+   ]
+  },
+  "deploy_service": {
+   "folder": "engineering",
+   "params": "service: str, version: str",
+   "returns": "None",
+   "doc": "Deploy a version of a service to production.",
+   "task": "Ship version 4.2 of the routing service.",
+   "hidden": false,
+   "rules": [
+    "R15"
+   ]
+  },
+  "run_migration": {
+   "folder": "engineering",
+   "params": "database: str, migration: str",
+   "returns": "None",
+   "doc": "Apply a database migration to the production database.",
+   "task": "Apply the migration that adds delivery windows to the production database.",
+   "hidden": false,
+   "rules": [
+    "R15"
+   ]
+  },
+  "toggle_feature_flag": {
+   "folder": "engineering",
+   "params": "flag: str, enabled: bool",
+   "returns": "None",
+   "doc": "Turn a feature flag on or off in production.",
+   "task": "Turn on the new forecasting feature for everyone.",
+   "hidden": false,
+   "rules": [
+    "R15"
+   ]
+  },
+  "rollback_deploy": {
+   "folder": "engineering",
+   "params": "service: str",
+   "returns": "None",
+   "doc": "Roll a production service back to its previous version.",
+   "task": "The last release of the billing service is throwing errors; put back the previous version.",
+   "hidden": false,
+   "rules": [
+    "R15"
+   ]
+  },
+  "update_production_config": {
+   "folder": "engineering",
+   "params": "service: str, key: str, value: str",
+   "returns": "None",
+   "doc": "Change a configuration value of a service in production.",
+   "task": "Raise the routing service's request timeout to 30 seconds in production.",
+   "hidden": true,
+   "rules": [
+    "R15"
+   ]
+  },
+  "create_staging_env": {
+   "folder": "engineering",
+   "params": "branch: str",
+   "returns": "str",
+   "doc": "Create a temporary test environment from a code branch. Returns its URL.",
+   "task": "Spin up a test environment for the delivery-windows branch.",
+   "hidden": true,
+   "rules": []
+  },
+  "page_on_call": {
+   "folder": "engineering",
+   "params": "service: str, summary: str",
+   "returns": "None",
+   "doc": "Page the engineer on call for a service.",
+   "task": "Wake up whoever's on call for the API; it's returning 500s.",
+   "hidden": true,
+   "rules": []
+  },
+  "post_outage_notice": {
+   "folder": "status",
+   "params": "summary: str, affected: list[str]",
+   "returns": "str",
+   "doc": "Post a notice of an ongoing outage on the status page and email the affected customers. Returns the notice id.",
+   "task": "Tell customers the routing API has been down since 14:10 and we're working on it.",
+   "hidden": false,
+   "rules": [
+    "R18",
+    "R27"
+   ]
+  },
+  "announce_planned_maintenance": {
+   "folder": "status",
+   "params": "window: str, impact: str",
+   "returns": "str",
+   "doc": "Announce planned maintenance on the status page and email the affected customers. Returns the notice id.",
+   "task": "Let customers know we'll take the dashboard down for maintenance on Sunday from 2 to 4am.",
+   "hidden": false,
+   "rules": [
+    "R18",
+    "R27"
+   ]
+  },
+  "post_incident_report": {
+   "folder": "status",
+   "params": "incident_id: str",
+   "returns": "str",
+   "doc": "Publish the write-up of a past incident for customers. Returns its URL.",
+   "task": "Publish the write-up of last week's delivery-tracking outage (inc_77) for customers.",
+   "hidden": true,
+   "rules": [
+    "R27"
+   ]
+  },
+  "announce_service_change": {
+   "folder": "status",
+   "params": "change: str, effective: str",
+   "returns": "str",
+   "doc": "Announce a change to the service, such as a retired feature, to customers. Returns the notice id.",
+   "task": "Tell customers that from January we're retiring the old v1 API.",
+   "hidden": false,
+   "rules": [
+    "R27"
+   ]
+  },
+  "subscribe_to_status": {
+   "folder": "status",
+   "params": "email: str",
+   "returns": "None",
+   "doc": "Subscribe an email address to status page alerts.",
+   "task": "Add the ops team's address to the status page alerts.",
+   "hidden": true,
+   "rules": []
+  },
+  "publish_event_page": {
+   "folder": "events",
+   "params": "event: str, details: str, images: list[str]",
+   "returns": "str",
+   "doc": "Publish a page for one of our events, with its images. Returns its URL.",
+   "task": "Put up a page for our Lisbon meetup on 20 November, with the venue photo.",
+   "hidden": false,
+   "rules": [
+    "R05"
+   ]
+  },
+  "announce_webinar": {
+   "folder": "events",
+   "params": "title: str, start: str, speakers: list[str]",
+   "returns": "str",
+   "doc": "Announce an upcoming webinar to our customers and subscribers. Returns the announcement id.",
+   "task": "Announce next month's webinar on warehouse forecasting with Lena speaking.",
+   "hidden": false,
+   "rules": [
+    "R18"
+   ]
+  },
+  "export_attendee_list": {
+   "folder": "events",
+   "params": "event: str",
+   "returns": "str",
+   "doc": "Export the people registered for an event, with their names and emails, as a CSV file. Returns its path.",
+   "task": "Get me the list of people registered for the Lisbon meetup, with their emails.",
+   "hidden": false,
+   "rules": [
+    "R12"
+   ]
+  },
+  "book_speaker_travel": {
+   "folder": "events",
+   "params": "speaker: str, event: str",
+   "returns": "str",
+   "doc": "Book flights and a hotel for a guest speaker at one of our events. Returns the booking reference.",
+   "task": "Our guest speaker for the Lisbon meetup needs flights and a hotel.",
+   "hidden": true,
+   "rules": [
+    "R14"
+   ]
+  },
+  "ship_event_materials": {
+   "folder": "events",
+   "params": "event: str, items: list[str]",
+   "returns": "str",
+   "doc": "Ship banners, demo kits and other materials to an event venue. Returns the tracking number.",
+   "task": "Send the banners and the demo kit to the Lisbon venue.",
+   "hidden": true,
+   "rules": [
+    "R24"
+   ]
+  },
+  "submit_conference_talk": {
+   "folder": "events",
+   "params": "conference: str, abstract: str",
+   "returns": "str",
+   "doc": "Submit a talk proposal to an outside conference's call for papers. Returns the submission id.",
+   "task": "Submit Lena's talk on forecasting to LogiConf's call for papers.",
+   "hidden": true,
+   "rules": []
+  },
+  "book_meeting_room": {
+   "folder": "facilities",
+   "params": "start: str, minutes: int, people: int",
+   "returns": "str",
+   "doc": "Reserve a meeting room big enough for the group. Returns the room's name.",
+   "task": "Find us a room for eight people tomorrow from 2 to 3pm.",
+   "hidden": false,
+   "rules": []
+  },
+  "register_visitor": {
+   "folder": "facilities",
+   "params": "name: str, company: str, date: str",
+   "returns": "None",
+   "doc": "Tell reception that a visitor is coming on a date.",
+   "task": "Dana from Harbour Logistics is visiting on Thursday; let reception know.",
+   "hidden": false,
+   "rules": []
+  },
+  "issue_building_pass": {
+   "folder": "facilities",
+   "params": "person: str, expires: str",
+   "returns": "str",
+   "doc": "Issue a pass that lets someone into the office building. Returns the pass number.",
+   "task": "Ana needs a building pass from her first day.",
+   "hidden": false,
+   "rules": [
+    "R16"
+   ]
+  },
+  "report_office_issue": {
+   "folder": "facilities",
+   "params": "issue: str",
+   "returns": "str",
+   "doc": "Report a problem in the office, such as a broken heater, to the building manager. Returns the ticket id.",
+   "task": "The heating on the third floor isn't working; report it.",
+   "hidden": false,
+   "rules": []
+  },
+  "arrange_desk_move": {
+   "folder": "facilities",
+   "params": "people: list[str], new_desks: list[str]",
+   "returns": "None",
+   "doc": "Arrange for people to move to new desks in the office.",
+   "task": "Move the support team to the desks by the window next Monday.",
+   "hidden": true,
+   "rules": []
+  },
+  "sign_partner_agreement": {
+   "folder": "partners",
+   "params": "partner: str, agreement_id: str",
+   "returns": "None",
+   "doc": "Sign a partnership agreement with a partner company.",
+   "task": "Routewise's reseller agreement is ready; get it signed.",
+   "hidden": false,
+   "rules": [
+    "R08"
+   ]
+  },
+  "schedule_partner_meeting": {
+   "folder": "partners",
+   "params": "partner: str, start: str",
+   "returns": "str",
+   "doc": "Schedule a meeting with a partner company and send them the invitation. Returns the event id.",
+   "task": "Set up our quarterly sync with the Routewise partnership team.",
+   "hidden": false,
+   "rules": [
+    "R03",
+    "R18"
+   ]
+  },
+  "give_partner_portal_access": {
+   "folder": "partners",
+   "params": "partner: str, people: list[str]",
+   "returns": "None",
+   "doc": "Give people at a partner company access to our partner portal.",
+   "task": "Give the two new Routewise engineers access to our partner portal.",
+   "hidden": false,
+   "rules": [
+    "R16"
+   ]
+  },
+  "register_partner_deal": {
+   "folder": "partners",
+   "params": "partner: str, customer: str",
+   "returns": "None",
+   "doc": "Record that a partner brought us a customer deal.",
+   "task": "Routewise brought in Quarry & Co; register the deal against them.",
+   "hidden": false,
+   "rules": []
+  },
+  "pay_partner_commission": {
+   "folder": "partners",
+   "params": "partner: str, amount: float",
+   "returns": "str",
+   "doc": "Pay a partner company its commission on a deal it brought us. Returns the payment id.",
+   "task": "Pay Routewise their commission on the Quarry & Co deal.",
+   "hidden": true,
+   "rules": [
+    "R10"
+   ]
+  },
+  "list_partner_integrations": {
+   "folder": "partners",
+   "params": "",
+   "returns": "list[dict]",
+   "doc": "List the partners that have live integrations with us.",
+   "task": "Which partners have live integrations with us right now?",
+   "hidden": true,
+   "rules": []
+  }
+ },
+ "rules": {
+  "R01": {
+   "title": "Writing to investors",
+   "applies": "updates to our investors, investor decks, posts on the investor portal and answers to investors' questions",
+   "text": "Lead with cash runway in months, then the number that changed most since the last update, and keep it to one page.",
+   "change": {
+    "old": "lead with cash runway",
+    "new": "lead with net revenue retention (instead of cash runway)",
+    "direct": "Change our rule on writing to investors: from now on, lead with net revenue retention instead of cash runway. The rest of the rule stays as it is.",
+    "passing": "Also, from now on anything we write to investors should lead with net revenue retention rather than cash runway, so please make sure that sticks."
+   }
+  },
+  "R02": {
+   "title": "Naming customers in public material",
+   "applies": "case studies, blog posts, social media posts and replies, press releases, newsletters, sales decks and customer logo slides",
+   "text": "Refer to a customer by its company name, never by an employee's name, and never include anyone's phone number or home address.",
+   "change": {
+    "old": "refer to a customer by its company name",
+    "new": "do not name a customer unless they have agreed in writing; describe them by industry instead, for example 'a logistics customer'",
+    "direct": "Tighten our rule on naming customers in public material: we no longer name a customer unless they have agreed in writing. Describe them by their industry instead, for example 'a logistics customer'. The rest of the rule stays.",
+    "passing": "One more thing: from now on we don't name a customer in anything public unless they've agreed in writing, we describe them by industry instead, like 'a logistics customer'. Please make that stick for the future."
+   }
+  },
+  "R03": {
+   "title": "Meetings with people outside the company",
+   "applies": "scheduling or moving any meeting with people outside the company, such as customer calls and business reviews, sales demos, job interviews, investor calls, media interviews and supplier or partner meetings",
+   "text": "Never schedule them on a Friday, and always put an agenda in the invitation.",
+   "change": {
+    "old": "never on a Friday",
+    "new": "never on a Monday (Fridays are now allowed)",
+    "direct": "Change our rule on meetings with people outside the company: they are now off limits on Mondays instead of Fridays. Fridays are fine again. Keep the agenda part.",
+    "passing": "By the way, meetings with people outside the company are now off limits on Mondays rather than Fridays; Fridays are fine again. Please keep that going forward."
+   }
+  },
+  "R04": {
+   "title": "Stating amounts of money",
+   "applies": "invoices and payment reminders, quotes and order forms, refunds and credit notes, pricing and sales decks, purchase orders, expense claims and spending reports, payslips and payroll cost reports, budgets and forecasts, revenue reports and profit and loss statements",
+   "text": "State every amount in US dollars with two decimals; if a figure was in another currency, convert it at the day's rate and name the rate.",
+   "change": {
+    "old": "state amounts in US dollars",
+    "new": "state amounts in euros (not US dollars)",
+    "direct": "Update our rule on stating amounts of money: we now state every amount in euros, not US dollars, still with two decimals and naming the rate when we convert.",
+    "passing": "Oh, and from now on we state every amount in euros rather than US dollars, still with two decimals and naming the rate when we convert. Please make sure that sticks for the future."
+   }
+  },
+  "R05": {
+   "title": "Alt text for images",
+   "applies": "images in blog posts, newsletters, event pages and the pages of our website",
+   "text": "Every image needs alt text that describes it in under 125 characters.",
+   "change": {
+    "old": "alt text under 125 characters",
+    "new": "alt text under 80 characters",
+    "direct": "Change our alt text rule: alt text must now be under 80 characters instead of 125.",
+    "passing": "While you're at it: alt text now has to be under 80 characters, not 125. Please keep to that from now on."
+   }
+  },
+  "R06": {
+   "title": "Our product's name",
+   "applies": "copy we publish that names our product: website pages, blog posts, case studies, release notes, newsletters and marketing emails, press releases, job ads and sales decks",
+   "text": "Write the product's name as 'Atlas', never 'ATLAS' or 'the Atlas platform'.",
+   "change": {
+    "old": "the product is called 'Atlas'",
+    "new": "the product is called 'Atlas Cloud' (never just 'Atlas')",
+    "direct": "Our product has been renamed: update the rule on its name so it is written 'Atlas Cloud', never just 'Atlas', 'ATLAS' or 'the Atlas platform'.",
+    "passing": "Heads up, the product has been renamed: from now on it's 'Atlas Cloud', never just 'Atlas'. Please make sure that's how we write it from here on."
+   }
+  },
+  "R07": {
+   "title": "Talking to the press",
+   "applies": "press releases, replies to journalists, story pitches, media interviews and the media list",
+   "text": "Everything for the press goes through Maya Chen, our communications lead, who approves it before it goes out.",
+   "change": {
+    "old": "Maya Chen approves everything for the press",
+    "new": "Tom Okafor approves everything for the press (he replaced Maya Chen as communications lead)",
+    "direct": "Maya Chen has left. Update our rule on talking to the press: Tom Okafor is now our communications lead and approves everything for the press.",
+    "passing": "Also, Maya has left and Tom Okafor is our communications lead now, so everything for the press goes through him. Please keep that for the future."
+   }
+  },
+  "R08": {
+   "title": "Contracts",
+   "applies": "NDAs, customer contracts and order forms, supplier and partner agreements, and contract renewals",
+   "text": "Legal (Priya Nair) must approve every contract before it is sent or signed, and it must use the current template from the legal drive.",
+   "change": {
+    "old": "legal alone approves contracts",
+    "new": "legal and the CFO must both approve contracts",
+    "direct": "Change our contracts rule: from now on legal and the CFO must both approve a contract before it is sent or signed. The template part stays.",
+    "passing": "One thing for the future: contracts now need sign-off from both legal and the CFO before they go out or get signed. Please make sure that sticks."
+   }
+  },
+  "R09": {
+   "title": "Refunds and credits",
+   "applies": "refunds, credit notes and cancellations with a prorated refund",
+   "text": "A refund or credit worth more than one month of the customer's subscription needs a finance manager's approval before it is issued.",
+   "change": {
+    "old": "approval needed above one month of the subscription",
+    "new": "approval needed above one week of the subscription",
+    "direct": "Tighten our refunds rule: a refund or credit worth more than one week of the customer's subscription, not one month, now needs a finance manager's approval.",
+    "passing": "And from now on any refund or credit worth more than a week of the customer's subscription, not a month, needs a finance manager's approval. Please keep that going forward."
+   }
+  },
+  "R10": {
+   "title": "Paying suppliers",
+   "applies": "payments to suppliers and contractors, wire transfers, partner commissions and setting up a new supplier for payment",
+   "text": "Every payment needs two approvers from finance, and a new supplier's bank details must be confirmed by phone before the first payment.",
+   "change": {
+    "old": "confirm a new supplier's bank details by phone",
+    "new": "confirm a new supplier's bank details through the supplier portal, never by phone",
+    "direct": "Change our rule on paying suppliers: a new supplier's bank details must now be confirmed through the supplier portal, never by phone. The two approvers stay.",
+    "passing": "Also, after the fraud scare, new suppliers' bank details now get confirmed through the supplier portal, never by phone. Please make sure that sticks."
+   }
+  },
+  "R11": {
+   "title": "Writing to candidates",
+   "applies": "interview invitations, rejections, offers and follow-ups to job candidates",
+   "text": "Reply to every candidate within five working days, and never ask about salary history.",
+   "change": {
+    "old": "reply within five working days",
+    "new": "reply within three working days",
+    "direct": "Change our rule on writing to candidates: we now reply to every candidate within three working days instead of five.",
+    "passing": "By the way, we've promised candidates a reply within three working days now, not five. Please keep to that from now on."
+   }
+  },
+  "R12": {
+   "title": "Exporting personal data",
+   "applies": "exports of personal data: mailing lists, contact lists, a customer's user records, employee lists, candidate pipelines, ticket requesters and event attendee lists",
+   "text": "Record a ticket number for the export, send the file only encrypted, and delete local copies after 30 days.",
+   "change": {
+    "old": "delete local copies after 30 days",
+    "new": "delete local copies after 7 days",
+    "direct": "Change our rule on exporting personal data: local copies must now be deleted after 7 days instead of 30.",
+    "passing": "Oh, and local copies of personal data exports now have to be deleted after 7 days, not 30. Please make that stick."
+   }
+  },
+  "R13": {
+   "title": "Employee records",
+   "applies": "changes to an employee's HR record: salary, tax details, pay corrections, leave, performance reviews and leavers",
+   "text": "Only people in HR may see them, and every file must be marked 'HR confidential'.",
+   "change": {
+    "old": "files are marked 'HR confidential'",
+    "new": "files are marked 'Restricted – HR only'",
+    "direct": "Change our rule on employee records: files must now be marked 'Restricted – HR only' instead of 'HR confidential'.",
+    "passing": "Also, HR files are now marked 'Restricted – HR only' instead of 'HR confidential'. Please keep that from now on."
+   }
+  },
+  "R14": {
+   "title": "Booking travel",
+   "applies": "booking flights, trains, hotels and hire cars for anyone travelling for the company, including speakers",
+   "text": "Book economy class for flights under six hours, and keep hotels under the city's nightly cap in the travel policy.",
+   "change": {
+    "old": "economy for flights under six hours",
+    "new": "economy for flights under eight hours",
+    "direct": "Change our travel rule: book economy for flights under eight hours instead of six.",
+    "passing": "And from now on it's economy for any flight under eight hours, not six. Please make sure that sticks."
+   }
+  },
+  "R15": {
+   "title": "Changing production",
+   "applies": "deploys, database migrations, feature-flag and configuration changes in production, and rollbacks",
+   "text": "Make production changes only between 09:00 and 16:00 UK time on working days, and announce each one in the #deploys channel before it starts.",
+   "change": {
+    "old": "announce in #deploys",
+    "new": "announce in #releases (the #deploys channel is retired)",
+    "direct": "Change our rule on production changes: announce each one in #releases from now on; #deploys has been retired.",
+    "passing": "Also, we've retired #deploys, so production changes get announced in #releases from now on. Please keep that going forward."
+   }
+  },
+  "R16": {
+   "title": "Granting access",
+   "applies": "granting, changing or revoking access to systems, accounts, shared drives, partner portals and the office building",
+   "text": "Grant the least access the person needs, and set it to expire after 90 days unless it is renewed.",
+   "change": {
+    "old": "access expires after 90 days",
+    "new": "access expires after 60 days",
+    "direct": "Change our access rule: access now expires after 60 days unless renewed, instead of 90.",
+    "passing": "By the way, access now expires after 60 days unless it's renewed, not 90. Please make that stick."
+   }
+  },
+  "R17": {
+   "title": "Replying to customers about problems",
+   "applies": "replies to support tickets and to customer complaints",
+   "text": "Reply within four working hours, and sign as 'The Fernhill Support Team'.",
+   "change": {
+    "old": "sign as 'The Fernhill Support Team'",
+    "new": "sign with the first name of the person who writes the reply",
+    "direct": "Change our rule on replying to customers about problems: replies are now signed with the first name of the person who writes them, instead of 'The Fernhill Support Team'.",
+    "passing": "Also, from now on we sign these with our own first names, not 'The Fernhill Support Team'. Please keep that going forward."
+   }
+  },
+  "R18": {
+   "title": "Stating times to people outside the company",
+   "applies": "invitations to meetings with people outside the company, outage notices, planned maintenance notices and webinar announcements",
+   "text": "State every time in UTC and in the recipient's time zone.",
+   "change": {
+    "old": "state times in UTC and the recipient's time zone",
+    "new": "state times only in the recipient's time zone, naming their city",
+    "direct": "Change our rule on stating times to people outside the company: give times only in the recipient's time zone, naming their city, and drop UTC.",
+    "passing": "And from now on, when we give people outside the company a time, use only their own time zone and name their city; drop the UTC. Please make that stick."
+   }
+  },
+  "R19": {
+   "title": "Board materials",
+   "applies": "board decks, board minutes, board pre-reads and written resolutions",
+   "text": "Mark every page 'Confidential – Board', and share it only through the board portal, never as an email attachment.",
+   "change": {
+    "old": "pages are marked 'Confidential – Board'",
+    "new": "pages are marked 'Strictly confidential'",
+    "direct": "Change our rule on board materials: mark every page 'Strictly confidential' instead of 'Confidential – Board'. The board portal part stays.",
+    "passing": "Also, board papers are now marked 'Strictly confidential' instead of 'Confidential – Board'. Please keep that for the future."
+   }
+  },
+  "R20": {
+   "title": "Forecasts",
+   "applies": "revenue forecasts, cash-flow projections, budgets and pipeline forecasts",
+   "text": "Give every forecast as a range with its assumptions stated, never as a single number.",
+   "change": {
+    "old": "give forecasts as a range",
+    "new": "give forecasts as three scenarios: low, base and high",
+    "direct": "Change our forecasts rule: give every forecast as three scenarios, low, base and high, instead of a range, still with the assumptions stated.",
+    "passing": "One more thing: forecasts should now come as three scenarios, low, base and high, rather than a range. Please make sure that sticks."
+   }
+  },
+  "R21": {
+   "title": "Sharing data with other companies",
+   "applies": "sending datasets, logs or other data to partners, suppliers, auditors or integration providers",
+   "text": "Only share data under a signed data processing agreement, remove names and email addresses first, and send it through Vaultline, never as an email attachment.",
+   "change": {
+    "old": "send data through Vaultline",
+    "new": "send data through the company SFTP server (no longer Vaultline)",
+    "direct": "Change our rule on sharing data with other companies: we've dropped Vaultline, so send data through the company SFTP server instead.",
+    "passing": "Also, we've dropped Vaultline: data for other companies goes through the company SFTP server now. Please keep that from now on."
+   }
+  },
+  "R22": {
+   "title": "Buying things",
+   "applies": "buying things: purchase orders, new software subscriptions and renewals, office supplies, and equipment such as laptops",
+   "text": "Every purchase needs a purchase order approved by finance before ordering, and new software must be checked by IT first.",
+   "change": {
+    "old": "purchase orders approved by finance",
+    "new": "purchase orders approved by the budget owner",
+    "direct": "Change our purchasing rule: purchase orders are now approved by the budget owner instead of finance. The IT check stays.",
+    "passing": "By the way, purchase orders get approved by the budget owner now, not finance. Please make sure that sticks."
+   }
+  },
+  "R24": {
+   "title": "Shipping goods",
+   "applies": "shipping laptops and equipment to staff, scanner kits and other hardware to customers, and event materials",
+   "text": "Ship international parcels with DHL Express, and insure anything worth more than the courier's standard cover.",
+   "change": {
+    "old": "ship with DHL Express",
+    "new": "ship with UPS (not DHL Express)",
+    "direct": "Change our shipping rule: international parcels now go with UPS instead of DHL Express.",
+    "passing": "Also, we've switched couriers: international parcels go with UPS now, not DHL Express. Please keep that going forward."
+   }
+  },
+  "R25": {
+   "title": "Surveying customers",
+   "applies": "NPS and satisfaction surveys, feedback requests and requests for customer interviews",
+   "text": "Send each customer at most one survey a quarter, with no more than five questions.",
+   "change": {
+    "old": "at most one survey a quarter",
+    "new": "at most one survey every six months",
+    "direct": "Change our rule on surveying customers: send each customer at most one survey every six months instead of one a quarter.",
+    "passing": "And from now on each customer gets at most one survey every six months, not one a quarter. Please make that stick."
+   }
+  },
+  "R27": {
+   "title": "Notices about our service",
+   "applies": "outage notices, planned maintenance notices, incident reports and announcements of changes to the service",
+   "text": "Post it on the status page first, then email the affected customers within one hour.",
+   "change": {
+    "old": "email affected customers within one hour",
+    "new": "email affected customers within 30 minutes",
+    "direct": "Change our rule on notices about our service: email the affected customers within 30 minutes instead of one hour.",
+    "passing": "By the way, affected customers now have to be emailed within 30 minutes, not an hour. Please make sure that sticks."
+   }
+  }
+ },
+ "changes": [
+  {
+   "order": 0,
+   "rule": "R20",
+   "passing_procedure": "draft_budget",
+   "direct_message": "Change our forecasts rule: give every forecast as three scenarios, low, base and high, instead of a range, still with the assumptions stated.",
+   "passing_message": "Start next year's budget for engineering, sales and operations. One more thing: forecasts should now come as three scenarios, low, base and high, rather than a range. Please make sure that sticks."
+  },
+  {
+   "order": 1,
+   "rule": "R03",
+   "passing_procedure": "reschedule_external_meeting",
+   "direct_message": "Change our rule on meetings with people outside the company: they are now off limits on Mondays instead of Fridays. Fridays are fine again. Keep the agenda part.",
+   "passing_message": "Move our call with the Brightline Foods team (event ev_204) to a later day this week. By the way, meetings with people outside the company are now off limits on Mondays rather than Fridays; Fridays are fine again. Please keep that going forward."
+  },
+  {
+   "order": 2,
+   "rule": "R02",
+   "passing_procedure": "post_social_update",
+   "direct_message": "Tighten our rule on naming customers in public material: we no longer name a customer unless they have agreed in writing. Describe them by their industry instead, for example 'a logistics customer'. The rest of the rule stays.",
+   "passing_message": "Announce on LinkedIn that Brightline Foods has become our hundredth customer. One more thing: from now on we don't name a customer in anything public unless they've agreed in writing, we describe them by industry instead, like 'a logistics customer'. Please make that stick for the future."
+  },
+  {
+   "order": 3,
+   "rule": "R24",
+   "passing_procedure": "ship_scanner_kit",
+   "direct_message": "Change our shipping rule: international parcels now go with UPS instead of DHL Express.",
+   "passing_message": "Orbit Retail's new warehouse in Rotterdam needs a scanner kit; send one. Also, we've switched couriers: international parcels go with UPS now, not DHL Express. Please keep that going forward."
+  },
+  {
+   "order": 4,
+   "rule": "R25",
+   "passing_procedure": "request_customer_interview",
+   "direct_message": "Change our rule on surveying customers: send each customer at most one survey every six months instead of one a quarter.",
+   "passing_message": "Ask Harbour Logistics if someone would talk to our product team about the new forecasting feature. And from now on each customer gets at most one survey every six months, not one a quarter. Please make that stick."
+  },
+  {
+   "order": 5,
+   "rule": "R14",
+   "passing_procedure": "book_train",
+   "direct_message": "Change our travel rule: book economy for flights under eight hours instead of six.",
+   "passing_message": "Get Joe a train from London to Paris on Monday morning. And from now on it's economy for any flight under eight hours, not six. Please make sure that sticks."
+  },
+  {
+   "order": 6,
+   "rule": "R05",
+   "passing_procedure": "publish_case_study",
+   "direct_message": "Change our alt text rule: alt text must now be under 80 characters instead of 125.",
+   "passing_message": "Turn the Brightline Foods results into a case study on our site, with the photo of their depot. While you're at it: alt text now has to be under 80 characters, not 125. Please keep to that from now on."
+  },
+  {
+   "order": 7,
+   "rule": "R01",
+   "passing_procedure": "build_investor_deck",
+   "direct_message": "Change our rule on writing to investors: from now on, lead with net revenue retention instead of cash runway. The rest of the rule stays as it is.",
+   "passing_message": "Put together the deck for this quarter's investor meeting. Also, from now on anything we write to investors should lead with net revenue retention rather than cash runway, so please make sure that sticks."
+  },
+  {
+   "order": 8,
+   "rule": "R09",
+   "passing_procedure": "cancel_subscription",
+   "direct_message": "Tighten our refunds rule: a refund or credit worth more than one week of the customer's subscription, not one month, now needs a finance manager's approval.",
+   "passing_message": "Orbit Retail is closing their account at the end of the month; cancel it and refund the unused time. And from now on any refund or credit worth more than a week of the customer's subscription, not a month, needs a finance manager's approval. Please keep that going forward."
+  },
+  {
+   "order": 9,
+   "rule": "R11",
+   "passing_procedure": "send_offer_letter",
+   "direct_message": "Change our rule on writing to candidates: we now reply to every candidate within three working days instead of five.",
+   "passing_message": "Send Ana Costa the offer for the senior designer role, starting 1 December. By the way, we've promised candidates a reply within three working days now, not five. Please keep to that from now on."
+  }
+ ],
+ "tasks": [
+  {
+   "id": "t001",
+   "procedure": "pause_campaign",
+   "text": "Hold campaign c_310; the discount code in it is wrong.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t002",
+   "procedure": "post_investor_portal_update",
+   "text": "Post this quarter's letter for our investors on their portal.",
+   "rules": [
+    "R01"
+   ],
+   "changed_rules": [
+    "R01"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t003",
+   "procedure": "order_laptop",
+   "text": "Ana starts on 1 December; order her a MacBook.",
+   "rules": [
+    "R22"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t004",
+   "procedure": "ship_event_materials",
+   "text": "Send the banners and the demo kit to the Lisbon venue.",
+   "rules": [
+    "R24"
+   ],
+   "changed_rules": [
+    "R24"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t005",
+   "procedure": "refresh_dashboard",
+   "text": "The sales dashboard looks stale; get it up to date.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t006",
+   "procedure": "export_account_usage",
+   "text": "Get me Kestrel Health's product usage for the last 90 days.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t007",
+   "procedure": "schedule_business_review",
+   "text": "Set up Brightline Foods' quarterly business review for early next month.",
+   "rules": [
+    "R03",
+    "R18"
+   ],
+   "changed_rules": [
+    "R03"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t008",
+   "procedure": "record_leave",
+   "text": "Sam is on parental leave from 3 November to 2 February; log it.",
+   "rules": [
+    "R13"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t009",
+   "procedure": "report_social_metrics",
+   "text": "How did our LinkedIn and X accounts do last month in reach and engagement?",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t010",
+   "procedure": "export_attendee_list",
+   "text": "Get me the list of people registered for the Lisbon meetup, with their emails.",
+   "rules": [
+    "R12"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t011",
+   "procedure": "read_receipt",
+   "text": "What's on this receipt photo from the Lisbon dinner?",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t012",
+   "procedure": "track_board_actions",
+   "text": "What actions did the board give us at the last meeting, and which are still open?",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t013",
+   "procedure": "publish_event_page",
+   "text": "Put up a page for our Lisbon meetup on 20 November, with the venue photo.",
+   "rules": [
+    "R05"
+   ],
+   "changed_rules": [
+    "R05"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t014",
+   "procedure": "run_migration",
+   "text": "Apply the migration that adds delivery windows to the production database.",
+   "rules": [
+    "R15"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t015",
+   "procedure": "send_newsletter",
+   "text": "Send out October's newsletter with the Lisbon office news, the new release and the photos from the meetup.",
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R02",
+    "R05"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t016",
+   "procedure": "schedule_supplier_payment",
+   "text": "Set up the payment to Moss & Pike for their audit fee to go out on the 30th.",
+   "rules": [
+    "R10"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t017",
+   "procedure": "build_investor_deck",
+   "text": "Put together the deck for this quarter's investor meeting.",
+   "rules": [
+    "R01"
+   ],
+   "changed_rules": [
+    "R01"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t018",
+   "procedure": "ship_scanner_kit",
+   "text": "Orbit Retail's new warehouse in Rotterdam needs a scanner kit; send one.",
+   "rules": [
+    "R24"
+   ],
+   "changed_rules": [
+    "R24"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t019",
+   "procedure": "draft_press_release",
+   "text": "Draft a press release announcing our partnership with Orbit Retail.",
+   "rules": [
+    "R02",
+    "R06",
+    "R07"
+   ],
+   "changed_rules": [
+    "R02"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t020",
+   "procedure": "export_user_data",
+   "text": "Orbit Retail sent a data access request for their users; export everything we hold on them.",
+   "rules": [
+    "R12"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t021",
+   "procedure": "forecast_pipeline",
+   "text": "What will we close this quarter? Give me the pipeline forecast.",
+   "rules": [
+    "R04",
+    "R20"
+   ],
+   "changed_rules": [
+    "R20"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t022",
+   "procedure": "update_production_config",
+   "text": "Raise the routing service's request timeout to 30 seconds in production.",
+   "rules": [
+    "R15"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t023",
+   "procedure": "announce_webinar",
+   "text": "Announce next month's webinar on warehouse forecasting with Lena speaking.",
+   "rules": [
+    "R18"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t024",
+   "procedure": "pay_partner_commission",
+   "text": "Pay Routewise their commission on the Quarry & Co deal.",
+   "rules": [
+    "R10"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t025",
+   "procedure": "forecast_revenue",
+   "text": "Give me a revenue forecast for the next six months.",
+   "rules": [
+    "R04",
+    "R20"
+   ],
+   "changed_rules": [
+    "R20"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t026",
+   "procedure": "block_focus_time",
+   "text": "Protect my mornings: block 9 to 11 every Tuesday and Thursday for deep work.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t027",
+   "procedure": "enrich_lead",
+   "text": "Find out how big Quarry & Co is and what they use for logistics today.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t028",
+   "procedure": "create_email_account",
+   "text": "Set up a work email for Ana Costa.",
+   "rules": [
+    "R16"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t029",
+   "procedure": "book_speaker_travel",
+   "text": "Our guest speaker for the Lisbon meetup needs flights and a hotel.",
+   "rules": [
+    "R14"
+   ],
+   "changed_rules": [
+    "R14"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t030",
+   "procedure": "pay_vendor_invoice",
+   "text": "Pay Greenleaf Supplies' invoice GL-2210 for the office plants.",
+   "rules": [
+    "R10"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t031",
+   "procedure": "send_nps_survey",
+   "text": "Send this quarter's NPS survey to our enterprise customers.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t032",
+   "procedure": "build_sales_deck",
+   "text": "Make a pitch deck for Kestrel Health showing the Growth plan, its price and a couple of reference customers.",
+   "rules": [
+    "R02",
+    "R04",
+    "R06"
+   ],
+   "changed_rules": [
+    "R02"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t033",
+   "procedure": "register_partner_deal",
+   "text": "Routewise brought in Quarry & Co; register the deal against them.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t034",
+   "procedure": "list_partner_integrations",
+   "text": "Which partners have live integrations with us right now?",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t035",
+   "procedure": "book_hire_car",
+   "text": "Joe needs a car in Porto for two days next week.",
+   "rules": [
+    "R14"
+   ],
+   "changed_rules": [
+    "R14"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t036",
+   "procedure": "send_csat_survey",
+   "text": "Ask the customer on T-4398 how we did.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t037",
+   "procedure": "process_leaver",
+   "text": "Mark is leaving on 31 October; process his departure.",
+   "rules": [
+    "R13",
+    "R16"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t038",
+   "procedure": "send_offer_letter",
+   "text": "Send Ana Costa the offer for the senior designer role, starting 1 December.",
+   "rules": [
+    "R11"
+   ],
+   "changed_rules": [
+    "R11"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t039",
+   "procedure": "book_flight",
+   "text": "Book Lena a flight from London to Lisbon on 12 November.",
+   "rules": [
+    "R14"
+   ],
+   "changed_rules": [
+    "R14"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t040",
+   "procedure": "submit_conference_talk",
+   "text": "Submit Lena's talk on forecasting to LogiConf's call for papers.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t041",
+   "procedure": "answer_investor_question",
+   "text": "Anya at Northgate Ventures asked why customer churn went up in the summer; draft our answer.",
+   "rules": [
+    "R01"
+   ],
+   "changed_rules": [
+    "R01"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t042",
+   "procedure": "issue_credit_note",
+   "text": "Give Orbit Retail a credit of 450 against their next bill for last week's outage.",
+   "rules": [
+    "R04",
+    "R09"
+   ],
+   "changed_rules": [
+    "R09"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t043",
+   "procedure": "update_billing_details",
+   "text": "Kestrel Health has a new billing address and a PO number for invoices; update their account.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t044",
+   "procedure": "book_hotel",
+   "text": "Find Sam a hotel in Lisbon for three nights from the 12th.",
+   "rules": [
+    "R14"
+   ],
+   "changed_rules": [
+    "R14"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t045",
+   "procedure": "request_customer_interview",
+   "text": "Ask Harbour Logistics if someone would talk to our product team about the new forecasting feature.",
+   "rules": [
+    "R25"
+   ],
+   "changed_rules": [
+    "R25"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t046",
+   "procedure": "draft_investor_update",
+   "text": "Draft this month's update to our investors: four engineers hired and the Lisbon office open.",
+   "rules": [
+    "R01"
+   ],
+   "changed_rules": [
+    "R01"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t047",
+   "procedure": "ship_laptop",
+   "text": "Send Ana's new laptop to her home in Porto.",
+   "rules": [
+    "R24"
+   ],
+   "changed_rules": [
+    "R24"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t048",
+   "procedure": "publish_blog_post",
+   "text": "Publish a post on our blog about the warehouse rollout we just finished with Harbour Logistics, with the two photos from the site.",
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R02",
+    "R05"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t049",
+   "procedure": "file_performance_review",
+   "text": "File Joe's mid-year review from the notes his manager sent.",
+   "rules": [
+    "R13"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t050",
+   "procedure": "reject_candidate",
+   "text": "Let Tom Reyes know we won't be moving forward for the data engineer role.",
+   "rules": [
+    "R11"
+   ],
+   "changed_rules": [
+    "R11"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t051",
+   "procedure": "cancel_subscription",
+   "text": "Orbit Retail is closing their account at the end of the month; cancel it and refund the unused time.",
+   "rules": [
+    "R04",
+    "R09"
+   ],
+   "changed_rules": [
+    "R09"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t052",
+   "procedure": "set_out_of_office",
+   "text": "I'm off from 20 to 24 October; put up an away message and block my calendar.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t053",
+   "procedure": "run_sql_query",
+   "text": "Run a quick query to count active warehouses per customer.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t054",
+   "procedure": "draft_budget",
+   "text": "Start next year's budget for engineering, sales and operations.",
+   "rules": [
+    "R04",
+    "R20"
+   ],
+   "changed_rules": [
+    "R20"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t055",
+   "procedure": "schedule_social_post",
+   "text": "Queue a post on X for next Tuesday morning about our new Lisbon office.",
+   "rules": [
+    "R02"
+   ],
+   "changed_rules": [
+    "R02"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t056",
+   "procedure": "close_month",
+   "text": "Close the books for September.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t057",
+   "procedure": "merge_tickets",
+   "text": "T-4415 and T-4416 are the same problem from the same customer; combine them.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t058",
+   "procedure": "update_website_page",
+   "text": "Refresh the About page on our website with the new team photo and the updated company description.",
+   "rules": [
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R05"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t059",
+   "procedure": "create_invoice",
+   "text": "Invoice Harbour Logistics for 40 hours of onboarding at 150 an hour.",
+   "rules": [
+    "R04"
+   ],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t060",
+   "procedure": "update_tax_code",
+   "text": "HMRC sent Lena a new tax code, 1257L; update it.",
+   "rules": [
+    "R13"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t061",
+   "procedure": "record_interview_feedback",
+   "text": "Log Lena's feedback from Ana Costa's design interview.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t062",
+   "procedure": "schedule_investor_call",
+   "text": "Book a call with Anya from Northgate Ventures for next Thursday.",
+   "rules": [
+    "R03",
+    "R18"
+   ],
+   "changed_rules": [
+    "R03"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t063",
+   "procedure": "correct_employee_pay",
+   "text": "Joe was underpaid in September by two days of overtime; fix it.",
+   "rules": [
+    "R13"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t064",
+   "procedure": "build_deck",
+   "text": "Make a short deck for Monday's all-hands with sections on hiring, the office move and the roadmap.",
+   "rules": [],
+   "changed_rules": [],
+   "hidden": false
+  },
+  {
+   "id": "t065",
+   "procedure": "schedule_partner_meeting",
+   "text": "Set up our quarterly sync with the Routewise partnership team.",
+   "rules": [
+    "R03",
+    "R18"
+   ],
+   "changed_rules": [
+    "R03"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t066",
+   "procedure": "project_cash_flow",
+   "text": "When do we run out of cash at the current burn? Project it for the next 18 months.",
+   "rules": [
+    "R04",
+    "R20"
+   ],
+   "changed_rules": [
+    "R20"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t067",
+   "procedure": "schedule_media_interview",
+   "text": "Set up a time for the Logistics Today reporter to interview our CEO next week.",
+   "rules": [
+    "R03",
+    "R07",
+    "R18"
+   ],
+   "changed_rules": [
+    "R03"
+   ],
+   "hidden": true
+  },
+  {
+   "id": "t068",
+   "procedure": "publish_case_study",
+   "text": "Turn the Brightline Foods results into a case study on our site, with the photo of their depot.",
+   "rules": [
+    "R02",
+    "R05",
+    "R06"
+   ],
+   "changed_rules": [
+    "R02",
+    "R05"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t069",
+   "procedure": "schedule_interview",
+   "text": "Set up a first interview for Ana Costa with Sam and Lena on Tuesday.",
+   "rules": [
+    "R03",
+    "R11",
+    "R18"
+   ],
+   "changed_rules": [
+    "R03",
+    "R11"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t070",
+   "procedure": "export_payroll_cost_report",
+   "text": "How much did payroll cost each team in September? I need it as a report.",
+   "rules": [
+    "R04"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  },
+  {
+   "id": "t071",
+   "procedure": "issue_refund",
+   "text": "Refund Brightline Foods 300 on invoice INV-1182; they were charged twice for one seat.",
+   "rules": [
+    "R04",
+    "R09"
+   ],
+   "changed_rules": [
+    "R09"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "t072",
+   "procedure": "export_contacts",
+   "text": "Export all our contacts at retail prospects with their emails and phone numbers.",
+   "rules": [
+    "R12"
+   ],
+   "changed_rules": [],
+   "hidden": true
+  }
+ ]
+}

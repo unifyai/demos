@@ -1,0 +1,22 @@
+[project]
+name = "linked-libraries"
+version = "0.1.0"
+description = "Procedures as functions and rules as guidance, linked both ways, against skill folders, a rules file and one long context"
+requires-python = ">=3.12"
+dependencies = ["demos-common", "snowballstemmer>=2.2"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv.sources]
+demos-common = { path = "../../common", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/linked_libraries"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
