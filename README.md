@@ -95,13 +95,25 @@ demos-common = { path = "../../common", editable = true }
 On the laptop: `cd concepts/<name> && ../../bin/with-openrouter-key uv run python run.py ...`
 (the key comes from Secret Manager as the team service account).
 
-On the cloud machine (Google Cloud VM `blog-exp-1` in `saas-368716`, 32 vCPU,
-125 GB, `ssh ubuntu@34.67.145.107`; the company's cloud accounts are listed in
-brain's `docs/operations/cloud-compute.md`): copy a concept over with
-`rsync -az --exclude .venv --exclude __pycache__ concepts/<name>/ ubuntu@34.67.145.107:demos/concepts/<name>/`,
-run the same command there under `nohup` or `tmux` (the key comes from
-`~/.experiments.env`), and copy `runs/` and results back after every batch. The
-machine is temporary: nothing may live only there.
+On a cloud machine: the round of 9 October 2026 ran on a Google Cloud VM,
+`blog-exp-1` in `saas-368716` (32 vCPU, 125 GB), deleted that night once every
+file was back here. For another round, rent one as brain's
+`docs/operations/cloud-compute.md` says, with a lease, give it the key in a
+file only its user can read (`~/.experiments.env`), copy a concept over with
+`rsync -az --exclude .venv --exclude __pycache__ concepts/<name>/ <host>:demos/concepts/<name>/`,
+run the same command there under `nohup` or `tmux`, and copy `runs/` and
+results back after every batch. The machine is temporary: nothing may live
+only there.
+
+## Status
+
+The round of 9 October 2026 is over. Seven concepts finished, each with its
+verdict at the top of its README's "Results"; `separate-loops` was stopped
+before its analysis when Dan stopped the experiments that night, and its
+README says what ran. The same day Dan removed the posts these ideas came from
+from unify.ai, so the "Post it came from" column below names posts that are no
+longer published; their last state is on the landing-page branch
+`archive/design-history-posts`.
 
 ## Models
 
