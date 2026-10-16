@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 # Run a command with OPENROUTER_API_KEY in its environment, and only there.
-# On the laptop the key is read from Secret Manager (project saas-368716) as the
-# team service account; on the cloud machine it is read from ~/.experiments.env.
-# The key is never printed.
+# On the laptop the key is the runner's own, OPENROUTER_API_KEY_DAN, _HARIS or
+# _YUSHA by login, so OpenRouter bills each call to whoever made it (the shared
+# OPENROUTER_API_KEY for any other login), read from Secret Manager (project
+# saas-368716) as the team service account; on the cloud machine it is read
+# from ~/.experiments.env. The key is never printed.
 #   bin/with-openrouter-key uv run python run.py ...
 set -euo pipefail
 if [ -z "${OPENROUTER_API_KEY:-}" ]; then
   if [ -r "$HOME/.experiments.env" ]; then
     set -a; . "$HOME/.experiments.env"; set +a
   else
+    case "${USER:-$(id -un)}" in
+      djl11|dan) secret=OPENROUTER_API_KEY_DAN ;;
+      hmahmood24|haris) secret=OPENROUTER_API_KEY_HARIS ;;
+      yushaarif|yusha) secret=OPENROUTER_API_KEY_YUSHA ;;
+      *) secret=OPENROUTER_API_KEY ;;
+    esac
     OPENROUTER_API_KEY=$(CLOUDSDK_ACTIVE_CONFIG_NAME=automation gcloud secrets versions access latest \
-      --secret OPENROUTER_API_KEY --project saas-368716 2>/dev/null)
+      --secret "$secret" --project saas-368716 2>/dev/null)
     export OPENROUTER_API_KEY
   fi
 fi
