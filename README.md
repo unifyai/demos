@@ -4,7 +4,7 @@ Minimal, clean rebuilds of ideas from
 [unify-agent](https://github.com/unifyai/unify-agent), the agent harness unify
 built from April 2025, each tested against the strongest simple alternatives
 on data that reflects the conditions the idea is for, with today's models.
-[Building a brain around a stateless model](https://unify.ai/blog/background)
+[Building a brain around a stateless model](https://unify.ai/blog/building-a-brain-around-a-stateless-model)
 tells the story behind them, and what these results say about it.
 
 Why this repo exists (Dan, 9 October 2026): the first experiments on these
@@ -130,7 +130,7 @@ agent come from the cheap tier.
 
 ## Concepts
 
-| Folder | The idea | Its name at [unify.ai/blog/background](https://unify.ai/blog/background) |
+| Folder | The idea | Its name in [the post](https://unify.ai/blog/building-a-brain-around-a-stateless-model) |
 |---|---|---|
 | `skills-as-functions` | An agent that keeps what it learns as callable, tested functions beats one that keeps notes, as tasks recur and the world changes | Storing skills as functions |
 | `separate-loops` | Talking and acting in separate loops, joined by a steerable handle, keeps a conversation responsive and lets corrections reach work in flight | Talking and acting in separate loops |
