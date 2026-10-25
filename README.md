@@ -1,17 +1,18 @@
 # demos
 
-Minimal, clean implementations of the ideas behind unify.ai's design-history
-posts, each tested against the strongest simple alternatives on data that
-reflects the conditions the idea is for.
+Minimal, clean rebuilds of ideas from
+[unify-agent](https://github.com/unifyai/unify-agent), the agent harness unify
+built from April 2025, each tested against the strongest simple alternatives
+on data that reflects the conditions the idea is for, with today's models.
+[Building a brain around a stateless model](https://unify.ai/blog/background)
+tells the story behind them, and what these results say about it.
 
-Why this repo exists (Dan, 9 October 2026): the first experiments behind the
-posts ran the original `unify-agent` code at the posts' dates
-(`landing-page/experiments/`). Most of what they measured was that code's bugs
-and toy settings in which a simpler design was bound to do as well. Here each
-idea is rebuilt from scratch, small and bug-free, so the only question is
-whether the idea itself holds. Which posts get written, and how they are framed
-and dated, is decided later from these results; they may well link to this
-code rather than to the archive.
+Why this repo exists (Dan, 9 October 2026): the first experiments on these
+ideas ran the original `unify-agent` code as it stood when each idea went in.
+Most of what they measured was that code's bugs and toy settings in which a
+simpler design was bound to do as well. Here each idea is rebuilt from
+scratch, small and bug-free, so the only question is whether the idea itself
+holds.
 
 ## Rules
 
@@ -110,10 +111,7 @@ only there.
 The round of 9 October 2026 is over. Seven concepts finished, each with its
 verdict at the top of its README's "Results"; `separate-loops` was stopped
 before its analysis when Dan stopped the experiments that night, and its
-README says what ran. The same day Dan removed the posts these ideas came from
-from unify.ai, so the "Post it came from" column below names posts that are no
-longer published; their last state is on the landing-page branch
-`archive/design-history-posts`.
+README says what ran.
 
 ## Models
 
@@ -132,7 +130,7 @@ agent come from the cheap tier.
 
 ## Concepts
 
-| Folder | The idea | Post it came from |
+| Folder | The idea | Its name at [unify.ai/blog/background](https://unify.ai/blog/background) |
 |---|---|---|
 | `skills-as-functions` | An agent that keeps what it learns as callable, tested functions beats one that keeps notes, as tasks recur and the world changes | Storing skills as functions |
 | `separate-loops` | Talking and acting in separate loops, joined by a steerable handle, keeps a conversation responsive and lets corrections reach work in flight | Talking and acting in separate loops |
